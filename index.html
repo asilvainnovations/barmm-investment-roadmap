@@ -1,0 +1,1721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BARMM Investment Roadmap 2026-2035: The Emerging Bangsamoro - A strategic hub for halal industry, Islamic finance, and resilient economic growth in the Philippines' premier autonomous region.">
+    <meta name="keywords" content="BARMM, Bangsamoro Investment, Halal Industry Philippines, Islamic Finance, BIMP-EAGA, Mindanao Investment, Moral Governance, Bangsamoro Economic Zone, Halal Certification, Philippines Halal Hub">
+    <meta name="author" content="Bangsamoro Autonomous Regional Government">
+    <meta property="og:title" content="BARMM Investment Roadmap 2026-2035 | The Emerging Bangsamoro">
+    <meta property="og:description" content="Transforming Bangsamoro into Southeast Asia's premier halal production hub through systems thinking, moral governance, and strategic investment.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://barmm.gov.ph/assets/emerging-bangsamoro-og.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>BARMM Investment Roadmap 2026-2035 | The Emerging Bangsamoro - Halal Hub of Southeast Asia</title>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "GovernmentOrganization",
+        "name": "Bangsamoro Autonomous Region in Muslim Mindanao",
+        "alternateName": "BARMM",
+        "description": "Premier investment destination for halal industry and Islamic finance in Southeast Asia",
+        "url": "https://barmm.gov.ph/investment-roadmap",
+        "logo": "https://barmm.gov.ph/assets/logo.png",
+        "areaServed": {
+            "@type": "AdministrativeArea",
+            "name": "Bangsamoro Autonomous Region"
+        },
+        "potentialAction": {
+            "@type": "InvestAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://barmm.gov.ph/invest"
+            }
+        }
+    }
+    </script>
+
+    <style>
+        :root {
+            --primary-green: #064e3b;
+            --dark-green: #022c22;
+            --light-green: #6ee7b7;
+            --accent-gold: #fbbf24;
+            --deep-gold: #d97706;
+            --cream: #ecfdf5;
+            --text-dark: #0f172a;
+            --islamic-pattern: rgba(251, 191, 36, 0.03);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            background-color: var(--cream);
+        }
+
+        /* Geometric Pattern Background */
+        .islamic-pattern {
+            background-color: var(--dark-green);
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(251, 191, 36, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(6, 78, 59, 0.8) 0%, transparent 50%),
+                repeating-linear-gradient(45deg, var(--islamic-pattern) 0px, var(--islamic-pattern) 1px, transparent 1px, transparent 10px),
+                repeating-linear-gradient(-45deg, var(--islamic-pattern) 0px, var(--islamic-pattern) 1px, transparent 1px, transparent 10px);
+            position: relative;
+        }
+
+        .islamic-pattern::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L35 25 L55 30 L35 35 L30 55 L25 35 L5 30 L25 25 Z' fill='none' stroke='%23fbbf24' stroke-width='0.5' opacity='0.1'/%3E%3C/svg%3E");
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(2, 44, 34, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 2px solid var(--accent-gold);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(2, 44, 34, 0.98);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--accent-gold);
+            font-weight: bold;
+            font-size: 1.25rem;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent-gold), var(--deep-gold));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-green);
+            font-weight: bold;
+            box-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--light-green);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-gold);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--deep-gold), var(--accent-gold));
+            color: var(--dark-green);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(251, 191, 36, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, transparent 0%, rgba(2, 44, 34, 0.4) 100%);
+        }
+
+        .hero-content {
+            max-width: 900px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(251, 191, 36, 0.15);
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            padding: 0.5rem 1.5rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: white;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero h1 span {
+            color: var(--accent-gold);
+            display: block;
+            font-size: 0.8em;
+            margin-top: 0.5rem;
+            font-weight: 600;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--light-green);
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(251, 191, 36, 0.2);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-gold);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent-gold);
+            display: block;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--light-green);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 2rem;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-gold), var(--deep-gold));
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            color: #64748b;
+            font-size: 1.125rem;
+            max-width: 600px;
+            margin: 1.5rem auto 0;
+        }
+
+        /* Priority Agenda Section */
+        .priority-agenda {
+            background: linear-gradient(135deg, var(--cream) 0%, #ffffff 100%);
+        }
+
+        .agenda-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .agenda-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid var(--accent-gold);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .agenda-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(251, 191, 36, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            transform: translate(30%, -30%);
+        }
+
+        .agenda-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .agenda-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-green);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-gold);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .agenda-card h3 {
+            color: var(--primary-green);
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .agenda-card p {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* SWOT Analysis Section */
+        .swot-section {
+            background: var(--dark-green);
+            color: white;
+            position: relative;
+        }
+
+        .swot-section .section-header h2 {
+            color: white;
+        }
+
+        .swot-section .section-header p {
+            color: var(--light-green);
+        }
+
+        .swot-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .swot-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+        }
+
+        .swot-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+        }
+
+        .swot-card.strengths { border-top: 4px solid #10b981; }
+        .swot-card.weaknesses { border-top: 4px solid #f59e0b; }
+        .swot-card.opportunities { border-top: 4px solid #3b82f6; }
+        .swot-card.threats { border-top: 4px solid #ef4444; }
+
+        .swot-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .swot-card ul {
+            list-style: none;
+            space: 0.75rem;
+        }
+
+        .swot-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #cbd5e1;
+            font-size: 0.95rem;
+        }
+
+        .swot-card li::before {
+            content: '›';
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Systems Thinking Section */
+        .systems-section {
+            background: linear-gradient(to bottom, #ffffff, var(--cream));
+        }
+
+        .cld-container {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 3rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            margin-top: 3rem;
+            border: 1px solid rgba(6, 78, 59, 0.1);
+        }
+
+        .cld-diagram {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .loop-card {
+            background: var(--cream);
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .loop-card.reinforcing {
+            border-color: #10b981;
+            background: linear-gradient(135deg, #ecfdf5 0%, #ffffff 100%);
+        }
+
+        .loop-card.balancing {
+            border-color: #f59e0b;
+            background: linear-gradient(135deg, #fffbeb 0%, #ffffff 100%);
+        }
+
+        .loop-badge {
+            position: absolute;
+            top: -12px;
+            left: 2rem;
+            background: var(--primary-green);
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .loop-card.reinforcing .loop-badge { background: #10b981; }
+        .loop-card.balancing .loop-badge { background: #f59e0b; }
+
+        .loop-card h4 {
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            margin-top: 0.5rem;
+        }
+
+        .loop-flow {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: #475569;
+        }
+
+        .flow-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            background: rgba(255,255,255,0.5);
+            border-radius: 0.5rem;
+        }
+
+        .arrow {
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+
+        /* Strategic Pillars */
+        .pillars-section {
+            background: var(--cream);
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pillar-card {
+            background: white;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            position: relative;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .pillar-header {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+            color: white;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pillar-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 200px;
+            height: 200px;
+            background: rgba(251, 191, 36, 0.1);
+            border-radius: 50%;
+        }
+
+        .pillar-number {
+            font-size: 3rem;
+            font-weight: 800;
+            opacity: 0.3;
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            color: var(--accent-gold);
+        }
+
+        .pillar-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pillar-header p {
+            color: var(--light-green);
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pillar-content {
+            padding: 2rem;
+        }
+
+        .pillar-content ul {
+            list-style: none;
+            space: 1rem;
+        }
+
+        .pillar-content li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            align-items: start;
+            gap: 0.75rem;
+            color: #475569;
+        }
+
+        .pillar-content li:last-child {
+            border-bottom: none;
+        }
+
+        .check-icon {
+            color: var(--accent-gold);
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        /* Implementation Roadmap */
+        .roadmap-section {
+            background: var(--dark-green);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .roadmap-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 10 L60 40 L90 50 L60 60 L50 90 L40 60 L10 50 L40 40 Z' fill='none' stroke='%23fbbf24' stroke-width='0.5' opacity='0.05'/%3E%3C/svg%3E");
+        }
+
+        .roadmap-section .section-header h2 {
+            color: white;
+        }
+
+        .roadmap-section .section-header p {
+            color: var(--light-green);
+        }
+
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            margin-top: 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .timeline-date {
+            text-align: right;
+            font-weight: 800;
+            color: var(--accent-gold);
+            font-size: 1.25rem;
+            position: relative;
+        }
+
+        .timeline-date::after {
+            content: '';
+            position: absolute;
+            right: -1.5rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            border: 3px solid var(--dark-green);
+            box-shadow: 0 0 0 3px var(--accent-gold);
+        }
+
+        .timeline-content {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(251, 191, 36, 0.2);
+            border-radius: 1rem;
+            padding: 2rem;
+        }
+
+        .timeline-content h3 {
+            color: var(--accent-gold);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .timeline-content li {
+            color: #cbd5e1;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .timeline-content li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+        }
+
+        /* Stats Dashboard */
+        .stats-dashboard {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-dashboard::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(251, 191, 36, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .dashboard-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .dashboard-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent-gold);
+            display: block;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .dashboard-label {
+            color: var(--light-green);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .dashboard-context {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+
+        /* Halal Industry Section */
+        .halal-section {
+            background: white;
+        }
+
+        .halal-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .halal-content h3 {
+            font-size: 2rem;
+            color: var(--primary-green);
+            margin-bottom: 1.5rem;
+        }
+
+        .halal-content p {
+            color: #475569;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .halal-sectors {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .sector-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--cream);
+            border-radius: 1rem;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .sector-item:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-5px);
+        }
+
+        .sector-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .sector-item h4 {
+            color: var(--primary-green);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .halal-visual {
+            position: relative;
+        }
+
+        .bimp-map {
+            background: linear-gradient(135deg, var(--cream) 0%, #ffffff 100%);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            border: 2px solid var(--accent-gold);
+            position: relative;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .map-highlight {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 60%, rgba(251, 191, 36, 0.2) 0%, transparent 50%);
+            border-radius: 1.5rem;
+        }
+
+        .trade-corridor {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .corridor-title {
+            font-size: 1.5rem;
+            color: var(--primary-green);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .corridor-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .corridor-stat {
+            text-align: center;
+        }
+
+        .corridor-stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--deep-gold);
+            display: block;
+        }
+
+        .corridor-stat-label {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-green);
+            color: white;
+            padding: 4rem 2rem 2rem;
+            border-top: 4px solid var(--accent-gold);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section h4 {
+            color: var(--accent-gold);
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.75rem;
+        }
+
+        .footer-section h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent-gold);
+            border-radius: 2px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-gold);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .swot-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .timeline-date {
+                text-align: left;
+            }
+            
+            .timeline-date::after {
+                display: none;
+            }
+            
+            .halal-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .halal-sectors {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+<base target="_blank">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">B</div>
+                <span>BARMM Investment</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#roadmap">Roadmap</a></li>
+                <li><a href="#swot">SWOT Analysis</a></li>
+                <li><a href="#systems">Systems Thinking</a></li>
+                <li><a href="#halal">Halal Industry</a></li>
+                <li><a href="#implementation">Implementation</a></li>
+            </ul>
+            <a href="#contact" class="cta-button">Invest Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero islamic-pattern">
+        <div class="hero-content">
+            <div class="hero-badge">Investment Roadmap 2026-2035</div>
+            <h1>
+                The Emerging Bangsamoro
+                <span>A Hub for Resilient and Ethical Growth</span>
+            </h1>
+            <p class="hero-subtitle">
+                Architecting the Investment Roadmap for Bangsamoro through Systems Thinking, 
+                Moral Governance, and Strategic Integration into the Global Halal Economy.
+            </p>
+            <a href="#roadmap" class="cta-button" style="font-size: 1.1rem; padding: 1rem 2.5rem;">
+                Explore Strategic Vision
+            </a>
+            
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <span class="stat-number">7.5%</span>
+                    <span class="stat-label">GRDP Growth (2021)</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">52.6%→23.5%</span>
+                    <span class="stat-label">Poverty Reduction (2018-2023)</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">$2T+</span>
+                    <span class="stat-label">Global Halal Market</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">70M+</span>
+                    <span class="stat-label">BIMP-EAGA Consumers</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Dashboard -->
+    <section class="stats-dashboard">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="dashboard-card">
+                    <span class="dashboard-number">₱299.5B</span>
+                    <span class="dashboard-label">GRDP 2024</span>
+                    <div class="dashboard-context">Regional Economy Expansion</div>
+                </div>
+                <div class="dashboard-card">
+                    <span class="dashboard-number">94.2%</span>
+                    <span class="dashboard-label">Employment Rate</span>
+                    <div class="dashboard-context">Post-Pandemic Recovery (2022)</div>
+                </div>
+                <div class="dashboard-card">
+                    <span class="dashboard-number">₱71B</span>
+                    <span class="dashboard-label">Social Welfare</span>
+                    <div class="dashboard-context">Investment in Human Capital</div>
+                </div>
+                <div class="dashboard-card">
+                    <span class="dashboard-number">8-9%</span>
+                    <span class="dashboard-label">Target Growth</span>
+                    <div class="dashboard-context">Annual Growth 2023-2028</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Priority Agenda Section -->
+    <section class="priority-agenda" id="roadmap">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>12-Point Priority Agenda</h2>
+                <p>The 2nd Bangsamoro Development Plan (2023-2028) targets 8-9% annual growth, 
+                driven by a deliberate shift from post-conflict instability to structured, systemic governance.</p>
+            </div>
+            
+            <div class="agenda-grid">
+                <div class="agenda-card fade-in">
+                    <div class="agenda-icon">⚡</div>
+                    <h3>Energy Security</h3>
+                    <p>Sustainable energy master plan implementation targeting 80-100% electrification by 2028.</p>
+                </div>
+                <div class="agenda-card fade-in">
+                    <div class="agenda-icon">🌾</div>
+                    <h3>Agri-Fishery Productivity</h3>
+                    <p>Food security through modernized farming and fisheries development.</p>
+                </div>
+                <div class="agenda-card fade-in">
+                    <div class="agenda-icon">🏗️</div>
+                    <h3>Strategic Infrastructure</h3>
+                    <p>Investment in transportation, communication, and connectivity networks.</p>
+                </div>
+                <div class="agenda-card fade-in">
+                    <div class="agenda-icon">💰</div>
+                    <h3>Revenue Generation</h3>
+                    <p>Competitive advantage through fiscal autonomy and resource mobilization.</p>
+                </div>
+                <div class="agenda-card fade-in">
+                    <div class="agenda-icon">🌐</div>
+                    <h3>Digital Infrastructure</h3>
+                    <p>E-Governance master plan bridging the digital divide for efficient governance.</p>
+                </div>
+                <div class="agenda-card fade-in">
+                    <div class="agenda-icon">🏛️</div>
+                    <h3>Stronger Bureaucracy</h3>
+                    <p>Capacity building and institutional strengthening for moral governance.</p>
+                </div>
+                <div class="agenda-card fade-in">
+                    <div class="agenda-icon">🕌</div>
+                    <h3>Culture & Heritage</h3>
+                    <p>Preservation of Bangsamoro identity and cultural diversity.</p>
+                </div>
+                <div class="agenda-card fade-in">
+                    <div class="agenda-icon">☮️</div>
+                    <h3>Peace & Security</h3>
+                    <p>Justice system enhancement and normalization process completion.</p>
+                </div>
+                <div class="agenda-card fade-in">
+                    <div class="agenda-icon">🤝</div>
+                    <h3>Moral Rehabilitation</h3>
+                    <p>Support for moral governance and community reconciliation.</p>
+                </div>
+                <div class="agenda-card fade-in">
+                    <div class="agenda-icon">📚</div>
+                    <h3>Quality Education</h3>
+                    <p>Holistic education system aligning with industry demands.</p>
+                </div>
+                <div class="agenda-card fade-in">
+                    <div class="agenda-icon">🌊</div>
+                    <h3>Climate Adaptation</h3>
+                    <p>Disaster resilience and climate change adaptation strategies.</p>
+                </div>
+                <div class="agenda-card fade-in">
+                    <div class="agenda-icon">🏥</div>
+                    <h3>Universal Healthcare</h3>
+                    <p>Social protection and healthcare system strengthening.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SWOT Analysis Section -->
+    <section class="swot-section" id="swot">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Strategic SWOT Analysis</h2>
+                <p>Dynamic assessment of internal capabilities and external market conditions shaping 
+                Bangsamoro's investment climate through 2035.</p>
+            </div>
+            
+            <div class="swot-grid">
+                <div class="swot-card strengths fade-in">
+                    <h3>💪 Strengths</h3>
+                    <ul>
+                        <li>Halal legitimacy & cultural credibility from Islamic heritage</li>
+                        <li>Strategic location in BIMP-EAGA trade corridor</li>
+                        <li>Strong agriculture base (40% of GDP)</li>
+                        <li>Growing policy recognition under BOL</li>
+                        <li>Domestic halal demand (5.69M population)</li>
+                        <li>Moral Governance framework</li>
+                    </ul>
+                </div>
+                
+                <div class="swot-card weaknesses fade-in">
+                    <h3>⚠️ Weaknesses</h3>
+                    <ul>
+                        <li>Weak certification system infrastructure</li>
+                        <li>Fragmented policy frameworks across ministries</li>
+                        <li>Limited infrastructure (low electrification rates)</li>
+                        <li>Lack of halal experts and technical personnel</li>
+                        <li>Insufficient local raw material production</li>
+                        <li>Skills mismatch in training programs</li>
+                    </ul>
+                </div>
+                
+                <div class="swot-card opportunities fade-in">
+                    <h3>🚀 Opportunities</h3>
+                    <ul>
+                        <li>Expanding global halal market (USD 2T+)</li>
+                        <li>ASEAN integration and standards alignment</li>
+                        <li>Islamic finance ecosystem development</li>
+                        <li>BIMP-EAGA market access (70M+ consumers)</li>
+                        <li>Digital transformation (BEGMP 2024-2033)</li>
+                        <li>Post-conflict reconstruction funding</li>
+                    </ul>
+                </div>
+                
+                <div class="swot-card threats fade-in">
+                    <h3>⚡ Threats</h3>
+                    <ul>
+                        <li>Competition from established halal hubs (Malaysia, Indonesia)</li>
+                        <li>Standards recognition risks (OIC/SMIIC compliance)</li>
+                        <li>Investment perception risks from historical conflict</li>
+                        <li>Climate vulnerabilities (typhoons, flooding)</li>
+                        <li>Political transition uncertainty</li>
+                        <li>Security incidents affecting investor confidence</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Systems Thinking Section -->
+    <section class="systems-section" id="systems">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Systems Thinking Analysis</h2>
+                <p>Understanding the dynamic interconnections and feedback loops that shape 
+                Bangsamoro's investment climate evolution through Causal Loop Diagrams (CLDs).</p>
+            </div>
+            
+            <div class="cld-container fade-in">
+                <h3 style="color: var(--primary-green); margin-bottom: 1rem; text-align: center;">Critical Feedback Loops</h3>
+                <p style="text-align: center; color: #64748b; margin-bottom: 2rem;">
+                    Four leverage points where strategic interventions create disproportionate impacts
+                </p>
+                
+                <div class="cld-diagram">
+                    <div class="loop-card reinforcing">
+                        <span class="loop-badge">Reinforcing Loop</span>
+                        <h4>R1: Investment-Development Virtuous Cycle</h4>
+                        <div class="loop-flow">
+                            <div class="flow-item">Investment Inflows <span class="arrow">→</span> Employment Growth</div>
+                            <div class="flow-item">Employment Growth <span class="arrow">→</span> Income Growth</div>
+                            <div class="flow-item">Income Growth <span class="arrow">→</span> Domestic Market Expansion</div>
+                            <div class="flow-item">Market Expansion <span class="arrow">→</span> Business Climate Improvement</div>
+                            <div class="flow-item">Climate Improvement <span class="arrow">→</span> Further Investment</div>
+                        </div>
+                    </div>
+                    
+                    <div class="loop-card reinforcing">
+                        <span class="loop-badge">Reinforcing Loop</span>
+                        <h4>R2: Governance-Investor Confidence</h4>
+                        <div class="loop-flow">
+                            <div class="flow-item">Governance Capacity <span class="arrow">→</span> Policy Clarity</div>
+                            <div class="flow-item">Policy Clarity <span class="arrow">→</span> Investor Confidence</div>
+                            <div class="flow-item">Investor Confidence <span class="arrow">→</span> Investment Inflows</div>
+                            <div class="flow-item">Investment Inflows <span class="arrow">→</span> Tax Revenues</div>
+                            <div class="flow-item">Tax Revenues <span class="arrow">→</span> Enhanced Governance</div>
+                        </div>
+                    </div>
+                    
+                    <div class="loop-card balancing">
+                        <span class="loop-badge">Balancing Loop</span>
+                        <h4>B1: Growth-Resource Constraints</h4>
+                        <div class="loop-flow">
+                            <div class="flow-item">Investment Growth <span class="arrow">→</span> Economic Expansion</div>
+                            <div class="flow-item">Economic Expansion <span class="arrow">→</span> Resource Demand</div>
+                            <div class="flow-item">Resource Demand <span class="arrow">→</span> Infrastructure Bottlenecks</div>
+                            <div class="flow-item">Bottlenecks <span class="arrow">→</span> Skills Shortages</div>
+                            <div class="flow-item">Skills Shortages <span class="arrow">→</span> Growth Limitation</div>
+                        </div>
+                    </div>
+                    
+                    <div class="loop-card balancing">
+                        <span class="loop-badge">Balancing Loop</span>
+                        <h4>B2: Security-Investment Tensions</h4>
+                        <div class="loop-flow">
+                            <div class="flow-item">Security Incidents <span class="arrow">→</span> Investor Caution</div>
+                            <div class="flow-item">Investor Caution <span class="arrow">→</span> Reduced Investment</div>
+                            <div class="flow-item">Reduced Investment <span class="arrow">→</span> Slower Development</div>
+                            <div class="flow-item">Slower Development <span class="arrow">→</span> Social Tensions</div>
+                            <div class="flow-item">Social Tensions <span class="arrow">→</span> Security Challenges</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 3rem; background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+                <h3 style="color: var(--primary-green); margin-bottom: 1rem;">Systems Archetypes at Play</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                    <div style="padding: 1.5rem; background: linear-gradient(135deg, #fef3c7 0%, #ffffff 100%); border-radius: 0.75rem; border-left: 4px solid #f59e0b;">
+                        <h4 style="color: #92400e; margin-bottom: 0.5rem;">Limits to Growth</h4>
+                        <p style="font-size: 0.9rem; color: #78350f;">Infrastructure deficits and skills gaps act as limiting factors. Solution: Proactive investment in enabling infrastructure before growth stalls.</p>
+                    </div>
+                    <div style="padding: 1.5rem; background: linear-gradient(135deg, #dbeafe 0%, #ffffff 100%); border-radius: 0.75rem; border-left: 4px solid #3b82f6;">
+                        <h4 style="color: #1e40af; margin-bottom: 0.5rem;">Success to Successful</h4>
+                        <p style="font-size: 0.9rem; color: #1e3a8a;">Risk of halal industry diverting resources from tourism and agribusiness. Solution: Balanced resource allocation across sectors.</p>
+                    </div>
+                    <div style="padding: 1.5rem; background: linear-gradient(135deg, #fee2e2 0%, #ffffff 100%); border-radius: 0.75rem; border-left: 4px solid #ef4444;">
+                        <h4 style="color: #991b1b; margin-bottom: 0.5rem;">Fixes that Fail</h4>
+                        <p style="font-size: 0.9rem; color: #7f1d1d;">Ad hoc tax incentives without systemic reform. Solution: Address root causes through governance reforms, not temporary patches.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Halal Industry Section -->
+    <section class="halal-section" id="halal">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>The Halal Industry Advantage</h2>
+                <p>Capitalizing on cultural heritage to capture the ASEAN market and position 
+                Bangsamoro as the Philippines' premier halal production hub.</p>
+            </div>
+            
+            <div class="halal-grid">
+                <div class="halal-content fade-in">
+                    <h3>Strategic Halal Sectors</h3>
+                    <p>
+                        Located on the BIMP-EAGA trade corridor (Brunei-Indonesia-Malaysia-Philippines), 
+                        Bangsamoro serves a massive regional Muslim population with authentic halal products 
+                        backed by moral governance principles.
+                    </p>
+                    <p>
+                        The <strong>WOW Matanog Special Economic Zone</strong> (Bangsamoro Halal Park) 
+                        will serve as the premier hub for halal manufacturing and trade, offering 
+                        private-led initiatives with global standards compliance.
+                    </p>
+                    
+                    <div class="halal-sectors">
+                        <div class="sector-item">
+                            <div class="sector-icon">🥥</div>
+                            <h4>Halal Food & Beverage</h4>
+                            <p style="font-size: 0.8rem; color: #64748b; margin-top: 0.5rem;">Focus on coconut by-products</p>
+                        </div>
+                        <div class="sector-item">
+                            <div class="sector-icon">💄</div>
+                            <h4>Halal Cosmetics</h4>
+                            <p style="font-size: 0.8rem; color: #64748b; margin-top: 0.5rem;">Beauty products for Muslim markets</p>
+                        </div>
+                        <div class="sector-item">
+                            <div class="sector-icon">💊</div>
+                            <h4>Halal Pharmaceuticals</h4>
+                            <p style="font-size: 0.8rem; color: #64748b; margin-top: 0.5rem;">Compliant medicine & healthcare</p>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 2rem; padding: 1.5rem; background: var(--cream); border-radius: 1rem; border-left: 4px solid var(--accent-gold);">
+                        <h4 style="color: var(--primary-green); margin-bottom: 0.5rem;">Islamic Finance Roadmap (2024-2028)</h4>
+                        <ul style="list-style: none; font-size: 0.9rem; color: #475569; space: 0.5rem;">
+                            <li>• Strengthen Islamic Banking Foundation</li>
+                            <li>• Strengthen Islamic Microfinance & Waqf</li>
+                            <li>• Establish Takaful (Insurance) Operations</li>
+                            <li>• Facilitate Islamic Capital Market (Sukuk)</li>
+                            <li>• <strong>2028 Goal:</strong> Functional System & Tax Neutrality</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="halal-visual fade-in">
+                    <div class="bimp-map">
+                        <div class="map-highlight"></div>
+                        <div class="trade-corridor">
+                            <div class="corridor-title">BIMP-EAGA Trade Corridor</div>
+                            <p style="color: #64748b; margin-bottom: 2rem;">Gateway to 70+ million ASEAN consumers</p>
+                            
+                            <svg viewBox="0 0 400 300" style="width: 100%; max-width: 350px; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));">
+                                <!-- Simplified SE Asia Map -->
+                                <path d="M50,150 Q80,120 120,140 T200,130 T280,150 T350,120" fill="none" stroke="#064e3b" stroke-width="2" stroke-dasharray="5,5"/>
+                                <circle cx="280" cy="150" r="8" fill="#fbbf24"/>
+                                <circle cx="200" cy="130" r="6" fill="#6ee7b7"/>
+                                <circle cx="120" cy="140" r="6" fill="#6ee7b7"/>
+                                <circle cx="350" cy="120" r="6" fill="#6ee7b7"/>
+                                <text x="290" y="155" font-size="12" fill="#064e3b" font-weight="bold">BARMM</text>
+                                <text x="50" y="140" font-size="10" fill="#64748b">Malaysia</text>
+                                <text x="180" y="115" font-size="10" fill="#64748b">Brunei</text>
+                                <text x="340" y="110" font-size="10" fill="#64748b">Philippines</text>
+                            </svg>
+                            
+                            <div class="corridor-stats">
+                                <div class="corridor-stat">
+                                    <span class="corridor-stat-number">$2T</span>
+                                    <span class="corridor-stat-label">Global Halal Market</span>
+                                </div>
+                                <div class="corridor-stat">
+                                    <span class="corridor-stat-number">70M</span>
+                                    <span class="corridor-stat-label">BIMP-EAGA Population</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div style="background: var(--primary-green); color: white; padding: 1.5rem; border-radius: 1rem; text-align: center;">
+                            <div style="font-size: 2rem; font-weight: 800; color: var(--accent-gold);">2,000</div>
+                            <div style="font-size: 0.85rem; opacity: 0.9;">Target Halal-Certified Enterprises by 2035</div>
+                        </div>
+                        <div style="background: var(--deep-gold); color: white; padding: 1.5rem; border-radius: 1rem; text-align: center;">
+                            <div style="font-size: 2rem; font-weight: 800;">₱25B</div>
+                            <div style="font-size: 0.85rem; opacity: 0.9;">Target Halal Export Value by 2035</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategic Pillars -->
+    <section class="pillars-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Integrated Halal-Driven Strategy</h2>
+                <p>Three interconnected pillars designed to trigger virtuous cycles while mitigating 
+                systemic risks identified through dynamic SWOT analysis.</p>
+            </div>
+            
+            <div class="pillars-grid">
+                <div class="pillar-card fade-in">
+                    <div class="pillar-header">
+                        <span class="pillar-number">01</span>
+                        <h3>Halal Industry Ecosystem Excellence</h3>
+                        <p>Establishing internationally recognized certification and production hubs</p>
+                    </div>
+                    <div class="pillar-content">
+                        <ul>
+                            <li><span class="check-icon">✓</span> Operationalize Bangsamoro Halal Board with OIC/SMIIC alignment</li>
+                            <li><span class="check-icon">✓</span> Develop Bangsamoro Halal Park in Matanog (WOW SEZ)</li>
+                            <li><span class="check-icon">✓</span> Build integrated halal value chains (farm-to-market)</li>
+                            <li><span class="check-icon">✓</span> Target sectors: Food, Cosmetics, Pharmaceuticals, Tourism</li>
+                            <li><span class="check-icon">✓</span> Train 100 halal certification officers by 2035</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="pillar-card fade-in">
+                    <div class="pillar-header">
+                        <span class="pillar-number">02</span>
+                        <h3>Enabling Infrastructure Development</h3>
+                        <p>Priority infrastructure-energy-connectivity nexus investments</p>
+                    </div>
+                    <div class="pillar-content">
+                        <ul>
+                            <li><span class="check-icon">✓</span> Achieve 80% electrification by 2028, 100% by 2030</li>
+                            <li><span class="check-icon">✓</span> Expand digital connectivity (70% internet penetration by 2030)</li>
+                            <li><span class="check-icon">✓</span> Develop farm-to-market roads and cold chain logistics</li>
+                            <li><span class="check-icon">✓</span> Modernize Polloc Freeport and Economic Zone (PFEZ)</li>
+                            <li><span class="check-icon">✓</span> Data centers and last-mile digital infrastructure</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="pillar-card fade-in">
+                    <div class="pillar-header">
+                        <span class="pillar-number">03</span>
+                        <h3>Governance & Institutional Strengthening</h3>
+                        <p>Moral governance framework and investment facilitation</p>
+                    </div>
+                    <div class="pillar-content">
+                        <ul>
+                            <li><span class="check-icon">✓</span> Streamline business registration (target: 1-day processing)</li>
+                            <li><span class="check-icon">✓</span> Establish one-stop investment facilitation centers</li>
+                            <li><span class="check-icon">✓</span> Strengthen BBOI and BEZA regulatory capacity</li>
+                            <li><span class="check-icon">✓</span> Digital transformation of permitting systems (BPLS)</li>
+                            <li><span class="check-icon">✓</span> Transparent monitoring via Balanced Scorecard</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Implementation Roadmap -->
+    <section class="roadmap-section" id="implementation">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Implementation Roadmap</h2>
+                <p>Three-phase approach to transitioning from post-conflict recovery to a mature, 
+                self-sustaining halal economy hub.</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-date">2026-2028</div>
+                    <div class="timeline-content">
+                        <h3>Phase 1: Foundation Building</h3>
+                        <ul>
+                            <li>Operationalize Bangsamoro Halal Board with OIC/SMIIC-aligned certification</li>
+                            <li>Launch Bangsamoro Halal Park development in Matanog</li>
+                            <li>Implement digital business registration and permitting platforms</li>
+                            <li>Achieve 80% electrification target per BSEMP</li>
+                            <li>Establish one-stop investment facilitation centers</li>
+                            <li>Train initial cadre of halal certification officers</li>
+                            <li>Budget: ₱5 Billion</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="timeline-date">2029-2032</div>
+                    <div class="timeline-content">
+                        <h3>Phase 2: Acceleration</h3>
+                        <ul>
+                            <li>Achieve full operationalization of halal certification with international recognition</li>
+                            <li>Complete Phase 1 of Bangsamoro Halal Park with anchor tenants</li>
+                            <li>Expand digital infrastructure to achieve 50% internet penetration</li>
+                            <li>Establish Islamic banking operations in the region</li>
+                            <li>Launch integrated halal value chain programs</li>
+                            <li>Develop tourism circuits showcasing Bangsamoro heritage</li>
+                            <li>Budget: ₱15 Billion</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="timeline-date">2033-2035</div>
+                    <div class="timeline-content">
+                        <h3>Phase 3: Consolidation</h3>
+                        <ul>
+                            <li>Achieve full BHB international accreditation and mutual recognition</li>
+                            <li>Complete full Bangsamoro Halal Park development</li>
+                            <li>Achieve 100% electrification and 70% internet penetration</li>
+                            <li>Establish Bangsamoro as recognized halal innovation center</li>
+                            <li>Deepen BIMP-EAGA integration with established trade corridors</li>
+                            <li>Transition to fully elected government with mature institutions</li>
+                            <li>Budget: ₱20 Billion</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 4rem; text-align: center;">
+                <div style="display: inline-block; background: rgba(251, 191, 36, 0.1); border: 1px solid var(--accent-gold); border-radius: 1rem; padding: 2rem; max-width: 800px;">
+                    <h3 style="color: var(--accent-gold); margin-bottom: 1rem;">Critical Success Factors</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; text-align: left; color: #cbd5e1; font-size: 0.9rem;">
+                        <div>• Sustained political commitment across transitions</div>
+                        <div>• Resource mobilization (block grants, ODA, private investment)</div>
+                        <div>• Inter-agency coordination (BBOI, BEZA, MTIT, BHB)</div>
+                        <div>• Private sector and community stakeholder engagement</div>
+                        <div>• Adaptive management and evidence-based course correction</div>
+                        <div>• Continued peace consolidation and security stability</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h4>Investment Promotion</h4>
+                <ul>
+                    <li><a href="#">Bangsamoro Board of Investments (BBOI)</a></li>
+                    <li><a href="#">Bangsamoro Economic Zone Authority (BEZA)</a></li>
+                    <li><a href="#">Strategic Investment Priorities Plan (SIPP)</a></li>
+                    <li><a href="#">Investment Incentives Portal</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Halal Industry</h4>
+                <ul>
+                    <li><a href="#">Bangsamoro Halal Board (BHB)</a></li>
+                    <li><a href="#">Halal Certification Process</a></li>
+                    <li><a href="#">WOW Matanog SEZ</a></li>
+                    <li><a href="#">OIC/SMIIC Standards</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Development Plans</h4>
+                <ul>
+                    <li><a href="#">2nd Bangsamoro Development Plan 2023-2028</a></li>
+                    <li><a href="#">Bangsamoro Halal Industry Development Plan</a></li>
+                    <li><a href="#">Tourism Master Plan (BTDP 2024-2033)</a></li>
+                    <li><a href="#">Digital Transformation (BEGMP)</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li>Ministry of Trade, Investments and Tourism</li>
+                    <li>Bangsamoro Autonomous Region</li>
+                    <li>Cotabato City, Philippines</li>
+                    <li><a href="mailto:invest@barmm.gov.ph">invest@barmm.gov.ph</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Bangsamoro Autonomous Region in Muslim Mindanao (BARMM). All rights reserved.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.8rem;">The Emerging Bangsamoro: A Hub for Resilient and Ethical Growth</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
