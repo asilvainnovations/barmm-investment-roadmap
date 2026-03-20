@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Workshop Resources — The Emerging Bangsamoro: Architecting a Hub for Resilient and Ethical Growth. Session guides, facilitation tools, and reference materials.">
+<title>Workshop Resources | The Emerging Bangsamoro</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* ===== DESIGN TOKENS ===== */
+:root{
+  --dark-green:#022c22; --primary-green:#064e3b; --mid-green:#065f46;
+  --light-green:#6ee7b7; --cream:#ecfdf5; --text-dark:#0f172a; --text-muted:#64748b;
+  --gold:#C9A84C; --gold-light:#E8C560; --gold-dark:#8B6C28; --gold-pale:#fdf6e3;
+  --gold-border:rgba(201,168,76,0.32); --gold-border-strong:rgba(201,168,76,0.55);
+  --gold-glow:rgba(201,168,76,0.18);
+  --gold-grad:linear-gradient(135deg,#7a5c1e 0%,#c9a84c 35%,#e8c560 50%,#c9a84c 65%,#7a5c1e 100%);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text-dark);overflow-x:hidden;line-height:1.7;}
+
+/* ===== NAV ===== */
+nav{background:rgba(2,44,34,.97);backdrop-filter:blur(16px);position:sticky;top:0;z-index:200;border-bottom:2px solid var(--gold-border);}
+.nav-inner{max-width:1300px;margin:0 auto;padding:.55rem 2rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;}
+.nav-logo img{height:52px;width:auto;object-fit:contain;display:block;}
+.nav-links{display:flex;gap:1.5rem;list-style:none;align-items:center;}
+.nav-links a{color:var(--light-green);text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.03em;transition:color .3s;position:relative;}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:2px;background:var(--gold);transition:width .3s;}
+.nav-links a:hover{color:var(--gold);}
+.nav-links a:hover::after{width:100%;}
+.nav-cta{background:var(--gold-grad);color:var(--dark-green)!important;padding:.55rem 1.25rem;border-radius:.4rem;font-weight:700!important;font-size:.8rem!important;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(201,168,76,.35);}
+.nav-cta::after{display:none!important;}
+
+/* ===== HERO ===== */
+.hero{
+  background:linear-gradient(160deg,var(--dark-green) 0%,#034030 50%,#0a1628 100%);
+  color:white;padding:5rem 2rem 4rem;text-align:center;position:relative;overflow:hidden;
+}
+.hero::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 8L46 30L68 36L46 42L40 64L34 42L12 36L34 30Z' fill='none' stroke='%23C9A84C' stroke-width='0.5' opacity='0.07'/%3E%3C/svg%3E");pointer-events:none;}
+.hero::after{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:100%;height:4px;background:var(--gold-grad);}
+.hero-inner{max-width:860px;margin:0 auto;position:relative;z-index:1;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.6rem;background:rgba(201,168,76,.1);border:1px solid var(--gold-border-strong);color:var(--gold);padding:.4rem 1.2rem;border-radius:2rem;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1.4rem;}
+.hero-eyebrow svg{width:14px;height:14px;}
+.hero h1{font-family:'Cinzel',serif;font-size:clamp(1.8rem,4vw,3.2rem);font-weight:700;line-height:1.2;margin-bottom:.75rem;background:var(--gold-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-sub{font-size:1.05rem;color:rgba(255,255,255,.75);max-width:640px;margin:0 auto 1.2rem;font-weight:300;}
+.hero-theme{font-family:'Cinzel',serif;font-size:1rem;color:var(--light-green);font-style:italic;margin-bottom:2.5rem;letter-spacing:.03em;}
+.hero-meta{display:flex;justify-content:center;flex-wrap:wrap;gap:1.5rem;}
+.meta-chip{display:flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);padding:.5rem 1rem;border-radius:2rem;font-size:.8rem;color:rgba(255,255,255,.75);}
+.meta-chip svg{width:14px;height:14px;flex-shrink:0;color:var(--gold);}
+
+/* ===== MAIN LAYOUT ===== */
+.page{max-width:1280px;margin:0 auto;padding:0 2rem 5rem;}
+
+/* ===== SECTION HEADERS ===== */
+.sec-header{text-align:center;padding:3.5rem 0 2.5rem;}
+.sec-eyebrow{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:.6rem;}
+.sec-header h2{font-family:'Cinzel',serif;font-size:clamp(1.5rem,2.8vw,2.2rem);color:var(--primary-green);margin-bottom:.6rem;line-height:1.25;}
+.gold-div{width:50px;height:3px;background:var(--gold-grad);border-radius:2px;margin:.75rem auto 1.1rem;}
+.sec-header p{color:var(--text-muted);font-size:.95rem;max-width:580px;margin:0 auto;}
+
+/* ===== PROGRAM TIMELINE ===== */
+.timeline-wrap{position:relative;margin-bottom:4rem;}
+.tl-spine{position:absolute;left:140px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--gold),rgba(201,168,76,.2));border-radius:2px;}
+
+.tl-block{display:grid;grid-template-columns:130px 1fr;gap:0 2.5rem;position:relative;margin-bottom:.75rem;align-items:start;}
+.tl-time{text-align:right;padding-top:1rem;position:relative;}
+.tl-time-text{font-family:'Cinzel',serif;font-size:.72rem;font-weight:700;color:var(--gold);line-height:1.3;}
+.tl-dot{position:absolute;right:-2.65rem;top:1.3rem;width:12px;height:12px;background:var(--gold);border-radius:50%;border:3px solid var(--cream);box-shadow:0 0 0 2px var(--gold);z-index:1;}
+
+.tl-card{
+  background:white;border-radius:.875rem;padding:1.4rem 1.6rem;
+  border:1px solid rgba(6,78,59,.1);
+  box-shadow:0 2px 12px rgba(0,0,0,.06);
+  transition:transform .3s,box-shadow .3s,border-color .3s;
+  position:relative;overflow:hidden;
+}
+.tl-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--card-accent,var(--primary-green));}
+.tl-card:hover{transform:translateX(4px);box-shadow:0 8px 28px rgba(0,0,0,.1);border-color:rgba(6,78,59,.2);}
+
+.tl-card-header{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:.5rem;flex-wrap:wrap;}
+.tl-activity{font-family:'Cinzel',serif;font-size:.9rem;font-weight:700;color:var(--primary-green);line-height:1.3;}
+.tl-tag{
+  font-size:.65rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  padding:.25rem .65rem;border-radius:2rem;flex-shrink:0;white-space:nowrap;
+}
+.tag-opening{background:rgba(201,168,76,.12);color:var(--gold-dark);border:1px solid var(--gold-border);}
+.tag-session{background:rgba(6,78,59,.1);color:var(--primary-green);border:1px solid rgba(6,78,59,.2);}
+.tag-masterclass{background:rgba(59,130,246,.1);color:#1d4ed8;border:1px solid rgba(59,130,246,.2);}
+.tag-break{background:rgba(100,116,139,.1);color:#475569;border:1px solid rgba(100,116,139,.2);}
+.tag-synthesis{background:rgba(147,51,234,.1);color:#7c3aed;border:1px solid rgba(147,51,234,.2);}
+.tag-retrospective{background:rgba(5,150,105,.1);color:#047857;border:1px solid rgba(5,150,105,.2);}
+
+.tl-lead{font-size:.78rem;color:var(--text-muted);margin-bottom:.6rem;display:flex;align-items:center;gap:.4rem;}
+.tl-lead svg{width:12px;height:12px;color:var(--gold);flex-shrink:0;}
+.tl-content{font-size:.84rem;color:var(--text-muted);line-height:1.6;}
+.tl-tools{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.9rem;}
+.tl-tool-chip{
+  font-size:.68rem;font-weight:600;background:var(--cream);border:1px solid rgba(6,78,59,.18);
+  color:var(--primary-green);padding:.2rem .6rem;border-radius:.35rem;letter-spacing:.02em;
+  transition:background .2s,border-color .2s;
+}
+.tl-card:hover .tl-tool-chip{background:rgba(6,78,59,.07);border-color:rgba(6,78,59,.3);}
+
+/* ===== RESOURCES GRID ===== */
+.resources-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin-bottom:3.5rem;}
+.res-card{
+  background:white;border-radius:1rem;overflow:hidden;
+  border:1px solid rgba(6,78,59,.1);
+  box-shadow:0 2px 12px rgba(0,0,0,.05);
+  transition:transform .3s,box-shadow .3s;
+  display:flex;flex-direction:column;
+}
+.res-card:hover{transform:translateY(-5px);box-shadow:0 12px 35px rgba(0,0,0,.1);}
+.res-card-top{
+  padding:1.4rem 1.5rem 1rem;
+  background:linear-gradient(135deg,var(--primary-green),var(--dark-green));
+  color:white;position:relative;overflow:hidden;
+}
+.res-card-top::after{content:'';position:absolute;bottom:-30px;right:-20px;width:120px;height:120px;background:rgba(201,168,76,.07);border-radius:50%;}
+.res-icon{
+  width:44px;height:44px;background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.3);
+  border-radius:.75rem;display:flex;align-items:center;justify-content:center;
+  font-size:1.3rem;margin-bottom:.85rem;position:relative;z-index:1;
+}
+.res-card-top h3{font-family:'Cinzel',serif;font-size:.92rem;font-weight:700;line-height:1.3;margin-bottom:.3rem;position:relative;z-index:1;}
+.res-session-tag{font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(201,168,76,.9);position:relative;z-index:1;}
+.res-card-body{padding:1.1rem 1.5rem 1.4rem;flex:1;display:flex;flex-direction:column;}
+.res-desc{font-size:.82rem;color:var(--text-muted);line-height:1.55;margin-bottom:1rem;flex:1;}
+.res-meta{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem;}
+.res-badge{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:.2rem .55rem;border-radius:.3rem;}
+.badge-framework{background:rgba(59,130,246,.1);color:#1d4ed8;}
+.badge-worksheet{background:rgba(16,185,129,.1);color:#047857;}
+.badge-guide{background:rgba(139,92,246,.1);color:#7c3aed;}
+.badge-reference{background:rgba(245,158,11,.1);color:#92400e;}
+.badge-template{background:rgba(239,68,68,.1);color:#b91c1c;}
+.res-access-btn{
+  display:flex;align-items:center;justify-content:center;gap:.5rem;
+  padding:.65rem;border-radius:.6rem;
+  background:var(--gold-grad);color:var(--dark-green);
+  font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:700;
+  letter-spacing:.04em;text-transform:uppercase;
+  border:none;cursor:pointer;
+  transition:transform .25s,box-shadow .25s;
+  text-decoration:none;
+}
+.res-access-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(201,168,76,.35);}
+.res-access-btn svg{width:14px;height:14px;}
+.res-access-btn.locked{
+  background:rgba(100,116,139,.1);color:var(--text-muted);
+  border:1px solid rgba(100,116,139,.2);
+  pointer-events:none;
+}
+
+/* ===== FACILITATORS ===== */
+.facilitators{background:linear-gradient(135deg,var(--primary-green),var(--dark-green));border-radius:1.25rem;padding:3rem;margin-bottom:3.5rem;position:relative;overflow:hidden;}
+.facilitators::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5L36 24L55 30L36 36L30 55L24 36L5 30L24 24Z' fill='none' stroke='%23C9A84C' stroke-width='0.4' opacity='0.08'/%3E%3C/svg%3E");pointer-events:none;}
+.fac-header{text-align:center;margin-bottom:2rem;position:relative;z-index:1;}
+.fac-header h2{font-family:'Cinzel',serif;color:var(--gold);font-size:1.4rem;margin-bottom:.4rem;}
+.fac-header p{color:rgba(255,255,255,.6);font-size:.88rem;}
+.fac-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;position:relative;z-index:1;}
+.fac-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:.875rem;padding:1.4rem 1.2rem;text-align:center;transition:background .3s,border-color .3s;}
+.fac-card:hover{background:rgba(255,255,255,.1);border-color:var(--gold-border);}
+.fac-avatar{
+  width:54px;height:54px;border-radius:50%;
+  background:rgba(201,168,76,.15);border:2px solid var(--gold-border-strong);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cinzel',serif;font-size:1.1rem;font-weight:700;color:var(--gold);
+  margin:0 auto .85rem;letter-spacing:.05em;
+}
+.fac-name{font-family:'Cinzel',serif;font-size:.82rem;font-weight:700;color:white;margin-bottom:.2rem;line-height:1.3;}
+.fac-role{font-size:.72rem;color:var(--light-green);line-height:1.4;}
+.fac-sessions{margin-top:.7rem;display:flex;flex-wrap:wrap;gap:.3rem;justify-content:center;}
+.fac-session-dot{font-size:.6rem;background:rgba(201,168,76,.12);border:1px solid var(--gold-border);color:var(--gold);padding:.15rem .5rem;border-radius:1rem;font-weight:700;letter-spacing:.04em;}
+
+/* ===== FRAMEWORK REFERENCE ===== */
+.framework-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.2rem;margin-bottom:3.5rem;}
+.fw-card{background:white;border-radius:1rem;padding:1.6rem;border:1px solid rgba(6,78,59,.1);box-shadow:0 2px 10px rgba(0,0,0,.05);transition:transform .3s,box-shadow .3s;position:relative;overflow:hidden;}
+.fw-card::after{content:'';position:absolute;bottom:-20px;right:-20px;width:90px;height:90px;background:radial-gradient(circle,rgba(201,168,76,.08) 0%,transparent 70%);border-radius:50%;}
+.fw-card:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(0,0,0,.1);}
+.fw-card-icon{font-size:1.8rem;margin-bottom:.85rem;}
+.fw-card h3{font-family:'Cinzel',serif;color:var(--primary-green);font-size:.9rem;font-weight:700;margin-bottom:.4rem;}
+.fw-card-tag{font-size:.65rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:.65rem;display:block;}
+.fw-card p{font-size:.82rem;color:var(--text-muted);line-height:1.55;}
+.fw-card-items{margin-top:.85rem;display:flex;flex-direction:column;gap:.3rem;}
+.fw-item{font-size:.75rem;color:var(--text-dark);padding:.25rem 0 .25rem .9rem;position:relative;}
+.fw-item::before{content:'›';position:absolute;left:0;color:var(--gold);font-weight:bold;}
+
+/* ===== ACCESS NOTICE ===== */
+.access-notice{
+  background:linear-gradient(135deg,rgba(6,78,59,.06) 0%,rgba(201,168,76,.06) 100%);
+  border:1px solid var(--gold-border);border-radius:1rem;padding:2rem 2.5rem;
+  margin-bottom:3.5rem;display:flex;align-items:flex-start;gap:1.5rem;
+}
+.notice-icon{font-size:2rem;flex-shrink:0;margin-top:.15rem;}
+.notice-body h3{font-family:'Cinzel',serif;color:var(--primary-green);font-size:1rem;margin-bottom:.5rem;}
+.notice-body p{color:var(--text-muted);font-size:.88rem;line-height:1.6;margin-bottom:.65rem;}
+.notice-steps{display:flex;flex-wrap:wrap;gap:.5rem;}
+.notice-step{display:flex;align-items:center;gap:.4rem;font-size:.75rem;font-weight:600;color:var(--primary-green);background:rgba(6,78,59,.08);border:1px solid rgba(6,78,59,.15);padding:.3rem .75rem;border-radius:2rem;}
+.notice-step span{background:var(--primary-green);color:white;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:700;flex-shrink:0;}
+
+/* ===== STATS ROW ===== */
+.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin-bottom:3.5rem;}
+.stat-box{background:linear-gradient(135deg,var(--primary-green),var(--dark-green));border-radius:1rem;padding:1.4rem;text-align:center;color:white;}
+.stat-box-num{font-family:'Cinzel',serif;font-size:2rem;font-weight:700;color:var(--gold);display:block;line-height:1;margin-bottom:.35rem;}
+.stat-box-lbl{font-size:.75rem;color:rgba(110,231,183,.85);letter-spacing:.05em;text-transform:uppercase;font-weight:500;}
+
+/* ===== FOOTER ===== */
+footer{background:var(--dark-green);color:white;padding:3rem 2rem 1.5rem;border-top:3px solid var(--gold-border);}
+.footer-inner{max-width:1280px;margin:0 auto;}
+.footer-logo{margin-bottom:1.5rem;}
+.footer-logo img{height:46px;width:auto;object-fit:contain;}
+.footer-bottom{padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.08);text-align:center;color:rgba(255,255,255,.38);font-size:.78rem;}
+.footer-bottom span{color:var(--gold);}
+
+/* ===== FADE IN ===== */
+.fi{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease;}
+.fi.vis{opacity:1;transform:none;}
+.fi-1{transition-delay:.08s;}.fi-2{transition-delay:.16s;}.fi-3{transition-delay:.24s;}.fi-4{transition-delay:.32s;}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .nav-links{display:none;}
+  .tl-spine{left:100px;}
+  .tl-block{grid-template-columns:90px 1fr;}
+  .tl-dot{right:-2.15rem;}
+}
+@media(max-width:640px){
+  .page{padding:0 1rem 4rem;}
+  .tl-spine,.tl-time{display:none;}
+  .tl-block{grid-template-columns:1fr;}
+  .tl-dot{display:none;}
+  .access-notice{flex-direction:column;}
+  .facilitators{padding:2rem 1.25rem;}
+}
+::-webkit-scrollbar{width:5px;height:5px;}
+::-webkit-scrollbar-track{background:var(--cream);}
+::-webkit-scrollbar-thumb{background:var(--gold-dark);border-radius:3px;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo" aria-label="BARMM MTIT Home">
+      <img src="https://mtit.bangsamoro.gov.ph/wp-content/uploads/2024/04/MTIT-HEADER-2024.png" alt="MTIT BARMM" onerror="this.style.display='none'">
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="#program">Program</a></li>
+      <li><a href="#resources">Resources</a></li>
+      <li><a href="#frameworks">Frameworks</a></li>
+      <li><a href="#facilitators">Team</a></li>
+      <li><a href="#register" class="nav-cta">Register</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" role="banner">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2L15 9H22L16 14L18 21L12 17L6 21L8 14L2 9H9Z"/></svg>
+      Workshop Resources Portal
+    </div>
+    <h1>The Emerging Bangsamoro</h1>
+    <p class="hero-sub">Architecting a Hub for Resilient and Ethical Growth</p>
+    <p class="hero-theme">Session Guides · Facilitation Tools · Reference Materials</p>
+    <div class="hero-meta">
+      <div class="meta-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Investment Roadmap Workshop
+      </div>
+      <div class="meta-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        8:30 AM – 5:00 PM
+      </div>
+      <div class="meta-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        MTIT–BoI · BARMM
+      </div>
+      <div class="meta-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Cotabato City, Philippines
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="page">
+
+  <!-- STATS ROW -->
+  <div class="stats-row fi" style="margin-top:2.5rem;">
+    <div class="stat-box"><span class="stat-box-num">8</span><span class="stat-box-lbl">Sessions</span></div>
+    <div class="stat-box"><span class="stat-box-num">6</span><span class="stat-box-lbl">Workshop Tools</span></div>
+    <div class="stat-box"><span class="stat-box-num">4</span><span class="stat-box-lbl">Analytical Frameworks</span></div>
+    <div class="stat-box"><span class="stat-box-num">5</span><span class="stat-box-lbl">Facilitators</span></div>
+    <div class="stat-box"><span class="stat-box-num">2035</span><span class="stat-box-lbl">Target Vision Year</span></div>
+  </div>
+
+  <!-- ACCESS NOTICE -->
+  <div class="access-notice fi" id="register">
+    <div class="notice-icon" aria-hidden="true">🔐</div>
+    <div class="notice-body">
+      <h3>How to Access Workshop Materials</h3>
+      <p>All session guides, facilitation decks, and working templates are available exclusively to registered workshop participants. Materials are released progressively — pre-read references are available immediately upon registration; live-session worksheets are distributed at the start of each session.</p>
+      <div class="notice-steps">
+        <div class="notice-step"><span>1</span> Complete Registration</div>
+        <div class="notice-step"><span>2</span> Receive Confirmation Email</div>
+        <div class="notice-step"><span>3</span> Access Participant Portal</div>
+        <div class="notice-step"><span>4</span> Download Pre-Read Pack</div>
+        <div class="notice-step"><span>5</span> Collect Session Worksheets On-Site</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROGRAM TIMELINE -->
+  <section id="program" aria-labelledby="prog-heading">
+    <div class="sec-header fi">
+      <span class="sec-eyebrow">Indicative Programme</span>
+      <h2 id="prog-heading">Workshop Programme of Activities</h2>
+      <div class="gold-div"></div>
+      <p>A full-day structured workshop combining masterclasses, facilitated sessions, and collaborative strategy-building exercises anchored in systems thinking methodology.</p>
+    </div>
+
+    <div class="timeline-wrap fi">
+      <div class="tl-spine" aria-hidden="true"></div>
+
+      <!-- 8:30 -->
+      <div class="tl-block">
+        <div class="tl-time"><span class="tl-time-text">8:30 AM<br>9:00 AM</span><div class="tl-dot" aria-hidden="true"></div></div>
+        <div class="tl-card" style="--card-accent:#C9A84C;">
+          <div class="tl-card-header">
+            <div class="tl-activity">Registration &amp; Systems Onboarding</div>
+            <span class="tl-tag tag-opening">Opening</span>
+          </div>
+          <div class="tl-lead">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            MTIT-BoI Staff
+          </div>
+          <p class="tl-content">Welcome orientation featuring the 12-Point Priority Agenda and current regional growth indicators. Participants receive their workshop kits and are introduced to the session's systems thinking lens.</p>
+          <div class="tl-tools">
+            <span class="tl-tool-chip">Welcome Kit</span>
+            <span class="tl-tool-chip">12-Point Priority Agenda Overview</span>
+            <span class="tl-tool-chip">Regional Growth Data Sheet</span>
+            <span class="tl-tool-chip">Participant Journal</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9:00 -->
+      <div class="tl-block">
+        <div class="tl-time"><span class="tl-time-text">9:00 AM<br>9:15 AM</span><div class="tl-dot" aria-hidden="true"></div></div>
+        <div class="tl-card" style="--card-accent:#7c3aed;">
+          <div class="tl-card-header">
+            <div class="tl-activity">Opening Ceremony</div>
+            <span class="tl-tag tag-opening">Ceremony</span>
+          </div>
+          <div class="tl-lead">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            MTIT-BoI Staff
+          </div>
+          <p class="tl-content">Invocation, Philippine National Anthem, and BARMM Hymn. Formal opening of the workshop day.</p>
+          <div class="tl-tools">
+            <span class="tl-tool-chip">Programme Flow</span>
+            <span class="tl-tool-chip">Ceremonial Script</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9:15 -->
+      <div class="tl-block">
+        <div class="tl-time"><span class="tl-time-text">9:15 AM<br>9:35 AM</span><div class="tl-dot" aria-hidden="true"></div></div>
+        <div class="tl-card" style="--card-accent:#1d4ed8;">
+          <div class="tl-card-header">
+            <div class="tl-activity">Opening Messages &amp; Rationale</div>
+            <span class="tl-tag tag-opening">Keynote</span>
+          </div>
+          <div class="tl-lead">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            DG Rosslaini Alonto Sinarimbo · Minister Farserina A. Mohammad · Sarah Radam
+          </div>
+          <p class="tl-content">Contextualising investment as a tool for peace consolidation and Moral Governance. Overview of the strategic rationale — shifting from conflict recovery to an 8–9% annual growth target through structured governance and poverty reduction.</p>
+          <div class="tl-tools">
+            <span class="tl-tool-chip">Opening Message Guide</span>
+            <span class="tl-tool-chip">Context Framing Deck</span>
+            <span class="tl-tool-chip">Moral Governance Brief</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9:35 -->
+      <div class="tl-block">
+        <div class="tl-time"><span class="tl-time-text">9:35 AM<br>9:55 AM</span><div class="tl-dot" aria-hidden="true"></div></div>
+        <div class="tl-card" style="--card-accent:#047857;">
+          <div class="tl-card-header">
+            <div class="tl-activity">Retrospective: Previous Workshop Results</div>
+            <span class="tl-tag tag-retrospective">Retrospective</span>
+          </div>
+          <div class="tl-lead">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Addie Unsi &amp; Sarah Radam · MTIT BoI Consultants
+          </div>
+          <p class="tl-content">Summary of regional economic performance (₱299.5B GRDP) and current sector contributions: Services 42%, Agriculture 32.4%, Industry 25.6%. Prior workshop outputs reviewed as baseline for today's strategy-building.</p>
+          <div class="tl-tools">
+            <span class="tl-tool-chip">GRDP Performance Dashboard</span>
+            <span class="tl-tool-chip">Sectoral Breakdown Reference</span>
+            <span class="tl-tool-chip">Prior Workshop Summary</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9:55 -->
+      <div class="tl-block">
+        <div class="tl-time"><span class="tl-time-text">9:55 AM<br>10:15 AM</span><div class="tl-dot" aria-hidden="true"></div></div>
+        <div class="tl-card" style="--card-accent:#2563eb;">
+          <div class="tl-card-header">
+            <div class="tl-activity">Masterclass: Roadmapping via Systems Thinking</div>
+            <span class="tl-tag tag-masterclass">Masterclass</span>
+          </div>
+          <div class="tl-lead">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Alvin Silva · Lead Consultant
+          </div>
+          <p class="tl-content">Introduction to Strategic and Systems Thinking including Causal Loop Diagrams (CLDs), distinguishing Reinforcing (R) vs. Balancing (B) loops, and identifying Leverage Points that trigger virtuous cycles of investment and development.</p>
+          <div class="tl-tools">
+            <span class="tl-tool-chip">CLD Primer Card</span>
+            <span class="tl-tool-chip">R vs B Loop Cheat Sheet</span>
+            <span class="tl-tool-chip">Leverage Point Identification Guide</span>
+            <span class="tl-tool-chip">Masterclass Slides</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10:15 -->
+      <div class="tl-block">
+        <div class="tl-time"><span class="tl-time-text">10:15 AM<br>11:15 AM</span><div class="tl-dot" aria-hidden="true"></div></div>
+        <div class="tl-card" style="--card-accent:#C9A84C;">
+          <div class="tl-card-header">
+            <div class="tl-activity">Session 1: Dynamic Scanning &amp; Narrative Co-Crafting</div>
+            <span class="tl-tag tag-session">Session 1</span>
+          </div>
+          <div class="tl-lead">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Addie Unsi · MTIT BoI Consultant
+          </div>
+          <p class="tl-content">Applying the PEDSET Framework (External Environmental Scanning) and McKinsey 7S (Internal Institutional Assessment) to identify systemic bottlenecks — such as the Infrastructure-Energy Nexus — and regional strengths, particularly Halal Legitimacy and cultural credibility.</p>
+          <div class="tl-tools">
+            <span class="tl-tool-chip">PEDSET Scanning Worksheet</span>
+            <span class="tl-tool-chip">McKinsey 7S Assessment Grid</span>
+            <span class="tl-tool-chip">Dynamic SWOT Template</span>
+            <span class="tl-tool-chip">Narrative Co-Crafting Canvas</span>
+            <span class="tl-tool-chip">Bottleneck Identification Tool</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 11:15 -->
+      <div class="tl-block">
+        <div class="tl-time"><span class="tl-time-text">11:15 AM<br>12:00 NN</span><div class="tl-dot" aria-hidden="true"></div></div>
+        <div class="tl-card" style="--card-accent:#C9A84C;">
+          <div class="tl-card-header">
+            <div class="tl-activity">Session 2: Prioritising Strategic Options</div>
+            <span class="tl-tag tag-session">Session 2</span>
+          </div>
+          <div class="tl-lead">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Alvin Silva · Lead Consultant
+          </div>
+          <p class="tl-content">Interactive evaluation of four strategic configurations — Options A (Infrastructure-First), B (Halal Hub Rapid), C (Governance-Centred), and D (Integrated Halal-Driven) — leading to group adoption of the preferred strategic option based on leverage point analysis.</p>
+          <div class="tl-tools">
+            <span class="tl-tool-chip">Strategic Options Matrix</span>
+            <span class="tl-tool-chip">Evaluation Scoring Guide</span>
+            <span class="tl-tool-chip">Group Decision Worksheet</span>
+            <span class="tl-tool-chip">Option D Rationale Brief</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12:00 -->
+      <div class="tl-block">
+        <div class="tl-time"><span class="tl-time-text">12:00 PM<br>1:15 PM</span><div class="tl-dot" aria-hidden="true"></div></div>
+        <div class="tl-card" style="--card-accent:#94a3b8;">
+          <div class="tl-card-header">
+            <div class="tl-activity">Lunch Break &amp; Prayer Time</div>
+            <span class="tl-tag tag-break">Break</span>
+          </div>
+          <div class="tl-lead">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            All Participants
+          </div>
+          <p class="tl-content">Networking lunch and informal systems dialogue. Prayer time observed in accordance with Islamic practice. Participants are encouraged to reflect on the morning sessions and surface questions for the afternoon.</p>
+          <div class="tl-tools">
+            <span class="tl-tool-chip">Reflection Prompt Card</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1:15 -->
+      <div class="tl-block">
+        <div class="tl-time"><span class="tl-time-text">1:15 PM<br>2:45 PM</span><div class="tl-dot" aria-hidden="true"></div></div>
+        <div class="tl-card" style="--card-accent:#C9A84C;">
+          <div class="tl-card-header">
+            <div class="tl-activity">Session 3: Benchmarking &amp; KPI Framework</div>
+            <span class="tl-tag tag-session">Session 3</span>
+          </div>
+          <div class="tl-lead">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Alvin Silva · Lead Consultant
+          </div>
+          <p class="tl-content">Aligning Bangsamoro's strategic targets with OIC/SMIIC International Standards and the Philippine Development Plan (PDP) 2023–2028. Defining measurable KPIs that bridge regional ambition with internationally recognised benchmarks across all priority sectors.</p>
+          <div class="tl-tools">
+            <span class="tl-tool-chip">OIC/SMIIC Standards Reference</span>
+            <span class="tl-tool-chip">PDP 2023–2028 Alignment Matrix</span>
+            <span class="tl-tool-chip">KPI Definition Worksheet</span>
+            <span class="tl-tool-chip">BARMM-Specific Indicators Table</span>
+            <span class="tl-tool-chip">Benchmarking Comparison Grid</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2:45 -->
+      <div class="tl-block">
+        <div class="tl-time"><span class="tl-time-text">2:45 PM<br>4:45 PM</span><div class="tl-dot" aria-hidden="true"></div></div>
+        <div class="tl-card" style="--card-accent:#C9A84C;">
+          <div class="tl-card-header">
+            <div class="tl-activity">Session 4: Balanced Scorecard &amp; Implementation Roadmap</div>
+            <span class="tl-tag tag-session">Session 4</span>
+          </div>
+          <div class="tl-lead">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Alvin Silva &amp; Addie Unsi · Consultants
+          </div>
+          <p class="tl-content">Defining 2035 targets across the four Balanced Scorecard perspectives: Financial, Stakeholder/Customer, Internal Process, and Learning &amp; Growth. Mapping the three-phase implementation timeline: Phase 1 Foundation Building (2026–2028), Phase 2 Acceleration (2029–2032), and Phase 3 Consolidation (2033–2035).</p>
+          <div class="tl-tools">
+            <span class="tl-tool-chip">BSC Strategy Canvas</span>
+            <span class="tl-tool-chip">4-Perspective Mapping Worksheet</span>
+            <span class="tl-tool-chip">3-Phase Roadmap Template</span>
+            <span class="tl-tool-chip">Lead Agency Assignment Grid</span>
+            <span class="tl-tool-chip">Budget Phasing Tool</span>
+            <span class="tl-tool-chip">Critical Success Factors Checklist</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4:45 -->
+      <div class="tl-block">
+        <div class="tl-time"><span class="tl-time-text">4:45 PM<br>5:00 PM</span><div class="tl-dot" aria-hidden="true"></div></div>
+        <div class="tl-card" style="--card-accent:#7c3aed;">
+          <div class="tl-card-header">
+            <div class="tl-activity">Synthesis &amp; Call to Action</div>
+            <span class="tl-tag tag-synthesis">Closing</span>
+          </div>
+          <div class="tl-lead">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Shamera A. Abobakar · Director II, MTIT-BoI
+          </div>
+          <p class="tl-content">Summarising the "Choose Bangsamoro" investment narrative and formalising commitment to Moral Governance principles and ethical investment practices. Participants record their individual pledges and next steps toward implementation.</p>
+          <div class="tl-tools">
+            <span class="tl-tool-chip">Synthesis Summary Card</span>
+            <span class="tl-tool-chip">Commitment Pledge Form</span>
+            <span class="tl-tool-chip">Next Steps Action Plan</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end timeline-wrap -->
+  </section>
+
+  <!-- WORKSHOP RESOURCES -->
+  <section id="resources" aria-labelledby="res-heading">
+    <div class="sec-header fi">
+      <span class="sec-eyebrow">Participant Materials</span>
+      <h2 id="res-heading">Workshop Tools &amp; Session Guides</h2>
+      <div class="gold-div"></div>
+      <p>Each resource is designed to scaffold the systems thinking methodology and support active participation across all workshop sessions. Access is granted progressively to registered participants.</p>
+    </div>
+
+    <div class="resources-grid">
+
+      <!-- Pre-Read Pack -->
+      <article class="res-card fi fi-1">
+        <div class="res-card-top">
+          <div class="res-icon" aria-hidden="true">📋</div>
+          <h3>Participant Pre-Read Pack</h3>
+          <span class="res-session-tag">All Sessions · Distributed at Registration</span>
+        </div>
+        <div class="res-card-body">
+          <p class="res-desc">Contextual briefing materials to orient participants before the workshop begins. Includes a concise overview of BARMM's economic trajectory, the Moral Governance framework, and a glossary of key systems thinking terms used throughout the day.</p>
+          <div class="res-meta">
+            <span class="res-badge badge-guide">Participant Guide</span>
+            <span class="res-badge badge-reference">Reference</span>
+          </div>
+          <a href="#register" class="res-access-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Available After Registration
+          </a>
+        </div>
+      </article>
+
+      <!-- Systems Thinking Primer -->
+      <article class="res-card fi fi-2">
+        <div class="res-card-top">
+          <div class="res-icon" aria-hidden="true">🔄</div>
+          <h3>Systems Thinking Primer</h3>
+          <span class="res-session-tag">Masterclass · 9:55 – 10:15 AM</span>
+        </div>
+        <div class="res-card-body">
+          <p class="res-desc">A concise reference card introducing Causal Loop Diagram (CLD) notation, reinforcing and balancing loop identification, delay markers, polarity signs (+/−), and the concept of leverage points. Includes the four feedback loops mapped for Bangsamoro's investment climate.</p>
+          <div class="res-meta">
+            <span class="res-badge badge-framework">Framework</span>
+            <span class="res-badge badge-reference">Reference Card</span>
+          </div>
+          <a href="#register" class="res-access-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Available After Registration
+          </a>
+        </div>
+      </article>
+
+      <!-- Session 1 Worksheet -->
+      <article class="res-card fi fi-3">
+        <div class="res-card-top">
+          <div class="res-icon" aria-hidden="true">🗺️</div>
+          <h3>Session 1: PEDSET &amp; 7S Scanning Worksheet</h3>
+          <span class="res-session-tag">Session 1 · 10:15 – 11:15 AM</span>
+        </div>
+        <div class="res-card-body">
+          <p class="res-desc">Structured group worksheet applying the PEDSET external scanning framework and McKinsey 7S internal assessment tool. Teams identify systemic bottlenecks and regional strengths, then co-craft a narrative linking the scan to investment priorities and leverage points.</p>
+          <div class="res-meta">
+            <span class="res-badge badge-worksheet">Group Worksheet</span>
+            <span class="res-badge badge-framework">Framework</span>
+          </div>
+          <a href="#register" class="res-access-btn locked" aria-disabled="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            Distributed at Session 1
+          </a>
+        </div>
+      </article>
+
+      <!-- Session 2 Worksheet -->
+      <article class="res-card fi fi-4">
+        <div class="res-card-top">
+          <div class="res-icon" aria-hidden="true">⚖️</div>
+          <h3>Session 2: Strategic Options Evaluation Guide</h3>
+          <span class="res-session-tag">Session 2 · 11:15 AM – 12:00 NN</span>
+        </div>
+        <div class="res-card-body">
+          <p class="res-desc">Interactive evaluation matrix comparing Options A through D across six dimensions: primary focus, time horizon, key strength, main risk, resource needs, and leverage alignment. Includes a group scoring guide and structured discussion prompts for arriving at the preferred strategy.</p>
+          <div class="res-meta">
+            <span class="res-badge badge-worksheet">Evaluation Matrix</span>
+            <span class="res-badge badge-guide">Decision Guide</span>
+          </div>
+          <a href="#register" class="res-access-btn locked" aria-disabled="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            Distributed at Session 2
+          </a>
+        </div>
+      </article>
+
+      <!-- Session 3 Worksheet -->
+      <article class="res-card fi fi-1">
+        <div class="res-card-top">
+          <div class="res-icon" aria-hidden="true">📊</div>
+          <h3>Session 3: KPI &amp; Benchmarking Template</h3>
+          <span class="res-session-tag">Session 3 · 1:15 – 2:45 PM</span>
+        </div>
+        <div class="res-card-body">
+          <p class="res-desc">A structured three-column template for defining sector-specific KPIs with baseline, 2028 interim target, and 2035 target columns. Cross-referenced against OIC/SMIIC halal standards and PDP 2023–2028 headline indicators. Includes a pre-populated BARMM-specific indicator reference table.</p>
+          <div class="res-meta">
+            <span class="res-badge badge-template">Template</span>
+            <span class="res-badge badge-reference">Standards Reference</span>
+          </div>
+          <a href="#register" class="res-access-btn locked" aria-disabled="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            Distributed at Session 3
+          </a>
+        </div>
+      </article>
+
+      <!-- Session 4 Worksheet -->
+      <article class="res-card fi fi-2">
+        <div class="res-card-top">
+          <div class="res-icon" aria-hidden="true">🏗️</div>
+          <h3>Session 4: Balanced Scorecard &amp; Roadmap Canvas</h3>
+          <span class="res-session-tag">Session 4 · 2:45 – 4:45 PM</span>
+        </div>
+        <div class="res-card-body">
+          <p class="res-desc">A large-format strategy canvas combining the four Balanced Scorecard perspectives with the three-phase implementation timeline. Teams populate strategic objectives, KPIs, targets, initiatives, lead agencies, and budget envelopes, producing a draft roadmap committed to the 2035 vision.</p>
+          <div class="res-meta">
+            <span class="res-badge badge-template">Strategy Canvas</span>
+            <span class="res-badge badge-worksheet">Group Worksheet</span>
+          </div>
+          <a href="#register" class="res-access-btn locked" aria-disabled="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            Distributed at Session 4
+          </a>
+        </div>
+      </article>
+
+      <!-- Synthesis Card -->
+      <article class="res-card fi fi-3">
+        <div class="res-card-top">
+          <div class="res-icon" aria-hidden="true">🌟</div>
+          <h3>Synthesis &amp; Commitment Card</h3>
+          <span class="res-session-tag">Closing · 4:45 – 5:00 PM</span>
+        </div>
+        <div class="res-card-body">
+          <p class="res-desc">A personal commitment card anchoring participants to the "Choose Bangsamoro" investment narrative. Captures individual pledges tied to Moral Governance principles, specific next steps, and a 30-day accountability commitment. Retained by the participant and photographed for the workshop record.</p>
+          <div class="res-meta">
+            <span class="res-badge badge-guide">Commitment Card</span>
+          </div>
+          <a href="#register" class="res-access-btn locked" aria-disabled="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            Distributed at Closing Session
+          </a>
+        </div>
+      </article>
+
+      <!-- Facilitator Guide -->
+      <article class="res-card fi fi-4">
+        <div class="res-card-top">
+          <div class="res-icon" aria-hidden="true">🎓</div>
+          <h3>Facilitator Session Guide (Full Day)</h3>
+          <span class="res-session-tag">Facilitators Only</span>
+        </div>
+        <div class="res-card-body">
+          <p class="res-desc">Detailed facilitation notes, timing cues, probing questions, energy management tips, and contingency guides for each session. Includes debrief protocols, common participant questions and suggested responses, and escalation pathways for complex group dynamics.</p>
+          <div class="res-meta">
+            <span class="res-badge badge-guide">Facilitator Guide</span>
+          </div>
+          <a href="#register" class="res-access-btn locked" aria-disabled="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            Facilitators Only · Restricted
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- FRAMEWORKS REFERENCE -->
+  <section id="frameworks" aria-labelledby="fw-heading">
+    <div class="sec-header fi">
+      <span class="sec-eyebrow">Analytical Frameworks</span>
+      <h2 id="fw-heading">Key Frameworks Used in This Workshop</h2>
+      <div class="gold-div"></div>
+      <p>Four complementary analytical frameworks are woven through every session, each selected for its capacity to reveal systemic interconnections in Bangsamoro's investment landscape.</p>
+    </div>
+
+    <div class="framework-grid">
+      <div class="fw-card fi fi-1">
+        <div class="fw-card-icon" aria-hidden="true">🌐</div>
+        <h3>PEDSET Analysis</h3>
+        <span class="fw-card-tag">External Environmental Scanning</span>
+        <p>A six-domain macro-environmental framework examining the forces that shape Bangsamoro's investment climate. Used in Session 1 to identify external opportunities and systemic threats.</p>
+        <div class="fw-card-items">
+          <div class="fw-item">Political — governance autonomy &amp; transition</div>
+          <div class="fw-item">Economic — GRDP performance &amp; trade balance</div>
+          <div class="fw-item">Demographics — population youth dividend</div>
+          <div class="fw-item">Social — Islamic heritage &amp; peacebuilding</div>
+          <div class="fw-item">Environmental — climate resilience &amp; energy</div>
+          <div class="fw-item">Technological — digital transformation gaps</div>
+        </div>
+      </div>
+      <div class="fw-card fi fi-2">
+        <div class="fw-card-icon" aria-hidden="true">⚙️</div>
+        <h3>McKinsey 7S Framework</h3>
+        <span class="fw-card-tag">Internal Institutional Assessment</span>
+        <p>An organisational analysis tool examining seven interdependent elements of Bangsamoro's governance system to surface internal alignment gaps and institutional strengths.</p>
+        <div class="fw-card-items">
+          <div class="fw-item">Strategy — BDP 2023-2028 &amp; sectoral roadmaps</div>
+          <div class="fw-item">Structure — parliamentary system &amp; 15 ministries</div>
+          <div class="fw-item">Systems — BBNR, BPLS, BEGMP platforms</div>
+          <div class="fw-item">Shared Values — Moral Governance framework</div>
+          <div class="fw-item">Skills — halal &amp; digital expertise gaps</div>
+          <div class="fw-item">Staff — MILF-to-government transition</div>
+          <div class="fw-item">Style — collective decision-making culture</div>
+        </div>
+      </div>
+      <div class="fw-card fi fi-3">
+        <div class="fw-card-icon" aria-hidden="true">🔁</div>
+        <h3>Systems Thinking &amp; CLDs</h3>
+        <span class="fw-card-tag">Dynamic SWOT &amp; Masterclass</span>
+        <p>Causal Loop Diagrams map circular cause-and-effect relationships to reveal reinforcing virtuous cycles and balancing constraints. Four feedback loops are identified as critical leverage points.</p>
+        <div class="fw-card-items">
+          <div class="fw-item">R1 — Investment-Development Virtuous Cycle</div>
+          <div class="fw-item">R2 — Governance-Investor Confidence Loop</div>
+          <div class="fw-item">B1 — Growth-Resource Constraints</div>
+          <div class="fw-item">B2 — Security-Investment Tensions</div>
+          <div class="fw-item">Archetypes: Limits to Growth, Fixes that Fail, Success to the Successful</div>
+        </div>
+      </div>
+      <div class="fw-card fi fi-4">
+        <div class="fw-card-icon" aria-hidden="true">🎯</div>
+        <h3>Balanced Scorecard</h3>
+        <span class="fw-card-tag">Sessions 3 &amp; 4 · KPI &amp; Roadmap</span>
+        <p>Translates the Integrated Halal-Driven Investment Strategy into measurable objectives across four perspectives, operationalising the 2026–2035 roadmap with clear milestones and phase budgets.</p>
+        <div class="fw-card-items">
+          <div class="fw-item">Financial — PHP 50B investment target by 2035</div>
+          <div class="fw-item">Stakeholder — 2,000 halal-certified MSMEs</div>
+          <div class="fw-item">Internal Process — 1-day business registration</div>
+          <div class="fw-item">Learning &amp; Growth — 100 halal officers trained</div>
+          <div class="fw-item">3-Phase: Foundation / Acceleration / Consolidation</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FACILITATORS -->
+  <div class="facilitators fi" id="facilitators">
+    <div class="fac-header">
+      <h2>Workshop Facilitation Team</h2>
+      <p>Ministry of Trade, Investments and Tourism · Bangsamoro Autonomous Region in Muslim Mindanao</p>
+    </div>
+    <div class="fac-grid">
+      <div class="fac-card">
+        <div class="fac-avatar" aria-hidden="true">FA</div>
+        <div class="fac-name">Farserina A. Mohammad</div>
+        <div class="fac-role">Minister<br>MTIT–BARMM</div>
+        <div class="fac-sessions">
+          <span class="fac-session-dot">Opening</span>
+        </div>
+      </div>
+      <div class="fac-card">
+        <div class="fac-avatar" aria-hidden="true">RA</div>
+        <div class="fac-name">Rosslaini Alonto Sinarimbo</div>
+        <div class="fac-role">Director General<br>MTIT</div>
+        <div class="fac-sessions">
+          <span class="fac-session-dot">Opening</span>
+        </div>
+      </div>
+      <div class="fac-card">
+        <div class="fac-avatar" aria-hidden="true">AS</div>
+        <div class="fac-name">Alvin Silva</div>
+        <div class="fac-role">Lead Consultant<br>Systems Thinking</div>
+        <div class="fac-sessions">
+          <span class="fac-session-dot">Masterclass</span>
+          <span class="fac-session-dot">S2</span>
+          <span class="fac-session-dot">S3</span>
+          <span class="fac-session-dot">S4</span>
+        </div>
+      </div>
+      <div class="fac-card">
+        <div class="fac-avatar" aria-hidden="true">AU</div>
+        <div class="fac-name">Addie Unsi</div>
+        <div class="fac-role">MTIT BoI Consultant<br>Environmental Scanning</div>
+        <div class="fac-sessions">
+          <span class="fac-session-dot">Retro</span>
+          <span class="fac-session-dot">S1</span>
+          <span class="fac-session-dot">S4</span>
+        </div>
+      </div>
+      <div class="fac-card">
+        <div class="fac-avatar" aria-hidden="true">SR</div>
+        <div class="fac-name">Sarah Radam</div>
+        <div class="fac-role">MTIT BoI Consultant<br>Strategic Planning</div>
+        <div class="fac-sessions">
+          <span class="fac-session-dot">Rationale</span>
+          <span class="fac-session-dot">Retro</span>
+        </div>
+      </div>
+      <div class="fac-card">
+        <div class="fac-avatar" aria-hidden="true">SA</div>
+        <div class="fac-name">Shamera A. Abobakar</div>
+        <div class="fac-role">Director II<br>MTIT–BoI</div>
+        <div class="fac-sessions">
+          <span class="fac-session-dot">Closing</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /page -->
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="https://mtit.bangsamoro.gov.ph/wp-content/uploads/2024/04/MTIT-HEADER-2024.png" alt="MTIT BARMM" onerror="this.style.display='none'">
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Ministry of Trade, Investments and Tourism · Bangsamoro Autonomous Region in Muslim Mindanao</p>
+      <p style="margin-top:.35rem;"><span>The Emerging Bangsamoro</span> — Workshop Resources Portal · Architecting a Hub for Resilient and Ethical Growth</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Fade-in on scroll
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}});
+},{threshold:.07,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
+
+// Nav scroll shadow
+window.addEventListener('scroll',()=>{
+  document.querySelector('nav').style.boxShadow=window.scrollY>40?'0 4px 30px rgba(0,0,0,.45)':'';
+},{passive:true});
+
+// Resource card button — show register modal prompt
+document.querySelectorAll('.res-access-btn:not(.locked)').forEach(btn=>{
+  btn.addEventListener('click',e=>{
+    e.preventDefault();
+    document.getElementById('register').scrollIntoView({behavior:'smooth',block:'start'});
+  });
+});
+</script>
+</body>
+</html>
