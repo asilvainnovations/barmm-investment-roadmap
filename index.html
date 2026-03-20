@@ -1119,171 +1119,154 @@ AI CHAT WIDGET
 <div class="chat-platform-notice" id="chatPlatformNotice" aria-live="polite"></div>
 </div>
 <script>
-<!-- ======================================================
-     JAVASCRIPT
-     ====================================================== -->
-<script>
 /* =====================================================
-   MOBILE NAV
-   ===================================================== */
+MOBILE NAV — hamburger controls mobile drawer only
+===================================================== */
 const hamburger=document.getElementById('navHamburger');
-const navLinks=document.getElementById('navLinks');
+const mobileDrawer=document.getElementById('navLinksMobile');
+function closeDrawer(){
+mobileDrawer.classList.remove('open');
+hamburger.classList.remove('open');
+hamburger.setAttribute('aria-expanded','false');
+}
 hamburger.addEventListener('click',()=>{
-  const isOpen=navLinks.classList.toggle('open');
-  hamburger.classList.toggle('open',isOpen);
-  hamburger.setAttribute('aria-expanded',String(isOpen));
+const isOpen=mobileDrawer.classList.toggle('open');
+hamburger.classList.toggle('open',isOpen);
+hamburger.setAttribute('aria-expanded',String(isOpen));
 });
-// Close on link click
-navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
-  navLinks.classList.remove('open');
-  hamburger.classList.remove('open');
-  hamburger.setAttribute('aria-expanded','false');
-}));
-// Close on outside click
+mobileDrawer.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',closeDrawer));
 document.addEventListener('click',e=>{
-  if(!hamburger.contains(e.target)&&!navLinks.contains(e.target)){
-    navLinks.classList.remove('open');
-    hamburger.classList.remove('open');
-    hamburger.setAttribute('aria-expanded','false');
-  }
+if(!hamburger.contains(e.target)&&!mobileDrawer.contains(e.target))closeDrawer();
 });
-// Close on Escape
 document.addEventListener('keydown',e=>{
-  if(e.key==='Escape'){
-    navLinks.classList.remove('open');
-    hamburger.classList.remove('open');
-    hamburger.setAttribute('aria-expanded','false');
-  }
+if(e.key==='Escape')closeDrawer();
 });
-
-/* =====================================================
-   NAV SCROLL
-   ===================================================== */
 window.addEventListener('scroll',()=>{
-  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50);
+document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50);
 },{passive:true});
-
 /* =====================================================
-   SCROLL ANIMATIONS
-   ===================================================== */
+SCROLL ANIMATIONS
+===================================================== */
 const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
+entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
 },{threshold:.07,rootMargin:'0px 0px -30px 0px'});
 document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
-
+const revealObs=new IntersectionObserver(entries=>{
+entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revealObs.unobserve(e.target);}});
+},{threshold:.15});
+document.querySelectorAll('.reveal-on-scroll').forEach(el=>revealObs.observe(el));
 /* =====================================================
-   ANIMATED COUNTERS
-   ===================================================== */
+ANIMATED COUNTERS
+===================================================== */
 function animateCounter(el){
-  const target=parseFloat(el.dataset.target),
-        prefix=el.dataset.prefix||'',
-        suffix=el.dataset.suffix||'',
-        dec=parseInt(el.dataset.dec)||0,dur=2000,steps=60;
-  let step=0;
-  const t=setInterval(()=>{
-    step++;
-    const p=1-Math.pow(1-step/steps,3);
-    el.textContent=prefix+(target*p).toFixed(dec)+suffix;
-    if(step>=steps){clearInterval(t);el.textContent=prefix+target.toFixed(dec)+suffix;}
-  },dur/steps);
+const target=parseFloat(el.dataset.target),
+prefix=el.dataset.prefix||'',
+suffix=el.dataset.suffix||'',
+dec=parseInt(el.dataset.dec)||0,dur=2000,steps=60;
+let step=0;
+const t=setInterval(()=>{
+step++;
+const p=1-Math.pow(1-step/steps,3);
+el.textContent=prefix+(target*p).toFixed(dec)+suffix;
+if(step>=steps){clearInterval(t);el.textContent=prefix+target.toFixed(dec)+suffix;}
+},dur/steps);
 }
 const cObs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      e.target.querySelectorAll('.figure-number[data-target]').forEach((el,i)=>{
-        setTimeout(()=>animateCounter(el),i*120);
-      });
-      cObs.unobserve(e.target);
-    }
-  });
+entries.forEach(e=>{
+if(e.isIntersecting){
+e.target.querySelectorAll('.figure-number[data-target]').forEach((el,i)=>{
+setTimeout(()=>animateCounter(el),i*120);
+});
+cObs.unobserve(e.target);
+}
+});
 },{threshold:.2});
 const fig=document.querySelector('.figures-section');
 if(fig)cObs.observe(fig);
-
 /* =====================================================
-   CONTACT FORM
-   ===================================================== */
+CONTACT FORM
+===================================================== */
 function handleSubmit(btn){
-  btn.textContent='Sending…';btn.disabled=true;btn.setAttribute('aria-busy','true');
-  setTimeout(()=>{
-    btn.textContent='✓ Inquiry Submitted!';
-    btn.style.background='linear-gradient(135deg,#10b981,#059669)';
-    btn.style.color='white';
-    btn.setAttribute('aria-busy','false');
-    setTimeout(()=>{btn.textContent='Submit Investment Inquiry';btn.style.background='';btn.style.color='';btn.disabled=false;},3500);
-  },1600);
+btn.textContent='Sending…';btn.disabled=true;btn.setAttribute('aria-busy','true');
+setTimeout(()=>{
+btn.textContent='✓ Inquiry Submitted!';
+btn.style.background='linear-gradient(135deg,#10b981,#059669)';
+btn.style.color='white';
+btn.setAttribute('aria-busy','false');
+setTimeout(()=>{btn.textContent='Submit Investment Inquiry';btn.style.background='';btn.style.color='';btn.disabled=false;},3500);
+},1600);
 }
-
 /* =====================================================
-   SMOOTH SCROLL
-   ===================================================== */
+SMOOTH SCROLL
+===================================================== */
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click',e=>{
-    e.preventDefault();
-    const t=document.querySelector(a.getAttribute('href'));
-    if(t){const nh=document.querySelector('nav').offsetHeight;
-      window.scrollTo({top:t.getBoundingClientRect().top+window.pageYOffset-nh,behavior:'smooth'});}
-  });
+a.addEventListener('click',e=>{
+e.preventDefault();
+const t=document.querySelector(a.getAttribute('href'));
+if(t){const nh=document.querySelector('nav').offsetHeight;
+window.scrollTo({top:t.getBoundingClientRect().top+window.pageYOffset-nh,behavior:'smooth'});}
 });
-
+});
 /* =====================================================
-   AI CHAT — CONTEXT-AWARE & PLATFORM-AWARE
-   ===================================================== */
+IMAGE LAZY LOADING
+===================================================== */
+const imgObserver = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+const img = entry.target;
+img.classList.remove('lazy-loading');
+img.classList.add('image-loaded');
+imgObserver.unobserve(img);
+}
+});
+}, { threshold: 0.1 });
+document.querySelectorAll('.lazy-loading').forEach(img => imgObserver.observe(img));
+/* =====================================================
+AI CHAT — CONTEXT-AWARE & PLATFORM-AWARE
+===================================================== */
 const BARMM_SYSTEM_PROMPT=`You are the BARMM Investment Assistant, an expert AI adviser on the Bangsamoro Autonomous Region in Muslim Mindanao (BARMM) Investment Roadmap 2026–2035 titled "The Emerging Bangsamoro — A Hub for Resilient and Ethical Growth."
-
 You have deep knowledge of:
-
 ECONOMIC CONTEXT:
 - BARMM GRDP: PHP 299.5B (2024), poverty reduced from 55.9% (2018) to 23.5% (2023)
 - New investments 2024: PHP 3.5B; target 2035: PHP 50B
 - Three economic sectors: Services 42%, Agriculture 32.4%, Industry 25.6%
 - Employment rate: 94.2% (2022)
-
 RECOMMENDED STRATEGY (Option D):
 The Integrated Halal-Driven Investment Strategy with three interconnected pillars:
 1. Halal Industry Ecosystem Excellence — BHB international accreditation (OIC/SMIIC), Bangsamoro Halal Park in Matanog
 2. Enabling Infrastructure Development — 80% electrification by 2028, 100% by 2030; 70% internet by 2030
 3. Governance and Institutional Strengthening — 1-day digital BNR, BBOI/BEZA capacity
-
 FOUR CRITICAL LEVERAGE POINTS:
 LP1: Halal Certification System Integrity — BHB achieving OIC/SMIIC recognition
 LP2: Infrastructure-Energy-Connectivity Nexus — electrification + digital connectivity
 LP3: Governance-Investor Confidence Feedback — systemic governance reform
 LP4: Islamic Finance Ecosystem Development — banking, Takaful, Sukuk by 2028
-
 CAUSAL LOOP DIAGRAMS (feedback structures):
 R1 (Investment-Development Virtuous Cycle): Investment inflows → employment → income → domestic market → business climate → more investment. All (+) links.
 R2 (Governance-Investor Confidence): Governance capacity → policy clarity → investor confidence → investment inflows → tax revenues → governance capacity. Also runs in REVERSE if governance fails.
 B1 (Growth-Resource Constraints): Investment growth → economic expansion → resource demand → infrastructure bottlenecks + skills shortages (−) → constrains investment growth. Balancing loop creating a ceiling.
 B2 (Security-Investment Tensions): Security incidents → investor caution → reduced investment → slower development → social tensions (−) → worsens security. Can reverse progress.
-
 THREE SYSTEMS ARCHETYPES:
 1. Limits to Growth: Initial reinforcing growth eventually hits balancing constraints (infra gaps, skills). Solution: invest in constraints BEFORE growth stalls (LP2).
 2. Success to the Successful: Halal industry early success attracts disproportionate resources, starving tourism, agribusiness, renewable energy. Solution: sectoral balance criteria and periodic resource reviews.
 3. Fixes that Fail: Ad-hoc tax incentives relieve symptoms (low investor confidence) but create side effects (revenue loss, weak institutions) that worsen the problem after a delay. Solution: systemic governance reform (LP3).
-
 SWOT HIGHLIGHTS:
 Strengths: Halal legitimacy, BIMP-EAGA location, strong agri base, BOL's 55 powers
 Weaknesses: 39% electrification, weak BHB certification, fragmented 15-ministry governance
 Opportunities: USD 2T+ global halal market, BIMP-EAGA 70M+ consumers, Islamic finance
 Threats: Malaysia/Indonesia halal hub competition, political transition, climate vulnerabilities
-
 BALANCED SCORECARD TARGETS (2035):
 Financial: PHP 50B investments, PHP 25B halal exports, 30% local revenue ratio, 95% budget execution
 Stakeholder: 8.0+ investor satisfaction, 2,000 halal MSMEs, 5,000 in Islamic finance, PHP 50B BIMP-EAGA trade
 Internal Process: 1-day business registration, BHB OIC/SMIIC accreditation, 100+ infrastructure projects
 Learning & Growth: 100 halal certification officers, 50 Islamic finance professionals, 20 e-government platforms
-
 IMPLEMENTATION PHASES:
 Phase 1 (2026-2028, PHP 5B): BHB setup, Halal Park launch, digital BNR, 80% electrification, one-stop shops
 Phase 2 (2029-2032, PHP 15B): Full certification, Halal Park Phase 1 tenants, 50% internet, Islamic banking
 Phase 3 (2033-2035, PHP 20B): Full BHB accreditation, 100% electrification, 70% internet, innovation hub
-
 KEY AGENCIES: MTIT, BBOI, BEZA, BHB, BPDA, MENRE, PFEZ, WOW Matanog SEZ
 CONTACT: invest@mtit.bangsamoro.gov.ph | mtit.bangsamoro.gov.ph
-
 Be concise, helpful, and cite specific data and frameworks where relevant. If asked about investment opportunities, tailor responses to the user's sector of interest. If asked about systems thinking concepts, explain them clearly with BARMM-specific examples. Always encourage engagement with the investment facilitation team for specific inquiries.`;
-
 let chatHistory=[];
 let apiKey=localStorage.getItem('barmm_oai_key')||'';
 const chatFab=document.getElementById('chatFab');
@@ -1298,191 +1281,163 @@ const saveApiKeyBtn=document.getElementById('saveApiKey');
 const chatSuggestions=document.getElementById('chatSuggestions');
 const chatStatusText=document.getElementById('chatStatusText');
 const chatPlatformNotice=document.getElementById('chatPlatformNotice');
-
-// Detect platform
 function detectPlatform(){
-  const ua=navigator.userAgent;
-  const isMobile=/iPhone|iPad|iPod|Android|Mobile/i.test(ua);
-  const isTablet=/iPad|Android(?!.*Mobile)/i.test(ua);
-  if(isMobile&&!isTablet)return'mobile';
-  if(isTablet)return'tablet';
-  return'desktop';
+const ua=navigator.userAgent;
+const isMobile=/iPhone|iPad|iPod|Android|Mobile/i.test(ua);
+const isTablet=/iPad|Android(?!.*Mobile)/i.test(ua);
+if(isMobile&&!isTablet)return'mobile';
+if(isTablet)return'tablet';
+return'desktop';
 }
-
 function updatePlatformNotice(){
-  const platform=detectPlatform();
-  const notices={
-    mobile:'📱 Mobile: Tap suggestions or type your question',
-    tablet:'📋 Tablet: Tap to explore investment opportunities',
-    desktop:'💻 Desktop: Use keyboard shortcuts — Enter to send, Shift+Enter for new line'
-  };
-  chatPlatformNotice.textContent=notices[platform]||'';
+const platform=detectPlatform();
+const notices={
+mobile:'📱 Mobile: Tap suggestions or type your question',
+tablet:'📋 Tablet: Tap to explore investment opportunities',
+desktop:'💻 Desktop: Use keyboard shortcuts — Enter to send, Shift+Enter for new line'
+};
+chatPlatformNotice.textContent=notices[platform]||'';
 }
-
-// Open/close chat
 chatFab.addEventListener('click',()=>{
-  const isOpen=!chatPanel.classList.contains('open');
-  chatPanel.classList.toggle('open',isOpen);
-  chatFab.setAttribute('aria-expanded',String(isOpen));
-  if(isOpen){
-    updatePlatformNotice();
-    if(!apiKey){apiPromptArea.classList.add('show');}
-    if(chatMessages.children.length===0){addWelcomeMessage();}
-    chatInput.focus();
-  }
+const isOpen=!chatPanel.classList.contains('open');
+chatPanel.classList.toggle('open',isOpen);
+chatFab.setAttribute('aria-expanded',String(isOpen));
+if(isOpen){
+updatePlatformNotice();
+if(!apiKey){apiPromptArea.classList.add('show');}
+if(chatMessages.children.length===0){addWelcomeMessage();}
+chatInput.focus();
+}
 });
-
 chatClose.addEventListener('click',()=>{
-  chatPanel.classList.remove('open');
-  chatFab.setAttribute('aria-expanded','false');
-  chatFab.focus();
+chatPanel.classList.remove('open');
+chatFab.setAttribute('aria-expanded','false');
+chatFab.focus();
 });
-
-// Escape closes chat
 document.addEventListener('keydown',e=>{
-  if(e.key==='Escape'&&chatPanel.classList.contains('open')){
-    chatPanel.classList.remove('open');
-    chatFab.setAttribute('aria-expanded','false');
-    chatFab.focus();
-  }
+if(e.key==='Escape'&&chatPanel.classList.contains('open')){
+chatPanel.classList.remove('open');
+chatFab.setAttribute('aria-expanded','false');
+chatFab.focus();
+}
 });
-
-// Save API key
 saveApiKeyBtn.addEventListener('click',()=>{
-  const val=apiKeyInput.value.trim();
-  if(val&&val.startsWith('sk-')){
-    apiKey=val;
-    localStorage.setItem('barmm_oai_key',val);
-    apiPromptArea.classList.remove('show');
-    apiKeyInput.value='';
-    chatStatusText.textContent='Ready to assist';
-    addBotMessage('API key saved. I\'m now ready to answer your questions about the BARMM Investment Roadmap. What would you like to know?');
-  }else{
-    apiKeyInput.style.borderColor='#ef4444';
-    setTimeout(()=>apiKeyInput.style.borderColor='',2000);
-  }
+const val=apiKeyInput.value.trim();
+if(val&&val.startsWith('sk-')){
+apiKey=val;
+localStorage.setItem('barmm_oai_key',val);
+apiPromptArea.classList.remove('show');
+apiKeyInput.value='';
+chatStatusText.textContent='Ready to assist';
+addBotMessage('API key saved. I\'m now ready to answer your questions about the BARMM Investment Roadmap. What would you like to know?');
+}else{
+apiKeyInput.style.borderColor='#ef4444';
+setTimeout(()=>apiKeyInput.style.borderColor='',2000);
+}
 });
-
-// Welcome message
 function addWelcomeMessage(){
-  addBotMessage(`Assalamu Alaykum! 👋 I'm the **BARMM Investment Assistant**, here to help you explore opportunities in the Bangsamoro Investment Roadmap 2026–2035.\n\nI can explain:\n• The 4 critical leverage points (LP1–LP4)\n• Causal Loop Diagrams (R1, R2, B1, B2)\n• Systems Archetypes and their strategic responses\n• Investment targets and sectors\n• How to get started with your investment inquiry\n\n${apiKey?'Ask me anything below, or tap a suggested question.':'Please save your OpenAI API key above to enable AI responses.'}`);
+addBotMessage(`Assalamu Alaykum! 👋 I'm the **BARMM Investment Assistant**, here to help you explore opportunities in the Bangsamoro Investment Roadmap 2026–2035.
+I can explain:
+• The 4 critical leverage points (LP1–LP4)
+• Causal Loop Diagrams (R1, R2, B1, B2)
+• Systems Archetypes and their strategic responses
+• Investment targets and sectors
+• How to get started with your investment inquiry
+${apiKey?'Ask me anything below, or tap a suggested question.':'Please save your OpenAI API key above to enable AI responses.'}`);
 }
-
-// Add messages
 function addBotMessage(text){
-  const msg=document.createElement('div');
-  msg.className='msg bot';
-  msg.innerHTML=`<div class="msg-avatar" aria-hidden="true">🤖</div><div class="msg-bubble" role="article">${formatMarkdown(text)}</div>`;
-  chatMessages.appendChild(msg);
-  chatMessages.scrollTop=chatMessages.scrollHeight;
+const msg=document.createElement('div');
+msg.className='msg bot';
+msg.innerHTML=`<div class="msg-avatar" aria-hidden="true">🤖</div><div class="msg-bubble" role="article">${formatMarkdown(text)}</div>`;
+chatMessages.appendChild(msg);
+chatMessages.scrollTop=chatMessages.scrollHeight;
 }
-
 function addUserMessage(text){
-  const msg=document.createElement('div');
-  msg.className='msg user';
-  msg.innerHTML=`<div class="msg-bubble" role="article">${escHtml(text)}</div><div class="msg-avatar" aria-hidden="true">👤</div>`;
-  chatMessages.appendChild(msg);
-  chatMessages.scrollTop=chatMessages.scrollHeight;
+const msg=document.createElement('div');
+msg.className='msg user';
+msg.innerHTML=`<div class="msg-bubble" role="article">${escHtml(text)}</div><div class="msg-avatar" aria-hidden="true">👤</div>`;
+chatMessages.appendChild(msg);
+chatMessages.scrollTop=chatMessages.scrollHeight;
 }
-
 function addTypingIndicator(){
-  const ti=document.createElement('div');
-  ti.className='msg bot';ti.id='typingIndicator';
-  ti.innerHTML=`<div class="msg-avatar" aria-hidden="true">🤖</div><div class="typing-indicator" aria-label="Thinking"><span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span></div>`;
-  chatMessages.appendChild(ti);
-  chatMessages.scrollTop=chatMessages.scrollHeight;
+const ti=document.createElement('div');
+ti.className='msg bot';ti.id='typingIndicator';
+ti.innerHTML=`<div class="msg-avatar" aria-hidden="true">🤖</div><div class="typing-indicator" aria-label="Thinking"><span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span></div>`;
+chatMessages.appendChild(ti);
+chatMessages.scrollTop=chatMessages.scrollHeight;
 }
-
 function removeTypingIndicator(){
-  const ti=document.getElementById('typingIndicator');
-  if(ti)ti.remove();
+const ti=document.getElementById('typingIndicator');
+if(ti)ti.remove();
 }
-
-// Simple markdown formatter
 function formatMarkdown(text){
-  return text
-    .replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')
-    .replace(/\*(.+?)\*/g,'<em>$1</em>')
-    .replace(/^• (.+)/gm,'<br>• $1')
-    .replace(/\n\n/g,'</p><p>')
-    .replace(/\n/g,'<br>');
+return text
+.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')
+.replace(/\*(.+?)\*/g,'<em>$1</em>')
+.replace(/^• (.+)/gm,'<br>• $1')
+.replace(/
+/g,'</p><p>')
+.replace(/
+/g,'<br>');
 }
 function escHtml(t){return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
-
-// Send message
 async function sendMessage(text){
-  if(!text.trim())return;
-  if(!apiKey){apiPromptArea.classList.add('show');return;}
-
-  addUserMessage(text);
-  chatHistory.push({role:'user',content:text});
-  chatInput.value='';chatInput.style.height='auto';
-  chatSuggestions.style.display='none';
-  chatStatusText.textContent='Thinking…';
-  chatSend.disabled=true;
-
-  addTypingIndicator();
-
-  try{
-    const res=await fetch('https://api.openai.com/v1/chat/completions',{
-      method:'POST',
-      headers:{'Content-Type':'application/json','Authorization':`Bearer ${apiKey}`},
-      body:JSON.stringify({
-        model:'gpt-4o-mini',
-        max_tokens:600,
-        temperature:0.7,
-        messages:[
-          {role:'system',content:BARMM_SYSTEM_PROMPT},
-          ...chatHistory.slice(-8)
-        ]
-      })
-    });
-
-    removeTypingIndicator();
-
-    if(!res.ok){
-      const err=await res.json().catch(()=>({}));
-      const msg=err.error?.message||`Error ${res.status}`;
-      if(res.status===401){apiKey='';localStorage.removeItem('barmm_oai_key');apiPromptArea.classList.add('show');addBotMessage('API key invalid or expired. Please enter a valid key above.');}
-      else{addBotMessage(`I encountered an error: ${msg}. Please try again.`);}
-      chatHistory.pop();
-    }else{
-      const data=await res.json();
-      const reply=data.choices[0]?.message?.content||'I could not generate a response. Please try again.';
-      chatHistory.push({role:'assistant',content:reply});
-      addBotMessage(reply);
-    }
-  }catch(err){
-    removeTypingIndicator();
-    chatHistory.pop();
-    addBotMessage('Connection failed. Please check your internet connection and try again.');
-  }finally{
-    chatStatusText.textContent='Ready to assist';
-    chatSend.disabled=false;
-  }
+if(!text.trim())return;
+if(!apiKey){apiPromptArea.classList.add('show');return;}
+addUserMessage(text);
+chatHistory.push({role:'user',content:text});
+chatInput.value='';chatInput.style.height='auto';
+chatSuggestions.style.display='none';
+chatStatusText.textContent='Thinking…';
+chatSend.disabled=true;
+addTypingIndicator();
+try{
+const res=await fetch('https://api.openai.com/v1/chat/completions',{
+method:'POST',
+headers:{'Content-Type':'application/json','Authorization':`Bearer ${apiKey}`},
+body:JSON.stringify({
+model:'gpt-4o-mini',
+max_tokens:600,
+temperature:0.7,
+messages:[
+{role:'system',content:BARMM_SYSTEM_PROMPT},
+...chatHistory.slice(-8)
+]
+})
+});
+removeTypingIndicator();
+if(!res.ok){
+const err=await res.json().catch(()=>({}));
+const msg=err.error?.message||`Error ${res.status}`;
+if(res.status===401){apiKey='';localStorage.removeItem('barmm_oai_key');apiPromptArea.classList.add('show');addBotMessage('API key invalid or expired. Please enter a valid key above.');}
+else{addBotMessage(`I encountered an error: ${msg}. Please try again.`);}
+chatHistory.pop();
+}else{
+const data=await res.json();
+const reply=data.choices[0]?.message?.content||'I could not generate a response. Please try again.';
+chatHistory.push({role:'assistant',content:reply});
+addBotMessage(reply);
 }
-
-// Suggestion buttons
+}catch(err){
+removeTypingIndicator();
+chatHistory.pop();
+addBotMessage('Connection failed. Please check your internet connection and try again.');
+}finally{
+chatStatusText.textContent='Ready to assist';
+chatSend.disabled=false;
+}
+}
 function sendSuggestion(btn){
-  sendMessage(btn.textContent.trim());
+sendMessage(btn.textContent.trim());
 }
-
-// Input events
 chatSend.addEventListener('click',()=>sendMessage(chatInput.value));
 chatInput.addEventListener('keydown',e=>{
-  if(e.key==='Enter'&&!e.shiftKey&&detectPlatform()==='desktop'){
-    e.preventDefault();sendMessage(chatInput.value);
-  }
+if(e.key==='Enter'&&!e.shiftKey){
+e.preventDefault();
+sendMessage(chatInput.value);
+}
 });
-// Auto-resize textarea
-chatInput.addEventListener('input',()=>{
-  chatInput.style.height='auto';
-  chatInput.style.height=Math.min(chatInput.scrollHeight,100)+'px';
-});
-
-// Init API key state
-if(apiKey){apiPromptArea.classList.remove('show');}
-else{apiPromptArea.classList.add('show');}
+updatePlatformNotice();
 </script>
 </body>
 </html>
