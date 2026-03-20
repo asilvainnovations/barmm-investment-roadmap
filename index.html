@@ -1,2080 +1,890 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="BARMM Investment Roadmap 2026-2035: The Emerging Bangsamoro - A strategic hub for halal industry, Islamic finance, and resilient economic growth in the Philippines' premier autonomous region.">
-    <title>BARMM Investment Roadmap 2026-2035 | The Emerging Bangsamoro</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --primary-green: #064e3b;
-            --dark-green: #022c22;
-            --mid-green: #065f46;
-            --light-green: #6ee7b7;
-            --accent-gold: #fbbf24;
-            --deep-gold: #d97706;
-            --pale-gold: #fef3c7;
-            --cream: #ecfdf5;
-            --text-dark: #0f172a;
-            --text-muted: #64748b;
-            --white: #ffffff;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        html { scroll-behavior: smooth; }
-
-        body {
-            font-family: 'DM Sans', sans-serif;
-            line-height: 1.7;
-            color: var(--text-dark);
-            background-color: var(--cream);
-            overflow-x: hidden;
-        }
-
-        /* ===== NAVIGATION ===== */
-        nav {
-            background: rgba(2, 44, 34, 0.97);
-            backdrop-filter: blur(16px);
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            border-bottom: 2px solid rgba(251,191,36,0.4);
-            transition: all 0.4s ease;
-        }
-
-        nav.scrolled {
-            background: rgba(2, 44, 34, 0.99);
-            box-shadow: 0 4px 30px rgba(0,0,0,0.4);
-        }
-
-        .nav-container {
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 0.65rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.85rem;
-            text-decoration: none;
-            flex-shrink: 0;
-        }
-
-        .logo img {
-            height: 52px;
-            width: auto;
-            object-fit: contain;
-            filter: brightness(1.05);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.6rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--light-green);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.875rem;
-            letter-spacing: 0.03em;
-            transition: color 0.3s;
-            position: relative;
-            white-space: nowrap;
-        }
-
-        .nav-links a:hover { color: var(--accent-gold); }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent-gold);
-            transition: width 0.3s;
-        }
-
-        .nav-links a:hover::after { width: 100%; }
-
-        .cta-button {
-            background: linear-gradient(135deg, var(--deep-gold), var(--accent-gold));
-            color: var(--dark-green);
-            padding: 0.65rem 1.5rem;
-            border-radius: 0.4rem;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.875rem;
-            letter-spacing: 0.04em;
-            transition: transform 0.3s, box-shadow 0.3s;
-            white-space: nowrap;
-            text-transform: uppercase;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(251,191,36,0.4);
-        }
-
-        /* ===== HERO ===== */
-        .hero {
-            min-height: 100vh;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .hero-banner {
-            width: 100%;
-            height: 100vh;
-            position: relative;
-        }
-
-        .hero-banner img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center top;
-        }
-
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(
-                to bottom,
-                rgba(2,44,34,0.55) 0%,
-                rgba(2,44,34,0.40) 40%,
-                rgba(2,44,34,0.75) 75%,
-                rgba(2,44,34,0.95) 100%
-            );
-        }
-
-        /* Islamic geometric pattern overlay */
-        .hero-overlay::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 8 L46 30 L68 36 L46 42 L40 64 L34 42 L12 36 L34 30 Z' fill='none' stroke='%23fbbf24' stroke-width='0.5' opacity='0.08'/%3E%3C/svg%3E");
-            pointer-events: none;
-        }
-
-        .hero-content {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 4rem 2rem 5rem;
-            text-align: center;
-            max-width: 960px;
-            margin: 0 auto;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: rgba(251,191,36,0.15);
-            border: 1px solid rgba(251,191,36,0.5);
-            color: var(--accent-gold);
-            padding: 0.45rem 1.5rem;
-            border-radius: 2rem;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            animation: fadeInDown 1s ease both;
-            font-family: 'DM Sans', sans-serif;
-        }
-
-        .hero h1 {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(2.2rem, 5vw, 4rem);
-            color: white;
-            margin-bottom: 1rem;
-            line-height: 1.15;
-            font-weight: 700;
-            text-shadow: 0 2px 20px rgba(0,0,0,0.5);
-            animation: fadeInUp 1s ease 0.2s both;
-        }
-
-        .hero h1 .gold { color: var(--accent-gold); }
-
-        .hero-subtitle {
-            font-size: 1.1rem;
-            color: rgba(255,255,255,0.85);
-            margin-bottom: 2.5rem;
-            max-width: 680px;
-            margin-left: auto;
-            margin-right: auto;
-            animation: fadeInUp 1s ease 0.4s both;
-            font-weight: 300;
-            letter-spacing: 0.02em;
-        }
-
-        .hero-cta {
-            animation: fadeInUp 1s ease 0.55s both;
-            margin-bottom: 3rem;
-        }
-
-        .hero-cta .cta-button {
-            font-size: 1rem;
-            padding: 1rem 2.5rem;
-            border-radius: 0.5rem;
-        }
-
-        /* ===== ANIMATED STATS ===== */
-        .hero-stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            position: relative;
-            z-index: 10;
-            margin-top: -4rem;
-            padding-bottom: 4rem;
-        }
-
-        .stat-card {
-            background: rgba(255,255,255,0.06);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(251,191,36,0.25);
-            border-radius: 1rem;
-            padding: 1.5rem;
-            text-align: center;
-            transition: transform 0.3s, border-color 0.3s, background 0.3s;
-            animation: fadeInUp 1s ease 0.7s both;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-6px);
-            border-color: var(--accent-gold);
-            background: rgba(255,255,255,0.10);
-        }
-
-        .stat-number {
-            font-family: 'Cinzel', serif;
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--accent-gold);
-            display: block;
-            line-height: 1.1;
-            margin-bottom: 0.4rem;
-        }
-
-        .stat-label {
-            color: var(--light-green);
-            font-size: 0.82rem;
-            font-weight: 500;
-            letter-spacing: 0.03em;
-        }
-
-        /* ===== KEY FIGURES DASHBOARD ===== */
-        .figures-section {
-            background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
-            padding: 5rem 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .figures-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -20%;
-            width: 700px;
-            height: 700px;
-            background: radial-gradient(circle, rgba(251,191,36,0.08) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        .figures-section::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            right: -10%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(110,231,183,0.06) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        .figures-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .figure-card {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 1.2rem;
-            padding: 2rem;
-            text-align: center;
-            transition: transform 0.3s, background 0.3s;
-        }
-
-        .figure-card:hover {
-            transform: translateY(-6px);
-            background: rgba(255,255,255,0.08);
-        }
-
-        .figure-number {
-            font-family: 'Cinzel', serif;
-            font-size: 2.8rem;
-            font-weight: 700;
-            color: var(--accent-gold);
-            display: block;
-            line-height: 1;
-            margin-bottom: 0.5rem;
-            transition: all 0.3s;
-        }
-
-        /* Counter animation */
-        .figure-number.counting {
-            animation: pulse-number 0.1s ease-in-out;
-        }
-
-        @keyframes pulse-number {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        .figure-label {
-            color: var(--light-green);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            font-weight: 500;
-        }
-
-        .figure-context {
-            margin-top: 0.75rem;
-            padding-top: 0.75rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.8rem;
-            color: rgba(255,255,255,0.5);
-        }
-
-        /* ===== SECTION STYLES ===== */
-        section { padding: 5rem 2rem; }
-
-        .container { max-width: 1200px; margin: 0 auto; }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 3.5rem;
-        }
-
-        .section-label {
-            display: inline-block;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--deep-gold);
-            margin-bottom: 0.75rem;
-        }
-
-        .section-header h2 {
-            font-family: 'Cinzel', serif;
-            font-size: clamp(1.8rem, 3vw, 2.5rem);
-            color: var(--primary-green);
-            margin-bottom: 1rem;
-            line-height: 1.25;
-        }
-
-        .section-header h2.white { color: white; }
-
-        .section-divider {
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent-gold), var(--deep-gold));
-            border-radius: 2px;
-            margin: 0 auto 1.5rem;
-        }
-
-        .section-header p {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .section-header p.light { color: rgba(255,255,255,0.7); }
-
-        /* ===== PRIORITY AGENDA ===== */
-        .priority-section {
-            background: white;
-        }
-
-        .agenda-image-wrapper {
-            border-radius: 1.5rem;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(6,78,59,0.15);
-            margin-bottom: 3rem;
-            position: relative;
-        }
-
-        .agenda-image-wrapper img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.6s ease;
-        }
-
-        .agenda-image-wrapper:hover img { transform: scale(1.02); }
-
-        .agenda-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.25rem;
-        }
-
-        .agenda-card {
-            background: var(--cream);
-            border-radius: 1rem;
-            padding: 1.75rem;
-            border-left: 4px solid var(--accent-gold);
-            transition: transform 0.3s, box-shadow 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .agenda-card::before {
-            content: '';
-            position: absolute;
-            top: 0; right: 0;
-            width: 80px; height: 80px;
-            background: radial-gradient(circle, rgba(251,191,36,0.12) 0%, transparent 70%);
-            border-radius: 50%;
-            transform: translate(30%, -30%);
-        }
-
-        .agenda-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(6,78,59,0.12);
-        }
-
-        .agenda-icon {
-            width: 46px; height: 46px;
-            background: var(--primary-green);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-        }
-
-        .agenda-card h3 {
-            font-family: 'Cinzel', serif;
-            color: var(--primary-green);
-            font-size: 1rem;
-            margin-bottom: 0.4rem;
-            font-weight: 600;
-        }
-
-        .agenda-card p {
-            color: var(--text-muted);
-            font-size: 0.88rem;
-            line-height: 1.5;
-        }
-
-        /* ===== SWOT ===== */
-        .swot-section {
-            background: var(--dark-green);
-            color: white;
-        }
-
-        .swot-image-wrapper {
-            border-radius: 1.5rem;
-            overflow: hidden;
-            margin-bottom: 3rem;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-        }
-
-        .swot-image-wrapper img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .swot-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-        }
-
-        .swot-card {
-            background: rgba(255,255,255,0.04);
-            border-radius: 1rem;
-            padding: 2rem;
-            border: 1px solid rgba(255,255,255,0.08);
-            transition: all 0.3s;
-        }
-
-        .swot-card:hover {
-            background: rgba(255,255,255,0.07);
-            transform: translateY(-4px);
-        }
-
-        .swot-card.strengths { border-top: 4px solid #10b981; }
-        .swot-card.weaknesses { border-top: 4px solid #f59e0b; }
-        .swot-card.opportunities { border-top: 4px solid #3b82f6; }
-        .swot-card.threats { border-top: 4px solid #ef4444; }
-
-        .swot-card h3 {
-            font-family: 'Cinzel', serif;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-
-        .swot-card ul { list-style: none; }
-
-        .swot-card li {
-            padding: 0.45rem 0 0.45rem 1.5rem;
-            position: relative;
-            color: rgba(255,255,255,0.75);
-            font-size: 0.92rem;
-        }
-
-        .swot-card li::before {
-            content: '›';
-            position: absolute;
-            left: 0;
-            color: var(--accent-gold);
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        /* ===== SYSTEMS THINKING ===== */
-        .systems-section { background: white; }
-
-        .cld-container {
-            background: var(--cream);
-            border-radius: 1.5rem;
-            padding: 2.5rem;
-            border: 1px solid rgba(6,78,59,0.1);
-            margin-top: 2rem;
-        }
-
-        .cld-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .loop-card {
-            border-radius: 1rem;
-            padding: 1.75rem;
-            border: 2px solid transparent;
-            position: relative;
-        }
-
-        .loop-card.reinforcing {
-            border-color: #10b981;
-            background: linear-gradient(135deg, rgba(16,185,129,0.05) 0%, white 100%);
-        }
-
-        .loop-card.balancing {
-            border-color: #f59e0b;
-            background: linear-gradient(135deg, rgba(245,158,11,0.05) 0%, white 100%);
-        }
-
-        .loop-badge {
-            position: absolute;
-            top: -12px; left: 1.5rem;
-            padding: 0.2rem 0.85rem;
-            border-radius: 1rem;
-            font-size: 0.72rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: white;
-        }
-
-        .loop-card.reinforcing .loop-badge { background: #10b981; }
-        .loop-card.balancing .loop-badge { background: #f59e0b; }
-
-        .loop-card h4 {
-            font-family: 'Cinzel', serif;
-            color: var(--primary-green);
-            margin-bottom: 1rem;
-            font-size: 1rem;
-            margin-top: 0.5rem;
-        }
-
-        .flow-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.4rem 0.6rem;
-            background: rgba(255,255,255,0.6);
-            border-radius: 0.4rem;
-            font-size: 0.86rem;
-            color: #475569;
-            margin-bottom: 0.4rem;
-        }
-
-        .arrow { color: var(--accent-gold); font-weight: bold; }
-
-        /* ===== HALAL SECTION ===== */
-        .halal-section { background: var(--cream); }
-
-        .halal-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        .halal-content h3 {
-            font-family: 'Cinzel', serif;
-            font-size: 1.8rem;
-            color: var(--primary-green);
-            margin-bottom: 1.25rem;
-        }
-
-        .halal-content p {
-            color: var(--text-muted);
-            margin-bottom: 1.25rem;
-            line-height: 1.8;
-        }
-
-        .halal-sectors-image {
-            border-radius: 1.25rem;
-            overflow: hidden;
-            margin: 1.5rem 0;
-            box-shadow: 0 12px 40px rgba(6,78,59,0.15);
-        }
-
-        .halal-sectors-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* OLD sector grid kept as fallback but hidden since we use image */
-        .halal-sectors { display: none; }
-
-        .bimp-image-wrapper {
-            border-radius: 1.25rem;
-            overflow: hidden;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 12px 40px rgba(6,78,59,0.2);
-        }
-
-        .bimp-image-wrapper img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .islamic-finance-image-wrapper {
-            border-radius: 1rem;
-            overflow: hidden;
-            margin-top: 1.5rem;
-            box-shadow: 0 8px 30px rgba(6,78,59,0.15);
-        }
-
-        .islamic-finance-image-wrapper img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .finance-roadmap-box {
-            background: white;
-            border-radius: 1rem;
-            padding: 1.5rem;
-            border-left: 4px solid var(--accent-gold);
-            margin-top: 1.5rem;
-        }
-
-        .finance-roadmap-box h4 {
-            font-family: 'Cinzel', serif;
-            color: var(--primary-green);
-            margin-bottom: 0.75rem;
-            font-size: 1rem;
-        }
-
-        .finance-roadmap-box ul {
-            list-style: none;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        .finance-roadmap-box li {
-            padding: 0.3rem 0;
-        }
-
-        .target-boxes {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .target-box {
-            border-radius: 1rem;
-            padding: 1.5rem;
-            text-align: center;
-            color: white;
-        }
-
-        .target-box.green { background: var(--primary-green); }
-        .target-box.gold { background: var(--deep-gold); }
-
-        .target-box .number {
-            font-family: 'Cinzel', serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            display: block;
-            margin-bottom: 0.3rem;
-        }
-
-        .target-box .label { font-size: 0.82rem; opacity: 0.9; }
-
-        /* ===== STRATEGIC PILLARS ===== */
-        .pillars-section { background: white; }
-
-        .pillars-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-        }
-
-        .pillar-card {
-            border-radius: 1.5rem;
-            overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-            transition: transform 0.3s;
-        }
-
-        .pillar-card:hover { transform: translateY(-8px); }
-
-        .pillar-header {
-            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
-            color: white;
-            padding: 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .pillar-header::before {
-            content: '';
-            position: absolute;
-            top: -40%; right: -15%;
-            width: 180px; height: 180px;
-            background: rgba(251,191,36,0.1);
-            border-radius: 50%;
-        }
-
-        .pillar-number {
-            font-family: 'Cinzel', serif;
-            font-size: 3rem;
-            font-weight: 900;
-            opacity: 0.2;
-            position: absolute;
-            top: 0.5rem; right: 1.25rem;
-            color: var(--accent-gold);
-        }
-
-        .pillar-header h3 {
-            font-family: 'Cinzel', serif;
-            font-size: 1.1rem;
-            margin-bottom: 0.4rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .pillar-header p {
-            color: var(--light-green);
-            font-size: 0.85rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .pillar-content { padding: 1.75rem; background: white; }
-
-        .pillar-content ul { list-style: none; }
-
-        .pillar-content li {
-            padding: 0.65rem 0;
-            border-bottom: 1px solid #f1f5f9;
-            display: flex;
-            gap: 0.65rem;
-            color: #475569;
-            font-size: 0.9rem;
-        }
-
-        .pillar-content li:last-child { border-bottom: none; }
-
-        .check-icon { color: var(--accent-gold); font-weight: bold; flex-shrink: 0; }
-
-        /* ===== ROADMAP ===== */
-        .roadmap-section {
-            background: var(--dark-green);
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .roadmap-section::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 10 L60 40 L90 50 L60 60 L50 90 L40 60 L10 50 L40 40 Z' fill='none' stroke='%23fbbf24' stroke-width='0.5' opacity='0.05'/%3E%3C/svg%3E");
-            pointer-events: none;
-        }
-
-        .timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 2.5rem;
-            margin-top: 3.5rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .timeline-item {
-            display: grid;
-            grid-template-columns: 160px 1fr;
-            gap: 2.5rem;
-            align-items: start;
-        }
-
-        .timeline-date {
-            text-align: right;
-            font-family: 'Cinzel', serif;
-            font-weight: 700;
-            color: var(--accent-gold);
-            font-size: 1.15rem;
-            position: relative;
-            padding-top: 1.5rem;
-        }
-
-        .timeline-date::after {
-            content: '';
-            position: absolute;
-            right: -1.4rem;
-            top: 2rem;
-            width: 12px; height: 12px;
-            background: var(--accent-gold);
-            border-radius: 50%;
-            border: 3px solid var(--dark-green);
-            box-shadow: 0 0 0 3px var(--accent-gold);
-        }
-
-        .timeline-content {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(251,191,36,0.2);
-            border-radius: 1rem;
-            padding: 2rem;
-        }
-
-        .timeline-content h3 {
-            font-family: 'Cinzel', serif;
-            color: var(--accent-gold);
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-        }
-
-        .timeline-content ul {
-            list-style: none;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.6rem;
-        }
-
-        .timeline-content li {
-            color: rgba(255,255,255,0.75);
-            padding-left: 1.4rem;
-            position: relative;
-            font-size: 0.9rem;
-        }
-
-        .timeline-content li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--accent-gold);
-            font-size: 0.8rem;
-        }
-
-        .budget-badge {
-            display: inline-block;
-            background: rgba(251,191,36,0.15);
-            border: 1px solid rgba(251,191,36,0.3);
-            color: var(--accent-gold);
-            padding: 0.3rem 0.85rem;
-            border-radius: 1rem;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-top: 1rem;
-            font-family: 'Cinzel', serif;
-        }
-
-        .success-box {
-            background: rgba(251,191,36,0.08);
-            border: 1px solid rgba(251,191,36,0.25);
-            border-radius: 1rem;
-            padding: 2rem;
-            margin-top: 3.5rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .success-box h3 {
-            font-family: 'Cinzel', serif;
-            color: var(--accent-gold);
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .success-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-        }
-
-        .success-item {
-            color: rgba(255,255,255,0.75);
-            font-size: 0.88rem;
-            padding-left: 1rem;
-            position: relative;
-        }
-
-        .success-item::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--accent-gold);
-        }
-
-        /* ===== CONTACT SECTION ===== */
-        .contact-section {
-            background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
-            color: white;
-            padding: 6rem 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 600px; height: 600px;
-            background: radial-gradient(circle, rgba(251,191,36,0.08) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        .contact-section::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -5%;
-            width: 400px; height: 400px;
-            background: radial-gradient(circle, rgba(110,231,183,0.05) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        .contact-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            margin-top: 3.5rem;
-            align-items: start;
-        }
-
-        .contact-info h3 {
-            font-family: 'Cinzel', serif;
-            font-size: 1.5rem;
-            color: var(--accent-gold);
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-detail {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-icon {
-            width: 44px; height: 44px;
-            background: rgba(251,191,36,0.12);
-            border: 1px solid rgba(251,191,36,0.25);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            flex-shrink: 0;
-        }
-
-        .contact-detail p {
-            color: rgba(255,255,255,0.85);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .contact-detail strong {
-            display: block;
-            color: var(--accent-gold);
-            font-size: 0.78rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            margin-bottom: 0.2rem;
-        }
-
-        .contact-agencies {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.75rem;
-            margin-top: 2rem;
-        }
-
-        .agency-tag {
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.12);
-            border-radius: 0.5rem;
-            padding: 0.6rem 0.85rem;
-            font-size: 0.82rem;
-            color: var(--light-green);
-            font-weight: 500;
-            text-align: center;
-            transition: all 0.3s;
-        }
-
-        .agency-tag:hover {
-            background: rgba(251,191,36,0.1);
-            border-color: rgba(251,191,36,0.3);
-            color: var(--accent-gold);
-        }
-
-        /* Contact Form */
-        .contact-form-wrapper {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 1.5rem;
-            padding: 2.5rem;
-        }
-
-        .contact-form-wrapper h3 {
-            font-family: 'Cinzel', serif;
-            color: var(--accent-gold);
-            font-size: 1.3rem;
-            margin-bottom: 1.75rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.25rem;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            color: var(--light-green);
-            margin-bottom: 0.5rem;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.85rem 1rem;
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.15);
-            border-radius: 0.6rem;
-            color: white;
-            font-family: 'DM Sans', sans-serif;
-            font-size: 0.92rem;
-            transition: border-color 0.3s, background 0.3s;
-            outline: none;
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: rgba(255,255,255,0.35);
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            border-color: rgba(251,191,36,0.5);
-            background: rgba(255,255,255,0.09);
-        }
-
-        .form-group select option {
-            background: var(--dark-green);
-            color: white;
-        }
-
-        .form-group textarea { resize: vertical; min-height: 110px; }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 1rem;
-            background: linear-gradient(135deg, var(--deep-gold), var(--accent-gold));
-            color: var(--dark-green);
-            border: none;
-            border-radius: 0.6rem;
-            font-family: 'DM Sans', sans-serif;
-            font-size: 0.95rem;
-            font-weight: 700;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-            margin-top: 0.5rem;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(251,191,36,0.35);
-        }
-
-        .form-note {
-            text-align: center;
-            font-size: 0.78rem;
-            color: rgba(255,255,255,0.4);
-            margin-top: 1rem;
-        }
-
-        /* ===== FOOTER ===== */
-        footer {
-            background: #011a12;
-            color: white;
-            padding: 3rem 2rem 1.5rem;
-            border-top: 3px solid rgba(251,191,36,0.3);
-        }
-
-        .footer-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-logo img {
-            height: 48px;
-            width: auto;
-            object-fit: contain;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255,255,255,0.08);
-            color: rgba(255,255,255,0.4);
-            font-size: 0.82rem;
-        }
-
-        .footer-bottom span {
-            color: var(--accent-gold);
-        }
-
-        /* ===== ANIMATIONS ===== */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes countUp {
-            from { opacity: 0.3; }
-            to { opacity: 1; }
-        }
-
-        .fade-in {
-            opacity: 0;
-            transform: translateY(28px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .fade-in-delay-1 { transition-delay: 0.1s; }
-        .fade-in-delay-2 { transition-delay: 0.2s; }
-        .fade-in-delay-3 { transition-delay: 0.3s; }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 1024px) {
-            .pillars-grid { grid-template-columns: 1fr; }
-            .halal-grid { grid-template-columns: 1fr; }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hero-stats { grid-template-columns: repeat(2, 1fr); margin-top: -2rem; }
-            .swot-grid { grid-template-columns: 1fr; }
-            .cld-grid { grid-template-columns: 1fr; }
-            .timeline-item { grid-template-columns: 1fr; gap: 0.75rem; }
-            .timeline-date { text-align: left; }
-            .timeline-date::after { display: none; }
-            .contact-grid { grid-template-columns: 1fr; }
-            .contact-agencies { grid-template-columns: 1fr; }
-            .form-row { grid-template-columns: 1fr; }
-            .success-grid { grid-template-columns: 1fr; }
-            .target-boxes { grid-template-columns: 1fr; }
-            .timeline-content ul { grid-template-columns: 1fr; }
-        }
-
-        @media (max-width: 480px) {
-            .hero-stats { grid-template-columns: 1fr; }
-            .figures-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BARMM Investment Roadmap 2026-2035 | The Emerging Bangsamoro</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary-green:#064e3b;--dark-green:#022c22;--mid-green:#065f46;
+  --light-green:#6ee7b7;--cream:#ecfdf5;--text-dark:#0f172a;--text-muted:#64748b;
+  /* Metallic gold palette */
+  --gold:#C9A84C;--gold-light:#E8C560;--gold-dark:#8B6C28;--gold-pale:#fdf6e3;
+  --gold-border:rgba(201,168,76,0.35);
+  --gold-grad:linear-gradient(135deg,#7a5c1e 0%,#c9a84c 35%,#e8c560 50%,#c9a84c 65%,#7a5c1e 100%);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;line-height:1.7;color:var(--text-dark);background:var(--cream);overflow-x:hidden;}
+
+/* NAV */
+nav{background:rgba(2,44,34,.97);backdrop-filter:blur(16px);position:fixed;width:100%;z-index:1000;border-bottom:2px solid var(--gold-border);transition:all .4s ease;}
+nav.scrolled{background:rgba(2,44,34,.99);box-shadow:0 4px 30px rgba(0,0,0,.4);}
+.nav-container{max-width:1300px;margin:0 auto;padding:.6rem 2rem;display:flex;justify-content:space-between;align-items:center;gap:1.5rem;}
+.logo img{height:54px;width:auto;object-fit:contain;display:block;}
+.nav-links{display:flex;gap:1.6rem;list-style:none;}
+.nav-links a{color:var(--light-green);text-decoration:none;font-weight:500;font-size:.875rem;letter-spacing:.03em;transition:color .3s;position:relative;}
+.nav-links a:hover{color:var(--gold);}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--gold);transition:width .3s;}
+.nav-links a:hover::after{width:100%;}
+.cta-btn{background:var(--gold-grad);color:var(--dark-green);padding:.65rem 1.5rem;border-radius:.4rem;text-decoration:none;font-weight:700;font-size:.875rem;letter-spacing:.04em;transition:transform .3s,box-shadow .3s;white-space:nowrap;text-transform:uppercase;}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,.4);}
+
+/* BANNER */
+.banner-wrap{margin-top:72px;line-height:0;}
+.banner-wrap img{width:100%;display:block;max-height:80vh;object-fit:cover;object-position:center;}
+
+/* HERO CONTENT (below banner) */
+.hero-content{background:linear-gradient(to bottom,var(--dark-green),#011a12);color:white;text-align:center;padding:5rem 2rem 4rem;}
+.hero-badge{display:inline-block;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.45);color:var(--gold);padding:.45rem 1.5rem;border-radius:2rem;font-size:.78rem;font-weight:600;margin-bottom:1.5rem;letter-spacing:.12em;text-transform:uppercase;}
+.hero-content h1{font-family:'Cinzel',serif;font-size:clamp(2rem,4.5vw,3.8rem);color:white;line-height:1.15;font-weight:700;text-shadow:0 2px 20px rgba(0,0,0,.5);margin-bottom:.8rem;}
+.hero-content h1 .gold{color:var(--gold);}
+.hero-sub{font-size:1.05rem;color:rgba(255,255,255,.8);max-width:680px;margin:0 auto 2.5rem;font-weight:300;letter-spacing:.02em;}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;max-width:1100px;margin:2.5rem auto 0;padding:0 1rem;}
+.stat-card{background:rgba(255,255,255,.05);backdrop-filter:blur(10px);border:1px solid var(--gold-border);border-radius:1rem;padding:1.4rem;text-align:center;transition:transform .3s,border-color .3s;}
+.stat-card:hover{transform:translateY(-5px);border-color:var(--gold);}
+.stat-num{font-family:'Cinzel',serif;font-size:1.9rem;font-weight:700;color:var(--gold);display:block;line-height:1.1;margin-bottom:.35rem;}
+.stat-lbl{color:var(--light-green);font-size:.8rem;font-weight:500;}
+
+/* FIGURES */
+.figures-section{background:linear-gradient(135deg,var(--primary-green),var(--dark-green));padding:5rem 2rem;position:relative;overflow:hidden;}
+.figures-section::before{content:'';position:absolute;top:-50%;left:-20%;width:700px;height:700px;background:radial-gradient(circle,rgba(201,168,76,.07) 0%,transparent 70%);border-radius:50%;pointer-events:none;}
+.figures-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.4rem;max-width:1200px;margin:0 auto;position:relative;z-index:1;}
+.figure-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:1.2rem;padding:1.8rem;text-align:center;transition:transform .3s,background .3s;}
+.figure-card:hover{transform:translateY(-5px);background:rgba(255,255,255,.08);}
+.figure-number{font-family:'Cinzel',serif;font-size:2.6rem;font-weight:700;color:var(--gold);display:block;line-height:1;margin-bottom:.5rem;}
+.figure-label{color:var(--light-green);font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;font-weight:500;}
+.figure-context{margin-top:.7rem;padding-top:.7rem;border-top:1px solid rgba(255,255,255,.1);font-size:.78rem;color:rgba(255,255,255,.45);}
+
+/* SECTIONS */
+section{padding:5rem 2rem;}
+.container{max-width:1200px;margin:0 auto;}
+.section-header{text-align:center;margin-bottom:3.5rem;}
+.section-label{display:inline-block;font-size:.73rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:.7rem;}
+.section-header h2{font-family:'Cinzel',serif;font-size:clamp(1.7rem,3vw,2.4rem);color:var(--primary-green);margin-bottom:.8rem;line-height:1.25;}
+.section-header h2.white{color:white;}
+.section-divider{width:60px;height:4px;background:var(--gold-grad);border-radius:2px;margin:0 auto 1.4rem;}
+.section-header p{color:var(--text-muted);font-size:1rem;max-width:600px;margin:0 auto;}
+.section-header p.light{color:rgba(255,255,255,.65);}
+
+/* AGENDA */
+.priority-section{background:white;}
+.agenda-image-wrap{border-radius:1.5rem;overflow:hidden;box-shadow:0 20px 60px rgba(6,78,59,.15);margin-bottom:3rem;}
+.agenda-image-wrap img{width:100%;height:auto;display:block;transition:transform .6s ease;}
+.agenda-image-wrap:hover img{transform:scale(1.02);}
+.agenda-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.2rem;}
+.agenda-card{background:var(--cream);border-radius:1rem;padding:1.6rem;border-left:4px solid var(--gold);transition:transform .3s,box-shadow .3s;position:relative;overflow:hidden;}
+.agenda-card::before{content:'';position:absolute;top:0;right:0;width:70px;height:70px;background:radial-gradient(circle,rgba(201,168,76,.1) 0%,transparent 70%);border-radius:50%;transform:translate(30%,-30%);}
+.agenda-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(6,78,59,.12);}
+.agenda-icon{width:44px;height:44px;background:var(--primary-green);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:.9rem;}
+.agenda-card h3{font-family:'Cinzel',serif;color:var(--primary-green);font-size:.95rem;margin-bottom:.35rem;font-weight:600;}
+.agenda-card p{color:var(--text-muted);font-size:.85rem;line-height:1.5;}
+
+/* SWOT */
+.swot-section{background:var(--dark-green);color:white;}
+.swot-image-wrap{border-radius:1.5rem;overflow:hidden;margin-bottom:3rem;box-shadow:0 20px 60px rgba(0,0,0,.4);}
+.swot-image-wrap img{width:100%;height:auto;display:block;}
+.swot-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;}
+.swot-card{background:rgba(255,255,255,.04);border-radius:1rem;padding:1.8rem;border:1px solid rgba(255,255,255,.08);transition:all .3s;}
+.swot-card:hover{background:rgba(255,255,255,.07);transform:translateY(-4px);}
+.swot-card.strengths{border-top:4px solid #10b981;}
+.swot-card.weaknesses{border-top:4px solid var(--gold);}
+.swot-card.opportunities{border-top:4px solid #3b82f6;}
+.swot-card.threats{border-top:4px solid #ef4444;}
+.swot-card h3{font-family:'Cinzel',serif;font-size:1.1rem;margin-bottom:1rem;}
+.swot-card ul{list-style:none;}
+.swot-card li{padding:.42rem 0 .42rem 1.4rem;position:relative;color:rgba(255,255,255,.72);font-size:.88rem;}
+.swot-card li::before{content:'›';position:absolute;left:0;color:var(--gold);font-weight:bold;font-size:1.1rem;}
+
+/* SYSTEMS THINKING */
+.systems-section{background:white;}
+.cld-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:2rem;}
+.cld-card{background:#061810;border-radius:1.25rem;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.15);padding:1rem 0.5rem 0.5rem;}
+.cld-card svg{width:100%;height:auto;display:block;}
+.cld-legend{display:flex;gap:2rem;justify-content:center;align-items:center;margin-top:1.5rem;flex-wrap:wrap;}
+.legend-item{display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--text-muted);}
+.legend-dot{width:12px;height:12px;border-radius:50%;flex-shrink:0;}
+.archetypes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2rem;}
+.archetype-card{background:#061810;border-radius:1.25rem;overflow:hidden;padding:1rem 0.5rem 0.5rem;box-shadow:0 8px 30px rgba(0,0,0,.12);}
+.archetype-card svg{width:100%;height:auto;display:block;}
+.arch-desc{background:var(--cream);border-radius:0 0 1rem 1rem;padding:1rem 1.2rem;border-top:2px solid var(--gold-border);}
+.arch-desc h4{font-family:'Cinzel',serif;color:var(--primary-green);font-size:.85rem;margin-bottom:.35rem;}
+.arch-desc p{color:var(--text-muted);font-size:.78rem;line-height:1.5;}
+
+/* HALAL */
+.halal-section{background:var(--cream);}
+.halal-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+.halal-content h3{font-family:'Cinzel',serif;font-size:1.7rem;color:var(--primary-green);margin-bottom:1.2rem;}
+.halal-content p{color:var(--text-muted);margin-bottom:1.2rem;line-height:1.8;}
+.halal-img-wrap{border-radius:1.2rem;overflow:hidden;margin:1.4rem 0;box-shadow:0 10px 35px rgba(6,78,59,.14);}
+.halal-img-wrap img{width:100%;height:auto;display:block;}
+.bimp-img-wrap{border-radius:1.2rem;overflow:hidden;margin-bottom:1.4rem;box-shadow:0 10px 35px rgba(6,78,59,.18);}
+.bimp-img-wrap img{width:100%;height:auto;display:block;}
+.finance-box{background:white;border-radius:1rem;padding:1.4rem;border-left:4px solid var(--gold);}
+.finance-box h4{font-family:'Cinzel',serif;color:var(--primary-green);margin-bottom:.65rem;font-size:.95rem;}
+.finance-box ul{list-style:none;font-size:.88rem;color:var(--text-muted);}
+.finance-box li{padding:.25rem 0;}
+.bimp-stats{display:flex;justify-content:center;gap:2.5rem;padding:1.4rem;background:white;border-radius:1rem;box-shadow:0 4px 20px rgba(0,0,0,.07);}
+.bimp-stat span{font-family:'Cinzel',serif;font-size:2rem;font-weight:700;color:var(--gold-dark);display:block;}
+.bimp-stat small{font-size:.8rem;color:var(--text-muted);}
+.target-boxes{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.2rem;}
+.target-box{border-radius:1rem;padding:1.4rem;text-align:center;color:white;}
+.target-box.green{background:var(--primary-green);}
+.target-box.gold{background:linear-gradient(135deg,var(--gold-dark),var(--gold));}
+.target-box .num{font-family:'Cinzel',serif;font-size:1.7rem;font-weight:700;display:block;margin-bottom:.25rem;}
+.target-box .lbl{font-size:.8rem;opacity:.9;}
+
+/* CONTACT */
+.contact-section{background:linear-gradient(135deg,var(--primary-green),var(--dark-green));color:white;padding:6rem 2rem;position:relative;overflow:hidden;}
+.contact-section::before{content:'';position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:radial-gradient(circle,rgba(201,168,76,.07) 0%,transparent 70%);border-radius:50%;pointer-events:none;}
+.contact-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1;}
+.contact-banner-wrap{border-radius:1.5rem;overflow:hidden;margin-bottom:3.5rem;box-shadow:0 20px 60px rgba(0,0,0,.4);}
+.contact-banner-wrap img{width:100%;height:auto;display:block;}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+.contact-info h3{font-family:'Cinzel',serif;font-size:1.4rem;color:var(--gold);margin-bottom:1.4rem;}
+.contact-detail{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.4rem;}
+.ci{width:42px;height:42px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+.contact-detail p{color:rgba(255,255,255,.82);font-size:.9rem;line-height:1.6;}
+.contact-detail strong{display:block;color:var(--gold);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.15rem;}
+.contact-detail a{color:var(--light-green);text-decoration:none;}
+.agency-grid{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin-top:1.8rem;}
+.agency-tag{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:.5rem;padding:.55rem .8rem;font-size:.79rem;color:var(--light-green);font-weight:500;text-align:center;transition:all .3s;}
+.agency-tag:hover{background:rgba(201,168,76,.1);border-color:rgba(201,168,76,.3);color:var(--gold);}
+.form-wrap{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:1.5rem;padding:2.2rem;}
+.form-wrap h3{font-family:'Cinzel',serif;color:var(--gold);font-size:1.2rem;margin-bottom:1.6rem;}
+.form-group{margin-bottom:1.1rem;}
+.form-group label{display:block;font-size:.76rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--light-green);margin-bottom:.4rem;}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:.8rem 1rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:.6rem;color:white;font-family:'DM Sans',sans-serif;font-size:.9rem;transition:border-color .3s,background .3s;outline:none;}
+.form-group input::placeholder,.form-group textarea::placeholder{color:rgba(255,255,255,.3);}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:rgba(201,168,76,.5);background:rgba(255,255,255,.09);}
+.form-group select option{background:var(--dark-green);color:white;}
+.form-group textarea{resize:vertical;min-height:100px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.submit-btn{width:100%;padding:.95rem;background:var(--gold-grad);color:var(--dark-green);border:none;border-radius:.6rem;font-family:'DM Sans',sans-serif;font-size:.92rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;transition:transform .3s,box-shadow .3s;margin-top:.4rem;}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(201,168,76,.35);}
+.form-note{text-align:center;font-size:.76rem;color:rgba(255,255,255,.35);margin-top:.8rem;}
+
+/* FOOTER */
+footer{background:#011a12;color:white;padding:2.5rem 2rem 1.5rem;border-top:3px solid var(--gold-border);}
+.footer-inner{max-width:1200px;margin:0 auto;}
+.footer-logo img{height:46px;width:auto;object-fit:contain;margin-bottom:1.5rem;}
+.footer-bottom{text-align:center;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.38);font-size:.8rem;}
+.footer-bottom span{color:var(--gold);}
+
+/* UTILS */
+.fade-in{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease;}
+.fade-in.visible{opacity:1;transform:none;}
+.fd1{transition-delay:.1s;}.fd2{transition-delay:.2s;}.fd3{transition-delay:.3s;}
+
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:none;}}
+
+/* HIDDEN SECTIONS */
+.pillars-section,.roadmap-section{display:none!important;}
+
+@media(max-width:1024px){.halal-grid{grid-template-columns:1fr;}.archetypes-grid{grid-template-columns:1fr;}}
+@media(max-width:768px){.nav-links{display:none;}.hero-stats{grid-template-columns:repeat(2,1fr);}.swot-grid{grid-template-columns:1fr;}.cld-grid{grid-template-columns:1fr;}.contact-grid{grid-template-columns:1fr;}.agency-grid{grid-template-columns:1fr;}.form-row{grid-template-columns:1fr;}.target-boxes{grid-template-columns:1fr;}}
+@media(max-width:480px){.hero-stats{grid-template-columns:1fr;}.figures-grid{grid-template-columns:1fr;}}
+</style>
 </head>
 <body>
 
-<!-- ===== NAVIGATION ===== -->
+<!-- NAV -->
 <nav id="navbar">
-    <div class="nav-container">
-        <a href="#" class="logo">
-            <img src="https://mtit.bangsamoro.gov.ph/wp-content/uploads/2024/04/MTIT-HEADER-2024.png"
-                 alt="MTIT BARMM"
-                 onerror="this.onerror=null; this.style.display='none'; document.querySelector('.logo-fallback').style.display='flex';">
-            <div class="logo-fallback" style="display:none; align-items:center; gap:0.6rem;">
-                <div style="width:38px;height:38px;background:linear-gradient(135deg,#fbbf24,#d97706);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;color:#022c22;font-size:1rem;">B</div>
-                <span style="color:#fbbf24;font-family:'Cinzel',serif;font-size:1rem;font-weight:700;"> Investment Roadmap</span>
-            </div>
-        </a>
-        <ul class="nav-links">
-            <li><a href="https://asilvainnovations.github.io/barmm-investment-roadmap/roadmap.html">Roadmap</a></li>
-            <li><a href="#swot">SWOT</a></li>
-            <li><a href="#systems">Systems</a></li>
-            <li><a href="#halal">Halal</a></li>
-            <li><a href="#implementation">Implementation</a></li>
-        </ul>
-        <a href="#contact" class="cta-button">Invest Now</a>
-    </div>
+  <div class="nav-container">
+    <a href="#" class="logo">
+      <img src="https://mtit.bangsamoro.gov.ph/wp-content/uploads/2024/04/MTIT-HEADER-2024.png" alt="MTIT BARMM">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#figures">Overview</a></li>
+      <li><a href="#roadmap">Agenda</a></li>
+      <li><a href="#swot">SWOT</a></li>
+      <li><a href="#systems">Systems</a></li>
+      <li><a href="#halal">Halal</a></li>
+    </ul>
+    <a href="#contact" class="cta-btn">Invest Now</a>
+  </div>
 </nav>
 
-<!-- ===== HERO ===== -->
-<section class="hero" id="home">
-    <div class="hero-banner">
-        <img src="https://appimize.app/assets/apps/user_1097/images/a0b8f389890e_227_1097.png"
-             alt="Bangsamoro Banner"
-             onerror="this.style.background='linear-gradient(135deg,#022c22,#064e3b)'; this.style.minHeight='100vh';">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <div class="hero-badge">Investment Roadmap 2026–2035</div>
-            <h1>The Emerging Bangsamoro<br><span class="gold">A Hub for Resilient &amp; Ethical Growth</span></h1>
-            <p class="hero-subtitle">Architecting the Investment Roadmap for Bangsamoro through Systems Thinking, Moral Governance, and Strategic Integration into the Global Halal Economy.</p>
-            <div class="hero-cta">
-                <a href="#roadmap" class="cta-button">Explore the Investment Roadmap</a>
-            </div>
-        </div>
-    </div>
+<!-- BANNER (full-width, no overlay, placed after nav) -->
+<div class="banner-wrap">
+  <img src="https://appimize.app/assets/apps/user_1097/images/a0b8f389890e_227_1097.png" alt="Bangsamoro Banner" onerror="this.style.display='none'">
+</div>
 
-    <!-- Stat cards overlapping hero -->
-    <div class="hero-stats" id="hero-stats">
-        <div class="stat-card">
-            <span class="stat-number">7.5%</span>
-            <span class="stat-label">GRDP Growth (2022)</span>
-        </div>
-        <div class="stat-card">
-            <span class="stat-number">52.6%→23.5%</span>
-            <span class="stat-label">Poverty Reduction 2018–2023</span>
-        </div>
-        <div class="stat-card">
-            <span class="stat-number">$2T+</span>
-            <span class="stat-label">Global Halal Market</span>
-        </div>
-        <div class="stat-card">
-            <span class="stat-number">70M+</span>
-            <span class="stat-label">BIMP-EAGA Consumers</span>
-        </div>
-    </div>
-</section>
+<!-- HERO CONTENT -->
+<div class="hero-content">
+  <div class="hero-badge">Investment Roadmap 2026–2035</div>
+  <h1>The Emerging Bangsamoro<br><span class="gold">A Hub for Resilient &amp; Ethical Growth</span></h1>
+  <p class="hero-sub">Architecting the Investment Roadmap for Bangsamoro through Systems Thinking, Moral Governance, and Strategic Integration into the Global Halal Economy.</p>
+  <a href="#roadmap" class="cta-btn" style="font-size:1rem;padding:1rem 2.5rem;">Explore the Roadmap</a>
+  <div class="hero-stats">
+    <div class="stat-card"><span class="stat-num">7.5%</span><span class="stat-lbl">GRDP Growth (2022)</span></div>
+    <div class="stat-card"><span class="stat-num">52.6%→23.5%</span><span class="stat-lbl">Poverty Reduction 2018–2023</span></div>
+    <div class="stat-card"><span class="stat-num">$2T+</span><span class="stat-lbl">Global Halal Market</span></div>
+    <div class="stat-card"><span class="stat-num">70M+</span><span class="stat-lbl">BIMP-EAGA Consumers</span></div>
+  </div>
+</div>
 
-<!-- ===== KEY FIGURES (Animated) ===== -->
+<!-- KEY FIGURES (animated) -->
 <section class="figures-section" id="figures">
-    <div class="container">
-        <div class="section-header fade-in">
-            <span class="section-label">Economic Indicators</span>
-            <h2 class="white" style="font-family:'Cinzel',serif;">Key Economic Figures</h2>
-            <div class="section-divider"></div>
-            <p class="light">Real data underpinning Bangsamoro's remarkable development trajectory.</p>
-        </div>
-        <div class="figures-grid">
-            <div class="figure-card fade-in fade-in-delay-1">
-                <span class="figure-number" data-target="299.5" data-suffix="B" data-prefix="₱" data-decimals="1">₱0B</span>
-                <span class="figure-label">GRDP 2024</span>
-                <div class="figure-context">Regional Economy Expansion</div>
-            </div>
-            <div class="figure-card fade-in fade-in-delay-2">
-                <span class="figure-number" data-target="94.2" data-suffix="%" data-prefix="" data-decimals="1">0%</span>
-                <span class="figure-label">Employment Rate</span>
-                <div class="figure-context">Post-Pandemic Recovery 2022</div>
-            </div>
-            <div class="figure-card fade-in fade-in-delay-3">
-                <span class="figure-number" data-target="71" data-suffix="B" data-prefix="₱" data-decimals="0">₱0B</span>
-                <span class="figure-label">Social Welfare Investment</span>
-                <div class="figure-context">Investment in Human Capital</div>
-            </div>
-            <div class="figure-card fade-in fade-in-delay-1">
-                <span class="figure-number" data-target="8" data-suffix="-9%" data-prefix="" data-decimals="0">0%</span>
-                <span class="figure-label">Target Annual Growth</span>
-                <div class="figure-context">2023–2028 Development Plan</div>
-            </div>
-            <div class="figure-card fade-in fade-in-delay-2">
-                <span class="figure-number" data-target="3.5" data-suffix="B" data-prefix="₱" data-decimals="1">₱0B</span>
-                <span class="figure-label">New Investments 2024</span>
-                <div class="figure-context">BBOI / BEZA Facilitated</div>
-            </div>
-            <div class="figure-card fade-in fade-in-delay-3">
-                <span class="figure-number" data-target="23.5" data-suffix="%" data-prefix="" data-decimals="1">0%</span>
-                <span class="figure-label">Poverty Rate (2023)</span>
-                <div class="figure-context">Down from 55.9% in 2018</div>
-            </div>
-        </div>
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-label" style="color:var(--gold);">Economic Indicators</span>
+      <h2 class="white">Key Economic Figures</h2>
+      <div class="section-divider"></div>
+      <p class="light">Real data underpinning Bangsamoro's remarkable development trajectory.</p>
     </div>
+    <div class="figures-grid">
+      <div class="figure-card fade-in fd1"><span class="figure-number" data-target="299.5" data-prefix="₱" data-suffix="B" data-dec="1">₱0B</span><span class="figure-label">GRDP 2024</span><div class="figure-context">Regional Economy Expansion</div></div>
+      <div class="figure-card fade-in fd2"><span class="figure-number" data-target="94.2" data-prefix="" data-suffix="%" data-dec="1">0%</span><span class="figure-label">Employment Rate</span><div class="figure-context">Post-Pandemic Recovery 2022</div></div>
+      <div class="figure-card fade-in fd3"><span class="figure-number" data-target="71" data-prefix="₱" data-suffix="B" data-dec="0">₱0B</span><span class="figure-label">Social Welfare</span><div class="figure-context">Investment in Human Capital</div></div>
+      <div class="figure-card fade-in fd1"><span class="figure-number" data-target="8" data-prefix="" data-suffix="-9%" data-dec="0">0%</span><span class="figure-label">Target Growth Rate</span><div class="figure-context">Annual Target 2023–2028</div></div>
+      <div class="figure-card fade-in fd2"><span class="figure-number" data-target="3.5" data-prefix="₱" data-suffix="B" data-dec="1">₱0B</span><span class="figure-label">New Investments 2024</span><div class="figure-context">BBOI / BEZA Facilitated</div></div>
+      <div class="figure-card fade-in fd3"><span class="figure-number" data-target="23.5" data-prefix="" data-suffix="%" data-dec="1">0%</span><span class="figure-label">Poverty Rate 2023</span><div class="figure-context">Down from 55.9% in 2018</div></div>
+    </div>
+  </div>
 </section>
 
-<!-- ===== 12-POINT PRIORITY AGENDA ===== -->
+<!-- 12-POINT AGENDA -->
 <section class="priority-section" id="roadmap">
-    <div class="container">
-        <div class="section-header fade-in">
-            <span class="section-label">Strategic Framework</span>
-            <h2>12-Point Priority Agenda</h2>
-            <div class="section-divider"></div>
-            <p>The 2nd Bangsamoro Development Plan (2023–2028) targets 8–9% annual growth, driven by a deliberate shift from post-conflict instability to structured, systemic governance.</p>
-        </div>
-
-        <div class="agenda-image-wrapper fade-in">
-            <img src="https://appimize.app/assets/apps/user_1097/images/fe2918d8579b_762_1097.png"
-                 alt="12-Point Priority Agenda"
-                 onerror="this.parentElement.style.display='none';">
-        </div>
-
-        <div class="agenda-grid">
-            <div class="agenda-card fade-in fade-in-delay-1">
-                <div class="agenda-icon">⚡</div>
-                <h3>Energy Security</h3>
-                <p>Sustainable energy master plan targeting 80–100% electrification by 2028.</p>
-            </div>
-            <div class="agenda-card fade-in fade-in-delay-2">
-                <div class="agenda-icon">🌾</div>
-                <h3>Agri-Fishery Productivity</h3>
-                <p>Food security through modernized farming and fisheries development.</p>
-            </div>
-            <div class="agenda-card fade-in fade-in-delay-3">
-                <div class="agenda-icon">🏗️</div>
-                <h3>Strategic Infrastructure</h3>
-                <p>Investment in transportation, communication, and connectivity networks.</p>
-            </div>
-            <div class="agenda-card fade-in fade-in-delay-1">
-                <div class="agenda-icon">💰</div>
-                <h3>Revenue Generation</h3>
-                <p>Competitive advantage through fiscal autonomy and resource mobilization.</p>
-            </div>
-            <div class="agenda-card fade-in fade-in-delay-2">
-                <div class="agenda-icon">🌐</div>
-                <h3>Digital Infrastructure</h3>
-                <p>E-Governance master plan bridging the digital divide for efficient governance.</p>
-            </div>
-            <div class="agenda-card fade-in fade-in-delay-3">
-                <div class="agenda-icon">🏛️</div>
-                <h3>Stronger Bureaucracy</h3>
-                <p>Capacity building and institutional strengthening for moral governance.</p>
-            </div>
-            <div class="agenda-card fade-in fade-in-delay-1">
-                <div class="agenda-icon">🕌</div>
-                <h3>Culture &amp; Heritage</h3>
-                <p>Preservation of Bangsamoro identity and cultural diversity.</p>
-            </div>
-            <div class="agenda-card fade-in fade-in-delay-2">
-                <div class="agenda-icon">☮️</div>
-                <h3>Peace &amp; Security</h3>
-                <p>Justice system enhancement and normalization process completion.</p>
-            </div>
-            <div class="agenda-card fade-in fade-in-delay-3">
-                <div class="agenda-icon">🤝</div>
-                <h3>Moral Rehabilitation</h3>
-                <p>Support for moral governance and community reconciliation.</p>
-            </div>
-            <div class="agenda-card fade-in fade-in-delay-1">
-                <div class="agenda-icon">📚</div>
-                <h3>Quality Education</h3>
-                <p>Holistic education system aligning with industry demands.</p>
-            </div>
-            <div class="agenda-card fade-in fade-in-delay-2">
-                <div class="agenda-icon">🌊</div>
-                <h3>Climate Adaptation</h3>
-                <p>Disaster resilience and climate change adaptation strategies.</p>
-            </div>
-            <div class="agenda-card fade-in fade-in-delay-3">
-                <div class="agenda-icon">🏥</div>
-                <h3>Universal Healthcare</h3>
-                <p>Social protection and healthcare system strengthening.</p>
-            </div>
-        </div>
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-label">Strategic Framework</span>
+      <h2>12-Point Priority Agenda</h2>
+      <div class="section-divider"></div>
+      <p>The 2nd Bangsamoro Development Plan (2023–2028) targets 8–9% annual growth, driven by a deliberate shift from post-conflict instability to structured, systemic governance.</p>
     </div>
+    <div class="agenda-image-wrap fade-in">
+      <img src="https://appimize.app/assets/apps/user_1097/images/fe2918d8579b_762_1097.png" alt="12-Point Priority Agenda" onerror="this.parentElement.style.display='none'">
+    </div>
+    <div class="agenda-grid">
+      <div class="agenda-card fade-in fd1"><div class="agenda-icon">⚡</div><h3>Energy Security</h3><p>Sustainable energy master plan targeting 80–100% electrification by 2028.</p></div>
+      <div class="agenda-card fade-in fd2"><div class="agenda-icon">🌾</div><h3>Agri-Fishery Productivity</h3><p>Food security through modernized farming and fisheries development.</p></div>
+      <div class="agenda-card fade-in fd3"><div class="agenda-icon">🏗️</div><h3>Strategic Infrastructure</h3><p>Investment in transportation, communication, and connectivity networks.</p></div>
+      <div class="agenda-card fade-in fd1"><div class="agenda-icon">💰</div><h3>Revenue Generation</h3><p>Competitive advantage through fiscal autonomy and resource mobilization.</p></div>
+      <div class="agenda-card fade-in fd2"><div class="agenda-icon">🌐</div><h3>Digital Infrastructure</h3><p>E-Governance master plan bridging the digital divide for efficient governance.</p></div>
+      <div class="agenda-card fade-in fd3"><div class="agenda-icon">🏛️</div><h3>Stronger Bureaucracy</h3><p>Capacity building and institutional strengthening for moral governance.</p></div>
+      <div class="agenda-card fade-in fd1"><div class="agenda-icon">🕌</div><h3>Culture &amp; Heritage</h3><p>Preservation of Bangsamoro identity and cultural diversity.</p></div>
+      <div class="agenda-card fade-in fd2"><div class="agenda-icon">☮️</div><h3>Peace &amp; Security</h3><p>Justice system enhancement and normalization process completion.</p></div>
+      <div class="agenda-card fade-in fd3"><div class="agenda-icon">🤝</div><h3>Moral Rehabilitation</h3><p>Support for moral governance and community reconciliation.</p></div>
+      <div class="agenda-card fade-in fd1"><div class="agenda-icon">📚</div><h3>Quality Education</h3><p>Holistic education system aligning with industry demands.</p></div>
+      <div class="agenda-card fade-in fd2"><div class="agenda-icon">🌊</div><h3>Climate Adaptation</h3><p>Disaster resilience and climate change adaptation strategies.</p></div>
+      <div class="agenda-card fade-in fd3"><div class="agenda-icon">🏥</div><h3>Universal Healthcare</h3><p>Social protection and healthcare system strengthening.</p></div>
+    </div>
+  </div>
 </section>
 
-<!-- ===== SWOT ===== -->
+<!-- SWOT -->
 <section class="swot-section" id="swot">
-    <div class="container">
-        <div class="section-header fade-in">
-            <span class="section-label" style="color:var(--accent-gold);">Strategic Analysis</span>
-            <h2 class="white">Strategic SWOT Analysis</h2>
-            <div class="section-divider"></div>
-            <p class="light">Dynamic assessment of internal capabilities and external market conditions shaping Bangsamoro's investment climate through 2035.</p>
-        </div>
-
-        <div class="swot-image-wrapper fade-in">
-            <img src="https://appimize.app/assets/apps/user_1097/images/10c7b578bcee_182_1097.png"
-                 alt="SWOT Analysis"
-                 onerror="this.parentElement.style.display='none';">
-        </div>
-
-        <div class="swot-grid">
-            <div class="swot-card strengths fade-in fade-in-delay-1">
-                <h3>💪 Strengths</h3>
-                <ul>
-                    <li>Halal legitimacy &amp; cultural credibility from Islamic heritage</li>
-                    <li>Strategic location in BIMP-EAGA trade corridor</li>
-                    <li>Strong agriculture base (32.4% of GRDP)</li>
-                    <li>Growing policy recognition under BOL</li>
-                    <li>Domestic halal demand (5.69M population)</li>
-                    <li>Moral Governance framework</li>
-                </ul>
-            </div>
-            <div class="swot-card weaknesses fade-in fade-in-delay-2">
-                <h3>⚠️ Weaknesses</h3>
-                <ul>
-                    <li>Weak certification system infrastructure</li>
-                    <li>Fragmented policy frameworks across ministries</li>
-                    <li>Limited infrastructure (low electrification rates)</li>
-                    <li>Lack of halal experts and technical personnel</li>
-                    <li>Insufficient local raw material production</li>
-                    <li>Skills mismatch in training programs</li>
-                </ul>
-            </div>
-            <div class="swot-card opportunities fade-in fade-in-delay-1">
-                <h3>🚀 Opportunities</h3>
-                <ul>
-                    <li>Expanding global halal market (USD 2T+)</li>
-                    <li>ASEAN integration and standards alignment</li>
-                    <li>Islamic finance ecosystem development</li>
-                    <li>BIMP-EAGA market access (70M+ consumers)</li>
-                    <li>Digital transformation (BEGMP 2024–2033)</li>
-                    <li>Post-conflict reconstruction funding</li>
-                </ul>
-            </div>
-            <div class="swot-card threats fade-in fade-in-delay-2">
-                <h3>⚡ Threats</h3>
-                <ul>
-                    <li>Competition from established halal hubs (Malaysia, Indonesia)</li>
-                    <li>Standards recognition risks (OIC/SMIIC compliance)</li>
-                    <li>Investment perception risks from historical conflict</li>
-                    <li>Climate vulnerabilities (typhoons, flooding)</li>
-                    <li>Political transition uncertainty</li>
-                    <li>Security incidents affecting investor confidence</li>
-                </ul>
-            </div>
-        </div>
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-label" style="color:var(--gold);">Strategic Analysis</span>
+      <h2 class="white">Strategic SWOT Analysis</h2>
+      <div class="section-divider"></div>
+      <p class="light">Dynamic assessment of internal capabilities and external market conditions shaping Bangsamoro's investment climate through 2035.</p>
     </div>
+    <div class="swot-image-wrap fade-in">
+      <img src="https://appimize.app/assets/apps/user_1097/images/10c7b578bcee_182_1097.png" alt="SWOT Analysis" onerror="this.parentElement.style.display='none'">
+    </div>
+    <div class="swot-grid">
+      <div class="swot-card strengths fade-in fd1"><h3>💪 Strengths</h3><ul><li>Halal legitimacy &amp; cultural credibility from Islamic heritage</li><li>Strategic location in BIMP-EAGA trade corridor</li><li>Strong agriculture base (32.4% of GRDP)</li><li>Growing policy recognition under BOL</li><li>Domestic halal demand (5.69M population)</li><li>Moral Governance framework</li></ul></div>
+      <div class="swot-card weaknesses fade-in fd2"><h3>⚠️ Weaknesses</h3><ul><li>Weak certification system infrastructure</li><li>Fragmented policy frameworks across ministries</li><li>Limited infrastructure (low electrification rates)</li><li>Lack of halal experts and technical personnel</li><li>Insufficient local raw material production</li><li>Skills mismatch in training programs</li></ul></div>
+      <div class="swot-card opportunities fade-in fd1"><h3>🚀 Opportunities</h3><ul><li>Expanding global halal market (USD 2T+)</li><li>ASEAN integration and standards alignment</li><li>Islamic finance ecosystem development</li><li>BIMP-EAGA market access (70M+ consumers)</li><li>Digital transformation (BEGMP 2024–2033)</li><li>Post-conflict reconstruction funding</li></ul></div>
+      <div class="swot-card threats fade-in fd2"><h3>⚡ Threats</h3><ul><li>Competition from established halal hubs (Malaysia, Indonesia)</li><li>Standards recognition risks (OIC/SMIIC compliance)</li><li>Investment perception risks from historical conflict</li><li>Climate vulnerabilities (typhoons, flooding)</li><li>Political transition uncertainty</li><li>Security incidents affecting investor confidence</li></ul></div>
+    </div>
+  </div>
 </section>
 
-<!-- ===== SYSTEMS THINKING ===== -->
+<!-- SYSTEMS THINKING -->
 <section class="systems-section" id="systems">
-    <div class="container">
-        <div class="section-header fade-in">
-            <span class="section-label">Analytical Framework</span>
-            <h2>Systems Thinking Analysis</h2>
-            <div class="section-divider"></div>
-            <p>Understanding the dynamic interconnections and feedback loops that shape Bangsamoro's investment climate through Causal Loop Diagrams (CLDs).</p>
-        </div>
-
-        <div class="cld-container fade-in">
-            <h3 style="font-family:'Cinzel',serif;color:var(--primary-green);text-align:center;margin-bottom:0.5rem;">Critical Feedback Loops</h3>
-            <p style="text-align:center;color:var(--text-muted);font-size:0.95rem;margin-bottom:1.5rem;">Four leverage points where strategic interventions create disproportionate impacts</p>
-
-            <div class="cld-grid">
-                <div class="loop-card reinforcing fade-in fade-in-delay-1">
-                    <span class="loop-badge">Reinforcing Loop R1</span>
-                    <h4>Investment-Development Virtuous Cycle</h4>
-                    <div class="flow-item">Investment Inflows <span class="arrow">→</span> Employment Growth</div>
-                    <div class="flow-item">Employment Growth <span class="arrow">→</span> Income Growth</div>
-                    <div class="flow-item">Income Growth <span class="arrow">→</span> Domestic Market Expansion</div>
-                    <div class="flow-item">Market Expansion <span class="arrow">→</span> Business Climate Improvement</div>
-                    <div class="flow-item">Climate Improvement <span class="arrow">→</span> Further Investment</div>
-                </div>
-                <div class="loop-card reinforcing fade-in fade-in-delay-2">
-                    <span class="loop-badge">Reinforcing Loop R2</span>
-                    <h4>Governance-Investor Confidence</h4>
-                    <div class="flow-item">Governance Capacity <span class="arrow">→</span> Policy Clarity</div>
-                    <div class="flow-item">Policy Clarity <span class="arrow">→</span> Investor Confidence</div>
-                    <div class="flow-item">Investor Confidence <span class="arrow">→</span> Investment Inflows</div>
-                    <div class="flow-item">Investment Inflows <span class="arrow">→</span> Tax Revenues</div>
-                    <div class="flow-item">Tax Revenues <span class="arrow">→</span> Enhanced Governance</div>
-                </div>
-                <div class="loop-card balancing fade-in fade-in-delay-1">
-                    <span class="loop-badge">Balancing Loop B1</span>
-                    <h4>Growth-Resource Constraints</h4>
-                    <div class="flow-item">Investment Growth <span class="arrow">→</span> Economic Expansion</div>
-                    <div class="flow-item">Economic Expansion <span class="arrow">→</span> Resource Demand</div>
-                    <div class="flow-item">Resource Demand <span class="arrow">→</span> Infrastructure Bottlenecks</div>
-                    <div class="flow-item">Bottlenecks <span class="arrow">→</span> Skills Shortages</div>
-                    <div class="flow-item">Skills Shortages <span class="arrow">→</span> Growth Limitation</div>
-                </div>
-                <div class="loop-card balancing fade-in fade-in-delay-2">
-                    <span class="loop-badge">Balancing Loop B2</span>
-                    <h4>Security-Investment Tensions</h4>
-                    <div class="flow-item">Security Incidents <span class="arrow">→</span> Investor Caution</div>
-                    <div class="flow-item">Investor Caution <span class="arrow">→</span> Reduced Investment</div>
-                    <div class="flow-item">Reduced Investment <span class="arrow">→</span> Slower Development</div>
-                    <div class="flow-item">Slower Development <span class="arrow">→</span> Social Tensions</div>
-                    <div class="flow-item">Social Tensions <span class="arrow">→</span> Security Challenges</div>
-                </div>
-            </div>
-        </div>
-
-        <div style="margin-top:2.5rem;background:white;border-radius:1rem;padding:2rem;box-shadow:0 4px 20px rgba(0,0,0,0.06);" class="fade-in">
-            <h3 style="font-family:'Cinzel',serif;color:var(--primary-green);margin-bottom:1.25rem;">Systems Archetypes at Play</h3>
-            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem;">
-                <div style="padding:1.4rem;background:linear-gradient(135deg,#fef3c7,#fff);border-radius:0.75rem;border-left:4px solid #f59e0b;">
-                    <h4 style="color:#92400e;margin-bottom:0.5rem;font-family:'Cinzel',serif;font-size:0.95rem;">Limits to Growth</h4>
-                    <p style="font-size:0.88rem;color:#78350f;line-height:1.6;">Infrastructure deficits and skills gaps act as limiting factors. Solution: Proactive investment in enabling infrastructure before growth stalls.</p>
-                </div>
-                <div style="padding:1.4rem;background:linear-gradient(135deg,#dbeafe,#fff);border-radius:0.75rem;border-left:4px solid #3b82f6;">
-                    <h4 style="color:#1e40af;margin-bottom:0.5rem;font-family:'Cinzel',serif;font-size:0.95rem;">Success to Successful</h4>
-                    <p style="font-size:0.88rem;color:#1e3a8a;line-height:1.6;">Risk of halal industry diverting resources from tourism and agribusiness. Solution: Balanced resource allocation across sectors.</p>
-                </div>
-                <div style="padding:1.4rem;background:linear-gradient(135deg,#fee2e2,#fff);border-radius:0.75rem;border-left:4px solid #ef4444;">
-                    <h4 style="color:#991b1b;margin-bottom:0.5rem;font-family:'Cinzel',serif;font-size:0.95rem;">Fixes that Fail</h4>
-                    <p style="font-size:0.88rem;color:#7f1d1d;line-height:1.6;">Ad hoc tax incentives without systemic reform. Solution: Address root causes through governance reforms, not temporary patches.</p>
-                </div>
-            </div>
-        </div>
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-label">Analytical Framework</span>
+      <h2>Systems Thinking Analysis</h2>
+      <div class="section-divider"></div>
+      <p>Causal Loop Diagrams (CLDs) map cause-and-effect relationships, revealing reinforcing (R) and balancing (B) feedback loops — each arrow marked (+) for same-direction or (−) for opposite-direction influence.</p>
     </div>
+
+    <h3 style="font-family:'Cinzel',serif;color:var(--primary-green);font-size:1.3rem;margin-bottom:.5rem;" class="fade-in">Critical Feedback Loops</h3>
+    <p style="color:var(--text-muted);margin-bottom:1.5rem;font-size:.92rem;" class="fade-in">Four leverage points where strategic interventions create disproportionate positive impacts on Bangsamoro's investment climate.</p>
+
+    <div class="cld-grid fade-in">
+
+      <!-- R1: Investment-Development Virtuous Cycle -->
+      <div class="cld-card">
+        <svg viewBox="0 0 500 390" xmlns="http://www.w3.org/2000/svg" aria-label="R1: Investment-Development Virtuous Cycle CLD">
+          <defs>
+            <marker id="arrR" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L10,4 L0,8 Z" fill="#10b981"/></marker>
+          </defs>
+          <rect width="500" height="390" fill="#061810" rx="0"/>
+          <!-- Paths (drawn before nodes) clockwise: N0→N1→N2→N3→N4→N0 -->
+          <!-- N0(250,70) N1(374,157) N2(327,305) N3(173,305) N4(126,157) -->
+          <path d="M 291 99 Q 340 80 333 128" fill="none" stroke="#10b981" stroke-width="2" marker-end="url(#arrR)"/>
+          <path d="M 362 197 Q 393 243 342 257" fill="none" stroke="#10b981" stroke-width="2" marker-end="url(#arrR)"/>
+          <path d="M 277 305 Q 250 348 223 305" fill="none" stroke="#10b981" stroke-width="2" marker-end="url(#arrR)"/>
+          <path d="M 158 257 Q 107 243 141 197" fill="none" stroke="#10b981" stroke-width="2" marker-end="url(#arrR)"/>
+          <path d="M 167 128 Q 160 80 209 99" fill="none" stroke="#10b981" stroke-width="2" marker-end="url(#arrR)"/>
+          <!-- Polarity labels -->
+          <text x="336" y="79" fill="#10b981" font-size="15" font-weight="bold" text-anchor="middle">+</text>
+          <text x="398" y="240" fill="#10b981" font-size="15" font-weight="bold" text-anchor="middle">+</text>
+          <text x="250" y="363" fill="#10b981" font-size="15" font-weight="bold" text-anchor="middle">+</text>
+          <text x="102" y="240" fill="#10b981" font-size="15" font-weight="bold" text-anchor="middle">+</text>
+          <text x="164" y="79" fill="#10b981" font-size="15" font-weight="bold" text-anchor="middle">+</text>
+          <!-- Center loop label -->
+          <circle cx="250" cy="193" r="34" fill="#0a2218" stroke="#10b981" stroke-width="1.5"/>
+          <path d="M234,182 A16,16 0 1,1 266,182" fill="none" stroke="#10b981" stroke-width="1.4" marker-end="url(#arrR)"/>
+          <text x="250" y="200" text-anchor="middle" font-size="17" font-weight="bold" fill="#10b981" font-family="Georgia,serif">R1</text>
+          <!-- Nodes -->
+          <circle cx="250" cy="70" r="42" fill="#064e3b" stroke="#10b981" stroke-width="1.5"/>
+          <text x="250" y="66" text-anchor="middle" font-size="9.5" fill="white" font-family="DM Sans,sans-serif">Investment</text>
+          <text x="250" y="79" text-anchor="middle" font-size="9.5" fill="white" font-family="DM Sans,sans-serif">Inflows</text>
+          <circle cx="374" cy="157" r="42" fill="#064e3b" stroke="#10b981" stroke-width="1.5"/>
+          <text x="374" y="153" text-anchor="middle" font-size="9.5" fill="white" font-family="DM Sans,sans-serif">Employment</text>
+          <text x="374" y="166" text-anchor="middle" font-size="9.5" fill="white" font-family="DM Sans,sans-serif">Growth</text>
+          <circle cx="327" cy="305" r="42" fill="#064e3b" stroke="#10b981" stroke-width="1.5"/>
+          <text x="327" y="301" text-anchor="middle" font-size="9.5" fill="white" font-family="DM Sans,sans-serif">Income</text>
+          <text x="327" y="314" text-anchor="middle" font-size="9.5" fill="white" font-family="DM Sans,sans-serif">Growth</text>
+          <circle cx="173" cy="305" r="42" fill="#064e3b" stroke="#10b981" stroke-width="1.5"/>
+          <text x="173" y="301" text-anchor="middle" font-size="9.5" fill="white" font-family="DM Sans,sans-serif">Domestic</text>
+          <text x="173" y="314" text-anchor="middle" font-size="9.5" fill="white" font-family="DM Sans,sans-serif">Market</text>
+          <circle cx="126" cy="157" r="42" fill="#064e3b" stroke="#10b981" stroke-width="1.5"/>
+          <text x="126" y="153" text-anchor="middle" font-size="9.5" fill="white" font-family="DM Sans,sans-serif">Business</text>
+          <text x="126" y="166" text-anchor="middle" font-size="9.5" fill="white" font-family="DM Sans,sans-serif">Climate</text>
+          <!-- Title -->
+          <text x="250" y="378" text-anchor="middle" font-size="10.5" fill="#6ee7b7" font-family="DM Sans,sans-serif" font-style="italic">R1: Investment-Development Virtuous Cycle</text>
+        </svg>
+      </div>
+
+      <!-- R2: Governance-Investor Confidence -->
+      <div class="cld-card">
+        <svg viewBox="0 0 500 390" xmlns="http://www.w3.org/2000/svg" aria-label="R2: Governance-Investor Confidence CLD">
+          <defs>
+            <marker id="arrR2" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L10,4 L0,8 Z" fill="#10b981"/></marker>
+          </defs>
+          <rect width="500" height="390" fill="#061810" rx="0"/>
+          <path d="M 291 99 Q 340 80 333 128" fill="none" stroke="#10b981" stroke-width="2" marker-end="url(#arrR2)"/>
+          <path d="M 362 197 Q 393 243 342 257" fill="none" stroke="#10b981" stroke-width="2" marker-end="url(#arrR2)"/>
+          <path d="M 277 305 Q 250 348 223 305" fill="none" stroke="#10b981" stroke-width="2" marker-end="url(#arrR2)"/>
+          <path d="M 158 257 Q 107 243 141 197" fill="none" stroke="#10b981" stroke-width="2" marker-end="url(#arrR2)"/>
+          <path d="M 167 128 Q 160 80 209 99" fill="none" stroke="#10b981" stroke-width="2" marker-end="url(#arrR2)"/>
+          <text x="336" y="79" fill="#10b981" font-size="15" font-weight="bold" text-anchor="middle">+</text>
+          <text x="398" y="240" fill="#10b981" font-size="15" font-weight="bold" text-anchor="middle">+</text>
+          <text x="250" y="363" fill="#10b981" font-size="15" font-weight="bold" text-anchor="middle">+</text>
+          <text x="102" y="240" fill="#10b981" font-size="15" font-weight="bold" text-anchor="middle">+</text>
+          <text x="164" y="79" fill="#10b981" font-size="15" font-weight="bold" text-anchor="middle">+</text>
+          <circle cx="250" cy="193" r="34" fill="#0a2218" stroke="#10b981" stroke-width="1.5"/>
+          <path d="M234,182 A16,16 0 1,1 266,182" fill="none" stroke="#10b981" stroke-width="1.4" marker-end="url(#arrR2)"/>
+          <text x="250" y="200" text-anchor="middle" font-size="17" font-weight="bold" fill="#10b981" font-family="Georgia,serif">R2</text>
+          <!-- Nodes -->
+          <circle cx="250" cy="70" r="42" fill="#064e3b" stroke="#10b981" stroke-width="1.5"/>
+          <text x="250" y="66" text-anchor="middle" font-size="9.5" fill="white" font-family="DM Sans,sans-serif">Governance</text>
+          <text x="250" y="79" text-anchor="middle" font-size="9.5" fill="white" font-family="DM Sans,sans-serif">Capacity</text>
+          <circle cx="374" cy="157" r="42" fill="#064e3b" stroke="#10b981" stroke-width="1.5"/>
+          <text x="374" y="153" text-anchor="middle" font-size="9.5" fill="white" font-family="DM Sans,sans-serif">Policy</text>
+          <text x="374" y="166" text-anchor="middle" font-size="9.5" fill="white" font-family="DM Sans,sans-serif">Clarity</text>
+          <circle cx="327" cy="305" r="42" fill="#064e3b" stroke="#10b981" stroke-width="1.5"/>
+          <text x="327" y="301" text-anchor="middle" font-size="9.5" fill="white" font-family="DM Sans,sans-serif">Investor</text>
+          <text x="327" y="314" text-anchor="middle" font-size="9.5" fill="white" font-family="DM Sans,sans-serif">Confidence</text>
+          <circle cx="173" cy="305" r="42" fill="#064e3b" stroke="#10b981" stroke-width="1.5"/>
+          <text x="173" y="301" text-anchor="middle" font-size="9.5" fill="white" font-family="DM Sans,sans-serif">Investment</text>
+          <text x="173" y="314" text-anchor="middle" font-size="9.5" fill="white" font-family="DM Sans,sans-serif">Inflows</text>
+          <circle cx="126" cy="157" r="42" fill="#064e3b" stroke="#10b981" stroke-width="1.5"/>
+          <text x="126" y="153" text-anchor="middle" font-size="9.5" fill="white" font-family="DM Sans,sans-serif">Tax</text>
+          <text x="126" y="166" text-anchor="middle" font-size="9.5" fill="white" font-family="DM Sans,sans-serif">Revenues</text>
+          <text x="250" y="378" text-anchor="middle" font-size="10.5" fill="#6ee7b7" font-family="DM Sans,sans-serif" font-style="italic">R2: Governance–Investor Confidence Loop</text>
+        </svg>
+      </div>
+
+      <!-- B1: Growth-Resource Constraints -->
+      <div class="cld-card">
+        <svg viewBox="0 0 500 390" xmlns="http://www.w3.org/2000/svg" aria-label="B1: Growth-Resource Constraints CLD">
+          <defs>
+            <marker id="arrB1p" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L10,4 L0,8 Z" fill="#C9A84C"/></marker>
+            <marker id="arrB1n" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L10,4 L0,8 Z" fill="#ef4444"/></marker>
+          </defs>
+          <rect width="500" height="390" fill="#061810" rx="0"/>
+          <!-- N0→N1, N1→N2, N2→N3, N3→N4: all + (gold) -->
+          <path d="M 291 99 Q 340 80 333 128" fill="none" stroke="#C9A84C" stroke-width="2" marker-end="url(#arrB1p)"/>
+          <path d="M 362 197 Q 393 243 342 257" fill="none" stroke="#C9A84C" stroke-width="2" marker-end="url(#arrB1p)"/>
+          <path d="M 277 305 Q 250 348 223 305" fill="none" stroke="#C9A84C" stroke-width="2" marker-end="url(#arrB1p)"/>
+          <path d="M 158 257 Q 107 243 141 197" fill="none" stroke="#C9A84C" stroke-width="2" marker-end="url(#arrB1p)"/>
+          <!-- N4→N0: NEGATIVE (red) -->
+          <path d="M 167 128 Q 160 80 209 99" fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrB1n)"/>
+          <!-- Polarity labels -->
+          <text x="336" y="79" fill="#C9A84C" font-size="15" font-weight="bold" text-anchor="middle">+</text>
+          <text x="398" y="240" fill="#C9A84C" font-size="15" font-weight="bold" text-anchor="middle">+</text>
+          <text x="250" y="363" fill="#C9A84C" font-size="15" font-weight="bold" text-anchor="middle">+</text>
+          <text x="102" y="240" fill="#C9A84C" font-size="15" font-weight="bold" text-anchor="middle">+</text>
+          <text x="164" y="76" fill="#ef4444" font-size="15" font-weight="bold" text-anchor="middle">−</text>
+          <!-- Center loop label -->
+          <circle cx="250" cy="193" r="34" fill="#0a1a14" stroke="#C9A84C" stroke-width="1.5"/>
+          <path d="M234,182 A16,16 0 1,0 266,182" fill="none" stroke="#C9A84C" stroke-width="1.4" marker-end="url(#arrB1p)"/>
+          <text x="250" y="200" text-anchor="middle" font-size="17" font-weight="bold" fill="#C9A84C" font-family="Georgia,serif">B1</text>
+          <!-- Nodes -->
+          <circle cx="250" cy="70" r="42" fill="#2a1a05" stroke="#C9A84C" stroke-width="1.5"/>
+          <text x="250" y="66" text-anchor="middle" font-size="9.5" fill="white" font-family="DM Sans,sans-serif">Investment</text>
+          <text x="250" y="79" text-anchor="middle" font-size="9.5" fill="white" font-family="DM Sans,sans-serif">Growth</text>
+          <circle cx="374" cy="157" r="42" fill="#2a1a05" stroke="#C9A84C" stroke-width="1.5"/>
+          <text x="374" y="153" text-anchor="middle" font-size="9.5" fill="white" font-family="DM Sans,sans-serif">Economic</text>
+          <text x="374" y="166" text-anchor="middle" font-size="9.5" fill="white" font-family="DM Sans,sans-serif">Expansion</text>
+          <circle cx="327" cy="305" r="42" fill="#2a1a05" stroke="#C9A84C" stroke-width="1.5"/>
+          <text x="327" y="301" text-anchor="middle" font-size="9.5" fill="white" font-family="DM Sans,sans-serif">Resource</text>
+          <text x="327" y="314" text-anchor="middle" font-size="9.5" fill="white" font-family="DM Sans,sans-serif">Demand</text>
+          <circle cx="173" cy="305" r="42" fill="#2a1a05" stroke="#C9A84C" stroke-width="1.5"/>
+          <text x="173" y="301" text-anchor="middle" font-size="9.5" fill="white" font-family="DM Sans,sans-serif">Infra</text>
+          <text x="173" y="314" text-anchor="middle" font-size="9.5" fill="white" font-family="DM Sans,sans-serif">Bottlenecks</text>
+          <circle cx="126" cy="157" r="42" fill="#2a1a05" stroke="#C9A84C" stroke-width="1.5"/>
+          <text x="126" y="153" text-anchor="middle" font-size="9.5" fill="white" font-family="DM Sans,sans-serif">Skills</text>
+          <text x="126" y="166" text-anchor="middle" font-size="9.5" fill="white" font-family="DM Sans,sans-serif">Shortages</text>
+          <text x="250" y="378" text-anchor="middle" font-size="10.5" fill="#C9A84C" font-family="DM Sans,sans-serif" font-style="italic">B1: Growth–Resource Constraints</text>
+        </svg>
+      </div>
+
+      <!-- B2: Security-Investment Tensions -->
+      <div class="cld-card">
+        <svg viewBox="0 0 500 390" xmlns="http://www.w3.org/2000/svg" aria-label="B2: Security-Investment Tensions CLD">
+          <defs>
+            <marker id="arrB2p" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L10,4 L0,8 Z" fill="#C9A84C"/></marker>
+            <marker id="arrB2n" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L10,4 L0,8 Z" fill="#ef4444"/></marker>
+          </defs>
+          <rect width="500" height="390" fill="#061810" rx="0"/>
+          <path d="M 291 99 Q 340 80 333 128" fill="none" stroke="#C9A84C" stroke-width="2" marker-end="url(#arrB2p)"/>
+          <path d="M 362 197 Q 393 243 342 257" fill="none" stroke="#C9A84C" stroke-width="2" marker-end="url(#arrB2p)"/>
+          <path d="M 277 305 Q 250 348 223 305" fill="none" stroke="#C9A84C" stroke-width="2" marker-end="url(#arrB2p)"/>
+          <path d="M 158 257 Q 107 243 141 197" fill="none" stroke="#C9A84C" stroke-width="2" marker-end="url(#arrB2p)"/>
+          <path d="M 167 128 Q 160 80 209 99" fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrB2n)"/>
+          <text x="336" y="79" fill="#C9A84C" font-size="15" font-weight="bold" text-anchor="middle">+</text>
+          <text x="398" y="240" fill="#C9A84C" font-size="15" font-weight="bold" text-anchor="middle">+</text>
+          <text x="250" y="363" fill="#C9A84C" font-size="15" font-weight="bold" text-anchor="middle">+</text>
+          <text x="102" y="240" fill="#C9A84C" font-size="15" font-weight="bold" text-anchor="middle">+</text>
+          <text x="164" y="76" fill="#ef4444" font-size="15" font-weight="bold" text-anchor="middle">−</text>
+          <circle cx="250" cy="193" r="34" fill="#0a1a14" stroke="#C9A84C" stroke-width="1.5"/>
+          <path d="M234,182 A16,16 0 1,0 266,182" fill="none" stroke="#C9A84C" stroke-width="1.4" marker-end="url(#arrB2p)"/>
+          <text x="250" y="200" text-anchor="middle" font-size="17" font-weight="bold" fill="#C9A84C" font-family="Georgia,serif">B2</text>
+          <!-- Nodes -->
+          <circle cx="250" cy="70" r="42" fill="#2a1a05" stroke="#C9A84C" stroke-width="1.5"/>
+          <text x="250" y="66" text-anchor="middle" font-size="9.5" fill="white" font-family="DM Sans,sans-serif">Security</text>
+          <text x="250" y="79" text-anchor="middle" font-size="9.5" fill="white" font-family="DM Sans,sans-serif">Incidents</text>
+          <circle cx="374" cy="157" r="42" fill="#2a1a05" stroke="#C9A84C" stroke-width="1.5"/>
+          <text x="374" y="153" text-anchor="middle" font-size="9.5" fill="white" font-family="DM Sans,sans-serif">Investor</text>
+          <text x="374" y="166" text-anchor="middle" font-size="9.5" fill="white" font-family="DM Sans,sans-serif">Caution</text>
+          <circle cx="327" cy="305" r="42" fill="#2a1a05" stroke="#C9A84C" stroke-width="1.5"/>
+          <text x="327" y="301" text-anchor="middle" font-size="9.5" fill="white" font-family="DM Sans,sans-serif">Reduced</text>
+          <text x="327" y="314" text-anchor="middle" font-size="9.5" fill="white" font-family="DM Sans,sans-serif">Investment</text>
+          <circle cx="173" cy="305" r="42" fill="#2a1a05" stroke="#C9A84C" stroke-width="1.5"/>
+          <text x="173" y="301" text-anchor="middle" font-size="9.5" fill="white" font-family="DM Sans,sans-serif">Slower</text>
+          <text x="173" y="314" text-anchor="middle" font-size="9.5" fill="white" font-family="DM Sans,sans-serif">Development</text>
+          <circle cx="126" cy="157" r="42" fill="#2a1a05" stroke="#C9A84C" stroke-width="1.5"/>
+          <text x="126" y="153" text-anchor="middle" font-size="9.5" fill="white" font-family="DM Sans,sans-serif">Social</text>
+          <text x="126" y="166" text-anchor="middle" font-size="9.5" fill="white" font-family="DM Sans,sans-serif">Tensions</text>
+          <text x="250" y="378" text-anchor="middle" font-size="10.5" fill="#C9A84C" font-family="DM Sans,sans-serif" font-style="italic">B2: Security–Investment Tensions</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- CLD Legend -->
+    <div class="cld-legend fade-in">
+      <div class="legend-item"><div class="legend-dot" style="background:#10b981;"></div>Reinforcing Loop (R) — amplifies change</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#C9A84C;"></div>Balancing Loop (B) — seeks equilibrium</div>
+      <div class="legend-item"><span style="color:#10b981;font-weight:700;font-size:1rem;">+</span>&nbsp;Same-direction polarity</div>
+      <div class="legend-item"><span style="color:#ef4444;font-weight:700;font-size:1rem;">−</span>&nbsp;Opposite-direction polarity</div>
+      <div class="legend-item"><svg width="30" height="8"><line x1="0" y1="4" x2="24" y2="4" stroke="#ef4444" stroke-width="2" stroke-dasharray="5,3"/></svg>&nbsp;Constraining (negative) link</div>
+    </div>
+
+    <!-- SYSTEMS ARCHETYPES -->
+    <div style="margin-top:3.5rem;">
+      <h3 style="font-family:'Cinzel',serif;color:var(--primary-green);font-size:1.3rem;margin-bottom:.5rem;" class="fade-in">Systems Archetypes at Play</h3>
+      <p style="color:var(--text-muted);margin-bottom:1.5rem;font-size:.92rem;" class="fade-in">Recurring structural patterns that reveal the underlying dynamics causing observed behaviour — identifying these archetypes guides effective leverage-point interventions.</p>
+    </div>
+
+    <div class="archetypes-grid fade-in">
+
+      <!-- Archetype 1: Limits to Growth -->
+      <div class="archetype-card">
+        <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" aria-label="Limits to Growth archetype">
+          <defs>
+            <marker id="aG" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 Z" fill="#10b981"/></marker>
+            <marker id="aB" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 Z" fill="#C9A84C"/></marker>
+            <marker id="aN" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 Z" fill="#ef4444"/></marker>
+          </defs>
+          <rect width="400" height="240" fill="#061810"/>
+          <!-- Three nodes: A(100,120) B(200,55) C(300,120) -->
+          <!-- R loop arrows: A→B (+), B→A (+) -->
+          <path d="M 136 100 Q 168 55 175 80" fill="none" stroke="#10b981" stroke-width="1.8" marker-end="url(#aG)"/>
+          <path d="M 225 80 Q 232 55 264 100" fill="none" stroke="#10b981" stroke-width="1.8" marker-end="url(#aG)"/>
+          <!-- B loop arrows: B→C (+), C→A (−) via bottom -->
+          <path d="M 232 83 Q 270 75 270 118" fill="none" stroke="#C9A84C" stroke-width="1.8" marker-end="url(#aB)"/>
+          <path d="M 270 142 Q 200 210 130 142" fill="none" stroke="#ef4444" stroke-width="1.8" stroke-dasharray="5,3" marker-end="url(#aN)"/>
+          <!-- Delay marker on B→C -->
+          <line x1="256" y1="83" x2="260" y2="95" stroke="#C9A84C" stroke-width="3"/>
+          <!-- R loop label -->
+          <circle cx="168" cy="130" r="18" fill="#0a1810" stroke="#10b981" stroke-width="1.2"/>
+          <text x="168" y="136" text-anchor="middle" font-size="13" font-weight="bold" fill="#10b981" font-family="Georgia,serif">R</text>
+          <!-- B loop label -->
+          <circle cx="232" cy="170" r="18" fill="#0a1810" stroke="#C9A84C" stroke-width="1.2"/>
+          <text x="232" y="176" text-anchor="middle" font-size="13" font-weight="bold" fill="#C9A84C" font-family="Georgia,serif">B</text>
+          <!-- Polarity labels -->
+          <text x="147" y="66" fill="#10b981" font-size="12" font-weight="bold">+</text>
+          <text x="253" y="66" fill="#10b981" font-size="12" font-weight="bold">+</text>
+          <text x="281" y="110" fill="#C9A84C" font-size="12" font-weight="bold">+</text>
+          <text x="188" y="218" fill="#ef4444" font-size="12" font-weight="bold">−</text>
+          <!-- Delay tick -->
+          <text x="256" y="73" fill="#C9A84C" font-size="9">delay</text>
+          <!-- Node A -->
+          <ellipse cx="100" cy="120" rx="50" ry="24" fill="#064e3b" stroke="#10b981" stroke-width="1.4"/>
+          <text x="100" y="117" text-anchor="middle" font-size="8.5" fill="white" font-family="DM Sans,sans-serif">Investment</text>
+          <text x="100" y="128" text-anchor="middle" font-size="8.5" fill="white" font-family="DM Sans,sans-serif">Activity</text>
+          <!-- Node B -->
+          <ellipse cx="200" cy="55" rx="50" ry="24" fill="#064e3b" stroke="#10b981" stroke-width="1.4"/>
+          <text x="200" y="52" text-anchor="middle" font-size="8.5" fill="white" font-family="DM Sans,sans-serif">Economic</text>
+          <text x="200" y="63" text-anchor="middle" font-size="8.5" fill="white" font-family="DM Sans,sans-serif">Growth</text>
+          <!-- Node C -->
+          <ellipse cx="300" cy="120" rx="52" ry="24" fill="#2a1a05" stroke="#C9A84C" stroke-width="1.4"/>
+          <text x="300" y="117" text-anchor="middle" font-size="8.5" fill="white" font-family="DM Sans,sans-serif">Infrastructure</text>
+          <text x="300" y="128" text-anchor="middle" font-size="8.5" fill="white" font-family="DM Sans,sans-serif">Gap</text>
+        </svg>
+        <div class="arch-desc">
+          <h4>Limits to Growth</h4>
+          <p>A reinforcing loop (R) drives growth until a balancing loop (B) activates via infrastructure gaps and skills shortages — constraining further expansion. <strong>Leverage:</strong> invest in enabling infrastructure before growth plateaus.</p>
+        </div>
+      </div>
+
+      <!-- Archetype 2: Success to the Successful -->
+      <div class="archetype-card">
+        <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" aria-label="Success to the Successful archetype">
+          <defs>
+            <marker id="aRA" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 Z" fill="#10b981"/></marker>
+            <marker id="aRB" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 Z" fill="#C9A84C"/></marker>
+            <marker id="aRN" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 Z" fill="#ef4444"/></marker>
+          </defs>
+          <rect width="400" height="240" fill="#061810"/>
+          <!-- Center resource pool -->
+          <ellipse cx="200" cy="120" rx="44" ry="20" fill="#1a1a2e" stroke="#9ca3af" stroke-width="1.2"/>
+          <text x="200" y="117" text-anchor="middle" font-size="8" fill="#9ca3af" font-family="DM Sans,sans-serif">Limited</text>
+          <text x="200" y="128" text-anchor="middle" font-size="8" fill="#9ca3af" font-family="DM Sans,sans-serif">Resources</text>
+          <!-- Left cluster: Halal Industry -->
+          <ellipse cx="80" cy="70" rx="48" ry="22" fill="#064e3b" stroke="#10b981" stroke-width="1.3"/>
+          <text x="80" y="67" text-anchor="middle" font-size="8" fill="white" font-family="DM Sans,sans-serif">Halal</text>
+          <text x="80" y="78" text-anchor="middle" font-size="8" fill="white" font-family="DM Sans,sans-serif">Industry</text>
+          <ellipse cx="80" cy="185" rx="48" ry="22" fill="#064e3b" stroke="#10b981" stroke-width="1.3"/>
+          <text x="80" y="181" text-anchor="middle" font-size="8" fill="white" font-family="DM Sans,sans-serif">Halal</text>
+          <text x="80" y="192" text-anchor="middle" font-size="8" fill="white" font-family="DM Sans,sans-serif">Success</text>
+          <!-- Right cluster: Other Sectors -->
+          <ellipse cx="320" cy="70" rx="52" ry="22" fill="#2a1a05" stroke="#C9A84C" stroke-width="1.3"/>
+          <text x="320" y="67" text-anchor="middle" font-size="8" fill="white" font-family="DM Sans,sans-serif">Other</text>
+          <text x="320" y="78" text-anchor="middle" font-size="8" fill="white" font-family="DM Sans,sans-serif">Sectors</text>
+          <ellipse cx="320" cy="185" rx="52" ry="22" fill="#2a1a05" stroke="#C9A84C" stroke-width="1.3"/>
+          <text x="320" y="181" text-anchor="middle" font-size="8" fill="white" font-family="DM Sans,sans-serif">Sector</text>
+          <text x="320" y="192" text-anchor="middle" font-size="8" fill="white" font-family="DM Sans,sans-serif">Performance</text>
+          <!-- Left R loop arrows -->
+          <path d="M 80 92 L 80 163" fill="none" stroke="#10b981" stroke-width="1.6" marker-end="url(#aRA)"/>
+          <path d="M 60 178 Q 30 128 60 82" fill="none" stroke="#10b981" stroke-width="1.6" marker-end="url(#aRA)"/>
+          <!-- Right R loop arrows -->
+          <path d="M 320 92 L 320 163" fill="none" stroke="#C9A84C" stroke-width="1.6" marker-end="url(#aRB)"/>
+          <path d="M 340 178 Q 370 128 340 82" fill="none" stroke="#C9A84C" stroke-width="1.6" marker-end="url(#aRB)"/>
+          <!-- Cross-links: Resource → Halal (+), Resource → Others (−) -->
+          <path d="M 160 112 L 116 90" fill="none" stroke="#10b981" stroke-width="1.5" marker-end="url(#aRA)"/>
+          <path d="M 244 112 L 278 90" fill="none" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#aRN)"/>
+          <!-- Polarity labels -->
+          <text x="68" y="132" fill="#10b981" font-size="11" font-weight="bold">+</text>
+          <text x="25" y="132" fill="#10b981" font-size="11" font-weight="bold">+</text>
+          <text x="376" y="132" fill="#C9A84C" font-size="11" font-weight="bold">+</text>
+          <text x="332" y="132" fill="#C9A84C" font-size="11" font-weight="bold">+</text>
+          <text x="128" y="96" fill="#10b981" font-size="11" font-weight="bold">+</text>
+          <text x="262" y="96" fill="#ef4444" font-size="11" font-weight="bold">−</text>
+          <!-- Loop labels -->
+          <circle cx="42" cy="128" r="14" fill="#0a1810" stroke="#10b981" stroke-width="1"/>
+          <text x="42" y="133" text-anchor="middle" font-size="11" font-weight="bold" fill="#10b981" font-family="Georgia,serif">R</text>
+          <circle cx="358" cy="128" r="14" fill="#0a1810" stroke="#C9A84C" stroke-width="1"/>
+          <text x="358" y="133" text-anchor="middle" font-size="11" font-weight="bold" fill="#C9A84C" font-family="Georgia,serif">R</text>
+        </svg>
+        <div class="arch-desc">
+          <h4>Success to the Successful</h4>
+          <p>As the halal industry gains early success it attracts disproportionate resources, starving other sectors. Two competing reinforcing loops share a limited resource pool. <strong>Leverage:</strong> establish balanced resource allocation across all priority sectors.</p>
+        </div>
+      </div>
+
+      <!-- Archetype 3: Fixes that Fail -->
+      <div class="archetype-card">
+        <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" aria-label="Fixes that Fail archetype">
+          <defs>
+            <marker id="aFp" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 Z" fill="#10b981"/></marker>
+            <marker id="aFb" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 Z" fill="#C9A84C"/></marker>
+            <marker id="aFn" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 Z" fill="#ef4444"/></marker>
+            <marker id="aFr" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L9,3.5 L0,7 Z" fill="#ef4444"/></marker>
+          </defs>
+          <rect width="400" height="240" fill="#061810"/>
+          <!-- Problem node: left -->
+          <ellipse cx="100" cy="120" rx="55" ry="26" fill="#3b0a0a" stroke="#ef4444" stroke-width="1.4"/>
+          <text x="100" y="115" text-anchor="middle" font-size="8" fill="white" font-family="DM Sans,sans-serif">Problem:</text>
+          <text x="100" y="125" text-anchor="middle" font-size="8" fill="white" font-family="DM Sans,sans-serif">Low Investor</text>
+          <text x="100" y="135" text-anchor="middle" font-size="8" fill="white" font-family="DM Sans,sans-serif">Confidence</text>
+          <!-- Fix node: top-right -->
+          <ellipse cx="290" cy="65" rx="60" ry="26" fill="#2a1a05" stroke="#C9A84C" stroke-width="1.4"/>
+          <text x="290" y="60" text-anchor="middle" font-size="8" fill="white" font-family="DM Sans,sans-serif">Quick Fix:</text>
+          <text x="290" y="70" text-anchor="middle" font-size="8" fill="white" font-family="DM Sans,sans-serif">Ad-hoc</text>
+          <text x="290" y="80" text-anchor="middle" font-size="8" fill="white" font-family="DM Sans,sans-serif">Incentives</text>
+          <!-- Side effects node: bottom-right -->
+          <ellipse cx="290" cy="185" rx="64" ry="26" fill="#1a0820" stroke="#9333ea" stroke-width="1.4"/>
+          <text x="290" y="180" text-anchor="middle" font-size="8" fill="white" font-family="DM Sans,sans-serif">Side Effects:</text>
+          <text x="290" y="190" text-anchor="middle" font-size="8" fill="white" font-family="DM Sans,sans-serif">Revenue Loss &amp;</text>
+          <text x="290" y="200" text-anchor="middle" font-size="8" fill="white" font-family="DM Sans,sans-serif">Weak Institutions</text>
+          <!-- Arrows -->
+          <!-- Problem → Fix (+): B loop motivation -->
+          <path d="M 148 102 Q 200 55 230 68" fill="none" stroke="#C9A84C" stroke-width="1.7" marker-end="url(#aFb)"/>
+          <!-- Fix → Problem (−): immediate B relief -->
+          <path d="M 235 80 Q 190 130 155 120" fill="none" stroke="#C9A84C" stroke-width="1.7" marker-end="url(#aFb)"/>
+          <!-- Fix → Side Effects (+): delayed R -->
+          <path d="M 290 91 L 290 159" fill="none" stroke="#9333ea" stroke-width="1.7" stroke-dasharray="5,3" marker-end="url(#aFr)"/>
+          <!-- Delay marker -->
+          <line x1="284" y1="122" x2="296" y2="122" stroke="#9333ea" stroke-width="3"/>
+          <text x="300" y="122" fill="#9333ea" font-size="8">delay</text>
+          <!-- Side Effects → Problem (+): worsens -->
+          <path d="M 228 185 Q 160 200 152 135" fill="none" stroke="#ef4444" stroke-width="1.7" marker-end="url(#aFn)"/>
+          <!-- Polarity labels -->
+          <text x="188" y="58" fill="#C9A84C" font-size="11" font-weight="bold">+</text>
+          <text x="195" y="125" fill="#C9A84C" font-size="11" font-weight="bold">−</text>
+          <text x="296" y="133" fill="#9333ea" font-size="11" font-weight="bold">+</text>
+          <text x="173" y="192" fill="#ef4444" font-size="11" font-weight="bold">+</text>
+          <!-- Loop labels -->
+          <circle cx="214" cy="80" r="14" fill="#0a1810" stroke="#C9A84C" stroke-width="1"/>
+          <text x="214" y="85" text-anchor="middle" font-size="11" font-weight="bold" fill="#C9A84C" font-family="Georgia,serif">B</text>
+          <circle cx="160" cy="175" r="14" fill="#0a1810" stroke="#ef4444" stroke-width="1"/>
+          <text x="160" y="180" text-anchor="middle" font-size="11" font-weight="bold" fill="#ef4444" font-family="Georgia,serif">R</text>
+        </svg>
+        <div class="arch-desc">
+          <h4>Fixes that Fail</h4>
+          <p>Ad-hoc tax incentives (B loop) provide temporary investor confidence relief, but their unintended side effects — revenue loss and institutional weakness — eventually worsen the original problem (R loop). <strong>Leverage:</strong> pursue systemic governance reform, not symptomatic patches.</p>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end container -->
 </section>
 
-<!-- ===== HALAL INDUSTRY ===== -->
+<!-- HALAL INDUSTRY -->
 <section class="halal-section" id="halal">
-    <div class="container">
-        <div class="section-header fade-in">
-            <span class="section-label">Key Opportunity</span>
-            <h2>The Halal Industry Advantage</h2>
-            <div class="section-divider"></div>
-            <p>Capitalizing on cultural heritage to capture the ASEAN market and position Bangsamoro as the Philippines' premier halal production hub.</p>
-        </div>
-
-        <div class="halal-grid">
-            <div class="halal-content fade-in">
-                <h3>Strategic Halal Sectors</h3>
-                <p>Located on the BIMP-EAGA trade corridor (Brunei-Indonesia-Malaysia-Philippines), Bangsamoro serves a massive regional Muslim population with authentic halal products backed by moral governance principles.</p>
-                <p>The <strong>WOW Matanog Special Economic Zone</strong> (Bangsamoro Halal Park) will serve as the premier hub for halal manufacturing and trade, offering private-led initiatives with global standards compliance.</p>
-
-                <!-- Halal Sectors Image -->
-                <div class="halal-sectors-image">
-                    <img src="https://appimize.app/assets/apps/user_1097/images/6c8c779f9866_489_1097.png"
-                         alt="Strategic Halal Sectors"
-                         onerror="this.parentElement.style.display='none';">
-                </div>
-
-                <!-- Islamic Finance Roadmap Image -->
-                <div class="islamic-finance-image-wrapper">
-                    <img src="https://appimize.app/assets/apps/user_1097/images/bad33401b383_706_1097.png"
-                         alt="Islamic Finance Roadmap"
-                         onerror="this.parentElement.style.display='none';">
-                </div>
-
-                <div class="finance-roadmap-box">
-                    <h4>Islamic Finance Roadmap (2024–2028)</h4>
-                    <ul>
-                        <li>• Strengthen Islamic Banking Foundation</li>
-                        <li>• Strengthen Islamic Microfinance &amp; Waqf</li>
-                        <li>• Establish Takaful (Insurance) Operations</li>
-                        <li>• Facilitate Islamic Capital Market (Sukuk)</li>
-                        <li>• <strong>2028 Goal:</strong> Functional System &amp; Tax Neutrality</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="fade-in fade-in-delay-2">
-                <!-- BIMP-EAGA Image -->
-                <div class="bimp-image-wrapper">
-                    <img src="https://appimize.app/assets/apps/user_1097/images/f7374d6b08a7_273_1097.png"
-                         alt="BIMP-EAGA Trade Corridor"
-                         onerror="this.parentElement.style.display='none';">
-                </div>
-
-                <div style="background:white;border-radius:1.25rem;padding:1.75rem;box-shadow:0 8px 30px rgba(6,78,59,0.1);margin-bottom:1.5rem;">
-                    <div style="text-align:center;margin-bottom:1.25rem;">
-                        <div style="font-family:'Cinzel',serif;font-size:1.2rem;color:var(--primary-green);font-weight:700;">BIMP-EAGA Trade Corridor</div>
-                        <p style="color:var(--text-muted);font-size:0.9rem;margin-top:0.3rem;">Gateway to 70+ million ASEAN consumers</p>
-                    </div>
-                    <div style="display:flex;justify-content:center;gap:2.5rem;">
-                        <div style="text-align:center;">
-                            <span style="font-family:'Cinzel',serif;font-size:2rem;font-weight:700;color:var(--deep-gold);display:block;">$2T</span>
-                            <span style="font-size:0.8rem;color:var(--text-muted);">Global Halal Market</span>
-                        </div>
-                        <div style="text-align:center;">
-                            <span style="font-family:'Cinzel',serif;font-size:2rem;font-weight:700;color:var(--deep-gold);display:block;">70M</span>
-                            <span style="font-size:0.8rem;color:var(--text-muted);">BIMP-EAGA Population</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="target-boxes">
-                    <div class="target-box green">
-                        <span class="number">2,000</span>
-                        <span class="label">Halal-Certified Enterprises by 2035</span>
-                    </div>
-                    <div class="target-box gold">
-                        <span class="number">₱25B</span>
-                        <span class="label">Target Halal Export Value by 2035</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-label">Key Opportunity</span>
+      <h2>The Halal Industry Advantage</h2>
+      <div class="section-divider"></div>
+      <p>Capitalizing on cultural heritage to capture the ASEAN market and position Bangsamoro as the Philippines' premier halal production hub.</p>
     </div>
+    <div class="halal-grid">
+      <div class="fade-in">
+        <h3>Strategic Halal Sectors</h3>
+        <p>Located on the BIMP-EAGA trade corridor, Bangsamoro serves a massive regional Muslim population with authentic halal products backed by moral governance principles.</p>
+        <p>The <strong>WOW Matanog Special Economic Zone</strong> (Bangsamoro Halal Park) will serve as the premier hub for halal manufacturing and trade.</p>
+        <div class="halal-img-wrap">
+          <img src="https://appimize.app/assets/apps/user_1097/images/6c8c779f9866_489_1097.png" alt="Strategic Halal Sectors" onerror="this.parentElement.style.display='none'">
+        </div>
+        <div class="halal-img-wrap">
+          <img src="https://appimize.app/assets/apps/user_1097/images/bad33401b383_706_1097.png" alt="Islamic Finance Roadmap" onerror="this.parentElement.style.display='none'">
+        </div>
+        <div class="finance-box">
+          <h4>Islamic Finance Roadmap (2024–2028)</h4>
+          <ul>
+            <li>• Strengthen Islamic Banking Foundation</li>
+            <li>• Strengthen Islamic Microfinance &amp; Waqf</li>
+            <li>• Establish Takaful (Insurance) Operations</li>
+            <li>• Facilitate Islamic Capital Market (Sukuk)</li>
+            <li>• <strong>2028 Goal:</strong> Functional System &amp; Tax Neutrality</li>
+          </ul>
+        </div>
+      </div>
+      <div class="fade-in fd2">
+        <div class="bimp-img-wrap">
+          <img src="https://appimize.app/assets/apps/user_1097/images/f7374d6b08a7_273_1097.png" alt="BIMP-EAGA Trade Corridor" onerror="this.parentElement.style.display='none'">
+        </div>
+        <div class="bimp-stats">
+          <div class="bimp-stat"><span>$2T</span><small>Global Halal Market</small></div>
+          <div class="bimp-stat"><span>70M</span><small>BIMP-EAGA Population</small></div>
+        </div>
+        <div class="target-boxes">
+          <div class="target-box green"><span class="num">2,000</span><span class="lbl">Halal-Certified Enterprises by 2035</span></div>
+          <div class="target-box gold"><span class="num">₱25B</span><span class="lbl">Target Halal Export Value by 2035</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- ===== STRATEGIC PILLARS ===== -->
-<section class="pillars-section" id="pillars">
-    <div class="container">
-        <div class="section-header fade-in">
-            <span class="section-label">Recommended Strategy</span>
-            <h2>Integrated Halal-Driven Strategy</h2>
-            <div class="section-divider"></div>
-            <p>Three interconnected pillars designed to trigger virtuous cycles while mitigating systemic risks identified through dynamic SWOT analysis.</p>
-        </div>
+<!-- PILLARS (HIDDEN) -->
+<section class="pillars-section" id="pillars"></section>
 
-        <div class="pillars-grid">
-            <div class="pillar-card fade-in fade-in-delay-1">
-                <div class="pillar-header">
-                    <span class="pillar-number">01</span>
-                    <h3>Halal Industry Ecosystem Excellence</h3>
-                    <p>Internationally recognized certification and production hubs</p>
-                </div>
-                <div class="pillar-content">
-                    <ul>
-                        <li><span class="check-icon">✓</span> Operationalize Bangsamoro Halal Board with OIC/SMIIC alignment</li>
-                        <li><span class="check-icon">✓</span> Develop Bangsamoro Halal Park in Matanog (WOW SEZ)</li>
-                        <li><span class="check-icon">✓</span> Build integrated halal value chains (farm-to-market)</li>
-                        <li><span class="check-icon">✓</span> Target sectors: Food, Cosmetics, Pharmaceuticals, Tourism</li>
-                        <li><span class="check-icon">✓</span> Train 100 halal certification officers by 2035</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="pillar-card fade-in fade-in-delay-2">
-                <div class="pillar-header">
-                    <span class="pillar-number">02</span>
-                    <h3>Enabling Infrastructure Development</h3>
-                    <p>Priority infrastructure-energy-connectivity nexus investments</p>
-                </div>
-                <div class="pillar-content">
-                    <ul>
-                        <li><span class="check-icon">✓</span> Achieve 80% electrification by 2028, 100% by 2030</li>
-                        <li><span class="check-icon">✓</span> Expand digital connectivity (70% internet penetration by 2030)</li>
-                        <li><span class="check-icon">✓</span> Develop farm-to-market roads and cold chain logistics</li>
-                        <li><span class="check-icon">✓</span> Modernize Polloc Freeport and Economic Zone (PFEZ)</li>
-                        <li><span class="check-icon">✓</span> Data centers and last-mile digital infrastructure</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="pillar-card fade-in fade-in-delay-3">
-                <div class="pillar-header">
-                    <span class="pillar-number">03</span>
-                    <h3>Governance &amp; Institutional Strengthening</h3>
-                    <p>Moral governance framework and investment facilitation</p>
-                </div>
-                <div class="pillar-content">
-                    <ul>
-                        <li><span class="check-icon">✓</span> Streamline business registration (target: 1-day processing)</li>
-                        <li><span class="check-icon">✓</span> Establish one-stop investment facilitation centers</li>
-                        <li><span class="check-icon">✓</span> Strengthen BBOI and BEZA regulatory capacity</li>
-                        <li><span class="check-icon">✓</span> Digital transformation of permitting systems (BPLS)</li>
-                        <li><span class="check-icon">✓</span> Transparent monitoring via Balanced Scorecard</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<!-- ROADMAP (HIDDEN) -->
+<section class="roadmap-section" id="implementation"></section>
 
-<!-- ===== IMPLEMENTATION ROADMAP ===== -->
-<section class="roadmap-section" id="implementation">
-    <div class="container">
-        <div class="section-header fade-in">
-            <span class="section-label" style="color:var(--accent-gold);">Phase Implementation</span>
-            <h2 class="white">Implementation Roadmap</h2>
-            <div class="section-divider"></div>
-            <p class="light">Three-phase approach to transitioning from post-conflict recovery to a mature, self-sustaining halal economy hub.</p>
-        </div>
-
-        <div class="timeline">
-            <div class="timeline-item fade-in">
-                <div class="timeline-date">2026–2028</div>
-                <div class="timeline-content">
-                    <h3>Phase 1: Foundation Building</h3>
-                    <ul>
-                        <li>Operationalize Bangsamoro Halal Board with OIC/SMIIC certification</li>
-                        <li>Launch Bangsamoro Halal Park in Matanog</li>
-                        <li>Implement digital business registration platforms</li>
-                        <li>Achieve 80% electrification target per BSEMP</li>
-                        <li>Establish one-stop investment facilitation centers</li>
-                        <li>Train initial cadre of halal certification officers</li>
-                    </ul>
-                    <span class="budget-badge">Budget: ₱5 Billion</span>
-                </div>
-            </div>
-
-            <div class="timeline-item fade-in">
-                <div class="timeline-date">2029–2032</div>
-                <div class="timeline-content">
-                    <h3>Phase 2: Acceleration</h3>
-                    <ul>
-                        <li>Full operationalization of halal certification system</li>
-                        <li>Complete Phase 1 of Bangsamoro Halal Park with anchor tenants</li>
-                        <li>Expand digital infrastructure to 50% internet penetration</li>
-                        <li>Establish Islamic banking operations in the region</li>
-                        <li>Launch integrated halal value chain programs</li>
-                        <li>Develop tourism circuits showcasing Bangsamoro heritage</li>
-                    </ul>
-                    <span class="budget-badge">Budget: ₱15 Billion</span>
-                </div>
-            </div>
-
-            <div class="timeline-item fade-in">
-                <div class="timeline-date">2033–2035</div>
-                <div class="timeline-content">
-                    <h3>Phase 3: Consolidation</h3>
-                    <ul>
-                        <li>Achieve full BHB international accreditation and mutual recognition</li>
-                        <li>Complete full Bangsamoro Halal Park development</li>
-                        <li>Achieve 100% electrification and 70% internet penetration</li>
-                        <li>Establish Bangsamoro as recognized halal innovation center</li>
-                        <li>Deepen BIMP-EAGA integration with established trade corridors</li>
-                        <li>Transition to fully elected government with mature institutions</li>
-                    </ul>
-                    <span class="budget-badge">Budget: ₱20 Billion</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="success-box fade-in">
-            <h3>Critical Success Factors</h3>
-            <div class="success-grid">
-                <div class="success-item">Sustained political commitment across transitions</div>
-                <div class="success-item">Resource mobilization (block grants, ODA, private investment)</div>
-                <div class="success-item">Inter-agency coordination (BBOI, BEZA, MTIT, BHB)</div>
-                <div class="success-item">Private sector and community stakeholder engagement</div>
-                <div class="success-item">Adaptive management and evidence-based course correction</div>
-                <div class="success-item">Continued peace consolidation and security stability</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===== CONTACT SECTION ===== -->
+<!-- CONTACT -->
 <section class="contact-section" id="contact">
-    <div class="contact-inner">
-        <div class="section-header fade-in">
-            <span class="section-label" style="color:var(--accent-gold);">Get In Touch</span>
-            <h2 class="white" style="font-family:'Cinzel',serif;">Invest in the Emerging Bangsamoro</h2>
-            <div class="section-divider"></div>
-            <p class="light">Connect with our investment facilitation team and explore opportunities in the Philippines' premier halal production hub.</p>
-        </div>
-
-        <div class="contact-grid">
-            <!-- Left: Contact Information -->
-            <div class="contact-info fade-in">
-                <h3>Investment Facilitation</h3>
-
-                <div class="contact-detail">
-                    <div class="contact-icon">🏛️</div>
-                    <p>
-                        <strong>Ministry</strong>
-                        Ministry of Trade, Investments and Tourism (MTIT)<br>
-                        Bangsamoro Autonomous Region in Muslim Mindanao
-                    </p>
-                </div>
-
-                <div class="contact-detail">
-                    <div class="contact-icon">📍</div>
-                    <p>
-                        <strong>Address</strong>
-                        MTIT Building, Capitol Compound<br>
-                        Cotabato City, 9600, Philippines
-                    </p>
-                </div>
-
-                <div class="contact-detail">
-                    <div class="contact-icon">✉️</div>
-                    <p>
-                        <strong>Email</strong>
-                        <a href="mailto:invest@mtit.bangsamoro.gov.ph" style="color:var(--light-green);text-decoration:none;">invest@mtit.bangsamoro.gov.ph</a><br>
-                        <a href="mailto:mtit@bangsamoro.gov.ph" style="color:var(--light-green);text-decoration:none;">mtit@bangsamoro.gov.ph</a>
-                    </p>
-                </div>
-
-                <div class="contact-detail">
-                    <div class="contact-icon">🌐</div>
-                    <p>
-                        <strong>Website</strong>
-                        <a href="https://mtit.bangsamoro.gov.ph" target="_blank" style="color:var(--light-green);text-decoration:none;">mtit.bangsamoro.gov.ph</a><br>
-                        <a href="https://barmm.gov.ph" target="_blank" style="color:var(--light-green);text-decoration:none;">barmm.gov.ph</a>
-                    </p>
-                </div>
-
-                <h3 style="margin-top:2rem;font-size:1.1rem;">Key Investment Agencies</h3>
-                <div class="contact-agencies">
-                    <div class="agency-tag">Bangsamoro Board of Investments (BBOI)</div>
-                    <div class="agency-tag">Bangsamoro Economic Zone Authority (BEZA)</div>
-                    <div class="agency-tag">Bangsamoro Halal Board (BHB)</div>
-                    <div class="agency-tag">Polloc Freeport & Ecozone (PFEZ)</div>
-                    <div class="agency-tag">BPDA – Planning &amp; Development</div>
-                    <div class="agency-tag">WOW Matanog Special Ecozone</div>
-                </div>
-
-                <div style="margin-top:2rem;padding:1.5rem;background:rgba(251,191,36,0.08);border:1px solid rgba(251,191,36,0.2);border-radius:1rem;">
-                    <p style="font-size:0.88rem;color:rgba(255,255,255,0.7);line-height:1.7;">
-                        <strong style="color:var(--accent-gold);display:block;margin-bottom:0.4rem;">🕐 Office Hours</strong>
-                        Monday – Friday, 8:00 AM – 5:00 PM (Philippine Standard Time)<br>
-                        Investment inquiries are responded to within 3 business days.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Right: Investment Inquiry Form -->
-            <div class="contact-form-wrapper fade-in fade-in-delay-2">
-                <h3>Send an Investment Inquiry</h3>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>First Name</label>
-                        <input type="text" placeholder="Juan">
-                    </div>
-                    <div class="form-group">
-                        <label>Last Name</label>
-                        <input type="text" placeholder="dela Cruz">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>Email Address</label>
-                    <input type="email" placeholder="yourname@company.com">
-                </div>
-
-                <div class="form-group">
-                    <label>Organization / Company</label>
-                    <input type="text" placeholder="Company Name">
-                </div>
-
-                <div class="form-group">
-                    <label>Country of Origin</label>
-                    <input type="text" placeholder="e.g. Philippines, Malaysia, UAE">
-                </div>
-
-                <div class="form-group">
-                    <label>Sector of Interest</label>
-                    <select>
-                        <option value="" disabled selected>Select a sector...</option>
-                        <option>Halal Food &amp; Beverage</option>
-                        <option>Halal Cosmetics &amp; Personal Care</option>
-                        <option>Halal Pharmaceuticals</option>
-                        <option>Islamic Finance &amp; Banking</option>
-                        <option>Agribusiness &amp; Fisheries</option>
-                        <option>Renewable Energy</option>
-                        <option>Tourism &amp; Hospitality</option>
-                        <option>Digital Infrastructure &amp; ICT</option>
-                        <option>Manufacturing &amp; Ecozone</option>
-                        <option>Other</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>Investment Range (USD)</label>
-                    <select>
-                        <option value="" disabled selected>Select investment range...</option>
-                        <option>Under $100,000</option>
-                        <option>$100,000 – $500,000</option>
-                        <option>$500,000 – $1 Million</option>
-                        <option>$1M – $5M</option>
-                        <option>$5M – $10M</option>
-                        <option>Above $10M</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>Message / Inquiry</label>
-                    <textarea placeholder="Tell us about your investment interest, specific questions, or how we can assist you..."></textarea>
-                </div>
-
-                <button class="submit-btn" onclick="handleFormSubmit(this)">
-                    Submit Investment Inquiry
-                </button>
-
-                <p class="form-note">Your information is kept confidential and used solely for investment facilitation purposes.</p>
-            </div>
-        </div>
+  <div class="contact-inner">
+    <div class="section-header fade-in">
+      <span class="section-label" style="color:var(--gold);">Get In Touch</span>
+      <h2 class="white" style="font-family:'Cinzel',serif;">Invest in the Emerging Bangsamoro</h2>
+      <div class="section-divider"></div>
+      <p class="light">Connect with our investment facilitation team and explore opportunities in the Philippines' premier halal production hub.</p>
     </div>
+
+    <!-- Image above contact form -->
+    <div class="contact-banner-wrap fade-in">
+      <img src="https://appimize.app/assets/apps/user_1097/images/1539eb37b62a_444_1097.png" alt="BARMM Investment Contact" onerror="this.parentElement.style.display='none'">
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info fade-in">
+        <h3>Investment Facilitation</h3>
+        <div class="contact-detail">
+          <div class="ci">🏛️</div>
+          <p><strong>Ministry</strong>Ministry of Trade, Investments and Tourism (MTIT)<br>Bangsamoro Autonomous Region in Muslim Mindanao</p>
+        </div>
+        <div class="contact-detail">
+          <div class="ci">📍</div>
+          <p><strong>Address</strong>MTIT Building, Capitol Compound<br>Cotabato City, 9600 Philippines</p>
+        </div>
+        <div class="contact-detail">
+          <div class="ci">✉️</div>
+          <p><strong>Email</strong><a href="mailto:invest@mtit.bangsamoro.gov.ph">invest@mtit.bangsamoro.gov.ph</a><br><a href="mailto:mtit@bangsamoro.gov.ph">mtit@bangsamoro.gov.ph</a></p>
+        </div>
+        <div class="contact-detail">
+          <div class="ci">🌐</div>
+          <p><strong>Website</strong><a href="https://mtit.bangsamoro.gov.ph" target="_blank">mtit.bangsamoro.gov.ph</a><br><a href="https://barmm.gov.ph" target="_blank">barmm.gov.ph</a></p>
+        </div>
+        <h3 style="margin-top:2rem;font-size:1.1rem;">Key Investment Agencies</h3>
+        <div class="agency-grid">
+          <div class="agency-tag">Bangsamoro Board of Investments (BBOI)</div>
+          <div class="agency-tag">Bangsamoro Economic Zone Authority (BEZA)</div>
+          <div class="agency-tag">Bangsamoro Halal Board (BHB)</div>
+          <div class="agency-tag">Polloc Freeport &amp; Ecozone (PFEZ)</div>
+          <div class="agency-tag">BPDA – Planning &amp; Development</div>
+          <div class="agency-tag">WOW Matanog Special Ecozone</div>
+        </div>
+        <div style="margin-top:1.8rem;padding:1.3rem;background:rgba(201,168,76,.08);border:1px solid var(--gold-border);border-radius:1rem;">
+          <p style="font-size:.85rem;color:rgba(255,255,255,.65);line-height:1.7;"><strong style="color:var(--gold);display:block;margin-bottom:.3rem;">🕐 Office Hours</strong>Monday – Friday, 8:00 AM – 5:00 PM (PHT)<br>Investment inquiries responded to within 3 business days.</p>
+        </div>
+      </div>
+
+      <div class="fade-in fd2">
+        <div class="form-wrap">
+          <h3>Send an Investment Inquiry</h3>
+          <div class="form-row">
+            <div class="form-group"><label>First Name</label><input type="text" placeholder="Juan"></div>
+            <div class="form-group"><label>Last Name</label><input type="text" placeholder="dela Cruz"></div>
+          </div>
+          <div class="form-group"><label>Email Address</label><input type="email" placeholder="yourname@company.com"></div>
+          <div class="form-group"><label>Organization / Company</label><input type="text" placeholder="Company Name"></div>
+          <div class="form-group"><label>Country of Origin</label><input type="text" placeholder="e.g. Philippines, Malaysia, UAE"></div>
+          <div class="form-group"><label>Sector of Interest</label>
+            <select>
+              <option value="" disabled selected>Select a sector…</option>
+              <option>Halal Food &amp; Beverage</option>
+              <option>Halal Cosmetics &amp; Personal Care</option>
+              <option>Halal Pharmaceuticals</option>
+              <option>Islamic Finance &amp; Banking</option>
+              <option>Agribusiness &amp; Fisheries</option>
+              <option>Renewable Energy</option>
+              <option>Tourism &amp; Hospitality</option>
+              <option>Digital Infrastructure &amp; ICT</option>
+              <option>Manufacturing &amp; Ecozone</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Investment Range (USD)</label>
+            <select>
+              <option value="" disabled selected>Select range…</option>
+              <option>Under $100,000</option>
+              <option>$100,000 – $500,000</option>
+              <option>$500,000 – $1 Million</option>
+              <option>$1M – $5M</option>
+              <option>$5M – $10M</option>
+              <option>Above $10M</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Message / Inquiry</label><textarea placeholder="Tell us about your investment interest…"></textarea></div>
+          <button class="submit-btn" onclick="handleSubmit(this)">Submit Investment Inquiry</button>
+          <p class="form-note">Your information is kept confidential and used solely for investment facilitation purposes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
+<!-- FOOTER -->
 <footer>
-    <div class="footer-inner">
-        <div class="footer-logo">
-            <img src="https://mtit.bangsamoro.gov.ph/wp-content/uploads/2024/04/MTIT-HEADER-2024.png"
-                 alt="MTIT BARMM"
-                 onerror="this.style.display='none';">
-        </div>
-        <div class="footer-bottom">
-            <p>© 2026 Bangsamoro Autonomous Region in Muslim Mindanao (BARMM). All rights reserved.</p>
-            <p style="margin-top:0.4rem;"><span>The Emerging Bangsamoro</span> — A Hub for Resilient and Ethical Growth | Investment Roadmap 2026–2035</p>
-        </div>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="https://mtit.bangsamoro.gov.ph/wp-content/uploads/2024/04/MTIT-HEADER-2024.png" alt="MTIT BARMM" onerror="this.style.display='none'">
     </div>
+    <div class="footer-bottom">
+      <p>© 2026 Bangsamoro Autonomous Region in Muslim Mindanao (BARMM). All rights reserved.</p>
+      <p style="margin-top:.35rem;"><span>The Emerging Bangsamoro</span> — A Hub for Resilient and Ethical Growth | Investment Roadmap 2026–2035</p>
+    </div>
+  </div>
 </footer>
 
 <script>
-    // ===== NAVBAR SCROLL EFFECT =====
-    window.addEventListener('scroll', () => {
-        document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
-    });
+/* NAV */
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50);
+});
 
-    // ===== FADE-IN OBSERVER =====
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+/* FADE-IN */
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
+},{threshold:.08,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
 
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-    // ===== ANIMATED COUNTER =====
-    function animateCounter(el) {
-        const target = parseFloat(el.dataset.target);
-        const prefix = el.dataset.prefix || '';
-        const suffix = el.dataset.suffix || '';
-        const decimals = parseInt(el.dataset.decimals) || 0;
-        const duration = 2000;
-        const steps = 60;
-        const stepTime = duration / steps;
-        let current = 0;
-        let step = 0;
-
-        const timer = setInterval(() => {
-            step++;
-            // Ease-out cubic
-            const progress = 1 - Math.pow(1 - step / steps, 3);
-            current = target * progress;
-
-            el.textContent = prefix + current.toFixed(decimals) + suffix;
-
-            if (step >= steps) {
-                clearInterval(timer);
-                el.textContent = prefix + target.toFixed(decimals) + suffix;
-            }
-        }, stepTime);
+/* ANIMATED COUNTER */
+function animateCounter(el){
+  const target=parseFloat(el.dataset.target),
+        prefix=el.dataset.prefix||'',
+        suffix=el.dataset.suffix||'',
+        dec=parseInt(el.dataset.dec)||0,
+        dur=2200,steps=70;
+  let step=0;
+  const t=setInterval(()=>{
+    step++;
+    const p=1-Math.pow(1-step/steps,3);
+    el.textContent=prefix+(target*p).toFixed(dec)+suffix;
+    if(step>=steps){clearInterval(t);el.textContent=prefix+target.toFixed(dec)+suffix;}
+  },dur/steps);
+}
+const cObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.figure-number[data-target]').forEach((el,i)=>{
+        setTimeout(()=>animateCounter(el),i*130);
+      });
+      cObs.unobserve(e.target);
     }
+  });
+},{threshold:.25});
+const fig=document.querySelector('.figures-section');
+if(fig)cObs.observe(fig);
 
-    const counterObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const counters = entry.target.querySelectorAll('.figure-number[data-target]');
-                counters.forEach((el, i) => {
-                    setTimeout(() => animateCounter(el), i * 150);
-                });
-                counterObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.3 });
+/* FORM */
+function handleSubmit(btn){
+  btn.textContent='Sending…';btn.disabled=true;
+  setTimeout(()=>{
+    btn.textContent='✓ Inquiry Submitted!';
+    btn.style.background='linear-gradient(135deg,#10b981,#059669)';
+    btn.style.color='white';
+    setTimeout(()=>{
+      btn.textContent='Submit Investment Inquiry';
+      btn.style.background='';btn.style.color='';btn.disabled=false;
+    },3500);
+  },1600);
+}
 
-    const figuresSection = document.querySelector('.figures-section');
-    if (figuresSection) counterObserver.observe(figuresSection);
-
-    // ===== FORM SUBMIT HANDLER =====
-    function handleFormSubmit(btn) {
-        btn.textContent = 'Sending...';
-        btn.disabled = true;
-        setTimeout(() => {
-            btn.textContent = '✓ Inquiry Submitted!';
-            btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
-            btn.style.color = 'white';
-            setTimeout(() => {
-                btn.textContent = 'Submit Investment Inquiry';
-                btn.style.background = '';
-                btn.style.color = '';
-                btn.disabled = false;
-            }, 3000);
-        }, 1500);
-    }
-
-    // ===== SMOOTH SCROLL =====
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                const navH = document.querySelector('nav').offsetHeight;
-                const top = target.getBoundingClientRect().top + window.pageYOffset - navH;
-                window.scrollTo({ top, behavior: 'smooth' });
-            }
-        });
-    });
+/* SMOOTH SCROLL */
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){const nh=document.querySelector('nav').offsetHeight;
+      window.scrollTo({top:t.getBoundingClientRect().top+window.pageYOffset-nh,behavior:'smooth'});}
+  });
+});
 </script>
-
 </body>
 </html>
