@@ -3,1341 +3,1508 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#064e3b">
-<meta name="description" content="BARMM Investment Roadmap 2026-2035 - The Emerging Bangsamoro">
+<meta name="theme-color" content="#022c22">
+<meta name="description" content="BARMM Investment Roadmap 2026-2035 – Interactive Strategy Map: The Emerging Bangsamoro">
 <link rel="manifest" href="#" id="manifest-placeholder">
-<title>BARMM Investment Roadmap 2026-2035 - Interactive Strategy Map</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<title>BARMM Investment Roadmap 2026-2035 – Interactive Strategy Map</title>
 <style>
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
-body {
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-background: linear-gradient(135deg, #022c22 0%, #064e3b 50%, #0f172a 100%);
-min-height: 100vh;
-color: #ecfdf5;
-background-attachment: fixed;
-}
-.container {
-max-width: 1400px;
-margin: 0 auto;
-padding: 2rem;
-}
-.header {
-text-align: center;
-margin-bottom: 3rem;
-position: relative;
-}
-.header::before {
-content: '';
-position: absolute;
-top: -20px;
-left: 50%;
-transform: translateX(-50%);
-width: 200px;
-height: 4px;
-background: linear-gradient(90deg, transparent, #d97706, #fbbf24, #d97706, transparent);
-border-radius: 2px;
-}
-.header h1 {
-font-size: 2.25rem;
-font-weight: bold;
-margin-bottom: 0.5rem;
-background: linear-gradient(135deg, #fbbf24 0%, #d97706 50%, #fbbf24 100%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
-text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-}
-.header .subtitle {
-font-size: 1.5rem;
-color: #6ee7b7;
-font-weight: 600;
-margin-bottom: 0.5rem;
-}
-.header p {
-font-size: 1.1rem;
-color: #a7f3d0;
-font-style: italic;
-}
-.tabs {
-display: flex;
-gap: 0.5rem;
-margin-bottom: 2rem;
-flex-wrap: wrap;
-justify-content: center;
-background: rgba(6, 78, 59, 0.4);
-padding: 0.75rem;
-border-radius: 1rem;
-border: 1px solid rgba(251, 191, 36, 0.2);
-}
-.tab-btn {
-padding: 0.75rem 1.5rem;
-border: none;
-border-radius: 0.5rem;
-font-size: 0.875rem;
-font-weight: 600;
-cursor: pointer;
-transition: all 0.3s;
-background: rgba(2, 44, 34, 0.8);
-color: #a7f3d0;
-border: 1px solid rgba(251, 191, 36, 0.3);
-}
-.tab-btn:hover {
-background: rgba(6, 95, 70, 0.8);
-color: #fbbf24;
-border-color: #fbbf24;
-transform: translateY(-2px);
-box-shadow: 0 4px 12px rgba(251, 191, 36, 0.2);
-}
-.tab-btn.active {
-background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
-color: white;
-border-color: #fbbf24;
-box-shadow: 0 4px 15px rgba(217, 119, 6, 0.4);
-}
-.tab-content {
-display: none;
-animation: fadeIn 0.4s ease-out;
-}
-.tab-content.active {
-display: block;
-}
-@keyframes fadeIn {
-from {
-opacity: 0;
-transform: translateY(10px);
-}
-to {
-opacity: 1;
-transform: translateY(0);
-}
-}
-.strategy-map {
-display: flex;
-flex-direction: column;
-gap: 1.5rem;
-}
-.perspective {
-position: relative;
-}
-.connection-line {
-position: absolute;
-top: -1.5rem;
-left: 50%;
-transform: translateX(-50%);
-width: 2px;
-height: 1.5rem;
-background: linear-gradient(to bottom, #fbbf24, transparent);
-opacity: 0.6;
-}
-.perspective-card {
-border-radius: 0.75rem;
-box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-overflow: hidden;
-transition: all 0.3s;
-border: 1px solid rgba(251, 191, 36, 0.2);
-}
-.perspective-card.expanded {
-box-shadow: 0 0 0 3px #fbbf24, 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-}
-.bg-purple { background: linear-gradient(135deg, #581c87 0%, #7c3aed 100%); }
-.bg-gold { background: linear-gradient(135deg, #b45309 0%, #d97706 100%); }
-.bg-green { background: linear-gradient(135deg, #065f46 0%, #059669 100%); }
-.bg-blue { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); }
-.bg-teal { background: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%); }
-.perspective-header {
-width: 100%;
-padding: 1.25rem;
-display: flex;
-align-items: center;
-justify-content: space-between;
-cursor: pointer;
-border: none;
-background: transparent;
-color: white;
-transition: background-color 0.3s;
-}
-.perspective-header:hover {
-background-color: rgba(255, 255, 255, 0.1);
-}
-.perspective-title {
-display: flex;
-align-items: center;
-gap: 0.75rem;
-}
-.icon {
-width: 1.5rem;
-height: 1.5rem;
-}
-.perspective-name {
-font-size: 1.125rem;
-font-weight: bold;
-letter-spacing: 0.5px;
-}
-.strategy-count {
-display: flex;
-align-items: center;
-gap: 0.5rem;
-}
-.badge {
-font-size: 0.875rem;
-background-color: rgba(255, 255, 255, 0.2);
-padding: 0.25rem 0.75rem;
-border-radius: 9999px;
-border: 1px solid rgba(255,255,255,0.3);
-}
-.vision-items,
-.strategy-details {
-padding: 1.5rem;
-background-color: rgba(0, 0, 0, 0.3);
-}
-.vision-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-gap: 1rem;
-}
-.vision-item {
-background-color: rgba(255, 255, 255, 0.1);
-padding: 1.25rem;
-border-radius: 0.5rem;
-border-left: 4px solid #fbbf24;
-backdrop-filter: blur(10px);
-}
-.vision-title {
-font-weight: bold;
-margin-bottom: 0.5rem;
-color: #fbbf24;
-font-size: 1.1rem;
-}
-.vision-desc {
-font-size: 0.875rem;
-color: #d1fae5;
-margin-bottom: 0.75rem;
-line-height: 1.5;
-}
-.vision-goals {
-display: flex;
-flex-direction: column;
-gap: 0.25rem;
-}
-.vision-goal {
-font-size: 0.8rem;
-color: #a7f3d0;
-display: flex;
-align-items: center;
-gap: 0.5rem;
-}
-.strategy-list {
-display: flex;
-flex-direction: column;
-gap: 0.75rem;
-}
-.strategy-item {
-background-color: rgba(255, 255, 255, 0.08);
-padding: 1rem;
-border-radius: 0.5rem;
-cursor: pointer;
-transition: all 0.3s;
-position: relative;
-border: 1px solid rgba(251, 191, 36, 0.1);
-}
-.strategy-item:hover {
-background-color: rgba(255, 255, 255, 0.15);
-border-color: rgba(251, 191, 36, 0.4);
-transform: translateX(5px);
-}
-.strategy-item.selected {
-box-shadow: 0 0 0 2px #fbbf24;
-background-color: rgba(251, 191, 36, 0.1);
-}
-.tooltip {
-visibility: hidden;
-width: 320px;
-background-color: #022c22;
-color: #ecfdf5;
-text-align: left;
-border-radius: 0.5rem;
-padding: 1rem;
-position: absolute;
-z-index: 1000;
-bottom: 125%;
-left: 50%;
-transform: translateX(-50%);
-opacity: 0;
-transition: opacity 0.3s;
-font-size: 0.875rem;
-border: 1px solid #d97706;
-box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.8);
-}
-.strategy-item:hover .tooltip {
-visibility: visible;
-opacity: 1;
-}
-.tooltip h4 {
-font-size: 0.9rem;
-margin-bottom: 0.5rem;
-color: #fbbf24;
-border-bottom: 1px solid rgba(251, 191, 36, 0.3);
-padding-bottom: 0.5rem;
-}
-.tooltip p {
-margin: 0.25rem 0;
-line-height: 1.4;
-color: #d1fae5;
-}
-.core-badge {
-background: #fbbf24;
-color: #064e3b;
-padding: 0.1rem 0.4rem;
-border-radius: 4px;
-font-size: 0.75rem;
-margin-left: 0.5rem;
-font-weight: bold;
-}
-.strategy-meta {
-display: flex;
-align-items: start;
-justify-content: space-between;
-margin-bottom: 0.5rem;
-flex-wrap: wrap;
-gap: 0.5rem;
-}
-.strategy-pillar {
-font-size: 0.75rem;
-font-weight: 600;
-color: #fbbf24;
-text-transform: uppercase;
-letter-spacing: 0.5px;
-}
-.strategy-target {
-font-size: 0.75rem;
-background-color: rgba(6, 78, 59, 0.8);
-color: #6ee7b7;
-padding: 0.25rem 0.5rem;
-border-radius: 0.25rem;
-border: 1px solid rgba(110, 231, 183, 0.3);
-}
-.strategy-action {
-font-weight: bold;
-margin-bottom: 0.5rem;
-color: #fff;
-font-size: 1.05rem;
-}
-.strategy-kpi {
-font-size: 0.875rem;
-color: #a7f3d0;
-margin-bottom: 0.5rem;
-font-style: italic;
-}
-.strategy-contributes {
-margin-top: 0.75rem;
-padding-top: 0.75rem;
-border-top: 1px solid rgba(251, 191, 36, 0.2);
-}
-.contributes-title {
-font-size: 0.75rem;
-font-weight: 600;
-color: #fbbf24;
-margin-bottom: 0.5rem;
-text-transform: uppercase;
-letter-spacing: 0.5px;
-}
-.contributes-list {
-display: flex;
-flex-direction: column;
-gap: 0.25rem;
-}
-.contributes-item {
-font-size: 0.8rem;
-color: #6ee7b7;
-display: flex;
-align-items: center;
-gap: 0.5rem;
-}
-.dot {
-width: 0.5rem;
-height: 0.5rem;
-background-color: #fbbf24;
-border-radius: 50%;
-box-shadow: 0 0 5px rgba(251, 191, 36, 0.5);
-}
-.priorities-section {
-margin-top: 3rem;
-background: linear-gradient(135deg, rgba(6, 78, 59, 0.8) 0%, rgba(2, 44, 34, 0.9) 100%);
-border-radius: 0.75rem;
-padding: 2rem;
-box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-border: 1px solid rgba(251, 191, 36, 0.3);
-position: relative;
-overflow: hidden;
-}
-.priorities-section::before {
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-height: 4px;
-background: linear-gradient(90deg, #d97706, #fbbf24, #d97706);
-}
-.priorities-title {
-font-size: 1.5rem;
-font-weight: bold;
-margin-bottom: 1.5rem;
-color: #fbbf24;
-text-align: center;
-}
-.priorities-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-gap: 1rem;
-}
-.priority-item {
-background-color: rgba(255, 255, 255, 0.05);
-padding: 1.25rem;
-border-radius: 0.5rem;
-border-left: 3px solid #fbbf24;
-transition: transform 0.3s;
-}
-.priority-item:hover {
-transform: translateY(-3px);
-background-color: rgba(255, 255, 255, 0.1);
-}
-.priority-title {
-font-weight: bold;
-color: #fbbf24;
-margin-bottom: 0.5rem;
-font-size: 1.1rem;
-}
-.priority-desc {
-font-size: 0.875rem;
-color: #d1fae5;
-line-height: 1.5;
-}
-.instructions {
-margin-top: 1.5rem;
-text-align: center;
-color: #6ee7b7;
-font-size: 0.875rem;
-font-style: italic;
-}
-.hidden {
-display: none;
-}
-.chevron {
-width: 1.5rem;
-height: 1.5rem;
-transition: transform 0.3s;
-color: #fbbf24;
-}
-.swot-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-gap: 1.5rem;
-margin-top: 2rem;
-}
-.swot-card {
-background: rgba(2, 44, 34, 0.6);
-border: 1px solid;
-border-radius: 0.75rem;
-padding: 1.5rem;
-backdrop-filter: blur(10px);
-transition: transform 0.3s;
-}
-.swot-card:hover {
-transform: translateY(-5px);
-}
-.swot-card.strength {
-border-color: #10b981;
-background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(2, 44, 34, 0.8) 100%);
-}
-.swot-card.weakness {
-border-color: #f59e0b;
-background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(2, 44, 34, 0.8) 100%);
-}
-.swot-card.opportunity {
-border-color: #3b82f6;
-background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(2, 44, 34, 0.8) 100%);
-}
-.swot-card.threat {
-border-color: #ef4444;
-background: linear-gradient(135deg, rgba(239, 68, 68, 0.15) 0%, rgba(2, 44, 34, 0.8) 100%);
-}
-.swot-header {
-display: flex;
-align-items: center;
-gap: 0.5rem;
-margin-bottom: 1rem;
-font-size: 1.25rem;
-font-weight: bold;
-color: #fff;
-}
-.swot-items {
-display: flex;
-flex-direction: column;
-gap: 0.75rem;
-}
-.swot-item {
-background: rgba(0, 0, 0, 0.3);
-padding: 0.875rem;
-border-radius: 0.5rem;
-font-size: 0.9rem;
-line-height: 1.5;
-cursor: pointer;
-transition: all 0.2s;
-border-left: 3px solid transparent;
-}
-.swot-item:hover {
-background: rgba(0, 0, 0, 0.5);
-border-left-color: #fbbf24;
-transform: translateX(5px);
-}
-/* Modal Styles for Archetypes */
-.modal {
-display: none;
-position: fixed;
-z-index: 100;
-left: 0;
-top: 0;
-width: 100%;
-height: 100%;
-background-color: rgba(0, 0, 0, 0.8);
-animation: fadeIn 0.3s ease;
-backdrop-filter: blur(5px);
-}
-.modal.active {
-display: flex;
-align-items: center;
-justify-content: center;
-padding: 1rem;
-}
-@keyframes fadeIn {
-from { opacity: 0; }
-to { opacity: 1; }
-}
-.modal-content {
-background: linear-gradient(180deg, #022c22 0%, #064e3b 50%, #022c22 100%);
-padding: 2rem;
-border-radius: 1rem;
-max-width: 900px;
-max-height: 90vh;
-overflow-y: auto;
-border: 2px solid #d97706;
-box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9);
-animation: slideUp 0.3s ease;
-width: 100%;
-position: relative;
-}
-.modal-content::before {
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-height: 4px;
-background: linear-gradient(90deg, #d97706, #fbbf24, #d97706);
-}
-@keyframes slideUp {
-from { transform: translateY(50px); opacity: 0; }
-to { transform: translateY(0); opacity: 1; }
-}
-.close-btn {
-float: right;
-font-size: 32px;
-font-weight: bold;
-cursor: pointer;
-color: #fbbf24;
-transition: color 0.2s ease;
-line-height: 1;
-}
-.close-btn:hover {
-color: #fff;
-text-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
-}
-.cld-image-container {
-text-align: center;
-margin: 1.5rem 0;
-background: rgba(0,0,0,0.3);
-padding: 1rem;
-border-radius: 0.75rem;
-border: 1px solid rgba(251, 191, 36, 0.2);
-}
-.cld-image {
-max-width: 100%;
-height: auto;
-border-radius: 0.5rem;
-box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
-border: 1px solid rgba(251, 191, 36, 0.3);
-}
-.term-definition {
-background: rgba(0, 0, 0, 0.4);
-border-left: 4px solid #fbbf24;
-padding: 1rem;
-border-radius: 0 0.5rem 0.5rem 0;
-margin: 1rem 0;
-}
-.term-definition h4 {
-color: #fbbf24;
-margin-bottom: 0.5rem;
-font-weight: bold;
-}
-.term-definition p {
-color: #d1fae5;
-line-height: 1.6;
-}
-.btn-learn-more {
-background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
-color: white;
-padding: 0.75rem 1.25rem;
-border-radius: 0.5rem;
-font-weight: 600;
-text-decoration: none;
-display: inline-flex;
-align-items: center;
-gap: 0.5rem;
-transition: all 0.3s ease;
-cursor: pointer;
-border: none;
-font-size: 0.9rem;
-margin-top: 0.5rem;
-border: 1px solid rgba(251, 191, 36, 0.5);
-}
-.btn-learn-more:hover {
-transform: translateY(-2px);
-box-shadow: 0 10px 25px rgba(217, 119, 6, 0.4);
-background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
-color: #022c22;
-}
-.geometric-pattern {
-position: absolute;
-opacity: 0.05;
-pointer-events: none;
-}
-@media (max-width: 768px) {
-.container {
-padding: 1rem;
-}
-.header h1 {
-font-size: 1.5rem;
-}
-.header .subtitle {
-font-size: 1.1rem;
-}
-.header p {
-font-size: 0.9rem;
-}
-.vision-grid,
-.priorities-grid,
-.swot-grid {
-grid-template-columns: 1fr;
-}
-.tabs {
-overflow-x: auto;
-flex-wrap: nowrap;
-}
-.tab-btn {
-white-space: nowrap;
-font-size: 0.8rem;
-padding: 0.6rem 1rem;
-}
-.tooltip {
-width: 250px;
-font-size: 0.8rem;
-}
-}
-.install-container {
-position: fixed;
-bottom: 1rem;
-right: 1rem;
-z-index: 1000;
-}
-.install-btn {
-background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
-color: white;
-border: none;
-padding: 0.75rem 1.5rem;
-border-radius: 0.5rem;
-font-weight: bold;
-cursor: pointer;
-box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
-transition: all 0.3s;
-border: 1px solid rgba(251, 191, 36, 0.5);
-}
-.install-btn:hover {
-background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
-color: #022c22;
-transform: translateY(-2px);
-}
-.leverage-points {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-gap: 1rem;
-margin: 2rem 0;
-}
-.leverage-point {
-background: rgba(6, 78, 59, 0.6);
-border: 1px solid rgba(251, 191, 36, 0.3);
-padding: 1rem;
-border-radius: 0.5rem;
-text-align: center;
-}
-.leverage-point-number {
-font-size: 1.5rem;
-font-weight: bold;
-color: #fbbf24;
-margin-bottom: 0.5rem;
-}
-.leverage-point-title {
-font-size: 0.9rem;
-color: #d1fae5;
-font-weight: 600;
-}
+/* ===== DESIGN TOKENS (mirrored from enhanced roadmap) ===== */
+:root{
+  --primary-green:#064e3b;
+  --dark-green:#022c22;
+  --mid-green:#065f46;
+  --light-green:#6ee7b7;
+  --cream:#ecfdf5;
+  --white:#ffffff;
+  --text-dark:#0f172a;
+  --text-muted:#64748b;
+  /* Metallic gold */
+  --gold:#C9A84C;
+  --gold-light:#E8C560;
+  --gold-dark:#8B6C28;
+  --gold-pale:#fdf6e3;
+  --gold-border:rgba(201,168,76,0.32);
+  --gold-border-strong:rgba(201,168,76,0.55);
+  --gold-glow:rgba(201,168,76,0.20);
+  --gold-grad:linear-gradient(135deg,#7a5c1e 0%,#c9a84c 35%,#e8c560 50%,#c9a84c 65%,#7a5c1e 100%);
+  /* Perspective colours */
+  --clr-vision:#4c1d95;
+  --clr-finance:#064e3b;
+  --clr-stakeholder:#1e3a8a;
+  --clr-process:#78350f;
+  --clr-learning:#134e4a;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:linear-gradient(160deg,#011a12 0%,#022c22 45%,#0a1628 100%);
+  min-height:100vh;
+  color:var(--cream);
+  background-attachment:fixed;
+  overflow-x:hidden;
+}
+
+/* ===================== NAV ===================== */
+.site-nav{
+  background:rgba(2,44,34,.97);
+  backdrop-filter:blur(18px);
+  position:sticky;
+  top:0;
+  width:100%;
+  z-index:200;
+  border-bottom:2px solid var(--gold-border);
+  transition:box-shadow .4s;
+}
+.site-nav.scrolled{box-shadow:0 4px 30px rgba(0,0,0,.5);}
+.nav-inner{
+  max-width:1400px;
+  margin:0 auto;
+  padding:.55rem 2rem;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:1rem;
+}
+.nav-logo img{
+  height:52px;
+  width:auto;
+  object-fit:contain;
+  display:block;
+}
+.nav-links-list{
+  display:flex;
+  gap:1.5rem;
+  list-style:none;
+  align-items:center;
+}
+.nav-links-list a{
+  color:var(--light-green);
+  text-decoration:none;
+  font-size:.82rem;
+  font-weight:500;
+  letter-spacing:.03em;
+  position:relative;
+  transition:color .3s;
+  white-space:nowrap;
+}
+.nav-links-list a::after{
+  content:'';position:absolute;bottom:-3px;left:0;
+  width:0;height:2px;background:var(--gold);
+  transition:width .3s;
+}
+.nav-links-list a:hover{color:var(--gold);}
+.nav-links-list a:hover::after{width:100%;}
+
+/* ===================== PAGE HEADER ===================== */
+.page-header{
+  text-align:center;
+  padding:3.5rem 2rem 2rem;
+  position:relative;
+}
+.page-header::before{
+  content:'';
+  position:absolute;
+  top:0;left:50%;
+  transform:translateX(-50%);
+  width:220px;height:4px;
+  background:var(--gold-grad);
+  border-radius:2px;
+}
+.page-header::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:radial-gradient(ellipse at 50% 0%,rgba(201,168,76,.06) 0%,transparent 65%);
+  pointer-events:none;
+}
+.header-eyebrow{
+  display:inline-block;
+  background:rgba(201,168,76,.10);
+  border:1px solid var(--gold-border-strong);
+  color:var(--gold);
+  padding:.35rem 1.25rem;
+  border-radius:2rem;
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  margin-bottom:1.1rem;
+}
+.page-header h1{
+  font-family:'Cinzel',serif;
+  font-size:clamp(1.85rem,4vw,3rem);
+  font-weight:700;
+  background:var(--gold-grad);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  line-height:1.2;
+  margin-bottom:.5rem;
+}
+.page-header .subtitle{
+  font-size:1.15rem;
+  color:var(--light-green);
+  font-weight:600;
+  margin-bottom:.4rem;
+  font-family:'Cinzel',serif;
+}
+.page-header .tagline{
+  font-size:.95rem;
+  color:rgba(255,255,255,.55);
+  font-style:italic;
+  letter-spacing:.02em;
+}
+
+/* ===================== TABS ===================== */
+.tabs-bar{
+  display:flex;
+  gap:.5rem;
+  flex-wrap:wrap;
+  justify-content:center;
+  background:rgba(6,78,59,.35);
+  padding:.75rem 1rem;
+  border-radius:.875rem;
+  border:1px solid var(--gold-border);
+  margin:1.5rem auto 2rem;
+  max-width:1400px;
+  padding-left:2rem;
+  padding-right:2rem;
+}
+.tab-btn{
+  padding:.65rem 1.3rem;
+  border:1px solid var(--gold-border);
+  border-radius:.5rem;
+  font-family:'DM Sans',sans-serif;
+  font-size:.82rem;
+  font-weight:600;
+  cursor:pointer;
+  transition:all .28s ease;
+  background:rgba(2,44,34,.75);
+  color:rgba(167,243,208,.85);
+  letter-spacing:.02em;
+  outline:none;
+}
+.tab-btn:hover{
+  background:rgba(6,95,70,.8);
+  color:var(--gold);
+  border-color:var(--gold-border-strong);
+  transform:translateY(-2px);
+  box-shadow:0 4px 14px rgba(201,168,76,.18);
+}
+.tab-btn.active{
+  background:var(--gold-grad);
+  color:var(--dark-green);
+  border-color:var(--gold);
+  box-shadow:0 4px 18px rgba(201,168,76,.3);
+  font-weight:700;
+}
+.tab-btn:focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
+
+/* ===================== TAB CONTENT ===================== */
+.tab-content{display:none;animation:fadeSlideIn .35s ease-out;}
+.tab-content.active{display:block;}
+@keyframes fadeSlideIn{
+  from{opacity:0;transform:translateY(10px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+/* ===================== MAIN LAYOUT ===================== */
+.page-container{max-width:1400px;margin:0 auto;padding:0 2rem 3rem;}
+
+/* ===================== STRATEGY MAP ===================== */
+.strategy-map{display:flex;flex-direction:column;gap:1.4rem;}
+
+.perspective{position:relative;}
+.connection-line{
+  position:absolute;
+  top:-1.4rem;left:50%;
+  transform:translateX(-50%);
+  width:2px;height:1.4rem;
+  background:linear-gradient(to bottom,var(--gold),transparent);
+  opacity:.5;
+}
+
+/* PERSPECTIVE CARD */
+.perspective-card{
+  border-radius:1rem;
+  overflow:hidden;
+  border:1px solid var(--gold-border);
+  transition:border-color .3s,box-shadow .3s;
+  box-shadow:0 8px 30px rgba(0,0,0,.3);
+}
+.perspective-card.expanded{
+  border-color:var(--gold);
+  box-shadow:0 0 0 2px var(--gold-border-strong),0 12px 40px rgba(0,0,0,.45);
+}
+
+/* Perspective colour overrides */
+.bg-vision{background:linear-gradient(135deg,#3b0764 0%,#5b21b6 100%);}
+.bg-finance{background:linear-gradient(135deg,#034930 0%,#065f46 100%);}
+.bg-stakeholder{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 100%);}
+.bg-process{background:linear-gradient(135deg,#7c2d12 0%,#c2410c 100%);}
+.bg-learning{background:linear-gradient(135deg,#134e4a 0%,#0f766e 100%);}
+
+.perspective-header{
+  width:100%;
+  padding:1.2rem 1.4rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  cursor:pointer;
+  border:none;
+  background:transparent;
+  color:white;
+  transition:background .25s;
+  text-align:left;
+}
+.perspective-header:hover{background:rgba(255,255,255,.08);}
+.perspective-header:focus-visible{outline:2px solid var(--gold);outline-offset:-2px;}
+
+.perspective-title-wrap{display:flex;align-items:center;gap:.75rem;}
+.p-icon{width:1.35rem;height:1.35rem;flex-shrink:0;}
+.perspective-name{
+  font-family:'Cinzel',serif;
+  font-size:1rem;
+  font-weight:700;
+  letter-spacing:.04em;
+  line-height:1.2;
+}
+
+.strategy-count{display:flex;align-items:center;gap:.5rem;}
+.count-badge{
+  font-size:.75rem;
+  background:rgba(255,255,255,.18);
+  padding:.2rem .7rem;
+  border-radius:2rem;
+  border:1px solid rgba(255,255,255,.25);
+  color:rgba(255,255,255,.9);
+  white-space:nowrap;
+}
+.chevron-icon{
+  width:1.3rem;height:1.3rem;
+  color:var(--gold);
+  transition:transform .3s;
+  flex-shrink:0;
+}
+.expanded .chevron-icon{transform:rotate(180deg);}
+
+/* VISION SECTION */
+.vision-items{
+  padding:1.4rem;
+  background:rgba(0,0,0,.28);
+}
+.vision-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:1rem;
+}
+.vision-item{
+  background:rgba(255,255,255,.08);
+  padding:1.2rem;
+  border-radius:.75rem;
+  border-left:4px solid var(--gold);
+  backdrop-filter:blur(8px);
+}
+.vision-title{
+  font-family:'Cinzel',serif;
+  font-weight:700;
+  margin-bottom:.45rem;
+  color:var(--gold);
+  font-size:1rem;
+}
+.vision-desc{
+  font-size:.85rem;
+  color:rgba(255,255,255,.8);
+  margin-bottom:.75rem;
+  line-height:1.55;
+}
+.vision-goals{display:flex;flex-direction:column;gap:.2rem;}
+.vision-goal{
+  font-size:.78rem;
+  color:var(--light-green);
+  display:flex;
+  align-items:center;
+  gap:.45rem;
+}
+
+/* STRATEGY DETAILS */
+.strategy-details{
+  padding:1.4rem;
+  background:rgba(0,0,0,.22);
+}
+.strategy-list{display:flex;flex-direction:column;gap:.7rem;}
+
+.strategy-item{
+  background:rgba(255,255,255,.06);
+  padding:.95rem 1.1rem;
+  border-radius:.75rem;
+  cursor:pointer;
+  transition:all .25s;
+  position:relative;
+  border:1px solid rgba(255,255,255,.08);
+}
+.strategy-item:hover{
+  background:rgba(255,255,255,.12);
+  border-color:var(--gold-border-strong);
+  transform:translateX(4px);
+}
+.strategy-item.selected{
+  border-color:var(--gold);
+  background:rgba(201,168,76,.09);
+  box-shadow:0 0 0 1px var(--gold-border-strong);
+}
+.strategy-item:focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
+
+/* TOOLTIP */
+.tooltip{
+  visibility:hidden;
+  width:310px;
+  background:var(--dark-green);
+  color:var(--cream);
+  text-align:left;
+  border-radius:.65rem;
+  padding:1rem 1.1rem;
+  position:absolute;
+  z-index:500;
+  bottom:calc(100% + 8px);
+  left:50%;
+  transform:translateX(-50%);
+  opacity:0;
+  transition:opacity .25s,visibility .25s;
+  font-size:.82rem;
+  border:1px solid var(--gold);
+  box-shadow:0 12px 35px rgba(0,0,0,.7);
+  pointer-events:none;
+}
+.strategy-item:hover .tooltip,
+.strategy-item:focus-within .tooltip{visibility:visible;opacity:1;}
+.tooltip h4{
+  font-family:'Cinzel',serif;
+  font-size:.85rem;
+  margin-bottom:.5rem;
+  color:var(--gold);
+  border-bottom:1px solid var(--gold-border);
+  padding-bottom:.4rem;
+}
+.tooltip p{
+  margin:.2rem 0;
+  line-height:1.45;
+  color:rgba(236,253,245,.85);
+}
+
+/* STRATEGY META */
+.strategy-meta{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  margin-bottom:.4rem;
+  flex-wrap:wrap;
+  gap:.4rem;
+}
+.strategy-pillar{
+  font-size:.7rem;
+  font-weight:700;
+  color:var(--gold);
+  text-transform:uppercase;
+  letter-spacing:.06em;
+}
+.strategy-target{
+  font-size:.7rem;
+  background:rgba(6,78,59,.8);
+  color:var(--light-green);
+  padding:.2rem .5rem;
+  border-radius:.3rem;
+  border:1px solid rgba(110,231,183,.25);
+  white-space:nowrap;
+}
+.strategy-action{
+  font-family:'Cinzel',serif;
+  font-weight:600;
+  margin-bottom:.35rem;
+  color:white;
+  font-size:.95rem;
+  line-height:1.3;
+}
+.strategy-kpi{
+  font-size:.8rem;
+  color:var(--light-green);
+  font-style:italic;
+}
+
+.leverage-badge{
+  display:inline-block;
+  background:var(--gold-grad);
+  color:var(--dark-green);
+  padding:.08rem .45rem;
+  border-radius:.3rem;
+  font-size:.65rem;
+  margin-left:.45rem;
+  font-weight:800;
+  font-family:'DM Sans',sans-serif;
+  font-style:normal;
+  vertical-align:middle;
+  letter-spacing:.03em;
+}
+
+.strategy-contributes{
+  margin-top:.65rem;
+  padding-top:.65rem;
+  border-top:1px solid var(--gold-border);
+}
+.contributes-title{
+  font-size:.68rem;
+  font-weight:700;
+  color:var(--gold);
+  margin-bottom:.4rem;
+  text-transform:uppercase;
+  letter-spacing:.07em;
+}
+.contributes-list{display:flex;flex-direction:column;gap:.2rem;}
+.contributes-item{
+  font-size:.75rem;
+  color:var(--light-green);
+  display:flex;
+  align-items:center;
+  gap:.45rem;
+}
+.dot{
+  width:.45rem;height:.45rem;
+  background:var(--gold);
+  border-radius:50%;
+  flex-shrink:0;
+  box-shadow:0 0 5px var(--gold-glow);
+}
+
+/* ===================== LEVERAGE POINTS ===================== */
+.priorities-section{
+  margin-top:3rem;
+  background:rgba(6,78,59,.28);
+  border-radius:1rem;
+  padding:2rem;
+  border:1px solid var(--gold-border);
+  position:relative;
+  overflow:hidden;
+}
+.priorities-section::before{
+  content:'';position:absolute;
+  top:0;left:0;right:0;height:3px;
+  background:var(--gold-grad);
+}
+.priorities-section::after{
+  content:'';position:absolute;
+  inset:0;
+  background:radial-gradient(ellipse at 80% 20%,rgba(201,168,76,.05) 0%,transparent 60%);
+  pointer-events:none;
+}
+.section-title-bar{
+  font-family:'Cinzel',serif;
+  font-size:1.3rem;
+  font-weight:700;
+  margin-bottom:1.4rem;
+  color:var(--gold);
+  text-align:center;
+  position:relative;
+  z-index:1;
+}
+.gold-divider{
+  width:50px;height:3px;
+  background:var(--gold-grad);
+  border-radius:2px;
+  margin:.5rem auto 1.5rem;
+}
+
+.leverage-points{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  gap:1rem;
+  margin-bottom:2.5rem;
+  position:relative;z-index:1;
+}
+.leverage-point{
+  background:rgba(2,44,34,.65);
+  border:1px solid var(--gold-border);
+  padding:1.1rem 1rem;
+  border-radius:.75rem;
+  text-align:center;
+  transition:transform .3s,border-color .3s,background .3s;
+}
+.leverage-point:hover{
+  transform:translateY(-3px);
+  border-color:var(--gold);
+  background:rgba(201,168,76,.08);
+}
+.lp-number{
+  font-family:'Cinzel',serif;
+  font-size:1.6rem;
+  font-weight:700;
+  color:var(--gold);
+  margin-bottom:.35rem;
+  line-height:1;
+}
+.lp-title{
+  font-size:.8rem;
+  color:rgba(167,243,208,.9);
+  font-weight:500;
+  line-height:1.4;
+}
+
+.priorities-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:1rem;
+  position:relative;z-index:1;
+}
+.priority-item{
+  background:rgba(255,255,255,.04);
+  padding:1.2rem;
+  border-radius:.75rem;
+  border-left:3px solid var(--gold);
+  transition:transform .3s,background .3s;
+}
+.priority-item:hover{
+  transform:translateY(-3px);
+  background:rgba(255,255,255,.08);
+}
+.priority-title{
+  font-family:'Cinzel',serif;
+  font-weight:700;
+  color:var(--gold);
+  margin-bottom:.4rem;
+  font-size:.95rem;
+}
+.priority-desc{font-size:.82rem;color:rgba(209,250,229,.8);line-height:1.5;}
+
+.instructions-bar{
+  margin-top:1.5rem;
+  text-align:center;
+  color:var(--light-green);
+  font-size:.8rem;
+  font-style:italic;
+  opacity:.75;
+}
+
+/* ===================== SWOT ===================== */
+.swot-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
+  gap:1.4rem;
+  margin-top:1rem;
+}
+.swot-card{
+  background:rgba(2,44,34,.5);
+  border-radius:1rem;
+  padding:1.4rem;
+  backdrop-filter:blur(10px);
+  transition:transform .3s;
+  border:1px solid transparent;
+}
+.swot-card:hover{transform:translateY(-4px);}
+.swot-card.strength{
+  border-color:rgba(16,185,129,.4);
+  background:linear-gradient(135deg,rgba(16,185,129,.12) 0%,rgba(2,44,34,.75) 100%);
+}
+.swot-card.weakness{
+  border-color:rgba(201,168,76,.4);
+  background:linear-gradient(135deg,rgba(201,168,76,.1) 0%,rgba(2,44,34,.75) 100%);
+}
+.swot-card.opportunity{
+  border-color:rgba(59,130,246,.4);
+  background:linear-gradient(135deg,rgba(59,130,246,.12) 0%,rgba(2,44,34,.75) 100%);
+}
+.swot-card.threat{
+  border-color:rgba(239,68,68,.4);
+  background:linear-gradient(135deg,rgba(239,68,68,.1) 0%,rgba(2,44,34,.75) 100%);
+}
+.swot-header{
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  margin-bottom:1rem;
+  font-family:'Cinzel',serif;
+  font-size:1.05rem;
+  font-weight:700;
+  color:white;
+}
+.swot-items{display:flex;flex-direction:column;gap:.65rem;}
+.swot-item{
+  background:rgba(0,0,0,.25);
+  padding:.8rem 1rem;
+  border-radius:.6rem;
+  font-size:.84rem;
+  line-height:1.5;
+  cursor:pointer;
+  transition:all .22s;
+  border-left:3px solid transparent;
+  color:rgba(236,253,245,.85);
+}
+.swot-item:hover{
+  background:rgba(0,0,0,.4);
+  border-left-color:var(--gold);
+  transform:translateX(4px);
+}
+.swot-item:focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
+.swot-archetype-tag{
+  font-size:.68rem;
+  font-weight:700;
+  color:var(--gold);
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  margin-bottom:.25rem;
+  display:block;
+}
+.swot-threat-tag{
+  font-size:.68rem;
+  font-weight:700;
+  color:#f87171;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  margin-bottom:.25rem;
+  display:block;
+}
+
+/* ===================== BSC TABLE ===================== */
+.bsc-wrapper{
+  background:rgba(2,44,34,.55);
+  border:1px solid var(--gold-border);
+  border-radius:1rem;
+  padding:2rem;
+  overflow-x:auto;
+  position:relative;
+}
+.bsc-wrapper::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:var(--gold-grad);border-radius:1rem 1rem 0 0;
+}
+.bsc-title{
+  font-family:'Cinzel',serif;
+  font-size:1.3rem;
+  font-weight:700;
+  margin-bottom:1.4rem;
+  color:var(--gold);
+}
+#bsc-table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:.82rem;
+  min-width:700px;
+}
+#bsc-table thead th{
+  padding:.75rem .85rem;
+  text-align:left;
+  color:var(--gold);
+  font-family:'Cinzel',serif;
+  font-weight:700;
+  font-size:.75rem;
+  letter-spacing:.05em;
+  background:rgba(201,168,76,.12);
+  border-bottom:2px solid var(--gold-border);
+}
+#bsc-table tbody tr{border-bottom:1px solid rgba(201,168,76,.12);}
+#bsc-table tbody tr:hover{background:rgba(201,168,76,.06);}
+#bsc-table tbody td{
+  padding:.7rem .85rem;
+  vertical-align:top;
+  line-height:1.45;
+}
+.bsc-persp{color:var(--gold);font-weight:700;font-family:'DM Sans',sans-serif;font-size:.78rem;letter-spacing:.04em;}
+.bsc-pillar{color:var(--light-green);font-size:.75rem;}
+.bsc-strategy{color:white;}
+.bsc-kpi{color:rgba(167,243,208,.9);font-style:italic;}
+.bsc-current{color:#fca5a5;font-size:.78rem;}
+.bsc-target{color:var(--light-green);font-weight:600;}
+.bsc-row-core{background:rgba(201,168,76,.08)!important;}
+.bsc-row-alt{background:rgba(0,0,0,.18);}
+
+/* ===================== MODALS ===================== */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  background:rgba(0,0,0,.82);
+  animation:modalFadeIn .25s ease;
+  backdrop-filter:blur(6px);
+  align-items:center;
+  justify-content:center;
+  padding:1rem;
+}
+.modal.active{display:flex;}
+@keyframes modalFadeIn{from{opacity:0;}to{opacity:1;}}
+
+.modal-content{
+  background:linear-gradient(175deg,#022c22 0%,#064e3b 55%,#022c22 100%);
+  padding:2rem 2.2rem;
+  border-radius:1.25rem;
+  max-width:880px;
+  width:100%;
+  max-height:90vh;
+  overflow-y:auto;
+  border:2px solid var(--gold);
+  box-shadow:0 24px 80px rgba(0,0,0,.9);
+  animation:modalSlideUp .3s ease;
+  position:relative;
+}
+.modal-content::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:4px;
+  background:var(--gold-grad);border-radius:1.25rem 1.25rem 0 0;
+}
+@keyframes modalSlideUp{
+  from{transform:translateY(40px);opacity:0;}
+  to{transform:translateY(0);opacity:1;}
+}
+.close-btn{
+  float:right;
+  font-size:2rem;
+  line-height:1;
+  font-weight:700;
+  cursor:pointer;
+  color:var(--gold);
+  transition:color .2s,text-shadow .2s;
+  background:none;border:none;padding:0;
+  font-family:'DM Sans',sans-serif;
+}
+.close-btn:hover{color:white;text-shadow:0 0 12px var(--gold-glow);}
+.close-btn:focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
+
+.modal-h2{
+  font-family:'Cinzel',serif;
+  color:var(--gold);
+  font-size:1.55rem;
+  font-weight:700;
+  margin-bottom:.85rem;
+  margin-top:.4rem;
+  clear:both;
+}
+.modal-lead{
+  color:rgba(209,250,229,.9);
+  margin-bottom:1.4rem;
+  font-size:1rem;
+  line-height:1.6;
+}
+
+.cld-box{
+  text-align:center;
+  margin:1.4rem 0;
+  background:rgba(0,0,0,.28);
+  padding:1rem;
+  border-radius:.85rem;
+  border:1px solid var(--gold-border);
+}
+.cld-box svg{
+  max-width:100%;
+  height:auto;
+  border-radius:.5rem;
+  border:1px solid var(--gold-border);
+}
+
+.insight-box{
+  background:rgba(0,0,0,.35);
+  border-left:4px solid var(--gold);
+  padding:1rem 1.1rem;
+  border-radius:0 .65rem .65rem 0;
+  margin:.9rem 0;
+}
+.insight-box h4{
+  font-family:'Cinzel',serif;
+  color:var(--gold);
+  margin-bottom:.4rem;
+  font-size:.9rem;
+}
+.insight-box p{
+  color:rgba(209,250,229,.85);
+  line-height:1.55;
+  font-size:.88rem;
+}
+
+/* ===================== INSTALL BUTTON ===================== */
+.install-wrap{
+  position:fixed;bottom:1.2rem;right:1.2rem;z-index:500;
+}
+#installBtn{
+  background:var(--gold-grad);
+  color:var(--dark-green);
+  border:none;
+  padding:.7rem 1.4rem;
+  border-radius:.5rem;
+  font-family:'Cinzel',serif;
+  font-weight:700;
+  font-size:.82rem;
+  cursor:pointer;
+  box-shadow:0 8px 25px rgba(0,0,0,.5);
+  transition:all .3s;
+  border:1px solid var(--gold);
+}
+#installBtn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 12px 30px rgba(201,168,76,.3);
+}
+.hidden{display:none!important;}
+
+/* ===================== SCROLL FADE ===================== */
+.fade-in-section{
+  opacity:0;
+  transform:translateY(20px);
+  transition:opacity .7s ease,transform .7s ease;
+}
+.fade-in-section.visible{opacity:1;transform:none;}
+
+/* ===================== RESPONSIVE ===================== */
+@media(max-width:900px){
+  .nav-links-list{display:none;}
+  .vision-grid,.priorities-grid,.swot-grid,.leverage-points{grid-template-columns:1fr;}
+}
+@media(max-width:640px){
+  .page-container{padding:0 1rem 2.5rem;}
+  .tabs-bar{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding:.65rem .75rem;gap:.4rem;}
+  .tab-btn{white-space:nowrap;font-size:.75rem;padding:.55rem .9rem;}
+  .tooltip{width:240px;font-size:.78rem;}
+  .modal-content{padding:1.4rem 1.2rem;}
+  .page-header h1{font-size:1.55rem;}
+  .bsc-table-scroll{overflow-x:auto;}
+}
+
+/* ===================== SCROLLBAR ===================== */
+::-webkit-scrollbar{width:6px;height:6px;}
+::-webkit-scrollbar-track{background:rgba(2,44,34,.5);}
+::-webkit-scrollbar-thumb{background:var(--gold-dark);border-radius:3px;}
+::-webkit-scrollbar-thumb:hover{background:var(--gold);}
 </style>
-<base target="_blank">
 </head>
 <body>
-<div class="container">
-<div class="header">
-<h1>The Emerging Bangsamoro</h1>
-<div class="subtitle">Investment Roadmap 2026-2035</div>
-<p>"A Hub for Resilient and Ethical Growth"</p>
-</div>
-<div class="tabs">
-<button class="tab-btn active" onclick="switchTab('strategy-map')">📊 Strategy Map</button>
-<button class="tab-btn" onclick="switchTab('swot-analysis')">🔍 SWOT + Systems Archetypes</button>
-<button class="tab-btn" onclick="switchTab('bsc-matrix')">📈 Balanced Scorecard</button>
-<button class="tab-btn" onclick="filterCore('core')">⭐ Critical Leverage Points</button>
-<button class="tab-btn" onclick="showAll('all')">👁️ Show All Initiatives</button>
-</div>
-<div id="strategy-map" class="tab-content active">
-<div class="strategy-map" id="strategyMapContainer"></div>
-<div class="priorities-section">
-<h3 class="priorities-title">Four Critical Leverage Points</h3>
-<div class="leverage-points">
-<div class="leverage-point">
-<div class="leverage-point-number">LP1</div>
-<div class="leverage-point-title">Halal Certification System Integrity</div>
-</div>
-<div class="leverage-point">
-<div class="leverage-point-number">LP2</div>
-<div class="leverage-point-title">Infrastructure-Energy-Connectivity Nexus</div>
-</div>
-<div class="leverage-point">
-<div class="leverage-point-number">LP3</div>
-<div class="leverage-point-title">Governance-Investor Confidence Feedback</div>
-</div>
-<div class="leverage-point">
-<div class="leverage-point-number">LP4</div>
-<div class="leverage-point-title">Islamic Finance Ecosystem Development</div>
-</div>
-</div>
-<h3 class="priorities-title" style="margin-top: 2rem;">2035 Strategic Vision</h3>
-<div class="priorities-grid">
-<div class="priority-item">
-<h4 class="priority-title">Halal Industry Ecosystem</h4>
-<p class="priority-desc">Establish internationally recognized certification body and develop Bangsamoro Halal Park in Matanog</p>
-</div>
-<div class="priority-item">
-<h4 class="priority-title">Enabling Infrastructure</h4>
-<p class="priority-desc">100% electrification and 70% internet penetration with integrated farm-to-market logistics</p>
-</div>
-<div class="priority-item">
-<h4 class="priority-title">Governance Excellence</h4>
-<p class="priority-desc">Streamlined one-stop investment facilitation with OIC/SMIIC international accreditation</p>
-</div>
-<div class="priority-item">
-<h4 class="priority-title">BIMP-EAGA Integration</h4>
-<p class="priority-desc">Premier gateway to 70M+ ASEAN consumers through strategic trade corridors</p>
-</div>
-</div>
-</div>
-<div class="instructions">
-<p>Hover over strategies for detailed KPIs • Click to expand perspectives • Use tabs to explore Systems Archetypes</p>
-</div>
-</div>
-<div id="swot-analysis" class="tab-content">
-<div class="swot-grid">
-<div class="swot-card strength">
-<div class="swot-header">
-<span>💪</span>
-<span>Strengths (Internal Assets)</span>
-</div>
-<div class="swot-items" id="strengths-list"></div>
-</div>
-<div class="swot-card weakness">
-<div class="swot-header">
-<span>⚠️</span>
-<span>Weaknesses & Systems Archetypes</span>
-</div>
-<div class="swot-items" id="weaknesses-list"></div>
-</div>
-<div class="swot-card opportunity">
-<div class="swot-header">
-<span>🌟</span>
-<span>Opportunities (External Potentials)</span>
-</div>
-<div class="swot-items" id="opportunities-list"></div>
-</div>
-<div class="swot-card threat">
-<div class="swot-header">
-<span>🔥</span>
-<span>Threats & Archetypes</span>
-</div>
-<div class="swot-items" id="threats-list"></div>
-</div>
-</div>
-</div>
-<div id="bsc-matrix" class="tab-content">
-<div style="background: rgba(2, 44, 34, 0.6); border: 1px solid rgba(251, 191, 36, 0.3); border-radius: 0.75rem; padding: 2rem; overflow-x: auto;">
-<h3 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 1.5rem; color: #fbbf24;">Balanced Scorecard Investment Roadmap (2026–2035)</h3>
-<table id="bsc-table" style="width: 100%; border-collapse: collapse; font-size: 0.875rem;"></table>
-</div>
-</div>
+
+<!-- NAV -->
+<nav class="site-nav" id="siteNav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo" aria-label="BARMM MTIT – Home">
+      <img src="https://mtit.bangsamoro.gov.ph/wp-content/uploads/2024/04/MTIT-HEADER-2024.png"
+           alt="Ministry of Trade, Investments and Tourism – BARMM"
+           onerror="this.style.display='none'">
+    </a>
+    <ul class="nav-links-list" role="list">
+      <li><a href="#strategy-section">Strategy Map</a></li>
+      <li><a href="#swot-section">SWOT</a></li>
+      <li><a href="#bsc-section">Balanced Scorecard</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<header class="page-header" role="banner">
+  <div class="header-eyebrow">Interactive Strategy Map 2026–2035</div>
+  <h1>The Emerging Bangsamoro</h1>
+  <div class="subtitle">Investment Roadmap 2026–2035</div>
+  <p class="tagline">"A Hub for Resilient and Ethical Growth"</p>
+</header>
+
+<!-- TABS BAR -->
+<div class="tabs-bar" role="tablist" aria-label="Strategy sections">
+  <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="strategy-map" onclick="switchTab('strategy-map',this)">📊 Strategy Map</button>
+  <button class="tab-btn" role="tab" aria-selected="false" aria-controls="swot-analysis" onclick="switchTab('swot-analysis',this)">🔍 SWOT + Archetypes</button>
+  <button class="tab-btn" role="tab" aria-selected="false" aria-controls="bsc-matrix" onclick="switchTab('bsc-matrix',this)">📈 Balanced Scorecard</button>
+  <button class="tab-btn" role="tab" aria-selected="false" onclick="filterCore()">⭐ Critical Leverage Points</button>
+  <button class="tab-btn" role="tab" aria-selected="false" onclick="showAll()">👁 Show All Initiatives</button>
 </div>
 
-<!-- Systems Archetype Modals -->
-<div id="archetypeModal1" class="modal">
-<div class="modal-content">
-<span class="close-btn" onclick="closeArchetypeModal(1)">×</span>
-<h2 style="color: #fbbf24; font-size: 1.75rem; font-weight: bold; margin-bottom: 1rem; margin-top: 0.5rem;">1. Limits to Growth</h2>
-<p style="color: #d1fae5; margin-bottom: 1.5rem; font-size: 1.05rem;">Investment growth potential faces limiting factors including infrastructure deficits, skills gaps, and governance capacity constraints.</p>
-<div class="cld-image-container">
-<svg viewBox="0 0 800 500" class="cld-image" style="background: rgba(0,0,0,0.2);">
-<!-- Simplified CLD Representation -->
-<defs>
-<marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-<polygon points="0 0, 10 3.5, 0 7" fill="#fbbf24" />
-</marker>
-</defs>
-<rect x="50" y="50" width="200" height="80" rx="10" fill="rgba(16, 185, 129, 0.3)" stroke="#10b981" stroke-width="2"/>
-<text x="150" y="95" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">Investment Promotion</text>
-<rect x="300" y="50" width="200" height="80" rx="10" fill="rgba(16, 185, 129, 0.3)" stroke="#10b981" stroke-width="2"/>
-<text x="400" y="85" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">Investor Interest</text>
-<text x="400" y="105" text-anchor="middle" fill="#a7f3d0" font-size="12">Capital Inflows</text>
-<rect x="550" y="50" width="200" height="80" rx="10" fill="rgba(16, 185, 129, 0.3)" stroke="#10b981" stroke-width="2"/>
-<text x="650" y="95" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">Economic Growth</text>
-<line x1="250" y1="90" x2="300" y2="90" stroke="#fbbf24" stroke-width="2" marker-end="url(#arrowhead)"/>
-<line x1="500" y1="90" x2="550" y2="90" stroke="#fbbf24" stroke-width="2" marker-end="url(#arrowhead)"/>
-<rect x="550" y="200" width="200" height="80" rx="10" fill="rgba(245, 158, 11, 0.3)" stroke="#f59e0b" stroke-width="2"/>
-<text x="650" y="235" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">Infrastructure</text>
-<text x="650" y="255" text-anchor="middle" fill="#fcd34d" font-size="12">Deficits</text>
-<rect x="550" y="350" width="200" height="80" rx="10" fill="rgba(245, 158, 11, 0.3)" stroke="#f59e0b" stroke-width="2"/>
-<text x="650" y="385" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">Growth</text>
-<text x="650" y="405" text-anchor="middle" fill="#fcd34d" font-size="12">Limitation</text>
-<line x1="650" y1="130" x2="650" y2="200" stroke="#ef4444" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
-<text x="670" y="165" fill="#ef4444" font-size="12">triggers</text>
-<line x1="650" y1="280" x2="650" y2="350" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrowhead)"/>
-<line x1="550" y1="390" x2="200" y2="130" stroke="#ef4444" stroke-width="2" marker-end="url(#arrowhead)"/>
-<text x="350" y="280" fill="#ef4444" font-size="12" transform="rotate(-25 350 280)">slows</text>
-<text x="150" y="150" fill="#10b981" font-size="16" font-weight="bold">R: Reinforcing Loop</text>
-<text x="580" y="320" fill="#f59e0b" font-size="16" font-weight="bold">B: Balancing Loop</text>
-</svg>
-</div>
-<div class="term-definition">
-<h4>💡 Key Insight: The Growth Ceiling</h4>
-<p>Initial growth produced by reinforcing processes eventually slows due to balancing forces. Without proactive investment in enabling infrastructure, growth plateaus as the system encounters resource constraints.</p>
-</div>
-<div class="term-definition">
-<h4>🎯 Strategic Response</h4>
-<p><strong>LP2 Infrastructure-Energy-Connectivity Nexus:</strong> Invest in energy infrastructure (80-100% electrification by 2028) and digital connectivity (70% internet penetration by 2030) to raise the growth ceiling before momentum stalls.</p>
-</div>
-</div>
+<!-- PAGE CONTENT -->
+<main class="page-container" id="mainContent">
+
+  <!-- STRATEGY MAP TAB -->
+  <div id="strategy-map" class="tab-content active fade-in-section" role="tabpanel" aria-label="Strategy Map">
+    <div class="strategy-map" id="strategyMapContainer"></div>
+
+    <!-- LEVERAGE POINTS & VISION -->
+    <div class="priorities-section fade-in-section">
+      <h3 class="section-title-bar">Four Critical Leverage Points</h3>
+      <div class="gold-divider"></div>
+      <div class="leverage-points" role="list">
+        <div class="leverage-point" role="listitem">
+          <div class="lp-number">LP1</div>
+          <div class="lp-title">Halal Certification System Integrity</div>
+        </div>
+        <div class="leverage-point" role="listitem">
+          <div class="lp-number">LP2</div>
+          <div class="lp-title">Infrastructure–Energy–Connectivity Nexus</div>
+        </div>
+        <div class="leverage-point" role="listitem">
+          <div class="lp-number">LP3</div>
+          <div class="lp-title">Governance–Investor Confidence Feedback</div>
+        </div>
+        <div class="leverage-point" role="listitem">
+          <div class="lp-number">LP4</div>
+          <div class="lp-title">Islamic Finance Ecosystem Development</div>
+        </div>
+      </div>
+
+      <h3 class="section-title-bar" style="margin-top:2rem;">2035 Strategic Vision</h3>
+      <div class="gold-divider"></div>
+      <div class="priorities-grid">
+        <div class="priority-item">
+          <h4 class="priority-title">Halal Industry Ecosystem</h4>
+          <p class="priority-desc">Establish internationally recognised certification body and develop Bangsamoro Halal Park in Matanog.</p>
+        </div>
+        <div class="priority-item">
+          <h4 class="priority-title">Enabling Infrastructure</h4>
+          <p class="priority-desc">100% electrification and 70% internet penetration with integrated farm-to-market logistics.</p>
+        </div>
+        <div class="priority-item">
+          <h4 class="priority-title">Governance Excellence</h4>
+          <p class="priority-desc">Streamlined one-stop investment facilitation with OIC/SMIIC international accreditation.</p>
+        </div>
+        <div class="priority-item">
+          <h4 class="priority-title">BIMP-EAGA Integration</h4>
+          <p class="priority-desc">Premier gateway to 70M+ ASEAN consumers through strategic trade corridors.</p>
+        </div>
+      </div>
+    </div>
+    <p class="instructions-bar" aria-live="polite">Hover over strategies for detailed KPIs&nbsp;•&nbsp;Click to expand perspectives&nbsp;•&nbsp;Use tabs to explore Systems Archetypes</p>
+  </div>
+
+  <!-- SWOT TAB -->
+  <div id="swot-analysis" class="tab-content fade-in-section" role="tabpanel" aria-label="SWOT Analysis and Systems Archetypes">
+    <div class="swot-grid">
+      <div class="swot-card strength" role="region" aria-label="Strengths">
+        <div class="swot-header"><span aria-hidden="true">💪</span><span>Strengths — Internal Assets</span></div>
+        <div class="swot-items" id="strengths-list"></div>
+      </div>
+      <div class="swot-card weakness" role="region" aria-label="Weaknesses and Systems Archetypes">
+        <div class="swot-header"><span aria-hidden="true">⚠️</span><span>Weaknesses &amp; Archetypes</span></div>
+        <div class="swot-items" id="weaknesses-list"></div>
+      </div>
+      <div class="swot-card opportunity" role="region" aria-label="Opportunities">
+        <div class="swot-header"><span aria-hidden="true">🌟</span><span>Opportunities — External Potentials</span></div>
+        <div class="swot-items" id="opportunities-list"></div>
+      </div>
+      <div class="swot-card threat" role="region" aria-label="Threats and Archetypes">
+        <div class="swot-header"><span aria-hidden="true">🔥</span><span>Threats &amp; Archetypes</span></div>
+        <div class="swot-items" id="threats-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BSC TAB -->
+  <div id="bsc-matrix" class="tab-content fade-in-section" role="tabpanel" aria-label="Balanced Scorecard">
+    <div class="bsc-wrapper">
+      <h3 class="bsc-title">Balanced Scorecard Investment Roadmap (2026–2035)</h3>
+      <div class="bsc-table-scroll">
+        <table id="bsc-table" aria-label="Balanced Scorecard data table"></table>
+      </div>
+    </div>
+  </div>
+
+</main><!-- /main -->
+
+<!-- ARCHETYPE MODAL 1: Limits to Growth -->
+<div id="archetypeModal1" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal1-title" tabindex="-1">
+  <div class="modal-content">
+    <button class="close-btn" onclick="closeArchetypeModal(1)" aria-label="Close Limits to Growth modal">×</button>
+    <h2 class="modal-h2" id="modal1-title">1. Limits to Growth</h2>
+    <p class="modal-lead">Investment growth potential faces limiting factors including infrastructure deficits, skills gaps, and governance capacity constraints. The reinforcing loop (R) drives growth until the balancing loop (B) activates.</p>
+    <div class="cld-box" aria-label="Causal Loop Diagram: Limits to Growth">
+      <svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg" style="background:rgba(0,0,0,.15);" role="img" aria-describedby="cld1-desc">
+        <desc id="cld1-desc">A causal loop diagram showing a reinforcing loop between Investment Promotion, Investor Interest, and Economic Growth (all positive links), and a balancing loop triggered by Infrastructure Deficits leading to Growth Limitation that feeds back negatively to the reinforcing loop.</desc>
+        <defs>
+          <marker id="m1g" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><polygon points="0,0 10,3.5 0,7" fill="#10b981"/></marker>
+          <marker id="m1r" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><polygon points="0,0 10,3.5 0,7" fill="#ef4444"/></marker>
+          <marker id="m1o" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><polygon points="0,0 10,3.5 0,7" fill="#C9A84C"/></marker>
+        </defs>
+        <!-- R loop nodes -->
+        <rect x="40" y="40" width="180" height="65" rx="10" fill="rgba(16,185,129,.2)" stroke="#10b981" stroke-width="1.5"/>
+        <text x="130" y="75" text-anchor="middle" fill="white" font-size="13" font-family="Cinzel,serif">Investment</text>
+        <text x="130" y="93" text-anchor="middle" fill="#a7f3d0" font-size="11" font-family="DM Sans,sans-serif">Promotion</text>
+        <rect x="295" y="40" width="180" height="65" rx="10" fill="rgba(16,185,129,.2)" stroke="#10b981" stroke-width="1.5"/>
+        <text x="385" y="75" text-anchor="middle" fill="white" font-size="13" font-family="Cinzel,serif">Investor Interest</text>
+        <text x="385" y="93" text-anchor="middle" fill="#a7f3d0" font-size="11" font-family="DM Sans,sans-serif">Capital Inflows</text>
+        <rect x="560" y="40" width="180" height="65" rx="10" fill="rgba(16,185,129,.2)" stroke="#10b981" stroke-width="1.5"/>
+        <text x="650" y="75" text-anchor="middle" fill="white" font-size="13" font-family="Cinzel,serif">Economic</text>
+        <text x="650" y="93" text-anchor="middle" fill="#a7f3d0" font-size="11" font-family="DM Sans,sans-serif">Growth</text>
+        <!-- R arrows -->
+        <line x1="220" y1="72" x2="295" y2="72" stroke="#10b981" stroke-width="2" marker-end="url(#m1g)"/>
+        <text x="257" y="64" fill="#10b981" font-size="13" font-weight="bold" text-anchor="middle">+</text>
+        <line x1="475" y1="72" x2="560" y2="72" stroke="#10b981" stroke-width="2" marker-end="url(#m1g)"/>
+        <text x="518" y="64" fill="#10b981" font-size="13" font-weight="bold" text-anchor="middle">+</text>
+        <!-- R loop label -->
+        <circle cx="390" cy="155" r="30" fill="rgba(16,185,129,.1)" stroke="#10b981" stroke-width="1.5"/>
+        <text x="390" y="162" text-anchor="middle" fill="#10b981" font-size="16" font-weight="bold" font-family="Georgia,serif">R</text>
+        <!-- Feedback arc from Growth back to Investment -->
+        <path d="M 650 105 Q 650 155 390 155 Q 130 155 130 105" fill="none" stroke="#10b981" stroke-width="1.8" stroke-dasharray="8,4" marker-end="url(#m1g)"/>
+        <text x="390" y="182" fill="#10b981" font-size="11" font-family="DM Sans,sans-serif" text-anchor="middle">virtuous cycle</text>
+        <!-- B loop nodes -->
+        <rect x="560" y="240" width="180" height="65" rx="10" fill="rgba(201,168,76,.18)" stroke="#C9A84C" stroke-width="1.5"/>
+        <text x="650" y="275" text-anchor="middle" fill="white" font-size="13" font-family="Cinzel,serif">Infrastructure</text>
+        <text x="650" y="293" text-anchor="middle" fill="#e8c560" font-size="11" font-family="DM Sans,sans-serif">Deficits / Gaps</text>
+        <rect x="280" y="330" width="220" height="65" rx="10" fill="rgba(201,168,76,.18)" stroke="#C9A84C" stroke-width="1.5"/>
+        <text x="390" y="368" text-anchor="middle" fill="white" font-size="13" font-family="Cinzel,serif">Growth Limitation</text>
+        <!-- B label -->
+        <circle cx="550" cy="330" r="28" fill="rgba(201,168,76,.1)" stroke="#C9A84C" stroke-width="1.5"/>
+        <text x="550" y="337" text-anchor="middle" fill="#C9A84C" font-size="16" font-weight="bold" font-family="Georgia,serif">B</text>
+        <!-- Trigger arrow: Growth → Infra -->
+        <line x1="650" y1="105" x2="650" y2="240" stroke="#ef4444" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#m1r)"/>
+        <text x="668" y="175" fill="#ef4444" font-size="10" font-family="DM Sans,sans-serif">triggers</text>
+        <!-- Infra → Growth Limit -->
+        <line x1="620" y1="305" x2="510" y2="340" stroke="#C9A84C" stroke-width="2" marker-end="url(#m1o)"/>
+        <text x="575" y="318" fill="#C9A84C" font-size="11" font-weight="bold" text-anchor="middle">+</text>
+        <!-- Growth Limit → Investment (negative) -->
+        <line x1="280" y1="362" x2="130" y2="140" stroke="#ef4444" stroke-width="2" marker-end="url(#m1r)"/>
+        <text x="185" y="262" fill="#ef4444" font-size="11" font-weight="bold">−</text>
+        <text x="155" y="278" fill="#ef4444" font-size="10" font-family="DM Sans,sans-serif">constrains</text>
+        <!-- Legend -->
+        <rect x="30" y="380" width="340" height="30" rx="5" fill="rgba(0,0,0,.2)"/>
+        <line x1="45" y1="395" x2="80" y2="395" stroke="#10b981" stroke-width="2"/>
+        <text x="90" y="399" fill="#a7f3d0" font-size="10" font-family="DM Sans,sans-serif">Reinforcing (R) — same direction (+)</text>
+        <line x1="210" y1="395" x2="245" y2="395" stroke="#ef4444" stroke-width="2" stroke-dasharray="4,3"/>
+        <text x="255" y="399" fill="#fca5a5" font-size="10" font-family="DM Sans,sans-serif">Constraining (−)</text>
+      </svg>
+    </div>
+    <div class="insight-box">
+      <h4>💡 Key Insight: The Growth Ceiling</h4>
+      <p>Initial growth from the reinforcing loop (R) eventually slows when the balancing loop (B) activates via infrastructure deficits and skills gaps. Without proactive investment, growth plateaus as constraints are encountered.</p>
+    </div>
+    <div class="insight-box">
+      <h4>🎯 Strategic Response — LP2 Infrastructure-Energy-Connectivity Nexus</h4>
+      <p>Invest in energy (80-100% electrification by 2028) and digital connectivity (70% internet by 2030) to raise the growth ceiling before momentum stalls — acting on the constraint before it binds.</p>
+    </div>
+  </div>
 </div>
 
-<div id="archetypeModal2" class="modal">
-<div class="modal-content">
-<span class="close-btn" onclick="closeArchetypeModal(2)">×</span>
-<h2 style="color: #fbbf24; font-size: 1.75rem; font-weight: bold; margin-bottom: 1rem; margin-top: 0.5rem;">2. Success to the Successful</h2>
-<p style="color: #d1fae5; margin-bottom: 1.5rem; font-size: 1.05rem;">Early success in the halal industry could divert disproportionate resources, creating imbalances and neglecting other priority sectors such as tourism, agribusiness, and renewable energy.</p>
-<div class="cld-image-container">
-<svg viewBox="0 0 800 400" class="cld-image" style="background: rgba(0,0,0,0.2);">
-<defs>
-<marker id="arrowhead2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-<polygon points="0 0, 10 3.5, 0 7" fill="#fbbf24" />
-</marker>
-</defs>
-<rect x="50" y="50" width="180" height="60" rx="10" fill="rgba(16, 185, 129, 0.3)" stroke="#10b981" stroke-width="2"/>
-<text x="140" y="85" text-anchor="middle" fill="#fff" font-size="13" font-weight="bold">Early Halal Success</text>
-<rect x="50" y="150" width="180" height="60" rx="10" fill="rgba(16, 185, 129, 0.3)" stroke="#10b981" stroke-width="2"/>
-<text x="140" y="175" text-anchor="middle" fill="#fff" font-size="13" font-weight="bold">More Resources</text>
-<text x="140" y="190" text-anchor="middle" fill="#a7f3d0" font-size="11">to Halal</text>
-<rect x="50" y="250" width="180" height="60" rx="10" fill="rgba(16, 185, 129, 0.3)" stroke="#10b981" stroke-width="2"/>
-<text x="140" y="285" text-anchor="middle" fill="#fff" font-size="13" font-weight="bold">Better Performance</text>
-<line x1="140" y1="110" x2="140" y2="150" stroke="#10b981" stroke-width="2" marker-end="url(#arrowhead2)"/>
-<line x1="140" y1="210" x2="140" y2="250" stroke="#10b981" stroke-width="2" marker-end="url(#arrowhead2)"/>
-<line x1="50" y1="280" x2="30" y2="200" stroke="#10b981" stroke-width="2" marker-end="url(#arrowhead2)"/>
-<rect x="450" y="150" width="180" height="60" rx="10" fill="rgba(239, 68, 68, 0.3)" stroke="#ef4444" stroke-width="2"/>
-<text x="540" y="175" text-anchor="middle" fill="#fff" font-size="13" font-weight="bold">Fewer Resources</text>
-<text x="540" y="190" text-anchor="middle" fill="#fca5a5" font-size="11">to Other Sectors</text>
-<rect x="450" y="250" width="180" height="60" rx="10" fill="rgba(239, 68, 68, 0.3)" stroke="#ef4444" stroke-width="2"/>
-<text x="540" y="285" text-anchor="middle" fill="#fff" font-size="13" font-weight="bold">Continued Struggle</text>
-<line x1="230" y1="180" x2="450" y2="180" stroke="#fbbf24" stroke-width="3" marker-end="url(#arrowhead2)"/>
-<text x="340" y="170" fill="#fbbf24" font-size="12" font-weight="bold">resources diverted</text>
-<line x1="450" y1="280" x2="230" y2="280" stroke="#ef4444" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead2)"/>
-<text x="340" y="300" fill="#ef4444" font-size="12">resources denied</text>
-<text x="140" y="350" fill="#10b981" font-size="14" font-weight="bold">HALAL INDUSTRY (Sector A)</text>
-<text x="540" y="350" fill="#ef4444" font-size="14" font-weight="bold">OTHER SECTORS (Sector B)</text>
-</svg>
-</div>
-<div class="term-definition">
-<h4>💡 Key Insight: Resource Imbalance</h4>
-<p>Initial success creates a virtuous cycle for the winning sector but a vicious cycle for others. Without intervention, halal industry growth could starve tourism, agribusiness, and renewable energy of necessary investment.</p>
-</div>
-<div class="term-definition">
-<h4>🎯 Strategic Response</h4>
-<p><strong>Integrated Halal-Driven Strategy:</strong> Establish sectoral balance criteria and periodic resource reallocation reviews. Ensure halal industry development includes value chain integration with agriculture and supports cross-sectoral infrastructure.</p>
-</div>
-</div>
-</div>
-
-<div id="archetypeModal3" class="modal">
-<div class="modal-content">
-<span class="close-btn" onclick="closeArchetypeModal(3)">×</span>
-<h2 style="color: #fbbf24; font-size: 1.75rem; font-weight: bold; margin-bottom: 1rem; margin-top: 0.5rem;">3. Fixes that Fail</h2>
-<p style="color: #d1fae5; margin-bottom: 1.5rem; font-size: 1.05rem;">Ad hoc tax incentives without systemic governance reform may attract some initial investment but fail to build the institutional capacity needed for sustained investment attraction.</p>
-<div class="cld-image-container">
-<svg viewBox="0 0 800 450" class="cld-image" style="background: rgba(0,0,0,0.2);">
-<defs>
-<marker id="arrowhead3" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-<polygon points="0 0, 10 3.5, 0 7" fill="#fbbf24" />
-</marker>
-</defs>
-<rect x="50" y="180" width="160" height="70" rx="10" fill="rgba(239, 68, 68, 0.3)" stroke="#ef4444" stroke-width="2"/>
-<text x="130" y="215" text-anchor="middle" fill="#fff" font-size="13" font-weight="bold">Low Investor</text>
-<text x="130" y="235" text-anchor="middle" fill="#fff" font-size="13" font-weight="bold">Confidence</text>
-<rect x="300" y="180" width="160" height="70" rx="10" fill="rgba(245, 158, 11, 0.3)" stroke="#f59e0b" stroke-width="2"/>
-<text x="380" y="215" text-anchor="middle" fill="#fff" font-size="13" font-weight="bold">Ad Hoc Tax</text>
-<text x="380" y="235" text-anchor="middle" fill="#fff" font-size="13" font-weight="bold">Incentives</text>
-<rect x="550" y="180" width="160" height="70" rx="10" fill="rgba(16, 185, 129, 0.3)" stroke="#10b981" stroke-width="2"/>
-<text x="630" y="220" text-anchor="middle" fill="#fff" font-size="13" font-weight="bold">Temporary Interest</text>
-<line x1="210" y1="215" x2="300" y2="215" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrowhead3)"/>
-<text x="255" y="205" fill="#f59e0b" font-size="11">applied</text>
-<line x1="460" y1="215" x2="550" y2="215" stroke="#10b981" stroke-width="2" marker-end="url(#arrowhead3)"/>
-<text x="505" y="205" fill="#10b981" font-size="11">produces</text>
-<path d="M 630 250 Q 630 320 380 320 Q 130 320 130 250" stroke="#ef4444" stroke-width="2" fill="none" marker-end="url(#arrowhead3)" stroke-dasharray="5,5"/>
-<text x="380" y="340" fill="#ef4444" font-size="12" text-anchor="middle">worsens (delayed effect)</text>
-<rect x="300" y="350" width="160" height="70" rx="10" fill="rgba(239, 68, 68, 0.3)" stroke="#ef4444" stroke-width="2"/>
-<text x="380" y="385" text-anchor="middle" fill="#fff" font-size="13" font-weight="bold">Revenue Loss &</text>
-<text x="380" y="405" text-anchor="middle" fill="#fff" font-size="13" font-weight="bold">Weak Institutions</text>
-<line x1="380" y1="250" x2="380" y2="350" stroke="#ef4444" stroke-width="2" marker-end="url(#arrowhead3)"/>
-<text x="400" y="300" fill="#ef4444" font-size="11">unintended</text>
-<text x="400" y="315" fill="#ef4444" font-size="11">consequences</text>
-</svg>
-</div>
-<div class="term-definition">
-<h4>💡 Key Insight: The Symptom Relief Trap</h4>
-<p>Quick fixes provide temporary relief but create unintended consequences (revenue loss, institutional weakness) that worsen the fundamental problem over time. The "fix" becomes the addiction.</p>
-</div>
-<div class="term-definition">
-<h4>🎯 Strategic Response</h4>
-<p><strong>LP3 Governance-Investor Confidence:</strong> Address root causes through systemic governance reforms rather than temporary patches. Implement transparent regulatory frameworks, streamline BBNR to 1-day registration, and establish international accreditation for BHB.</p>
-</div>
-</div>
+<!-- ARCHETYPE MODAL 2: Success to the Successful -->
+<div id="archetypeModal2" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal2-title" tabindex="-1">
+  <div class="modal-content">
+    <button class="close-btn" onclick="closeArchetypeModal(2)" aria-label="Close Success to the Successful modal">×</button>
+    <h2 class="modal-h2" id="modal2-title">2. Success to the Successful</h2>
+    <p class="modal-lead">Early success in halal industry attracts disproportionate resources, creating imbalances and neglecting tourism, agribusiness, and renewable energy — two competing reinforcing loops share a limited resource pool.</p>
+    <div class="cld-box" aria-label="Causal Loop Diagram: Success to the Successful">
+      <svg viewBox="0 0 800 370" xmlns="http://www.w3.org/2000/svg" style="background:rgba(0,0,0,.15);" role="img" aria-describedby="cld2-desc">
+        <desc id="cld2-desc">Two competing reinforcing loops: one for the Halal Industry gaining more resources and performing better, and one for Other Sectors receiving fewer resources and performing worse. A central limited resource pool feeds one loop positively and the other negatively.</desc>
+        <defs>
+          <marker id="m2g" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><polygon points="0,0 10,3.5 0,7" fill="#10b981"/></marker>
+          <marker id="m2r" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><polygon points="0,0 10,3.5 0,7" fill="#ef4444"/></marker>
+          <marker id="m2o" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><polygon points="0,0 10,3.5 0,7" fill="#C9A84C"/></marker>
+        </defs>
+        <!-- Centre resource pool -->
+        <ellipse cx="400" cy="185" rx="70" ry="32" fill="rgba(100,116,139,.25)" stroke="#94a3b8" stroke-width="1.5"/>
+        <text x="400" y="181" text-anchor="middle" fill="#cbd5e1" font-size="11" font-family="Cinzel,serif">Limited</text>
+        <text x="400" y="197" text-anchor="middle" fill="#94a3b8" font-size="10" font-family="DM Sans,sans-serif">Resources</text>
+        <!-- Left: Halal Industry success loop -->
+        <rect x="30" y="50" width="170" height="55" rx="10" fill="rgba(16,185,129,.2)" stroke="#10b981" stroke-width="1.5"/>
+        <text x="115" y="82" text-anchor="middle" fill="white" font-size="12" font-family="Cinzel,serif">Halal Success</text>
+        <rect x="30" y="145" width="170" height="55" rx="10" fill="rgba(16,185,129,.2)" stroke="#10b981" stroke-width="1.5"/>
+        <text x="115" y="175" text-anchor="middle" fill="white" font-size="12" font-family="Cinzel,serif">More Resources</text>
+        <text x="115" y="191" text-anchor="middle" fill="#a7f3d0" font-size="10" font-family="DM Sans,sans-serif">to Halal</text>
+        <rect x="30" y="255" width="170" height="55" rx="10" fill="rgba(16,185,129,.2)" stroke="#10b981" stroke-width="1.5"/>
+        <text x="115" y="285" text-anchor="middle" fill="white" font-size="12" font-family="Cinzel,serif">Better</text>
+        <text x="115" y="301" text-anchor="middle" fill="#a7f3d0" font-size="10" font-family="DM Sans,sans-serif">Performance</text>
+        <!-- Left R arrows -->
+        <line x1="115" y1="105" x2="115" y2="145" stroke="#10b981" stroke-width="2" marker-end="url(#m2g)"/>
+        <text x="128" y="130" fill="#10b981" font-size="12" font-weight="bold">+</text>
+        <line x1="115" y1="200" x2="115" y2="255" stroke="#10b981" stroke-width="2" marker-end="url(#m2g)"/>
+        <text x="128" y="232" fill="#10b981" font-size="12" font-weight="bold">+</text>
+        <path d="M 30 282 Q 5 185 30 78" fill="none" stroke="#10b981" stroke-width="2" marker-end="url(#m2g)"/>
+        <text x="0" y="185" fill="#10b981" font-size="12" font-weight="bold">+</text>
+        <circle cx="80" cy="185" r="22" fill="rgba(16,185,129,.1)" stroke="#10b981" stroke-width="1.2"/>
+        <text x="80" y="192" text-anchor="middle" fill="#10b981" font-size="15" font-weight="bold" font-family="Georgia,serif">R</text>
+        <!-- Right: Other sectors failure loop -->
+        <rect x="600" y="50" width="170" height="55" rx="10" fill="rgba(239,68,68,.18)" stroke="#ef4444" stroke-width="1.5"/>
+        <text x="685" y="75" text-anchor="middle" fill="white" font-size="12" font-family="Cinzel,serif">Other Sectors</text>
+        <text x="685" y="91" text-anchor="middle" fill="#fca5a5" font-size="10" font-family="DM Sans,sans-serif">Tourism, Agri, Energy</text>
+        <rect x="600" y="145" width="170" height="55" rx="10" fill="rgba(239,68,68,.18)" stroke="#ef4444" stroke-width="1.5"/>
+        <text x="685" y="175" text-anchor="middle" fill="white" font-size="12" font-family="Cinzel,serif">Fewer Resources</text>
+        <text x="685" y="191" text-anchor="middle" fill="#fca5a5" font-size="10" font-family="DM Sans,sans-serif">to Other Sectors</text>
+        <rect x="600" y="255" width="170" height="55" rx="10" fill="rgba(239,68,68,.18)" stroke="#ef4444" stroke-width="1.5"/>
+        <text x="685" y="282" text-anchor="middle" fill="white" font-size="12" font-family="Cinzel,serif">Continued</text>
+        <text x="685" y="298" text-anchor="middle" fill="#fca5a5" font-size="10" font-family="DM Sans,sans-serif">Struggle</text>
+        <!-- Right R arrows -->
+        <line x1="685" y1="105" x2="685" y2="145" stroke="#ef4444" stroke-width="2" marker-end="url(#m2r)"/>
+        <text x="700" y="130" fill="#ef4444" font-size="12" font-weight="bold">+</text>
+        <line x1="685" y1="200" x2="685" y2="255" stroke="#ef4444" stroke-width="2" marker-end="url(#m2r)"/>
+        <text x="700" y="232" fill="#ef4444" font-size="12" font-weight="bold">+</text>
+        <path d="M 770 282 Q 798 185 770 78" fill="none" stroke="#ef4444" stroke-width="2" marker-end="url(#m2r)"/>
+        <text x="786" y="185" fill="#ef4444" font-size="12" font-weight="bold">+</text>
+        <circle cx="720" cy="185" r="22" fill="rgba(239,68,68,.1)" stroke="#ef4444" stroke-width="1.2"/>
+        <text x="720" y="192" text-anchor="middle" fill="#ef4444" font-size="15" font-weight="bold" font-family="Georgia,serif">R</text>
+        <!-- Cross-links from resource pool -->
+        <line x1="332" y1="175" x2="200" y2="162" stroke="#10b981" stroke-width="2" marker-end="url(#m2g)"/>
+        <text x="266" y="160" fill="#10b981" font-size="12" font-weight="bold" text-anchor="middle">+</text>
+        <line x1="468" y1="175" x2="600" y2="162" stroke="#ef4444" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#m2r)"/>
+        <text x="534" y="158" fill="#ef4444" font-size="12" font-weight="bold" text-anchor="middle">−</text>
+        <!-- Diverted label -->
+        <text x="400" y="148" fill="#C9A84C" font-size="11" text-anchor="middle" font-family="DM Sans,sans-serif">resources diverted ›</text>
+        <text x="400" y="228" fill="#ef4444" font-size="11" text-anchor="middle" font-family="DM Sans,sans-serif">‹ resources denied</text>
+      </svg>
+    </div>
+    <div class="insight-box">
+      <h4>💡 Key Insight: Resource Imbalance</h4>
+      <p>Initial success creates a virtuous cycle for the winning sector but a vicious cycle for others. Without planned intervention, halal industry growth could starve tourism, agribusiness, and renewable energy of investment.</p>
+    </div>
+    <div class="insight-box">
+      <h4>🎯 Strategic Response — Integrated Halal-Driven Strategy</h4>
+      <p>Establish sectoral balance criteria and periodic resource reallocation reviews. Ensure halal industry development includes value chain integration with agriculture and supports cross-sectoral infrastructure.</p>
+    </div>
+  </div>
 </div>
 
-<div class="install-container">
-<button class="install-btn hidden" id="installBtn">Install App</button>
+<!-- ARCHETYPE MODAL 3: Fixes that Fail -->
+<div id="archetypeModal3" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal3-title" tabindex="-1">
+  <div class="modal-content">
+    <button class="close-btn" onclick="closeArchetypeModal(3)" aria-label="Close Fixes that Fail modal">×</button>
+    <h2 class="modal-h2" id="modal3-title">3. Fixes that Fail</h2>
+    <p class="modal-lead">Ad-hoc tax incentives without systemic governance reform provide short-term investor relief but generate unintended consequences — revenue loss and weak institutions — that worsen the original problem over time.</p>
+    <div class="cld-box" aria-label="Causal Loop Diagram: Fixes that Fail">
+      <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" style="background:rgba(0,0,0,.15);" role="img" aria-describedby="cld3-desc">
+        <desc id="cld3-desc">A Fixes that Fail archetype showing a balancing loop where Ad Hoc Tax Incentives temporarily reduce Low Investor Confidence, but a delayed reinforcing loop causes Side Effects (Revenue Loss and Weak Institutions) that worsen the original problem.</desc>
+        <defs>
+          <marker id="m3g" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><polygon points="0,0 10,3.5 0,7" fill="#10b981"/></marker>
+          <marker id="m3r" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><polygon points="0,0 10,3.5 0,7" fill="#ef4444"/></marker>
+          <marker id="m3o" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><polygon points="0,0 10,3.5 0,7" fill="#C9A84C"/></marker>
+          <marker id="m3p" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto" markerUnits="userSpaceOnUse"><polygon points="0,0 10,3.5 0,7" fill="#9333ea"/></marker>
+        </defs>
+        <!-- Problem -->
+        <rect x="40" y="155" width="175" height="70" rx="10" fill="rgba(239,68,68,.2)" stroke="#ef4444" stroke-width="1.8"/>
+        <text x="128" y="185" text-anchor="middle" fill="white" font-size="13" font-family="Cinzel,serif">Low Investor</text>
+        <text x="128" y="203" text-anchor="middle" fill="white" font-size="13" font-family="Cinzel,serif">Confidence</text>
+        <!-- Fix -->
+        <rect x="305" y="155" width="175" height="70" rx="10" fill="rgba(201,168,76,.2)" stroke="#C9A84C" stroke-width="1.8"/>
+        <text x="393" y="185" text-anchor="middle" fill="white" font-size="13" font-family="Cinzel,serif">Ad-Hoc Tax</text>
+        <text x="393" y="203" text-anchor="middle" fill="white" font-size="13" font-family="Cinzel,serif">Incentives</text>
+        <!-- Symptom relief -->
+        <rect x="570" y="155" width="175" height="70" rx="10" fill="rgba(16,185,129,.2)" stroke="#10b981" stroke-width="1.8"/>
+        <text x="658" y="192" text-anchor="middle" fill="white" font-size="13" font-family="Cinzel,serif">Temporary</text>
+        <text x="658" y="208" text-anchor="middle" fill="#a7f3d0" font-size="11" font-family="DM Sans,sans-serif">Investor Interest</text>
+        <!-- Side effects -->
+        <rect x="305" y="310" width="175" height="65" rx="10" fill="rgba(147,51,234,.2)" stroke="#9333ea" stroke-width="1.8"/>
+        <text x="393" y="338" text-anchor="middle" fill="white" font-size="12" font-family="Cinzel,serif">Side Effects:</text>
+        <text x="393" y="355" text-anchor="middle" fill="#d8b4fe" font-size="11" font-family="DM Sans,sans-serif">Revenue Loss &amp; Weak Institutions</text>
+        <!-- B loop label -->
+        <circle cx="265" cy="190" r="26" fill="rgba(201,168,76,.1)" stroke="#C9A84C" stroke-width="1.5"/>
+        <text x="265" y="197" text-anchor="middle" fill="#C9A84C" font-size="15" font-weight="bold" font-family="Georgia,serif">B</text>
+        <!-- R loop label -->
+        <circle cx="220" cy="320" r="26" fill="rgba(239,68,68,.1)" stroke="#ef4444" stroke-width="1.5"/>
+        <text x="220" y="327" text-anchor="middle" fill="#ef4444" font-size="15" font-weight="bold" font-family="Georgia,serif">R</text>
+        <!-- Arrows: Problem→Fix, Fix→Symptom relief, Fix→Side Effects, Side effects→Problem -->
+        <line x1="215" y1="190" x2="305" y2="190" stroke="#C9A84C" stroke-width="2" marker-end="url(#m3o)"/>
+        <text x="260" y="180" fill="#C9A84C" font-size="12" font-weight="bold" text-anchor="middle">+</text>
+        <line x1="480" y1="190" x2="570" y2="190" stroke="#10b981" stroke-width="2" marker-end="url(#m3g)"/>
+        <text x="525" y="180" fill="#10b981" font-size="12" font-weight="bold" text-anchor="middle">+</text>
+        <!-- Symptom relief back to problem (B loop negative) -->
+        <path d="M 658 225 Q 658 260 393 260 Q 128 260 128 225" fill="none" stroke="#C9A84C" stroke-width="2" marker-end="url(#m3o)"/>
+        <text x="393" y="252" fill="#C9A84C" font-size="11" font-weight="bold" text-anchor="middle">−</text>
+        <!-- Fix → Side effects (delayed) -->
+        <line x1="393" y1="225" x2="393" y2="310" stroke="#9333ea" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#m3p)"/>
+        <text x="412" y="272" fill="#9333ea" font-size="10" font-family="DM Sans,sans-serif">delay</text>
+        <!-- Delay marker -->
+        <line x1="386" y1="262" x2="400" y2="262" stroke="#9333ea" stroke-width="3"/>
+        <!-- Side effects → Problem (worsens) -->
+        <path d="M 305 342 Q 180 342 128 260" fill="none" stroke="#ef4444" stroke-width="2" marker-end="url(#m3r)"/>
+        <text x="195" y="358" fill="#ef4444" font-size="11" font-weight="bold" text-anchor="middle">+&nbsp;(worsens)</text>
+      </svg>
+    </div>
+    <div class="insight-box">
+      <h4>💡 Key Insight: The Symptom Relief Trap</h4>
+      <p>Quick fixes (B loop) provide temporary relief but create unintended consequences — revenue loss and institutional weakness (R loop) — that eventually worsen the original problem. The "fix" becomes the dependency.</p>
+    </div>
+    <div class="insight-box">
+      <h4>🎯 Strategic Response — LP3 Governance-Investor Confidence</h4>
+      <p>Address root causes through systemic governance reform rather than temporary patches. Streamline business registration to 1-day (Digital BNR), establish transparent regulatory frameworks, and achieve international accreditation for BHB.</p>
+    </div>
+  </div>
 </div>
+
+<!-- INSTALL BUTTON -->
+<div class="install-wrap" role="complementary" aria-label="App installation">
+  <button class="install-btn hidden" id="installBtn" aria-label="Install BARMM Roadmap as app">Install App</button>
+</div>
+
+<!-- ===== JAVASCRIPT (all original logic preserved + accessibility enhancements) ===== -->
 <script>
-const perspectivesData = [
-{
-id: 'vision',
-name: 'VISION & STRATEGIC PILLARS',
-color: 'bg-purple',
-icon: 'target',
-items: [
-{
-title: 'Vision 2035',
-desc: 'The Philippines\' Premier Hub for Halal Production and a Global Model for Post-Conflict Investment',
-goals: ['PHP 50B Investment Inflows', 'PHP 25B Halal Exports', '2,000 Halal-Certified Enterprises']
-},
-{
-title: 'Mission',
-desc: 'Transition from post-conflict recovery to inclusive growth through Integrated Halal-Driven Investment Strategy',
-goals: ['Moral Governance Framework', 'BIMP-EAGA Integration', 'Ethical Economic Development']
-}
-]
-},
-{
-id: 'finance',
-name: 'FINANCIAL PERSPECTIVE',
-color: 'bg-green',
-icon: 'dollar',
-strategies: [
-{
-pillar: 'Pillar 1: Halal Industry Ecosystem',
-action: 'Increase FDI and domestic investment inflows',
-kpi: 'Total Investment Generated ⭐',
-target: 'PHP 50 Billion by 2035',
-contributes: ['Goal: Financial Sustainability', 'Leverage Point: Halal Certification'],
-tooltip: '<h4>Total Investment Inflows</h4><p>Grow both domestic and foreign direct investment to drive economic expansion.</p><p><strong>Baseline:</strong> PHP 3.5B (2024)</p><p><strong>Critical Leverage:</strong> Halal certification integrity triggers investor confidence cycle.</p>'
-},
-{
-pillar: 'Pillar 3: Governance',
-action: 'Diversify revenue sources beyond block grants',
-kpi: 'Local Revenue to Total Budget',
-target: '30% Local Generation',
-contributes: ['Goal: Fiscal Autonomy', 'Reduces National Dependence'],
-tooltip: '<h4>Revenue Diversification</h4><p>Reduce dependence on national government transfers through increased local revenue generation and PPP cost-sharing.</p>'
-},
-{
-pillar: 'Pillar 1: Halal Ecosystem',
-action: 'Expand halal product exports to global markets',
-kpi: 'Halal Export Value ⭐',
-target: 'PHP 25 Billion by 2035',
-contributes: ['Goal: Global Integration', 'BIMP-EAGA Market Access'],
-tooltip: '<h4>Halal Export Growth</h4><p>Target BIMP-EAGA corridor (70M+ consumers) and OIC markets.</p><p><strong>Archetype Addressed:</strong> Success to the Successful (balanced growth)</p>'
-},
-{
-pillar: 'Pillar 2: Infrastructure',
-action: 'Optimize budget execution for development impact',
-kpi: 'Budget Execution Rate',
-target: '95% Utilization',
-contributes: ['Goal: Operational Efficiency', 'Infrastructure Delivery'],
-tooltip: '<h4>Resource Optimization</h4><p>Improve public financial management to maximize development impact of limited resources.</p>'
-}
-]
-},
-{
-id: 'stakeholder',
-name: 'STAKEHOLDER PERSPECTIVE',
-color: 'bg-blue',
-icon: 'users',
-strategies: [
-{
-pillar: 'Pillar 3: Governance',
-action: 'Enhance investor satisfaction and retention',
-kpi: 'Investor Satisfaction Score ⭐',
-target: '8.0+ Rating (1-10)',
-contributes: ['Goal: Confidence Building', 'LP3: Governance Feedback'],
-tooltip: '<h4>Investor Confidence</h4><p>Provide world-class investment facilitation services that exceed expectations.</p><p><strong>Archetype:</strong> Governance-Investor Confidence Reinforcing Loop (R2)</p>'
-},
-{
-pillar: 'Pillar 1: Halal Ecosystem',
-action: 'Build MSME capacity and market access',
-kpi: 'MSMEs with Halal Certification',
-target: '2,000 Enterprises by 2035',
-contributes: ['Goal: Inclusive Growth', 'MSME Development'],
-tooltip: '<h4>MSME Empowerment</h4><p>Support micro, small and medium enterprises through halal certification and Islamic finance access.</p>'
-},
-{
-pillar: 'Pillar 4: Islamic Finance',
-action: 'Expand Shariah-compliant financing access',
-kpi: 'MSMEs Accessing Islamic Finance',
-target: '5,000 Enterprises',
-contributes: ['Goal: Financial Inclusion', 'LP4: Islamic Finance'],
-tooltip: '<h4>Islamic Finance Ecosystem</h4><p>Develop Shariah-compliant capital sources including banking and Takaful (insurance).</p><p><strong>Target:</strong> Functional system by 2028</p>'
-},
-{
-pillar: 'Pillar 5: BIMP-EAGA',
-action: 'Deepen subregional trade integration',
-kpi: 'Intra-EAGA Trade Value',
-target: 'PHP 50 Billion',
-contributes: ['Goal: Regional Integration', 'Strategic Location Advantage'],
-tooltip: '<h4>BIMP-EAGA Integration</h4><p>Leverage strategic location in Brunei-Indonesia-Malaysia-Philippines corridor.</p>'
-}
-]
-},
-{
-id: 'process',
-name: 'INTERNAL PROCESS PERSPECTIVE',
-color: 'bg-gold',
-icon: 'cog',
-strategies: [
-{
-pillar: 'Pillar 1: Halal Ecosystem',
-action: 'Achieve OIC/SMIIC international accreditation',
-kpi: 'BHB International Accreditation ⭐',
-target: 'Full Recognition by 2028',
-contributes: ['Goal: Standards Authority', 'LP1: Certification Integrity'],
-tooltip: '<h4>Bangsamoro Halal Board (BHB)</h4><p>Establish credible, internationally recognized halal certification body.</p><p><strong>Critical Leverage:</strong> Certification credibility triggers market access virtuous cycle.</p><p><strong>Archetype:</strong> Fixes that Fail (avoiding weak standards)</p>'
-},
-{
-pillar: 'Pillar 3: Governance',
-action: 'Streamline business registration digitally',
-kpi: 'Business Registration Time',
-target: '1 Day (Digital BNR)',
-contributes: ['Goal: Ease of Doing Business', 'Digital Transformation'],
-tooltip: '<h4>Digital Business Registration</h4><p>Implement Bangsamoro Business Name Registration (BBNR) digital platform.</p>'
-},
-{
-pillar: 'Pillar 2: Infrastructure',
-action: 'Accelerate infrastructure project delivery',
-kpi: 'Infrastructure Projects Completed',
-target: '100+ Priority Projects',
-contributes: ['Goal: Connectivity', 'PPP Facilitation'],
-tooltip: '<h4>Infrastructure Delivery</h4><p>Expedite critical infrastructure supporting halal value chains and connectivity.</p>'
-},
-{
-pillar: 'Pillar 1: Halal Ecosystem',
-action: 'Reduce certification processing time',
-kpi: 'Certification Processing Time',
-target: '14 Days',
-contributes: ['Goal: Efficiency', 'Investor Facilitation'],
-tooltip: '<h4>Halal Certification Efficiency</h4><p>Streamline processes to enable rapid market entry for halal enterprises.</p>'
-}
-]
-},
-{
-id: 'learning',
-name: 'LEARNING & GROWTH PERSPECTIVE',
-color: 'bg-teal',
-icon: 'graduation',
-strategies: [
-{
-pillar: 'Pillar 1: Halal Ecosystem',
-action: 'Develop technical halal expertise',
-kpi: 'Halal Certification Officers Trained ⭐',
-target: '100 Officers by 2030',
-contributes: ['Goal: Human Capital', 'Institutional Capacity'],
-tooltip: '<h4>Halal Expertise Development</h4><p>Establish halal training academy to build technical capacity in certification and auditing.</p><p><strong>Addresses:</strong> Skills shortage limiting growth (Limits to Growth archetype)</p>'
-},
-{
-pillar: 'Pillar 4: Islamic Finance',
-action: 'Build Islamic finance professional capacity',
-kpi: 'Islamic Finance Professionals',
-target: '50 Certified Experts',
-contributes: ['Goal: Financial Expertise', 'LP4: Finance Ecosystem'],
-tooltip: '<h4>Islamic Finance Capacity</h4><p>Develop expertise in Shariah-compliant banking, Takaful, and Sukuk (Islamic bonds).</p>'
-},
-{
-pillar: 'Pillar 3: Governance',
-action: 'Strengthen investment promotion agency capacity',
-kpi: 'IPA Staff with Certification',
-target: '80% Professionalized',
-contributes: ['Goal: Institutional Strengthening', 'BBOI/BEZA Capacity'],
-tooltip: '<h4>Institutional Capacity Building</h4><p>Enhance skills across Bangsamoro Board of Investments (BBOI) and Economic Zone Authority (BEZA).</p>'
-},
-{
-pillar: 'Pillar 6: Digital',
-action: 'Foster innovation and digital transformation',
-kpi: 'Digital Services Launched',
-target: '20 E-Government Platforms',
-contributes: ['Goal: Digital Governance', 'BEGMP Implementation'],
-tooltip: '<h4>Digital Innovation</h4><p>Implement Bangsamoro e-Governance Master Plan (BEGMP) for efficient governance.</p>'
-}
-]
-}
+/* ======================== DATA ======================== */
+const perspectivesData=[
+  {id:'vision',name:'VISION & STRATEGIC PILLARS',color:'bg-vision',icon:'target',items:[
+    {title:'Vision 2035',desc:"The Philippines' Premier Hub for Halal Production and a Global Model for Post-Conflict Investment",goals:['PHP 50B Investment Inflows','PHP 25B Halal Exports','2,000 Halal-Certified Enterprises']},
+    {title:'Mission',desc:'Transition from post-conflict recovery to inclusive growth through Integrated Halal-Driven Investment Strategy',goals:['Moral Governance Framework','BIMP-EAGA Integration','Ethical Economic Development']}
+  ]},
+  {id:'finance',name:'FINANCIAL PERSPECTIVE',color:'bg-finance',icon:'dollar',strategies:[
+    {pillar:'Pillar 1: Halal Industry Ecosystem',action:'Increase FDI and domestic investment inflows',kpi:'Total Investment Generated ⭐',target:'PHP 50 Billion by 2035',contributes:['Goal: Financial Sustainability','Leverage Point: Halal Certification'],tooltip:'<h4>Total Investment Inflows</h4><p>Grow both domestic and foreign direct investment to drive economic expansion.</p><p><strong>Baseline:</strong> PHP 3.5B (2024)</p><p><strong>Critical Leverage:</strong> Halal certification integrity triggers investor confidence cycle.</p>'},
+    {pillar:'Pillar 3: Governance',action:'Diversify revenue sources beyond block grants',kpi:'Local Revenue to Total Budget',target:'30% Local Generation',contributes:['Goal: Fiscal Autonomy','Reduces National Dependence'],tooltip:'<h4>Revenue Diversification</h4><p>Reduce dependence on national government transfers through increased local revenue generation and PPP cost-sharing.</p>'},
+    {pillar:'Pillar 1: Halal Ecosystem',action:'Expand halal product exports to global markets',kpi:'Halal Export Value ⭐',target:'PHP 25 Billion by 2035',contributes:['Goal: Global Integration','BIMP-EAGA Market Access'],tooltip:'<h4>Halal Export Growth</h4><p>Target BIMP-EAGA corridor (70M+ consumers) and OIC markets.</p><p><strong>Archetype Addressed:</strong> Success to the Successful (balanced growth)</p>'},
+    {pillar:'Pillar 2: Infrastructure',action:'Optimise budget execution for development impact',kpi:'Budget Execution Rate',target:'95% Utilisation',contributes:['Goal: Operational Efficiency','Infrastructure Delivery'],tooltip:'<h4>Resource Optimisation</h4><p>Improve public financial management to maximise development impact of limited resources.</p>'}
+  ]},
+  {id:'stakeholder',name:'STAKEHOLDER PERSPECTIVE',color:'bg-stakeholder',icon:'users',strategies:[
+    {pillar:'Pillar 3: Governance',action:'Enhance investor satisfaction and retention',kpi:'Investor Satisfaction Score ⭐',target:'8.0+ Rating (1-10)',contributes:['Goal: Confidence Building','LP3: Governance Feedback'],tooltip:'<h4>Investor Confidence</h4><p>Provide world-class investment facilitation services that exceed expectations.</p><p><strong>Archetype:</strong> Governance-Investor Confidence Reinforcing Loop (R2)</p>'},
+    {pillar:'Pillar 1: Halal Ecosystem',action:'Build MSME capacity and market access',kpi:'MSMEs with Halal Certification',target:'2,000 Enterprises by 2035',contributes:['Goal: Inclusive Growth','MSME Development'],tooltip:'<h4>MSME Empowerment</h4><p>Support micro, small and medium enterprises through halal certification and Islamic finance access.</p>'},
+    {pillar:'Pillar 4: Islamic Finance',action:'Expand Shariah-compliant financing access',kpi:'MSMEs Accessing Islamic Finance',target:'5,000 Enterprises',contributes:['Goal: Financial Inclusion','LP4: Islamic Finance'],tooltip:'<h4>Islamic Finance Ecosystem</h4><p>Develop Shariah-compliant capital sources including banking and Takaful (insurance).</p><p><strong>Target:</strong> Functional system by 2028</p>'},
+    {pillar:'Pillar 5: BIMP-EAGA',action:'Deepen subregional trade integration',kpi:'Intra-EAGA Trade Value',target:'PHP 50 Billion',contributes:['Goal: Regional Integration','Strategic Location Advantage'],tooltip:'<h4>BIMP-EAGA Integration</h4><p>Leverage strategic location in Brunei-Indonesia-Malaysia-Philippines corridor.</p>'}
+  ]},
+  {id:'process',name:'INTERNAL PROCESS PERSPECTIVE',color:'bg-process',icon:'cog',strategies:[
+    {pillar:'Pillar 1: Halal Ecosystem',action:'Achieve OIC/SMIIC international accreditation',kpi:'BHB International Accreditation ⭐',target:'Full Recognition by 2028',contributes:['Goal: Standards Authority','LP1: Certification Integrity'],tooltip:'<h4>Bangsamoro Halal Board (BHB)</h4><p>Establish credible, internationally recognised halal certification body.</p><p><strong>Critical Leverage:</strong> Certification credibility triggers market access virtuous cycle.</p><p><strong>Archetype:</strong> Fixes that Fail (avoiding weak standards)</p>'},
+    {pillar:'Pillar 3: Governance',action:'Streamline business registration digitally',kpi:'Business Registration Time',target:'1 Day (Digital BNR)',contributes:['Goal: Ease of Doing Business','Digital Transformation'],tooltip:'<h4>Digital Business Registration</h4><p>Implement Bangsamoro Business Name Registration (BBNR) digital platform.</p>'},
+    {pillar:'Pillar 2: Infrastructure',action:'Accelerate infrastructure project delivery',kpi:'Infrastructure Projects Completed',target:'100+ Priority Projects',contributes:['Goal: Connectivity','PPP Facilitation'],tooltip:'<h4>Infrastructure Delivery</h4><p>Expedite critical infrastructure supporting halal value chains and connectivity.</p>'},
+    {pillar:'Pillar 1: Halal Ecosystem',action:'Reduce certification processing time',kpi:'Certification Processing Time',target:'14 Days',contributes:['Goal: Efficiency','Investor Facilitation'],tooltip:'<h4>Halal Certification Efficiency</h4><p>Streamline processes to enable rapid market entry for halal enterprises.</p>'}
+  ]},
+  {id:'learning',name:'LEARNING & GROWTH PERSPECTIVE',color:'bg-learning',icon:'graduation',strategies:[
+    {pillar:'Pillar 1: Halal Ecosystem',action:'Develop technical halal expertise',kpi:'Halal Certification Officers Trained ⭐',target:'100 Officers by 2030',contributes:['Goal: Human Capital','Institutional Capacity'],tooltip:'<h4>Halal Expertise Development</h4><p>Establish halal training academy to build technical capacity in certification and auditing.</p><p><strong>Addresses:</strong> Skills shortage limiting growth (Limits to Growth archetype)</p>'},
+    {pillar:'Pillar 4: Islamic Finance',action:'Build Islamic finance professional capacity',kpi:'Islamic Finance Professionals',target:'50 Certified Experts',contributes:['Goal: Financial Expertise','LP4: Finance Ecosystem'],tooltip:'<h4>Islamic Finance Capacity</h4><p>Develop expertise in Shariah-compliant banking, Takaful, and Sukuk (Islamic bonds).</p>'},
+    {pillar:'Pillar 3: Governance',action:'Strengthen investment promotion agency capacity',kpi:'IPA Staff with Certification',target:'80% Professionalised',contributes:['Goal: Institutional Strengthening','BBOI/BEZA Capacity'],tooltip:'<h4>Institutional Capacity Building</h4><p>Enhance skills across Bangsamoro Board of Investments (BBOI) and Economic Zone Authority (BEZA).</p>'},
+    {pillar:'Pillar 6: Digital',action:'Foster innovation and digital transformation',kpi:'Digital Services Launched',target:'20 E-Government Platforms',contributes:['Goal: Digital Governance','BEGMP Implementation'],tooltip:'<h4>Digital Innovation</h4><p>Implement Bangsamoro e-Governance Master Plan (BEGMP) for efficient governance.</p>'}
+  ]}
 ];
-const swotData = {
-strengths: [
-'Halal Legitimacy & Cultural Credibility: Inherent authenticity from Islamic heritage and Moral Governance framework',
-'Strategic Location in BIMP-EAGA: Gateway to 70 million ASEAN consumers in Brunei-Indonesia-Malaysia-Philippines corridor',
-'Strong Agriculture Base: PHP 99.1B contribution (40% of GRDP) with extensive agricultural lands and fisheries',
-'Growing Policy Recognition: 55 distinct powers under Bangsamoro Organic Law (RA 11054)',
-'Domestic Halal Demand: 5.69M population with specific religious consumption needs'
-],
-weaknesses: [
-{text: 'Weak Certification System<br>Deficit in standardized certification limiting international market access.', modal: null},
-{text: 'Fragmented Policy Frameworks<br>Coordination gaps between 15 ministries slowing investment facilitation.', modal: null},
-{text: 'Limited Infrastructure<br>Only 39% electrification rate; connectivity gaps in island provinces.', modal: 1},
-{text: 'Lack of Halal Experts<br>Shortage of technical personnel, auditors, and skilled labor.', modal: null}
-],
-opportunities: [
-'Global Halal Market (USD 2T+): Massive external demand for halal-compliant goods and services',
-'ASEAN Integration: Regional standards alignment allowing seamless cross-border trade',
-'Islamic Finance Development: Shariah-compliant capital sources including banking and Takaful',
-'BIMP-EAGA Market Access: Subregional economic cooperation targeting 70M+ consumers',
-'Digital Transformation: Phased ICT expansion to reach 70% internet penetration by 2030'
-],
-threats: [
-{text: 'Limits to Growth<br>Infrastructure deficits and skills gaps creating binding constraints on investment.', modal: 1},
-{text: 'Success to the Successful<br>Resource concentration in halal neglecting tourism, agribusiness, renewable energy.', modal: 2},
-{text: 'Fixes that Fail<br>Ad hoc tax incentives without governance reform creating dependency.', modal: 3},
-{text: 'Standards Recognition Risks<br>Risk of non-acceptance of BARMM certifications by international bodies.', modal: null},
-'Competition from Established Halal Hubs: Malaysia, Indonesia, and Thailand first-mover advantages',
-'Climate Vulnerabilities: Typhoons and flooding threatening agricultural assets',
-'Political Transition Uncertainty: Shift to elected parliament creating institutional risks'
-]
+
+const swotData={
+  strengths:['Halal Legitimacy & Cultural Credibility: Inherent authenticity from Islamic heritage and Moral Governance framework','Strategic Location in BIMP-EAGA: Gateway to 70 million ASEAN consumers in Brunei-Indonesia-Malaysia-Philippines corridor','Strong Agriculture Base: PHP 99.1B contribution (40% of GRDP) with extensive agricultural lands and fisheries','Growing Policy Recognition: 55 distinct powers under Bangsamoro Organic Law (RA 11054)','Domestic Halal Demand: 5.69M population with specific religious consumption needs'],
+  weaknesses:[
+    {text:'Weak Certification System — Deficit in standardised certification limiting international market access.',modal:null},
+    {text:'Fragmented Policy Frameworks — Coordination gaps between 15 ministries slowing investment facilitation.',modal:null},
+    {text:'Limited Infrastructure — Only 39% electrification rate; connectivity gaps in island provinces.',modal:1},
+    {text:'Lack of Halal Experts — Shortage of technical personnel, auditors, and skilled labour.',modal:null}
+  ],
+  opportunities:['Global Halal Market (USD 2T+): Massive external demand for halal-compliant goods and services','ASEAN Integration: Regional standards alignment allowing seamless cross-border trade','Islamic Finance Development: Shariah-compliant capital sources including banking and Takaful','BIMP-EAGA Market Access: Subregional economic cooperation targeting 70M+ consumers','Digital Transformation: Phased ICT expansion to reach 70% internet penetration by 2030'],
+  threats:[
+    {text:'Limits to Growth — Infrastructure deficits and skills gaps creating binding constraints on investment.',modal:1},
+    {text:'Success to the Successful — Resource concentration in halal neglecting tourism, agribusiness, renewable energy.',modal:2},
+    {text:'Fixes that Fail — Ad-hoc tax incentives without governance reform creating institutional dependency.',modal:3},
+    {text:'Standards Recognition Risks — Risk of non-acceptance of BARMM certifications by international bodies.',modal:null},
+    'Competition from Established Halal Hubs: Malaysia, Indonesia, and Thailand first-mover advantages',
+    'Climate Vulnerabilities: Typhoons and flooding threatening agricultural assets',
+    'Political Transition Uncertainty: Shift to elected parliament creating institutional risks'
+  ]
 };
-const bscData = [
-{ perspective: 'FINANCIAL', pillar: 'Pillar 1: Halal Industry', strategy: 'Increase FDI and domestic investment', kpi: 'Total Investment Inflows ⭐', current: 'PHP 3.5B (2024)', target: 'PHP 50B by 2035' },
-{ perspective: 'FINANCIAL', pillar: 'Pillar 1: Halal Industry', strategy: 'Expand halal product exports', kpi: 'Halal Export Value ⭐', current: 'Minimal formal trade', target: 'PHP 25B by 2035' },
-{ perspective: 'FINANCIAL', pillar: 'Pillar 3: Governance', strategy: 'Diversify revenue sources', kpi: 'Local Revenue Ratio', current: '<10% (Block grant dependent)', target: '30% Local Generation' },
-{ perspective: 'STAKEHOLDER', pillar: 'Pillar 3: Governance', strategy: 'Enhance investor satisfaction', kpi: 'Investor Satisfaction Score ⭐', current: 'Baseline TBD', target: '8.0+ (1-10 scale)' },
-{ perspective: 'STAKEHOLDER', pillar: 'Pillar 1: Halal Ecosystem', strategy: 'Build MSME halal capacity', kpi: 'Halal-Certified MSMEs', current: '<100 (Estimated)', target: '2,000 by 2035' },
-{ perspective: 'STAKEHOLDER', pillar: 'Pillar 4: Islamic Finance', strategy: 'Expand Shariah financing access', kpi: 'MSMEs in Islamic Finance', current: '0 (No formal system)', target: '5,000 Enterprises' },
-{ perspective: 'STAKEHOLDER', pillar: 'Pillar 5: BIMP-EAGA', strategy: 'Deepen regional trade', kpi: 'Intra-EAGA Trade Value', current: 'PHP TBD', target: 'PHP 50B by 2035' },
-{ perspective: 'INTERNAL PROCESS', pillar: 'Pillar 1: Halal Ecosystem', strategy: 'Achieve OIC/SMIIC accreditation', kpi: 'BHB International Status ⭐', current: 'National level only', target: 'OIC/SMIIC Recognized' },
-{ perspective: 'INTERNAL PROCESS', pillar: 'Pillar 3: Governance', strategy: 'Digital business registration', kpi: 'Registration Processing Time', current: 'Several days/weeks', target: '1 Day (Digital)' },
-{ perspective: 'INTERNAL PROCESS', pillar: 'Pillar 2: Infrastructure', strategy: 'Expedite critical infrastructure', kpi: 'Projects Completed', current: 'Underspending issues', target: '100+ Projects' },
-{ perspective: 'LEARNING & GROWTH', pillar: 'Pillar 1: Halal Ecosystem', strategy: 'Develop certification expertise', kpi: 'Officers Trained ⭐', current: 'Minimal pool', target: '100 Officers' },
-{ perspective: 'LEARNING & GROWTH', pillar: 'Pillar 4: Islamic Finance', strategy: 'Build finance professionals', kpi: 'Islamic Finance Experts', current: '0', target: '50 Professionals' },
-{ perspective: 'LEARNING & GROWTH', pillar: 'Pillar 6: Digital', strategy: 'Launch digital services', kpi: 'E-Government Platforms', current: 'Fragmented systems', target: '20 Digital Services' }
+
+const bscData=[
+  {perspective:'FINANCIAL',pillar:'Pillar 1: Halal Industry',strategy:'Increase FDI and domestic investment',kpi:'Total Investment Inflows ⭐',current:'PHP 3.5B (2024)',target:'PHP 50B by 2035'},
+  {perspective:'FINANCIAL',pillar:'Pillar 1: Halal Industry',strategy:'Expand halal product exports',kpi:'Halal Export Value ⭐',current:'Minimal formal trade',target:'PHP 25B by 2035'},
+  {perspective:'FINANCIAL',pillar:'Pillar 3: Governance',strategy:'Diversify revenue sources',kpi:'Local Revenue Ratio',current:'<10% (Block grant dependent)',target:'30% Local Generation'},
+  {perspective:'STAKEHOLDER',pillar:'Pillar 3: Governance',strategy:'Enhance investor satisfaction',kpi:'Investor Satisfaction Score ⭐',current:'Baseline TBD',target:'8.0+ (1-10 scale)'},
+  {perspective:'STAKEHOLDER',pillar:'Pillar 1: Halal Ecosystem',strategy:'Build MSME halal capacity',kpi:'Halal-Certified MSMEs',current:'<100 (Estimated)',target:'2,000 by 2035'},
+  {perspective:'STAKEHOLDER',pillar:'Pillar 4: Islamic Finance',strategy:'Expand Shariah financing access',kpi:'MSMEs in Islamic Finance',current:'0 (No formal system)',target:'5,000 Enterprises'},
+  {perspective:'STAKEHOLDER',pillar:'Pillar 5: BIMP-EAGA',strategy:'Deepen regional trade',kpi:'Intra-EAGA Trade Value',current:'PHP TBD',target:'PHP 50B by 2035'},
+  {perspective:'INTERNAL PROCESS',pillar:'Pillar 1: Halal Ecosystem',strategy:'Achieve OIC/SMIIC accreditation',kpi:'BHB International Status ⭐',current:'National level only',target:'OIC/SMIIC Recognised'},
+  {perspective:'INTERNAL PROCESS',pillar:'Pillar 3: Governance',strategy:'Digital business registration',kpi:'Registration Processing Time',current:'Several days/weeks',target:'1 Day (Digital)'},
+  {perspective:'INTERNAL PROCESS',pillar:'Pillar 2: Infrastructure',strategy:'Expedite critical infrastructure',kpi:'Projects Completed',current:'Underspending issues',target:'100+ Projects'},
+  {perspective:'LEARNING & GROWTH',pillar:'Pillar 1: Halal Ecosystem',strategy:'Develop certification expertise',kpi:'Officers Trained ⭐',current:'Minimal pool',target:'100 Officers'},
+  {perspective:'LEARNING & GROWTH',pillar:'Pillar 4: Islamic Finance',strategy:'Build finance professionals',kpi:'Islamic Finance Experts',current:'0',target:'50 Professionals'},
+  {perspective:'LEARNING & GROWTH',pillar:'Pillar 6: Digital',strategy:'Launch digital services',kpi:'E-Government Platforms',current:'Fragmented systems',target:'20 Digital Services'}
 ];
-const icons = {
-target: '<svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><circle cx="12" cy="12" r="6" stroke-width="2"/><circle cx="12" cy="12" r="2" stroke-width="2"/></svg>',
-users: '<svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>',
-dollar: '<svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>',
-cog: '<svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>',
-graduation: '<svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>',
-chevronDown: '<svg class="chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>',
-chevronUp: '<svg class="chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/></svg>',
-trending: '<svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>'
+
+/* ======================== SVG ICONS ======================== */
+const icons={
+  target:'<svg class="p-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke-width="2"/><circle cx="12" cy="12" r="6" stroke-width="2"/><circle cx="12" cy="12" r="2" stroke-width="2"/></svg>',
+  users:'<svg class="p-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>',
+  dollar:'<svg class="p-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>',
+  cog:'<svg class="p-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>',
+  graduation:'<svg class="p-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>',
+  chevronDown:'<svg class="chevron-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>',
+  chevronUp:'<svg class="chevron-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/></svg>',
+  trending:'<svg width="11" height="11" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>'
 };
-let state = {
-expandedPerspective: null,
-selectedStrategy: null,
-currentTab: 'strategy-map',
-viewMode: 'all'
-};
-function switchTab(tabName) {
-state.currentTab = tabName;
-document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-event.target.classList.add('active');
-document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-document.getElementById(tabName).classList.add('active');
-if (tabName === 'swot-analysis') renderSWOT();
-if (tabName === 'bsc-matrix') renderBSC();
+
+/* ======================== STATE ======================== */
+let state={expandedPerspective:null,selectedStrategy:null,viewMode:'all'};
+
+/* ======================== TAB SWITCHING ======================== */
+function switchTab(tabName,btn){
+  document.querySelectorAll('.tab-btn').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-selected','false');});
+  if(btn){btn.classList.add('active');btn.setAttribute('aria-selected','true');}
+  document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
+  const target=document.getElementById(tabName);
+  if(target){target.classList.add('active');requestAnimationFrame(()=>target.classList.add('visible'));}
+  if(tabName==='swot-analysis')renderSWOT();
+  if(tabName==='bsc-matrix')renderBSC();
 }
-function filterCore() {
-state.viewMode = 'core';
-document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-const coreBtn = Array.from(document.querySelectorAll('.tab-btn')).find(btn => btn.textContent.includes('Leverage'));
-if (coreBtn) coreBtn.classList.add('active');
-render();
+
+function filterCore(){
+  state.viewMode='core';
+  document.querySelectorAll('.tab-btn').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-selected','false');});
+  const btn=Array.from(document.querySelectorAll('.tab-btn')).find(b=>b.textContent.includes('Leverage'));
+  if(btn){btn.classList.add('active');btn.setAttribute('aria-selected','true');}
+  const sm=document.getElementById('strategy-map');
+  document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
+  sm.classList.add('active');
+  render();
 }
-function showAll() {
-state.viewMode = 'all';
-document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-const showAllBtn = Array.from(document.querySelectorAll('.tab-btn')).find(btn => btn.textContent.includes('Show All'));
-if (showAllBtn) showAllBtn.classList.add('active');
-render();
+
+function showAll(){
+  state.viewMode='all';
+  document.querySelectorAll('.tab-btn').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-selected','false');});
+  const btn=Array.from(document.querySelectorAll('.tab-btn')).find(b=>b.textContent.includes('Show All'));
+  if(btn){btn.classList.add('active');btn.setAttribute('aria-selected','true');}
+  document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
+  document.getElementById('strategy-map').classList.add('active');
+  render();
 }
-function openArchetypeModal(modalId) {
-document.getElementById(`archetypeModal${modalId}`).classList.add('active');
+
+/* ======================== MODALS ======================== */
+function openArchetypeModal(id){
+  const m=document.getElementById(`archetypeModal${id}`);
+  m.classList.add('active');
+  m.setAttribute('aria-hidden','false');
+  m.querySelector('.close-btn').focus();
 }
-function closeArchetypeModal(modalId) {
-document.getElementById(`archetypeModal${modalId}`).classList.remove('active');
+function closeArchetypeModal(id){
+  const m=document.getElementById(`archetypeModal${id}`);
+  m.classList.remove('active');
+  m.setAttribute('aria-hidden','true');
 }
-function renderVisionItems(items) {
-return items.map(item => '<div class="vision-item"><h3 class="vision-title">' + item.title + '</h3><p class="vision-desc">' + item.desc + '</p><div class="vision-goals">' + item.goals.map(goal => '<div class="vision-goal">' + icons.trending + goal + '</div>').join('') + '</div></div>').join('');
-}
-function renderStrategies(strategies, perspectiveId) {
-const filteredStrategies = state.viewMode === 'core'
-? strategies.filter(s => s.kpi.includes('⭐'))
-: strategies;
-if (filteredStrategies.length === 0 && state.viewMode === 'core') {
-return '<div class="strategy-item" style="background:rgba(255,255,255,0.05);"><em style="color:#6ee7b7;">Select "Show All Initiatives" to view all strategies in this perspective</em></div>';
-}
-return filteredStrategies.map(function(strategy, idx) {
-const strategyId = perspectiveId + '-' + idx;
-const isSelected = state.selectedStrategy === strategyId;
-const coreBadge = strategy.kpi.includes('⭐') ? '<span class="core-badge">LEVERAGE POINT</span>' : '';
-return '<div class="strategy-item ' + (isSelected ? 'selected' : '') + '" data-strategy-id="' + strategyId + '"><div class="strategy-meta"><span class="strategy-pillar">' + strategy.pillar + '</span><span class="strategy-target">' + strategy.target + '</span></div><h4 class="strategy-action">' + strategy.action + coreBadge + '</h4><p class="strategy-kpi">KPI: ' + strategy.kpi + '</p>' + (isSelected ? '<div class="strategy-contributes"><p class="contributes-title">Strategic Contribution:</p><div class="contributes-list">' + strategy.contributes.map(contrib => '<div class="contributes-item"><div class="dot"></div>' + contrib + '</div>').join('') + '</div></div>' : '') + '<div class="tooltip">' + (strategy.tooltip || '') + '</div></div>';
-}).join('');
-}
-function renderPerspective(perspective, index) {
-const isExpanded = state.expandedPerspective === perspective.id;
-const hasStrategies = perspective.strategies && perspective.strategies.length > 0;
-return '<div class="perspective">' + (index > 0 ? '<div class="connection-line"></div>' : '') + '<div class="perspective-card ' + perspective.color + ' ' + (isExpanded ? 'expanded' : '') + '"><button class="perspective-header" data-perspective-id="' + perspective.id + '"><div class="perspective-title">' + icons[perspective.icon] + '<h2 class="perspective-name">' + perspective.name + '</h2></div>' + (hasStrategies ? '<div class="strategy-count"><span class="badge">' + (state.viewMode === 'core' ? perspective.strategies.filter(s => s.kpi.includes('⭐')).length + ' Critical' : perspective.strategies.length + ' Strategies') + '</span>' + (isExpanded ? icons.chevronUp : icons.chevronDown) + '</div>' : '') + '</button>' + (perspective.items ? '<div class="vision-items"><div class="vision-grid">' + renderVisionItems(perspective.items) + '</div></div>' : '') + (hasStrategies && isExpanded ? '<div class="strategy-details"><div class="strategy-list">' + renderStrategies(perspective.strategies, perspective.id) + '</div></div>' : '') + '</div></div>';
-}
-function render() {
-const mapContainer = document.getElementById('strategyMapContainer');
-mapContainer.innerHTML = perspectivesData.map(function(perspective, idx) {
-return renderPerspective(perspective, idx);
-}).join('');
-attachEventListeners();
-}
-function attachEventListeners() {
-document.querySelectorAll('.perspective-header').forEach(function(header) {
-header.addEventListener('click', function(e) {
-const perspectiveId = e.currentTarget.getAttribute('data-perspective-id');
-state.expandedPerspective = state.expandedPerspective === perspectiveId ? null : perspectiveId;
-render();
-saveState();
+// Close on backdrop click
+document.querySelectorAll('.modal').forEach(m=>{
+  m.addEventListener('click',e=>{if(e.target===m)closeArchetypeModal(m.id.replace('archetypeModal',''));});
 });
+// Close on Escape
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape')document.querySelectorAll('.modal.active').forEach(m=>m.classList.remove('active'));
 });
-document.querySelectorAll('.strategy-item').forEach(function(item) {
-item.addEventListener('click', function(e) {
-const strategyId = e.currentTarget.getAttribute('data-strategy-id');
-state.selectedStrategy = state.selectedStrategy === strategyId ? null : strategyId;
-render();
-saveState();
-});
-});
+
+/* ======================== RENDER VISION ======================== */
+function renderVisionItems(items){
+  return items.map(i=>`<div class="vision-item"><h3 class="vision-title">${i.title}</h3><p class="vision-desc">${i.desc}</p><div class="vision-goals">${i.goals.map(g=>`<div class="vision-goal">${icons.trending}${g}</div>`).join('')}</div></div>`).join('');
 }
-function renderSWOT() {
-document.getElementById('strengths-list').innerHTML = swotData.strengths.map(item => '<div class="swot-item">' + item + '</div>').join('');
-document.getElementById('weaknesses-list').innerHTML = swotData.weaknesses.map(item => item.modal ? '<div class="swot-item" style="border-left:3px solid #fbbf24;" onclick="openArchetypeModal(' + item.modal + ')"><strong style="color:#fbbf24;">System Archetype:</strong><br>' + item.text + '</div>' : '<div class="swot-item">' + item.text + '</div>').join('');
-document.getElementById('opportunities-list').innerHTML = swotData.opportunities.map(item => '<div class="swot-item">' + item + '</div>').join('');
-document.getElementById('threats-list').innerHTML = swotData.threats.map(item => typeof item === 'string' ? '<div class="swot-item">' + item + '</div>' : '<div class="swot-item" style="border-left:3px solid #ef4444;" onclick="openArchetypeModal(' + item.modal + ')"><strong style="color:#ef4444;">System Archetype:</strong><br>' + item.text + '</div>').join('');
+
+/* ======================== RENDER STRATEGIES ======================== */
+function renderStrategies(strategies,pid){
+  const filtered=state.viewMode==='core'?strategies.filter(s=>s.kpi.includes('⭐')):strategies;
+  if(!filtered.length&&state.viewMode==='core')
+    return '<div class="strategy-item" style="opacity:.6;cursor:default;"><em style="color:var(--light-green);">Select "Show All Initiatives" to view all strategies in this perspective.</em></div>';
+  return filtered.map((s,idx)=>{
+    const sid=`${pid}-${idx}`;
+    const sel=state.selectedStrategy===sid;
+    const badge=s.kpi.includes('⭐')?'<span class="leverage-badge">LEVERAGE POINT</span>':'';
+    return `<div class="strategy-item${sel?' selected':''}" data-strategy-id="${sid}" role="button" tabindex="0" aria-pressed="${sel}" aria-label="${s.action}: ${s.target}">
+      <div class="strategy-meta">
+        <span class="strategy-pillar">${s.pillar}</span>
+        <span class="strategy-target">${s.target}</span>
+      </div>
+      <h4 class="strategy-action">${s.action}${badge}</h4>
+      <p class="strategy-kpi">KPI: ${s.kpi}</p>
+      ${sel?`<div class="strategy-contributes"><p class="contributes-title">Strategic Contribution:</p><div class="contributes-list">${s.contributes.map(c=>`<div class="contributes-item"><div class="dot"></div>${c}</div>`).join('')}</div></div>`:''}
+      <div class="tooltip" role="tooltip">${s.tooltip||''}</div>
+    </div>`;
+  }).join('');
 }
-function renderBSC() {
-const table = document.getElementById('bsc-table');
-let html = '<thead><tr style="background: rgba(217, 119, 6, 0.2); border-bottom: 2px solid #d97706;"><th style="padding: 0.75rem; text-align: left; color: #fbbf24; font-weight: bold;">Perspective</th><th style="padding: 0.75rem; text-align: left; color: #fbbf24; font-weight: bold;">Strategic Pillar</th><th style="padding: 0.75rem; text-align: left; color: #fbbf24; font-weight: bold;">Strategy/Action</th><th style="padding: 0.75rem; text-align: left; color: #fbbf24; font-weight: bold;">Key Performance Indicator</th><th style="padding: 0.75rem; text-align: left; color: #fbbf24; font-weight: bold;">Baseline (2024)</th><th style="padding: 0.75rem; text-align: left; color: #fbbf24; font-weight: bold;">Target (2035)</th></tr></thead><tbody>';
-bscData.forEach(function(row, idx) {
-const isCore = row.kpi.includes('⭐');
-html += '<tr style="border-bottom: 1px solid rgba(251, 191, 36, 0.2); ' + (idx % 2 === 0 ? 'background: rgba(0, 0, 0, 0.2);' : '') + (isCore ? 'background: rgba(251, 191, 36, 0.1);' : '') + '"><td style="padding: 0.75rem; color: #fbbf24; font-weight: 600;">' + row.perspective + '</td><td style="padding: 0.75rem; color: #6ee7b7; font-size: 0.8rem;">' + row.pillar + '</td><td style="padding: 0.75rem; color: #fff;">' + row.strategy + '</td><td style="padding: 0.75rem; color: #a7f3d0; font-style: italic;">' + row.kpi + '</td><td style="padding: 0.75rem; color: #fca5a5; font-size: 0.85rem;">' + row.current + '</td><td style="padding: 0.75rem; color: #6ee7b7; font-weight: 600;">' + row.target + '</td></tr>';
-});
-html += '</tbody>';
-table.innerHTML = html;
+
+/* ======================== RENDER PERSPECTIVE ======================== */
+function renderPerspective(p,idx){
+  const expanded=state.expandedPerspective===p.id;
+  const hasStrategies=p.strategies&&p.strategies.length>0;
+  const coreCount=hasStrategies?(state.viewMode==='core'?p.strategies.filter(s=>s.kpi.includes('⭐')).length:p.strategies.length):0;
+  return `<div class="perspective">${idx>0?'<div class="connection-line" aria-hidden="true"></div>':''}
+    <div class="perspective-card${expanded?' expanded':''} ${p.color}">
+      <button class="perspective-header" data-perspective-id="${p.id}" aria-expanded="${expanded}" aria-controls="pd-${p.id}">
+        <div class="perspective-title-wrap">${icons[p.icon]}<h2 class="perspective-name">${p.name}</h2></div>
+        ${hasStrategies?`<div class="strategy-count"><span class="count-badge">${coreCount} ${state.viewMode==='core'?'Critical':'Strategies'}</span>${expanded?icons.chevronUp:icons.chevronDown}</div>`:''}
+      </button>
+      ${p.items?`<div class="vision-items"><div class="vision-grid">${renderVisionItems(p.items)}</div></div>`:''}
+      ${hasStrategies&&expanded?`<div id="pd-${p.id}" class="strategy-details"><div class="strategy-list">${renderStrategies(p.strategies,p.id)}</div></div>`:`<div id="pd-${p.id}" class="hidden"></div>`}
+    </div>
+  </div>`;
 }
-function saveState() {
-try {
-localStorage.setItem('barmmStrategyMapState', JSON.stringify(state));
-} catch (e) {}
+
+/* ======================== FULL RENDER ======================== */
+function render(){
+  const c=document.getElementById('strategyMapContainer');
+  c.innerHTML=perspectivesData.map((p,i)=>renderPerspective(p,i)).join('');
+  attachListeners();
 }
-function loadState() {
-try {
-const savedState = localStorage.getItem('barmmStrategyMapState');
-if (savedState) {
-const parsed = JSON.parse(savedState);
-state.expandedPerspective = parsed.expandedPerspective;
-state.selectedStrategy = parsed.selectedStrategy;
+
+function attachListeners(){
+  document.querySelectorAll('.perspective-header').forEach(h=>{
+    h.addEventListener('click',e=>{
+      const pid=e.currentTarget.getAttribute('data-perspective-id');
+      state.expandedPerspective=state.expandedPerspective===pid?null:pid;
+      render();saveState();
+    });
+    h.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();h.click();}});
+  });
+  document.querySelectorAll('.strategy-item').forEach(item=>{
+    item.addEventListener('click',e=>{
+      if(e.target.closest('.tooltip'))return;
+      const sid=e.currentTarget.getAttribute('data-strategy-id');
+      state.selectedStrategy=state.selectedStrategy===sid?null:sid;
+      item.setAttribute('aria-pressed',state.selectedStrategy===sid);
+      render();saveState();
+    });
+    item.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();item.click();}});
+  });
 }
-} catch (e) {}
+
+/* ======================== SWOT RENDER ======================== */
+function renderSWOT(){
+  document.getElementById('strengths-list').innerHTML=swotData.strengths.map(t=>`<div class="swot-item" tabindex="0">${t}</div>`).join('');
+  document.getElementById('weaknesses-list').innerHTML=swotData.weaknesses.map(w=>
+    w.modal
+      ?`<div class="swot-item" role="button" tabindex="0" onclick="openArchetypeModal(${w.modal})" onkeydown="if(event.key==='Enter')openArchetypeModal(${w.modal})" aria-label="View archetype: ${w.text.replace(/<[^>]+>/g,' ')}">
+          <span class="swot-archetype-tag">System Archetype ↗</span>${w.text}</div>`
+      :`<div class="swot-item" tabindex="0">${w.text}</div>`
+  ).join('');
+  document.getElementById('opportunities-list').innerHTML=swotData.opportunities.map(t=>`<div class="swot-item" tabindex="0">${t}</div>`).join('');
+  document.getElementById('threats-list').innerHTML=swotData.threats.map(t=>
+    typeof t==='string'
+      ?`<div class="swot-item" tabindex="0">${t}</div>`
+      :`<div class="swot-item" role="button" tabindex="0" onclick="openArchetypeModal(${t.modal})" onkeydown="if(event.key==='Enter')openArchetypeModal(${t.modal})" aria-label="View archetype: ${t.text.replace(/<[^>]+>/g,' ')}">
+          <span class="swot-threat-tag">System Archetype ↗</span>${t.text}</div>`
+  ).join('');
 }
+
+/* ======================== BSC RENDER ======================== */
+function renderBSC(){
+  const table=document.getElementById('bsc-table');
+  let html=`<thead><tr>
+    <th scope="col">Perspective</th>
+    <th scope="col">Strategic Pillar</th>
+    <th scope="col">Strategy / Action</th>
+    <th scope="col">Key Performance Indicator</th>
+    <th scope="col">Baseline (2024)</th>
+    <th scope="col">Target (2035)</th>
+  </tr></thead><tbody>`;
+  bscData.forEach((r,i)=>{
+    const core=r.kpi.includes('⭐');
+    html+=`<tr class="${core?'bsc-row-core':i%2===0?'bsc-row-alt':''}">
+      <td class="bsc-persp">${r.perspective}</td>
+      <td class="bsc-pillar">${r.pillar}</td>
+      <td class="bsc-strategy">${r.strategy}</td>
+      <td class="bsc-kpi">${r.kpi}</td>
+      <td class="bsc-current">${r.current}</td>
+      <td class="bsc-target">${r.target}</td>
+    </tr>`;
+  });
+  table.innerHTML=html+'</tbody>';
+}
+
+/* ======================== PERSIST STATE ======================== */
+function saveState(){try{localStorage.setItem('barmmState',JSON.stringify(state));}catch(e){}}
+function loadState(){
+  try{
+    const s=localStorage.getItem('barmmState');
+    if(s){const p=JSON.parse(s);state.expandedPerspective=p.expandedPerspective;state.selectedStrategy=p.selectedStrategy;}
+  }catch(e){}
+}
+
+/* ======================== SCROLL FADE ======================== */
+const fadeObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');fadeObs.unobserve(e.target);}});
+},{threshold:.06});
+document.querySelectorAll('.fade-in-section').forEach(el=>fadeObs.observe(el));
+
+/* ======================== NAV SCROLL ======================== */
+window.addEventListener('scroll',()=>{
+  document.getElementById('siteNav').classList.toggle('scrolled',window.scrollY>40);
+},{passive:true});
+
+/* ======================== PWA INSTALL ======================== */
 let deferredPrompt;
-const installBtn = document.getElementById('installBtn');
-const manifest = {
-name: 'BARMM Investment Roadmap 2026-2035',
-short_name: 'BARMM Roadmap',
-description: 'The Emerging Bangsamoro Investment Strategy Map',
-start_url: window.location.href,
-display: 'standalone',
-background_color: '#022c22',
-theme_color: '#064e3b',
-icons: [{
-src: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" fill="%23064e3b"/><path d="M256 80c-61.8 0-112 50.2-112 112s50.2 112 112 112 112-50.2 112-112-50.2-112-112-112zm0 192c-44.2 0-80-35.8-80-80s35.8-80 80-80 80 35.8 80 80-35.8 80-80 80zm144 64h-72c-18.8 0-35.5 8.6-46.6 22-11.1-13.4-27.8-22-46.6-22h-72c-26.5 0-48 21.5-48 48v16h384v-16c0-26.5-21.5-48-48-48z" fill="%23fbbf24"/></svg>',
-sizes: '512x512',
-type: 'image/svg+xml',
-purpose: 'any maskable'
-}]
-};
-const manifestBlob = new Blob([JSON.stringify(manifest)], { type: 'application/json' });
-const manifestURL = URL.createObjectURL(manifestBlob);
-document.getElementById('manifest-placeholder').setAttribute('href', manifestURL);
-if ('serviceWorker' in navigator) {
-const swCode = 'const CACHE_NAME="barmm-roadmap-v1";const urlsToCache=["/"];self.addEventListener("install",event=>{event.waitUntil(caches.open(CACHE_NAME).then(cache=>cache.addAll(urlsToCache)))});self.addEventListener("fetch",event=>{event.respondWith(caches.match(event.request).then(response=>response||fetch(event.request)))});';
-const swBlob = new Blob([swCode], { type: 'application/javascript' });
-const swURL = URL.createObjectURL(swBlob);
-navigator.serviceWorker.register(swURL).then(reg => console.log('Service Worker registered')).catch(err => console.log('SW registration failed:', err));
-}
-window.addEventListener('beforeinstallprompt', function(e) {
-e.preventDefault();
-deferredPrompt = e;
-installBtn.classList.remove('hidden');
-});
-installBtn.addEventListener('click', async function() {
-if (!deferredPrompt) return;
-deferredPrompt.prompt();
-const result = await deferredPrompt.userChoice;
-if (result.outcome === 'accepted') {
-console.log('User accepted the install prompt');
-}
-deferredPrompt = null;
-installBtn.classList.add('hidden');
-});
-window.addEventListener('appinstalled', function() {
-console.log('PWA was installed');
-installBtn.classList.add('hidden');
-});
+const installBtn=document.getElementById('installBtn');
+const manifest={name:'BARMM Investment Roadmap 2026-2035',short_name:'BARMM Roadmap',description:'The Emerging Bangsamoro Interactive Strategy Map',start_url:window.location.href,display:'standalone',background_color:'#022c22',theme_color:'#064e3b',icons:[{src:`data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' fill='%23064e3b'/><path d='M256 120a136 136 0 1 0 0 272 136 136 0 0 0 0-272zm0 240a104 104 0 1 1 0-208 104 104 0 0 1 0 208z' fill='%23C9A84C'/></svg>`,sizes:'512x512',type:'image/svg+xml',purpose:'any maskable'}]};
+try{const mB=new Blob([JSON.stringify(manifest)],{type:'application/json'});document.getElementById('manifest-placeholder').href=URL.createObjectURL(mB);}catch(e){}
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;installBtn.classList.remove('hidden');});
+installBtn.addEventListener('click',async()=>{if(!deferredPrompt)return;deferredPrompt.prompt();const r=await deferredPrompt.userChoice;deferredPrompt=null;installBtn.classList.add('hidden');});
+window.addEventListener('appinstalled',()=>installBtn.classList.add('hidden'));
+
+/* ======================== INIT ======================== */
 loadState();
 render();
+// Animate visible sections
+requestAnimationFrame(()=>{
+  document.querySelectorAll('.tab-content.active .fade-in-section').forEach(el=>fadeObs.observe(el));
+});
 </script>
 </body>
 </html>
