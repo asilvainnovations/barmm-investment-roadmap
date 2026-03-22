@@ -3,18 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Workshop Resources — The Emerging Bangsamoro: Architecting a Hub for Resilient and Ethical Growth. Session guides, facilitation tools, and reference materials.">
+<meta name="description" content="Workshop Resources — The Emerging Bangsamoro: Architecting a Hub for Resilient and Ethical Growth. Session guides, facilitation tools, Strat Planner Pro, and Systems Strat Pro.">
 <title>Workshop Resources | The Emerging Bangsamoro</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
-/* ===== DESIGN TOKENS ===== */
+/* ===== TOKENS ===== */
 :root{
-  --dark-green:#022c22; --primary-green:#064e3b; --mid-green:#065f46;
-  --light-green:#6ee7b7; --cream:#ecfdf5; --text-dark:#0f172a; --text-muted:#64748b;
-  --gold:#C9A84C; --gold-light:#E8C560; --gold-dark:#8B6C28; --gold-pale:#fdf6e3;
-  --gold-border:rgba(201,168,76,0.32); --gold-border-strong:rgba(201,168,76,0.55);
-  --gold-glow:rgba(201,168,76,0.18);
+  --dark-green:#022c22;--primary-green:#064e3b;--mid-green:#065f46;
+  --light-green:#6ee7b7;--cream:#ecfdf5;--text-dark:#0f172a;--text-muted:#64748b;
+  --gold:#C9A84C;--gold-light:#E8C560;--gold-dark:#8B6C28;--gold-pale:#fdf6e3;
+  --gold-border:rgba(201,168,76,.32);--gold-border-strong:rgba(201,168,76,.55);
   --gold-grad:linear-gradient(135deg,#7a5c1e 0%,#c9a84c 35%,#e8c560 50%,#c9a84c 65%,#7a5c1e 100%);
+  --ai-blue:#1e3a5f;--ai-accent:#3b82f6;
+  --spp-purple:#4f1d96;--spp-accent:#8b5cf6;--spp-grad:linear-gradient(135deg,#4f1d96,#6d28d9);
+  --ssp-navy:#0f2044;--ssp-accent:#3b82f6;--ssp-grad:linear-gradient(135deg,#1e3a5f,#0c2240);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
@@ -22,221 +24,404 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text-d
 
 /* ===== NAV ===== */
 nav{background:rgba(2,44,34,.97);backdrop-filter:blur(16px);position:sticky;top:0;z-index:200;border-bottom:2px solid var(--gold-border);}
-.nav-inner{max-width:1300px;margin:0 auto;padding:.55rem 2rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;}
-.nav-logo img{height:52px;width:auto;object-fit:contain;display:block;}
-.nav-links{display:flex;gap:1.5rem;list-style:none;align-items:center;}
-.nav-links a{color:var(--light-green);text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.03em;transition:color .3s;position:relative;}
+.nav-inner{max-width:1340px;margin:0 auto;padding:.5rem 2rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;}
+.nav-logo img{height:50px;width:auto;object-fit:contain;display:block;}
+.nav-links{display:flex;gap:1.3rem;list-style:none;align-items:center;}
+.nav-links a{color:var(--light-green);text-decoration:none;font-size:.79rem;font-weight:500;letter-spacing:.03em;transition:color .3s;position:relative;}
 .nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:2px;background:var(--gold);transition:width .3s;}
 .nav-links a:hover{color:var(--gold);}
 .nav-links a:hover::after{width:100%;}
-.nav-cta{background:var(--gold-grad);color:var(--dark-green)!important;padding:.55rem 1.25rem;border-radius:.4rem;font-weight:700!important;font-size:.8rem!important;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;}
+.nav-cta{background:var(--gold-grad);color:var(--dark-green)!important;padding:.5rem 1.1rem;border-radius:.4rem;font-weight:700!important;font-size:.77rem!important;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;}
 .nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(201,168,76,.35);}
 .nav-cta::after{display:none!important;}
 
 /* ===== HERO ===== */
-.hero{
-  background:linear-gradient(160deg,var(--dark-green) 0%,#034030 50%,#0a1628 100%);
-  color:white;padding:5rem 2rem 4rem;text-align:center;position:relative;overflow:hidden;
-}
+.hero{background:linear-gradient(160deg,var(--dark-green) 0%,#034030 50%,#0a1628 100%);color:white;padding:5rem 2rem 4rem;text-align:center;position:relative;overflow:hidden;}
 .hero::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 8L46 30L68 36L46 42L40 64L34 42L12 36L34 30Z' fill='none' stroke='%23C9A84C' stroke-width='0.5' opacity='0.07'/%3E%3C/svg%3E");pointer-events:none;}
 .hero::after{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:100%;height:4px;background:var(--gold-grad);}
 .hero-inner{max-width:860px;margin:0 auto;position:relative;z-index:1;}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:.6rem;background:rgba(201,168,76,.1);border:1px solid var(--gold-border-strong);color:var(--gold);padding:.4rem 1.2rem;border-radius:2rem;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1.4rem;}
-.hero-eyebrow svg{width:14px;height:14px;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.6rem;background:rgba(201,168,76,.1);border:1px solid var(--gold-border-strong);color:var(--gold);padding:.4rem 1.2rem;border-radius:2rem;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1.4rem;}
+.hero-eyebrow svg{width:13px;height:13px;}
 .hero h1{font-family:'Cinzel',serif;font-size:clamp(1.8rem,4vw,3.2rem);font-weight:700;line-height:1.2;margin-bottom:.75rem;background:var(--gold-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .hero-sub{font-size:1.05rem;color:rgba(255,255,255,.75);max-width:640px;margin:0 auto 1.2rem;font-weight:300;}
-.hero-theme{font-family:'Cinzel',serif;font-size:1rem;color:var(--light-green);font-style:italic;margin-bottom:2.5rem;letter-spacing:.03em;}
-.hero-meta{display:flex;justify-content:center;flex-wrap:wrap;gap:1.5rem;}
-.meta-chip{display:flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);padding:.5rem 1rem;border-radius:2rem;font-size:.8rem;color:rgba(255,255,255,.75);}
-.meta-chip svg{width:14px;height:14px;flex-shrink:0;color:var(--gold);}
+.hero-theme{font-family:'Cinzel',serif;font-size:.95rem;color:var(--light-green);font-style:italic;margin-bottom:2.5rem;letter-spacing:.03em;}
+.hero-meta{display:flex;justify-content:center;flex-wrap:wrap;gap:1.2rem;}
+.meta-chip{display:flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);padding:.45rem .9rem;border-radius:2rem;font-size:.78rem;color:rgba(255,255,255,.75);}
+.meta-chip svg{width:13px;height:13px;flex-shrink:0;color:var(--gold);}
 
-/* ===== MAIN LAYOUT ===== */
-.page{max-width:1280px;margin:0 auto;padding:0 2rem 5rem;}
+/* ===== PLATFORM PILLS in hero ===== */
+.hero-platforms{display:flex;justify-content:center;gap:.75rem;flex-wrap:wrap;margin-top:1.5rem;}
+.platform-pill{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem 1rem;border-radius:2rem;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;transition:transform .2s,box-shadow .2s;}
+.pp-spp{background:rgba(139,92,246,.15);border:1px solid rgba(139,92,246,.4);color:#c4b5fd;}
+.pp-ssp{background:rgba(59,130,246,.15);border:1px solid rgba(59,130,246,.4);color:#93c5fd;}
+.pp-spp:hover,.pp-ssp:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.3);}
+.platform-pill svg{width:11px;height:11px;}
 
-/* ===== SECTION HEADERS ===== */
+/* ===== PAGE ===== */
+.page{max-width:1300px;margin:0 auto;padding:0 2rem 5rem;}
+
+/* ===== SEC HEADERS ===== */
 .sec-header{text-align:center;padding:3.5rem 0 2.5rem;}
-.sec-eyebrow{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:.6rem;}
-.sec-header h2{font-family:'Cinzel',serif;font-size:clamp(1.5rem,2.8vw,2.2rem);color:var(--primary-green);margin-bottom:.6rem;line-height:1.25;}
-.gold-div{width:50px;height:3px;background:var(--gold-grad);border-radius:2px;margin:.75rem auto 1.1rem;}
-.sec-header p{color:var(--text-muted);font-size:.95rem;max-width:580px;margin:0 auto;}
+.sec-eyebrow{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:.6rem;}
+.sec-header h2{font-family:'Cinzel',serif;font-size:clamp(1.4rem,2.6vw,2.1rem);color:var(--primary-green);margin-bottom:.6rem;line-height:1.25;}
+.gold-div{width:48px;height:3px;background:var(--gold-grad);border-radius:2px;margin:.75rem auto 1.1rem;}
+.sec-header p{color:var(--text-muted);font-size:.92rem;max-width:580px;margin:0 auto;}
 
-/* ===== PROGRAM TIMELINE ===== */
-.timeline-wrap{position:relative;margin-bottom:4rem;}
+/* ===== STATS ROW ===== */
+.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:.85rem;margin-bottom:3rem;}
+.stat-box{background:linear-gradient(135deg,var(--primary-green),var(--dark-green));border-radius:1rem;padding:1.25rem;text-align:center;color:white;}
+.stat-box-num{font-family:'Cinzel',serif;font-size:1.85rem;font-weight:700;color:var(--gold);display:block;line-height:1;margin-bottom:.3rem;}
+.stat-box-lbl{font-size:.7rem;color:rgba(110,231,183,.85);letter-spacing:.05em;text-transform:uppercase;font-weight:500;}
+
+/* ===== ACCESS NOTICE ===== */
+.access-notice{background:linear-gradient(135deg,rgba(6,78,59,.06),rgba(201,168,76,.06));border:1px solid var(--gold-border);border-radius:1rem;padding:1.8rem 2.2rem;margin-bottom:3rem;display:flex;align-items:flex-start;gap:1.4rem;}
+.notice-icon{font-size:1.8rem;flex-shrink:0;margin-top:.1rem;}
+.notice-body h3{font-family:'Cinzel',serif;color:var(--primary-green);font-size:.98rem;margin-bottom:.45rem;}
+.notice-body p{color:var(--text-muted);font-size:.86rem;line-height:1.6;margin-bottom:.6rem;}
+.notice-steps{display:flex;flex-wrap:wrap;gap:.45rem;}
+.notice-step{display:flex;align-items:center;gap:.4rem;font-size:.73rem;font-weight:600;color:var(--primary-green);background:rgba(6,78,59,.08);border:1px solid rgba(6,78,59,.15);padding:.28rem .7rem;border-radius:2rem;}
+.notice-step span{background:var(--primary-green);color:white;width:15px;height:15px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.58rem;font-weight:700;flex-shrink:0;}
+
+/* ===== DUAL PLATFORM BANNER ===== */
+.dual-platform-banner{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:3rem;}
+.platform-card{border-radius:1.25rem;overflow:hidden;border:1px solid;position:relative;}
+.platform-card.spp{background:linear-gradient(160deg,#2e1065,#4f1d96,#1e1040);border-color:rgba(139,92,246,.3);}
+.platform-card.ssp{background:var(--ssp-grad);border-color:rgba(59,130,246,.25);}
+.platform-card::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='25' cy='25' r='18' fill='none' stroke='white' stroke-width='0.3' opacity='0.05'/%3E%3C/svg%3E");pointer-events:none;}
+.pc-inner{padding:2rem 2rem 1.8rem;position:relative;z-index:1;}
+.pc-badge{display:inline-flex;align-items:center;gap:.4rem;font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.28rem .75rem;border-radius:2rem;margin-bottom:1rem;}
+.spp .pc-badge{background:rgba(196,181,253,.12);border:1px solid rgba(196,181,253,.3);color:#c4b5fd;}
+.ssp .pc-badge{background:rgba(147,197,253,.1);border:1px solid rgba(147,197,253,.25);color:#93c5fd;}
+.pc-badge .status-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;}
+.spp .status-dot{background:#a78bfa;animation:pulse 2s ease-in-out infinite;}
+.ssp .status-dot{background:#22d3ee;animation:pulse 2s ease-in-out infinite 0.5s;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.4;}}
+.pc-inner h2{font-family:'Cinzel',serif;font-size:1.25rem;color:white;line-height:1.3;margin-bottom:.5rem;}
+.pc-inner p{font-size:.82rem;color:rgba(255,255,255,.55);line-height:1.6;margin-bottom:1.1rem;}
+.pc-relationship{font-size:.75rem;color:rgba(255,255,255,.35);font-style:italic;margin-bottom:1.2rem;padding:.5rem .75rem;background:rgba(255,255,255,.04);border-radius:.5rem;border-left:2px solid rgba(255,255,255,.15);}
+.pc-modules{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.4rem;}
+.pc-module{font-size:.65rem;font-weight:600;padding:.22rem .6rem;border-radius:2rem;letter-spacing:.03em;}
+.spp .pc-module{background:rgba(167,139,250,.12);border:1px solid rgba(167,139,250,.25);color:#c4b5fd;}
+.ssp .pc-module{background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);color:#93c5fd;}
+.pc-cta-row{display:flex;gap:.6rem;flex-wrap:wrap;}
+.pc-btn-primary{display:inline-flex;align-items:center;gap:.45rem;padding:.6rem 1.2rem;border-radius:.45rem;font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border:none;cursor:pointer;transition:transform .2s,box-shadow .2s;text-decoration:none;}
+.spp .pc-btn-primary{background:#7c3aed;color:white;}
+.spp .pc-btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(124,58,237,.45);}
+.ssp .pc-btn-primary{background:#2563eb;color:white;}
+.ssp .pc-btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(37,99,235,.45);}
+.pc-btn-secondary{display:inline-flex;align-items:center;gap:.45rem;padding:.6rem 1rem;border-radius:.45rem;font-size:.78rem;font-weight:600;border:1px solid;cursor:pointer;transition:background .2s;background:transparent;text-decoration:none;}
+.spp .pc-btn-secondary{border-color:rgba(167,139,250,.3);color:#c4b5fd;}
+.spp .pc-btn-secondary:hover{background:rgba(167,139,250,.1);}
+.ssp .pc-btn-secondary{border-color:rgba(93,165,251,.3);color:#93c5fd;}
+.ssp .pc-btn-secondary:hover{background:rgba(59,130,246,.1);}
+/* auth status strip */
+.pc-auth-strip{display:flex;align-items:center;justify-content:space-between;padding:.6rem 2rem;border-top:1px solid rgba(255,255,255,.07);background:rgba(0,0,0,.12);}
+.pc-auth-item{display:flex;align-items:center;gap:.4rem;font-size:.67rem;color:rgba(255,255,255,.4);}
+.auth-icon-cloud{color:#34d399;}
+.auth-icon-local{color:#fbbf24;}
+.pc-auth-item svg{width:11px;height:11px;}
+
+/* ===== MODULE COMPARISON TABLE ===== */
+.module-compare{background:white;border-radius:1.1rem;border:1px solid rgba(6,78,59,.1);box-shadow:0 2px 12px rgba(0,0,0,.05);overflow:hidden;margin-bottom:3rem;}
+.mc-header{display:grid;grid-template-columns:2fr 1fr 1fr;background:linear-gradient(135deg,var(--primary-green),var(--dark-green));padding:1rem 1.5rem;gap:1rem;}
+.mc-header-cell{font-family:'Cinzel',serif;font-size:.78rem;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.06em;text-transform:uppercase;}
+.mc-header-cell.spp-col{color:#c4b5fd;}
+.mc-header-cell.ssp-col{color:#93c5fd;}
+.mc-row{display:grid;grid-template-columns:2fr 1fr 1fr;gap:1rem;padding:.85rem 1.5rem;border-bottom:1px solid rgba(6,78,59,.06);align-items:center;transition:background .2s;}
+.mc-row:hover{background:rgba(6,78,59,.02);}
+.mc-row:last-child{border-bottom:none;}
+.mc-feature{display:flex;flex-direction:column;gap:.15rem;}
+.mc-feature-name{font-size:.82rem;font-weight:600;color:var(--text-dark);}
+.mc-feature-desc{font-size:.72rem;color:var(--text-muted);}
+.mc-check{display:flex;align-items:center;justify-content:center;}
+.check-full{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.check-full.spp{background:rgba(139,92,246,.1);border:1px solid rgba(139,92,246,.25);}
+.check-full.ssp{background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);}
+.check-full svg{width:11px;height:11px;}
+.check-full.spp svg{color:#8b5cf6;}
+.check-full.ssp svg{color:#3b82f6;}
+.check-none{width:22px;height:22px;display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:.9rem;}
+.check-partial{width:22px;height:22px;border-radius:50%;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.check-partial svg{width:9px;height:9px;color:#f59e0b;}
+
+/* ===== SPP FEATURE CARDS ===== */
+.spp-features-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:1.1rem;margin-bottom:3rem;}
+.spp-feat-card{background:white;border-radius:1rem;overflow:hidden;border:1px solid rgba(79,29,150,.1);box-shadow:0 2px 10px rgba(0,0,0,.05);transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column;}
+.spp-feat-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.1);}
+.spp-feat-top{padding:1.3rem 1.4rem .9rem;position:relative;overflow:hidden;}
+.spp-feat-top::after{content:'';position:absolute;bottom:-25px;right:-15px;width:100px;height:100px;background:rgba(255,255,255,.04);border-radius:50%;}
+.spp-feat-icon{width:42px;height:42px;border-radius:.7rem;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:.8rem;position:relative;z-index:1;}
+.spp-feat-top h3{font-family:'Cinzel',serif;font-size:.87rem;font-weight:700;color:white;line-height:1.3;margin-bottom:.2rem;position:relative;z-index:1;}
+.spp-feat-label{font-size:.6rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.4);position:relative;z-index:1;}
+.spp-feat-session-tag{font-size:.62rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.55);position:relative;z-index:1;margin-top:.15rem;}
+.spp-feat-body{padding:1rem 1.4rem 1.3rem;flex:1;display:flex;flex-direction:column;}
+.spp-feat-desc{font-size:.81rem;color:var(--text-muted);line-height:1.55;margin-bottom:.85rem;flex:1;}
+.spp-feature-list{display:flex;flex-direction:column;gap:.28rem;margin-bottom:.9rem;}
+.spp-feat-item{font-size:.73rem;color:var(--text-dark);padding:.18rem 0 .18rem .85rem;position:relative;line-height:1.4;}
+.spp-feat-item::before{content:'›';position:absolute;left:0;color:var(--gold);font-weight:bold;}
+.spp-feat-launch{display:flex;align-items:center;justify-content:center;gap:.45rem;padding:.6rem;border-radius:.55rem;font-size:.76rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border:none;cursor:pointer;transition:transform .2s,box-shadow .2s;text-decoration:none;color:white;}
+.spp-feat-launch:hover{transform:translateY(-2px);}
+.spp-feat-launch svg{width:12px;height:12px;}
+
+/* colour variants for SPP cards */
+.bg-auth{background:linear-gradient(135deg,#312e81,#4338ca);}
+.ico-auth{background:rgba(165,180,252,.15);border:1px solid rgba(165,180,252,.3);}
+.btn-auth{background:#4338ca;box-shadow:0 4px 14px rgba(67,56,202,.4);}
+.bg-swot{background:linear-gradient(135deg,#4f1d96,#6d28d9);}
+.ico-swot{background:rgba(196,181,253,.15);border:1px solid rgba(196,181,253,.3);}
+.btn-swot{background:#7c3aed;box-shadow:0 4px 14px rgba(124,58,237,.4);}
+.bg-tows{background:linear-gradient(135deg,#065f46,#064e3b);}
+.ico-tows{background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.3);}
+.btn-tows{background:var(--primary-green);box-shadow:0 4px 14px rgba(6,78,59,.35);}
+.bg-bsc{background:linear-gradient(135deg,#1d4ed8,#1e40af);}
+.ico-bsc{background:rgba(147,197,253,.15);border:1px solid rgba(147,197,253,.3);}
+.btn-bsc{background:#1d4ed8;box-shadow:0 4px 14px rgba(29,78,216,.4);}
+.bg-pap{background:linear-gradient(135deg,#92400e,#78350f);}
+.ico-pap{background:rgba(251,191,36,.15);border:1px solid rgba(251,191,36,.3);}
+.btn-pap{background:#b45309;box-shadow:0 4px 14px rgba(180,83,9,.4);}
+.bg-systems{background:linear-gradient(135deg,#0f4c81,#1e3a5f);}
+.ico-systems{background:rgba(125,211,252,.15);border:1px solid rgba(125,211,252,.3);}
+.btn-systems{background:#0369a1;box-shadow:0 4px 14px rgba(3,105,161,.4);}
+.bg-mel{background:linear-gradient(135deg,#166534,#14532d);}
+.ico-mel{background:rgba(110,231,183,.15);border:1px solid rgba(110,231,183,.3);}
+.btn-mel{background:#15803d;box-shadow:0 4px 14px rgba(21,128,61,.4);}
+.bg-export{background:linear-gradient(135deg,#7f1d1d,#991b1b);}
+.ico-export{background:rgba(252,165,165,.12);border:1px solid rgba(252,165,165,.25);}
+.btn-export{background:#dc2626;box-shadow:0 4px 14px rgba(220,38,38,.35);}
+
+/* ===== AUTH STATUS PANEL ===== */
+.auth-panel{background:white;border-radius:1rem;border:1px solid rgba(79,29,150,.12);box-shadow:0 2px 10px rgba(0,0,0,.05);padding:1.5rem 2rem;margin-bottom:3rem;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;}
+.auth-panel-left h3{font-family:'Cinzel',serif;color:var(--primary-green);font-size:.98rem;margin-bottom:.4rem;}
+.auth-panel-left p{font-size:.83rem;color:var(--text-muted);line-height:1.55;max-width:520px;}
+.auth-modes{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1rem;}
+.auth-mode{display:flex;align-items:flex-start;gap:.6rem;background:var(--cream);border:1px solid rgba(6,78,59,.1);border-radius:.75rem;padding:.8rem 1rem;flex:1;min-width:180px;}
+.auth-mode-icon{font-size:1.3rem;flex-shrink:0;}
+.auth-mode-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:.15rem;}
+.auth-mode-label.cloud{color:#15803d;}
+.auth-mode-label.local{color:#b45309;}
+.auth-mode-desc{font-size:.72rem;color:var(--text-muted);line-height:1.35;}
+.auth-panel-right{text-align:center;}
+.auth-panel-btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--spp-grad);color:white;padding:.75rem 1.6rem;border-radius:.55rem;font-size:.8rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border:none;cursor:pointer;transition:transform .2s,box-shadow .2s;text-decoration:none;}
+.auth-panel-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(109,40,217,.45);}
+.auth-status-row{display:flex;gap:.5rem;justify-content:center;margin-top:.65rem;}
+.auth-status-chip{display:flex;align-items:center;gap:.3rem;font-size:.65rem;font-weight:600;padding:.2rem .55rem;border-radius:1rem;}
+.asc-cloud{background:rgba(21,128,61,.08);border:1px solid rgba(21,128,61,.2);color:#15803d;}
+.asc-offline{background:rgba(180,83,9,.08);border:1px solid rgba(180,83,9,.2);color:#b45309;}
+.asc-dot{width:5px;height:5px;border-radius:50%;}
+.asc-cloud .asc-dot{background:#22c55e;}
+.asc-offline .asc-dot{background:#f59e0b;animation:pulse 1.5s ease-in-out infinite;}
+
+/* ===== WORKFLOW STEPPER ===== */
+.workflow-stepper{background:linear-gradient(135deg,rgba(6,78,59,.04),rgba(201,168,76,.04));border:1px solid var(--gold-border);border-radius:1.25rem;padding:2.2rem 2.4rem;margin-bottom:3rem;}
+.workflow-stepper h3{font-family:'Cinzel',serif;font-size:1.05rem;color:var(--primary-green);margin-bottom:.35rem;}
+.workflow-stepper>p{font-size:.84rem;color:var(--text-muted);margin-bottom:1.8rem;}
+.steps-flow{display:flex;gap:0;position:relative;overflow-x:auto;padding-bottom:.5rem;}
+.step-item{flex:1;min-width:155px;position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 .6rem;}
+.step-item:not(:last-child)::after{content:'→';position:absolute;right:-.55rem;top:1rem;font-size:.95rem;color:var(--gold);font-weight:700;z-index:1;}
+.step-num{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:.85rem;font-weight:700;color:white;margin-bottom:.6rem;flex-shrink:0;}
+.sn-1{background:#4338ca;} .sn-2{background:#7c3aed;} .sn-3{background:var(--primary-green);} .sn-4{background:#1d4ed8;} .sn-5{background:#b45309;} .sn-6{background:#15803d;} .sn-7{background:#dc2626;}
+.step-title{font-family:'Cinzel',serif;font-size:.73rem;font-weight:700;color:var(--text-dark);margin-bottom:.2rem;line-height:1.3;}
+.step-platform{font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.25rem;}
+.sp-spp{color:#8b5cf6;} .sp-ssp{color:#3b82f6;} .sp-both{color:var(--gold-dark);}
+.step-desc{font-size:.68rem;color:var(--text-muted);line-height:1.35;}
+
+/* ===== TIMELINE ===== */
+.timeline-wrap{position:relative;margin-bottom:3.5rem;}
 .tl-spine{position:absolute;left:140px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--gold),rgba(201,168,76,.2));border-radius:2px;}
-
-.tl-block{display:grid;grid-template-columns:130px 1fr;gap:0 2.5rem;position:relative;margin-bottom:.75rem;align-items:start;}
+.tl-block{display:grid;grid-template-columns:130px 1fr;gap:0 2.4rem;position:relative;margin-bottom:.75rem;align-items:start;}
 .tl-time{text-align:right;padding-top:1rem;position:relative;}
-.tl-time-text{font-family:'Cinzel',serif;font-size:.72rem;font-weight:700;color:var(--gold);line-height:1.3;}
-.tl-dot{position:absolute;right:-2.65rem;top:1.3rem;width:12px;height:12px;background:var(--gold);border-radius:50%;border:3px solid var(--cream);box-shadow:0 0 0 2px var(--gold);z-index:1;}
-
-.tl-card{
-  background:white;border-radius:.875rem;padding:1.4rem 1.6rem;
-  border:1px solid rgba(6,78,59,.1);
-  box-shadow:0 2px 12px rgba(0,0,0,.06);
-  transition:transform .3s,box-shadow .3s,border-color .3s;
-  position:relative;overflow:hidden;
-}
+.tl-time-text{font-family:'Cinzel',serif;font-size:.7rem;font-weight:700;color:var(--gold);line-height:1.3;}
+.tl-dot{position:absolute;right:-2.6rem;top:1.3rem;width:11px;height:11px;background:var(--gold);border-radius:50%;border:3px solid var(--cream);box-shadow:0 0 0 2px var(--gold);z-index:1;}
+.tl-card{background:white;border-radius:.875rem;padding:1.3rem 1.5rem;border:1px solid rgba(6,78,59,.1);box-shadow:0 2px 10px rgba(0,0,0,.05);transition:transform .3s,box-shadow .3s;position:relative;overflow:hidden;}
 .tl-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--card-accent,var(--primary-green));}
-.tl-card:hover{transform:translateX(4px);box-shadow:0 8px 28px rgba(0,0,0,.1);border-color:rgba(6,78,59,.2);}
-
-.tl-card-header{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:.5rem;flex-wrap:wrap;}
-.tl-activity{font-family:'Cinzel',serif;font-size:.9rem;font-weight:700;color:var(--primary-green);line-height:1.3;}
-.tl-tag{
-  font-size:.65rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
-  padding:.25rem .65rem;border-radius:2rem;flex-shrink:0;white-space:nowrap;
-}
+.tl-card:hover{transform:translateX(4px);box-shadow:0 8px 26px rgba(0,0,0,.1);}
+.tl-card-header{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:.45rem;flex-wrap:wrap;}
+.tl-activity{font-family:'Cinzel',serif;font-size:.87rem;font-weight:700;color:var(--primary-green);line-height:1.3;}
+.tl-tag{font-size:.63rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.22rem .6rem;border-radius:2rem;flex-shrink:0;white-space:nowrap;}
 .tag-opening{background:rgba(201,168,76,.12);color:var(--gold-dark);border:1px solid var(--gold-border);}
 .tag-session{background:rgba(6,78,59,.1);color:var(--primary-green);border:1px solid rgba(6,78,59,.2);}
 .tag-masterclass{background:rgba(59,130,246,.1);color:#1d4ed8;border:1px solid rgba(59,130,246,.2);}
 .tag-break{background:rgba(100,116,139,.1);color:#475569;border:1px solid rgba(100,116,139,.2);}
 .tag-synthesis{background:rgba(147,51,234,.1);color:#7c3aed;border:1px solid rgba(147,51,234,.2);}
 .tag-retrospective{background:rgba(5,150,105,.1);color:#047857;border:1px solid rgba(5,150,105,.2);}
-
-.tl-lead{font-size:.78rem;color:var(--text-muted);margin-bottom:.6rem;display:flex;align-items:center;gap:.4rem;}
-.tl-lead svg{width:12px;height:12px;color:var(--gold);flex-shrink:0;}
-.tl-content{font-size:.84rem;color:var(--text-muted);line-height:1.6;}
-.tl-tools{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.9rem;}
-.tl-tool-chip{
-  font-size:.68rem;font-weight:600;background:var(--cream);border:1px solid rgba(6,78,59,.18);
-  color:var(--primary-green);padding:.2rem .6rem;border-radius:.35rem;letter-spacing:.02em;
-  transition:background .2s,border-color .2s;
-}
+.tl-lead{font-size:.76rem;color:var(--text-muted);margin-bottom:.5rem;display:flex;align-items:center;gap:.4rem;}
+.tl-lead svg{width:11px;height:11px;color:var(--gold);flex-shrink:0;}
+.tl-content{font-size:.82rem;color:var(--text-muted);line-height:1.6;}
+.tl-tools{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.8rem;}
+.tl-tool-chip{font-size:.66rem;font-weight:600;background:var(--cream);border:1px solid rgba(6,78,59,.18);color:var(--primary-green);padding:.18rem .55rem;border-radius:.32rem;letter-spacing:.02em;transition:background .2s;}
 .tl-card:hover .tl-tool-chip{background:rgba(6,78,59,.07);border-color:rgba(6,78,59,.3);}
+/* platform badges on timeline */
+.tl-platform-badges{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.75rem;}
+.tl-platform-badge{display:inline-flex;align-items:center;gap:.3rem;font-size:.62rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.2rem .6rem;border-radius:2rem;}
+.tpb-spp{background:rgba(139,92,246,.08);border:1px solid rgba(139,92,246,.25);color:#8b5cf6;}
+.tpb-ssp{background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.22);color:#2563eb;}
+.tl-platform-badge svg{width:9px;height:9px;}
+
+/* ===== MEL DASHBOARD PREVIEW ===== */
+.mel-preview{background:white;border-radius:1.1rem;border:1px solid rgba(6,78,59,.1);box-shadow:0 2px 12px rgba(0,0,0,.05);margin-bottom:3rem;overflow:hidden;}
+.mel-header{background:linear-gradient(135deg,#166534,#14532d);padding:1.4rem 1.8rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.mel-header h3{font-family:'Cinzel',serif;color:#4ade80;font-size:1rem;}
+.mel-header p{color:rgba(255,255,255,.5);font-size:.78rem;}
+.mel-header-right{display:flex;align-items:center;gap:.75rem;}
+.mel-sync-chip{display:flex;align-items:center;gap:.35rem;font-size:.65rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.25);color:#4ade80;padding:.25rem .65rem;border-radius:1rem;}
+.mel-sync-chip .sync-dot{width:5px;height:5px;border-radius:50%;background:#4ade80;animation:pulse 1.5s ease-in-out infinite;}
+.mel-body{padding:1.5rem 1.8rem;}
+.kpi-cards-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.85rem;margin-bottom:1.4rem;}
+.kpi-card{background:var(--cream);border-radius:.75rem;padding:1rem 1.1rem;border:1px solid rgba(6,78,59,.08);position:relative;overflow:hidden;}
+.kpi-card::after{content:'';position:absolute;bottom:-15px;right:-10px;width:60px;height:60px;background:radial-gradient(circle,rgba(201,168,76,.07),transparent 70%);border-radius:50%;}
+.kpi-label{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text-muted);margin-bottom:.35rem;}
+.kpi-value{font-family:'Cinzel',serif;font-size:1.4rem;font-weight:700;color:var(--text-dark);line-height:1;margin-bottom:.3rem;}
+.kpi-sub{font-size:.68rem;color:var(--text-muted);}
+.kpi-status{display:inline-flex;align-items:center;gap:.3rem;font-size:.62rem;font-weight:700;padding:.18rem .5rem;border-radius:1rem;margin-top:.4rem;}
+.status-on-track{background:rgba(21,128,61,.08);border:1px solid rgba(21,128,61,.2);color:#15803d;}
+.status-at-risk{background:rgba(180,83,9,.08);border:1px solid rgba(180,83,9,.2);color:#b45309;}
+.status-behind{background:rgba(220,38,38,.08);border:1px solid rgba(220,38,38,.2);color:#dc2626;}
+.mel-pap-table{border-radius:.6rem;overflow:hidden;border:1px solid rgba(6,78,59,.08);}
+.mel-pap-header{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;background:rgba(6,78,59,.06);padding:.6rem 1rem;gap:.5rem;}
+.mel-pap-col-h{font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text-muted);}
+.mel-pap-row{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;padding:.65rem 1rem;gap:.5rem;border-bottom:1px solid rgba(6,78,59,.05);align-items:center;transition:background .2s;}
+.mel-pap-row:last-child{border-bottom:none;}
+.mel-pap-row:hover{background:rgba(6,78,59,.02);}
+.pap-name{font-size:.78rem;font-weight:600;color:var(--text-dark);}
+.pap-type{font-size:.65rem;color:var(--text-muted);}
+.pap-cell{font-size:.75rem;color:var(--text-muted);}
+.pap-prog-wrap{height:6px;background:rgba(6,78,59,.08);border-radius:3px;overflow:hidden;width:100%;}
+.pap-prog{height:100%;border-radius:3px;}
+.prog-green{background:linear-gradient(90deg,#059669,#34d399);}
+.prog-blue{background:linear-gradient(90deg,#1d4ed8,#60a5fa);}
+.prog-amber{background:linear-gradient(90deg,#d97706,#fbbf24);}
+.mel-footer{padding:.85rem 1.8rem;border-top:1px solid rgba(6,78,59,.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem;}
+.mel-footer p{font-size:.73rem;color:var(--text-muted);}
+.mel-open-btn{display:inline-flex;align-items:center;gap:.4rem;background:#15803d;color:white;padding:.5rem 1.1rem;border-radius:.45rem;font-size:.74rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border:none;cursor:pointer;transition:transform .2s,box-shadow .2s;text-decoration:none;}
+.mel-open-btn:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(21,128,61,.4);}
+
+/* ===== BSC PREVIEW ===== */
+.bsc-preview{margin-bottom:3rem;}
+.bsc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.9rem;}
+.bsc-card{background:white;border-radius:.875rem;padding:1.3rem 1.4rem;border:1px solid rgba(6,78,59,.1);box-shadow:0 2px 8px rgba(0,0,0,.04);position:relative;overflow:hidden;}
+.bsc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--bsc-color,var(--gold));}
+.bsc-card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.85rem;}
+.bsc-card-icon{font-size:1.5rem;}
+.bsc-card-platform{display:flex;align-items:center;gap:.3rem;font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#8b5cf6;background:rgba(139,92,246,.08);border:1px solid rgba(139,92,246,.2);padding:.18rem .5rem;border-radius:1rem;}
+.bsc-card-platform svg{width:9px;height:9px;}
+.bsc-perspective{font-family:'Cinzel',serif;font-size:.85rem;font-weight:700;color:var(--primary-green);margin-bottom:.25rem;}
+.bsc-target{font-size:.78rem;color:var(--text-muted);margin-bottom:.8rem;font-style:italic;}
+.bsc-obj-list{display:flex;flex-direction:column;gap:.3rem;}
+.bsc-obj{display:flex;align-items:center;gap:.5rem;font-size:.75rem;color:var(--text-dark);}
+.bsc-obj-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+.bsc-kpi-chip{margin-left:auto;font-size:.62rem;font-weight:700;padding:.15rem .45rem;border-radius:.3rem;white-space:nowrap;}
 
 /* ===== RESOURCES GRID ===== */
-.resources-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin-bottom:3.5rem;}
-.res-card{
-  background:white;border-radius:1rem;overflow:hidden;
-  border:1px solid rgba(6,78,59,.1);
-  box-shadow:0 2px 12px rgba(0,0,0,.05);
-  transition:transform .3s,box-shadow .3s;
-  display:flex;flex-direction:column;
-}
-.res-card:hover{transform:translateY(-5px);box-shadow:0 12px 35px rgba(0,0,0,.1);}
-.res-card-top{
-  padding:1.4rem 1.5rem 1rem;
-  background:linear-gradient(135deg,var(--primary-green),var(--dark-green));
-  color:white;position:relative;overflow:hidden;
-}
-.res-card-top::after{content:'';position:absolute;bottom:-30px;right:-20px;width:120px;height:120px;background:rgba(201,168,76,.07);border-radius:50%;}
-.res-icon{
-  width:44px;height:44px;background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.3);
-  border-radius:.75rem;display:flex;align-items:center;justify-content:center;
-  font-size:1.3rem;margin-bottom:.85rem;position:relative;z-index:1;
-}
-.res-card-top h3{font-family:'Cinzel',serif;font-size:.92rem;font-weight:700;line-height:1.3;margin-bottom:.3rem;position:relative;z-index:1;}
-.res-session-tag{font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(201,168,76,.9);position:relative;z-index:1;}
-.res-card-body{padding:1.1rem 1.5rem 1.4rem;flex:1;display:flex;flex-direction:column;}
-.res-desc{font-size:.82rem;color:var(--text-muted);line-height:1.55;margin-bottom:1rem;flex:1;}
-.res-meta{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem;}
-.res-badge{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:.2rem .55rem;border-radius:.3rem;}
+.resources-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(278px,1fr));gap:1.1rem;margin-bottom:3rem;}
+.res-card{background:white;border-radius:1rem;overflow:hidden;border:1px solid rgba(6,78,59,.1);box-shadow:0 2px 10px rgba(0,0,0,.05);transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column;}
+.res-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.1);}
+.res-card-top{padding:1.3rem 1.4rem .9rem;background:linear-gradient(135deg,var(--primary-green),var(--dark-green));color:white;position:relative;overflow:hidden;}
+.res-card-top::after{content:'';position:absolute;bottom:-28px;right:-18px;width:110px;height:110px;background:rgba(201,168,76,.07);border-radius:50%;}
+.res-icon{width:42px;height:42px;background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.3);border-radius:.7rem;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:.8rem;position:relative;z-index:1;}
+.res-card-top h3{font-family:'Cinzel',serif;font-size:.88rem;font-weight:700;line-height:1.3;margin-bottom:.25rem;position:relative;z-index:1;}
+.res-session-tag{font-size:.62rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:rgba(201,168,76,.9);position:relative;z-index:1;}
+.res-platform-tags{display:flex;gap:.3rem;flex-wrap:wrap;margin-top:.4rem;position:relative;z-index:1;}
+.res-ptag{display:inline-flex;align-items:center;gap:.28rem;font-size:.59rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.16rem .45rem;border-radius:1rem;}
+.res-ptag.spp{background:rgba(167,139,250,.12);border:1px solid rgba(167,139,250,.28);color:#c4b5fd;}
+.res-ptag.ssp{background:rgba(147,197,253,.1);border:1px solid rgba(147,197,253,.22);color:#93c5fd;}
+.res-ptag svg{width:8px;height:8px;}
+.res-card-body{padding:1rem 1.4rem 1.3rem;flex:1;display:flex;flex-direction:column;}
+.res-desc{font-size:.8rem;color:var(--text-muted);line-height:1.55;margin-bottom:.9rem;flex:1;}
+.res-meta{display:flex;align-items:center;gap:.45rem;flex-wrap:wrap;margin-bottom:.9rem;}
+.res-badge{font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:.18rem .5rem;border-radius:.3rem;}
 .badge-framework{background:rgba(59,130,246,.1);color:#1d4ed8;}
 .badge-worksheet{background:rgba(16,185,129,.1);color:#047857;}
 .badge-guide{background:rgba(139,92,246,.1);color:#7c3aed;}
 .badge-reference{background:rgba(245,158,11,.1);color:#92400e;}
 .badge-template{background:rgba(239,68,68,.1);color:#b91c1c;}
-.res-access-btn{
-  display:flex;align-items:center;justify-content:center;gap:.5rem;
-  padding:.65rem;border-radius:.6rem;
-  background:var(--gold-grad);color:var(--dark-green);
-  font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:700;
-  letter-spacing:.04em;text-transform:uppercase;
-  border:none;cursor:pointer;
-  transition:transform .25s,box-shadow .25s;
-  text-decoration:none;
-}
-.res-access-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(201,168,76,.35);}
-.res-access-btn svg{width:14px;height:14px;}
-.res-access-btn.locked{
-  background:rgba(100,116,139,.1);color:var(--text-muted);
-  border:1px solid rgba(100,116,139,.2);
-  pointer-events:none;
-}
+.badge-spp{background:rgba(139,92,246,.1);color:#7c3aed;border:1px solid rgba(139,92,246,.2);}
+.badge-ssp{background:rgba(59,130,246,.1);color:#1d4ed8;border:1px solid rgba(59,130,246,.2);}
+.res-btn-row{display:flex;flex-direction:column;gap:.4rem;}
+.res-access-btn{display:flex;align-items:center;justify-content:center;gap:.45rem;padding:.6rem;border-radius:.55rem;background:var(--gold-grad);color:var(--dark-green);font-size:.75rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border:none;cursor:pointer;transition:transform .2s,box-shadow .2s;text-decoration:none;}
+.res-access-btn:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(201,168,76,.35);}
+.res-access-btn svg{width:13px;height:13px;}
+.res-access-btn.locked{background:rgba(100,116,139,.1);color:var(--text-muted);border:1px solid rgba(100,116,139,.2);pointer-events:none;}
+.res-platform-btn{display:flex;align-items:center;justify-content:center;gap:.4rem;padding:.5rem;border-radius:.5rem;font-size:.71rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border:1px solid;cursor:pointer;transition:background .2s;text-decoration:none;}
+.res-platform-btn.spp{background:rgba(124,58,237,.08);border-color:rgba(124,58,237,.25);color:#7c3aed;}
+.res-platform-btn.spp:hover{background:rgba(124,58,237,.16);}
+.res-platform-btn.ssp{background:rgba(37,99,235,.07);border-color:rgba(37,99,235,.22);color:#2563eb;}
+.res-platform-btn.ssp:hover{background:rgba(37,99,235,.14);}
+.res-platform-btn svg{width:11px;height:11px;}
+
+/* ===== FRAMEWORKS ===== */
+.framework-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:1.1rem;margin-bottom:3rem;}
+.fw-card{background:white;border-radius:1rem;padding:1.5rem;border:1px solid rgba(6,78,59,.1);box-shadow:0 2px 8px rgba(0,0,0,.05);transition:transform .3s,box-shadow .3s;position:relative;overflow:hidden;}
+.fw-card::after{content:'';position:absolute;bottom:-18px;right:-18px;width:80px;height:80px;background:radial-gradient(circle,rgba(201,168,76,.08),transparent 70%);border-radius:50%;}
+.fw-card:hover{transform:translateY(-4px);box-shadow:0 10px 26px rgba(0,0,0,.1);}
+.fw-card-icon{font-size:1.7rem;margin-bottom:.8rem;}
+.fw-card h3{font-family:'Cinzel',serif;color:var(--primary-green);font-size:.88rem;font-weight:700;margin-bottom:.35rem;}
+.fw-card-tag{font-size:.63rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:.6rem;display:block;}
+.fw-card p{font-size:.8rem;color:var(--text-muted);line-height:1.55;}
+.fw-card-items{margin-top:.8rem;display:flex;flex-direction:column;gap:.28rem;}
+.fw-item{font-size:.73rem;color:var(--text-dark);padding:.22rem 0 .22rem .85rem;position:relative;}
+.fw-item::before{content:'›';position:absolute;left:0;color:var(--gold);font-weight:bold;}
+.fw-platform-row{margin-top:.9rem;padding-top:.8rem;border-top:1px solid rgba(6,78,59,.07);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.4rem;}
+.fw-platform-label{font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text-muted);}
+.fw-platform-chips{display:flex;gap:.3rem;flex-wrap:wrap;}
+.fw-pchip{display:inline-flex;align-items:center;gap:.25rem;font-size:.63rem;font-weight:700;padding:.18rem .5rem;border-radius:1rem;cursor:pointer;transition:background .2s;}
+.fw-pchip.spp{background:rgba(139,92,246,.08);border:1px solid rgba(139,92,246,.2);color:#8b5cf6;}
+.fw-pchip.ssp{background:rgba(59,130,246,.07);border:1px solid rgba(59,130,246,.18);color:#3b82f6;}
+.fw-pchip:hover{opacity:.8;}
+.fw-pchip svg{width:9px;height:9px;}
 
 /* ===== FACILITATORS ===== */
-.facilitators{background:linear-gradient(135deg,var(--primary-green),var(--dark-green));border-radius:1.25rem;padding:3rem;margin-bottom:3.5rem;position:relative;overflow:hidden;}
+.facilitators{background:linear-gradient(135deg,var(--primary-green),var(--dark-green));border-radius:1.25rem;padding:2.8rem;margin-bottom:3rem;position:relative;overflow:hidden;}
 .facilitators::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5L36 24L55 30L36 36L30 55L24 36L5 30L24 24Z' fill='none' stroke='%23C9A84C' stroke-width='0.4' opacity='0.08'/%3E%3C/svg%3E");pointer-events:none;}
-.fac-header{text-align:center;margin-bottom:2rem;position:relative;z-index:1;}
-.fac-header h2{font-family:'Cinzel',serif;color:var(--gold);font-size:1.4rem;margin-bottom:.4rem;}
-.fac-header p{color:rgba(255,255,255,.6);font-size:.88rem;}
-.fac-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;position:relative;z-index:1;}
-.fac-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:.875rem;padding:1.4rem 1.2rem;text-align:center;transition:background .3s,border-color .3s;}
+.fac-header{text-align:center;margin-bottom:1.8rem;position:relative;z-index:1;}
+.fac-header h2{font-family:'Cinzel',serif;color:var(--gold);font-size:1.35rem;margin-bottom:.35rem;}
+.fac-header p{color:rgba(255,255,255,.55);font-size:.85rem;}
+.fac-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:.9rem;position:relative;z-index:1;}
+.fac-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:.875rem;padding:1.3rem 1.1rem;text-align:center;transition:background .3s,border-color .3s;}
 .fac-card:hover{background:rgba(255,255,255,.1);border-color:var(--gold-border);}
-.fac-avatar{
-  width:54px;height:54px;border-radius:50%;
-  background:rgba(201,168,76,.15);border:2px solid var(--gold-border-strong);
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Cinzel',serif;font-size:1.1rem;font-weight:700;color:var(--gold);
-  margin:0 auto .85rem;letter-spacing:.05em;
-}
-.fac-name{font-family:'Cinzel',serif;font-size:.82rem;font-weight:700;color:white;margin-bottom:.2rem;line-height:1.3;}
-.fac-role{font-size:.72rem;color:var(--light-green);line-height:1.4;}
-.fac-sessions{margin-top:.7rem;display:flex;flex-wrap:wrap;gap:.3rem;justify-content:center;}
-.fac-session-dot{font-size:.6rem;background:rgba(201,168,76,.12);border:1px solid var(--gold-border);color:var(--gold);padding:.15rem .5rem;border-radius:1rem;font-weight:700;letter-spacing:.04em;}
+.fac-avatar{width:52px;height:52px;border-radius:50%;background:rgba(201,168,76,.15);border:2px solid var(--gold-border-strong);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:1rem;font-weight:700;color:var(--gold);margin:0 auto .8rem;}
+.fac-name{font-family:'Cinzel',serif;font-size:.8rem;font-weight:700;color:white;margin-bottom:.18rem;line-height:1.3;}
+.fac-role{font-size:.7rem;color:var(--light-green);line-height:1.4;}
+.fac-sessions{margin-top:.65rem;display:flex;flex-wrap:wrap;gap:.28rem;justify-content:center;}
+.fac-session-dot{font-size:.58rem;background:rgba(201,168,76,.12);border:1px solid var(--gold-border);color:var(--gold);padding:.13rem .48rem;border-radius:1rem;font-weight:700;letter-spacing:.04em;}
 
-/* ===== FRAMEWORK REFERENCE ===== */
-.framework-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.2rem;margin-bottom:3.5rem;}
-.fw-card{background:white;border-radius:1rem;padding:1.6rem;border:1px solid rgba(6,78,59,.1);box-shadow:0 2px 10px rgba(0,0,0,.05);transition:transform .3s,box-shadow .3s;position:relative;overflow:hidden;}
-.fw-card::after{content:'';position:absolute;bottom:-20px;right:-20px;width:90px;height:90px;background:radial-gradient(circle,rgba(201,168,76,.08) 0%,transparent 70%);border-radius:50%;}
-.fw-card:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(0,0,0,.1);}
-.fw-card-icon{font-size:1.8rem;margin-bottom:.85rem;}
-.fw-card h3{font-family:'Cinzel',serif;color:var(--primary-green);font-size:.9rem;font-weight:700;margin-bottom:.4rem;}
-.fw-card-tag{font-size:.65rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:.65rem;display:block;}
-.fw-card p{font-size:.82rem;color:var(--text-muted);line-height:1.55;}
-.fw-card-items{margin-top:.85rem;display:flex;flex-direction:column;gap:.3rem;}
-.fw-item{font-size:.75rem;color:var(--text-dark);padding:.25rem 0 .25rem .9rem;position:relative;}
-.fw-item::before{content:'›';position:absolute;left:0;color:var(--gold);font-weight:bold;}
-
-/* ===== ACCESS NOTICE ===== */
-.access-notice{
-  background:linear-gradient(135deg,rgba(6,78,59,.06) 0%,rgba(201,168,76,.06) 100%);
-  border:1px solid var(--gold-border);border-radius:1rem;padding:2rem 2.5rem;
-  margin-bottom:3.5rem;display:flex;align-items:flex-start;gap:1.5rem;
-}
-.notice-icon{font-size:2rem;flex-shrink:0;margin-top:.15rem;}
-.notice-body h3{font-family:'Cinzel',serif;color:var(--primary-green);font-size:1rem;margin-bottom:.5rem;}
-.notice-body p{color:var(--text-muted);font-size:.88rem;line-height:1.6;margin-bottom:.65rem;}
-.notice-steps{display:flex;flex-wrap:wrap;gap:.5rem;}
-.notice-step{display:flex;align-items:center;gap:.4rem;font-size:.75rem;font-weight:600;color:var(--primary-green);background:rgba(6,78,59,.08);border:1px solid rgba(6,78,59,.15);padding:.3rem .75rem;border-radius:2rem;}
-.notice-step span{background:var(--primary-green);color:white;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:700;flex-shrink:0;}
-
-/* ===== STATS ROW ===== */
-.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin-bottom:3.5rem;}
-.stat-box{background:linear-gradient(135deg,var(--primary-green),var(--dark-green));border-radius:1rem;padding:1.4rem;text-align:center;color:white;}
-.stat-box-num{font-family:'Cinzel',serif;font-size:2rem;font-weight:700;color:var(--gold);display:block;line-height:1;margin-bottom:.35rem;}
-.stat-box-lbl{font-size:.75rem;color:rgba(110,231,183,.85);letter-spacing:.05em;text-transform:uppercase;font-weight:500;}
+/* ===== EXPORT PANEL ===== */
+.export-panel{background:linear-gradient(135deg,#7f1d1d,#991b1b,#7f1d1d);border-radius:1.25rem;padding:2.2rem 2.5rem;margin-bottom:3rem;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;border:1px solid rgba(252,165,165,.15);}
+.export-panel-left h3{font-family:'Cinzel',serif;color:#fca5a5;font-size:1.05rem;margin-bottom:.4rem;}
+.export-panel-left p{font-size:.83rem;color:rgba(255,255,255,.5);line-height:1.6;margin-bottom:1rem;}
+.export-formats{display:flex;gap:.5rem;flex-wrap:wrap;}
+.export-fmt{display:flex;align-items:center;gap:.4rem;font-size:.7rem;font-weight:700;padding:.3rem .75rem;border-radius:.4rem;text-transform:uppercase;letter-spacing:.05em;}
+.fmt-pdf{background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.3);color:#fca5a5;}
+.fmt-word{background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.25);color:#93c5fd;}
+.fmt-csv{background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.25);color:#6ee7b7;}
+.fmt-ppt{background:rgba(251,146,60,.1);border:1px solid rgba(251,146,60,.25);color:#fdba74;}
+.export-panel-right{display:flex;flex-direction:column;gap:.6rem;align-items:flex-end;}
+.export-btn{display:inline-flex;align-items:center;gap:.45rem;background:#dc2626;color:white;padding:.7rem 1.5rem;border-radius:.5rem;font-size:.78rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border:none;cursor:pointer;transition:transform .2s,box-shadow .2s;text-decoration:none;}
+.export-btn:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(220,38,38,.4);}
+.export-ai-note{font-size:.7rem;color:rgba(255,255,255,.35);text-align:right;}
 
 /* ===== FOOTER ===== */
-footer{background:var(--dark-green);color:white;padding:3rem 2rem 1.5rem;border-top:3px solid var(--gold-border);}
-.footer-inner{max-width:1280px;margin:0 auto;}
-.footer-logo{margin-bottom:1.5rem;}
-.footer-logo img{height:46px;width:auto;object-fit:contain;}
-.footer-bottom{padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.08);text-align:center;color:rgba(255,255,255,.38);font-size:.78rem;}
+footer{background:var(--dark-green);color:white;padding:2.8rem 2rem 1.5rem;border-top:3px solid var(--gold-border);}
+.footer-inner{max-width:1300px;margin:0 auto;}
+.footer-logo{margin-bottom:1.4rem;}
+.footer-logo img{height:44px;width:auto;object-fit:contain;}
+.footer-platform-row{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:1.4rem;}
+.footer-platform{display:inline-flex;align-items:center;gap:.45rem;font-size:.72rem;font-weight:600;padding:.35rem .85rem;border-radius:.4rem;text-decoration:none;}
+.fp-spp{background:rgba(139,92,246,.12);border:1px solid rgba(139,92,246,.25);color:#c4b5fd;}
+.fp-ssp{background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);color:#93c5fd;}
+.footer-platform svg{width:11px;height:11px;}
+.footer-bottom{padding-top:1.1rem;border-top:1px solid rgba(255,255,255,.08);text-align:center;color:rgba(255,255,255,.35);font-size:.76rem;}
 .footer-bottom span{color:var(--gold);}
 
 /* ===== FADE IN ===== */
-.fi{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease;}
+.fi{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease;}
 .fi.vis{opacity:1;transform:none;}
 .fi-1{transition-delay:.08s;}.fi-2{transition-delay:.16s;}.fi-3{transition-delay:.24s;}.fi-4{transition-delay:.32s;}
 
 /* ===== RESPONSIVE ===== */
-@media(max-width:900px){
-  .nav-links{display:none;}
-  .tl-spine{left:100px;}
-  .tl-block{grid-template-columns:90px 1fr;}
-  .tl-dot{right:-2.15rem;}
-}
-@media(max-width:640px){
-  .page{padding:0 1rem 4rem;}
-  .tl-spine,.tl-time{display:none;}
-  .tl-block{grid-template-columns:1fr;}
-  .tl-dot{display:none;}
-  .access-notice{flex-direction:column;}
-  .facilitators{padding:2rem 1.25rem;}
-}
-::-webkit-scrollbar{width:5px;height:5px;}
-::-webkit-scrollbar-track{background:var(--cream);}
-::-webkit-scrollbar-thumb{background:var(--gold-dark);border-radius:3px;}
+@media(max-width:1024px){.dual-platform-banner{grid-template-columns:1fr;}.bsc-grid{grid-template-columns:1fr;}.export-panel{grid-template-columns:1fr;}.export-panel-right{align-items:flex-start;}}
+@media(max-width:900px){.nav-links{display:none;}.tl-spine{left:100px;}.tl-block{grid-template-columns:90px 1fr;}.tl-dot{right:-2.1rem;}.auth-panel{grid-template-columns:1fr;}}
+@media(max-width:640px){.page{padding:0 1rem 4rem;}.tl-spine,.tl-time{display:none;}.tl-block{grid-template-columns:1fr;}.tl-dot{display:none;}.access-notice{flex-direction:column;}.facilitators{padding:1.8rem 1.1rem;}.steps-flow{flex-direction:column;}.step-item:not(:last-child)::after{content:'↓';right:auto;bottom:-.75rem;left:50%;top:auto;transform:translateX(-50%);}.kpi-cards-row{grid-template-columns:1fr 1fr;}}
+::-webkit-scrollbar{width:5px;height:5px;}::-webkit-scrollbar-track{background:var(--cream);}::-webkit-scrollbar-thumb{background:var(--gold-dark);border-radius:3px;}
 </style>
 </head>
 <body>
@@ -244,11 +429,12 @@ footer{background:var(--dark-green);color:white;padding:3rem 2rem 1.5rem;border-
 <!-- NAV -->
 <nav role="navigation" aria-label="Main navigation">
   <div class="nav-inner">
-    <a href="#" class="nav-logo" aria-label="BARMM MTIT Home">
-      <img src="https://mtit.bangsamoro.gov.ph/wp-content/uploads/2024/04/MTIT-HEADER-2024.png" alt="MTIT BARMM" onerror="this.style.display='none'">
-    </a>
+    <a href="#" class="nav-logo"><img src="https://mtit.bangsamoro.gov.ph/wp-content/uploads/2024/04/MTIT-HEADER-2024.png" alt="MTIT BARMM" onerror="this.style.display='none'"></a>
     <ul class="nav-links" role="list">
       <li><a href="#program">Program</a></li>
+      <li><a href="#platforms">Platforms</a></li>
+      <li><a href="#spp-modules">SPP Modules</a></li>
+      <li><a href="#mel">MEL</a></li>
       <li><a href="#resources">Resources</a></li>
       <li><a href="#frameworks">Frameworks</a></li>
       <li><a href="#facilitators">Team</a></li>
@@ -258,62 +444,433 @@ footer{background:var(--dark-green);color:white;padding:3rem 2rem 1.5rem;border-
 </nav>
 
 <!-- HERO -->
-<header class="hero" role="banner">
+<header class="hero">
   <div class="hero-inner">
     <div class="hero-eyebrow">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2L15 9H22L16 14L18 21L12 17L6 21L8 14L2 9H9Z"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15 9H22L16 14L18 21L12 17L6 21L8 14L2 9H9Z"/></svg>
       Workshop Resources Portal
     </div>
     <h1>The Emerging Bangsamoro</h1>
     <p class="hero-sub">Architecting a Hub for Resilient and Ethical Growth</p>
-    <p class="hero-theme">Session Guides · Facilitation Tools · Reference Materials</p>
+    <p class="hero-theme">Session Guides · Strat Planner Pro · Systems Strat Pro · MEL Dashboard · Plan Export</p>
     <div class="hero-meta">
-      <div class="meta-chip">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        Investment Roadmap Workshop
-      </div>
-      <div class="meta-chip">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        8:30 AM – 5:00 PM
-      </div>
-      <div class="meta-chip">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-        MTIT–BoI · BARMM
-      </div>
-      <div class="meta-chip">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        Cotabato City, Philippines
-      </div>
+      <div class="meta-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Investment Roadmap Workshop</div>
+      <div class="meta-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>8:30 AM – 5:00 PM</div>
+      <div class="meta-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>MTIT–BoI · BARMM</div>
+      <div class="meta-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Cotabato City, Philippines</div>
+    </div>
+    <div class="hero-platforms">
+      <a href="https://strat-planner-pro.asilvainnovations.com" target="_blank" rel="noopener" class="platform-pill pp-spp">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        Strat Planner Pro
+      </a>
+      <a href="#platforms" class="platform-pill pp-ssp">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14"/></svg>
+        Systems Strat Pro
+      </a>
     </div>
   </div>
 </header>
 
 <div class="page">
 
-  <!-- STATS ROW -->
+  <!-- STATS -->
   <div class="stats-row fi" style="margin-top:2.5rem;">
     <div class="stat-box"><span class="stat-box-num">8</span><span class="stat-box-lbl">Sessions</span></div>
-    <div class="stat-box"><span class="stat-box-num">6</span><span class="stat-box-lbl">Workshop Tools</span></div>
-    <div class="stat-box"><span class="stat-box-num">4</span><span class="stat-box-lbl">Analytical Frameworks</span></div>
+    <div class="stat-box"><span class="stat-box-num">8</span><span class="stat-box-lbl">SPP Modules</span></div>
+    <div class="stat-box"><span class="stat-box-num">5</span><span class="stat-box-lbl">SSP Modules</span></div>
+    <div class="stat-box"><span class="stat-box-num">4</span><span class="stat-box-num" style="font-size:1rem;">Frameworks</span></div>
+    <div class="stat-box"><span class="stat-box-num">4</span><span class="stat-box-lbl">BSC Perspectives</span></div>
     <div class="stat-box"><span class="stat-box-num">5</span><span class="stat-box-lbl">Facilitators</span></div>
-    <div class="stat-box"><span class="stat-box-num">2035</span><span class="stat-box-lbl">Target Vision Year</span></div>
+    <div class="stat-box"><span class="stat-box-num">2035</span><span class="stat-box-lbl">Vision Year</span></div>
   </div>
 
   <!-- ACCESS NOTICE -->
   <div class="access-notice fi" id="register">
-    <div class="notice-icon" aria-hidden="true">🔐</div>
+    <div class="notice-icon">🔐</div>
     <div class="notice-body">
-      <h3>How to Access Workshop Materials</h3>
-      <p>All session guides, facilitation decks, and working templates are available exclusively to registered workshop participants. Materials are released progressively — pre-read references are available immediately upon registration; live-session worksheets are distributed at the start of each session.</p>
+      <h3>Access Workshop Materials, Strat Planner Pro &amp; Systems Strat Pro</h3>
+      <p>Session guides and worksheets are available to registered participants. Registration also grants access to both digital platforms — <strong>Strat Planner Pro</strong> (cloud-synced strategic planning with MEL &amp; export) and <strong>Systems Strat Pro</strong> (systems thinking &amp; AI advisory). Both platforms work offline; cloud sync requires authenticated login.</p>
       <div class="notice-steps">
-        <div class="notice-step"><span>1</span> Complete Registration</div>
-        <div class="notice-step"><span>2</span> Receive Confirmation Email</div>
-        <div class="notice-step"><span>3</span> Access Participant Portal</div>
-        <div class="notice-step"><span>4</span> Download Pre-Read Pack</div>
-        <div class="notice-step"><span>5</span> Collect Session Worksheets On-Site</div>
+        <div class="notice-step"><span>3</span> Sign In to Strat Planner Pro</div>
+        <div class="notice-step"><span>4</span> Activate Systems Strat Pro</div>
+        <div class="notice-step"><span>5</span> Download Pre-Read Pack</div>
+        <div class="notice-step"><span>6</span> Collect Session Worksheets On-Site</div>
       </div>
     </div>
   </div>
+
+  <!-- DUAL PLATFORM BANNER -->
+  <div id="platforms">
+  <div class="sec-header fi">
+    <span class="sec-eyebrow">Digital Strategy Platforms</span>
+    <h2>Two Integrated Platforms for This Workshop</h2>
+    <div class="gold-div"></div>
+    <p>Strat Planner Pro provides the full strategic planning suite with cloud storage, BSC, PAPs, MEL, and export. Systems Strat Pro is its systems-based extension — adding causal loop diagrams, archetypes, and AI-driven feedback loop analysis.</p>
+  </div>
+  <div class="dual-platform-banner fi">
+
+    <!-- SPP -->
+    <div class="platform-card spp">
+      <div class="pc-inner">
+        <div class="pc-badge"><div class="status-dot"></div>Strat Planner Pro · Live Platform</div>
+        <h2>Strat Planner Pro</h2>
+        <p>The full-featured, cloud-backed strategic planning platform. Covers the complete planning-to-monitoring lifecycle — from SWOT and TOWS Strategy Matrix through Balanced Scorecard, PAPs Management, MEL Dashboard, and professional Plan Export.</p>
+        <div class="pc-relationship">🔗 Systems Strat Pro is built as the systems-based extension of this platform — adding causal loop diagrams, archetypes, and AI-powered systems analysis on top of SPP's strategic framework.</div>
+        <div class="pc-modules">
+          <span class="pc-module">🔐 User Auth + Cloud Sync</span>
+          <span class="pc-module">📊 SWOT Analysis</span>
+          <span class="pc-module">⚔️ Strategy Matrix (TOWS)</span>
+          <span class="pc-module">🎯 Balanced Scorecard</span>
+          <span class="pc-module">📋 PAPs Management</span>
+          <span class="pc-module">🔁 Systems Thinking View</span>
+          <span class="pc-module">📈 MEL Dashboard</span>
+          <span class="pc-module">📄 Plan Export</span>
+        </div>
+        <div class="pc-cta-row">
+          <a href="https://strat-planner-pro.asilvainnovations.com" target="_blank" rel="noopener" class="pc-btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Launch Strat Planner Pro
+          </a>
+          <a href="#spp-modules" class="pc-btn-secondary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            Explore Modules
+          </a>
+        </div>
+      </div>
+      <div class="pc-auth-strip">
+        <div class="pc-auth-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="auth-icon-cloud"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg>Cloud Synced (Authenticated)</div>
+        <div class="pc-auth-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="auth-icon-local"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>Local-Only (Offline Mode)</div>
+        <div class="pc-auth-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>Online/Offline Status Indicator</div>
+      </div>
+    </div>
+
+    <!-- SSP -->
+    <div class="platform-card ssp">
+      <div class="pc-inner">
+        <div class="pc-badge"><div class="status-dot"></div>Systems Strat Pro · Systems Extension</div>
+        <h2>Systems Strat Pro</h2>
+        <p>The systems-based extension layer for Strat Planner Pro. Adds dynamic causal loop diagram building, SWOT-to-systems mapping, 8 system archetypes, AI-powered loop analysis, and an interactive Strategic Options Generator grounded in leverage point theory.</p>
+        <div class="pc-relationship">🔗 Built on top of Strat Planner Pro's SWOT and BSC data — variables you define in SPP flow directly into CLD nodes and the AI Advisor's context.</div>
+        <div class="pc-modules">
+          <span class="pc-module">📝 SWOT-to-Systems Engine</span>
+          <span class="pc-module">🔁 CLD Builder</span>
+          <span class="pc-module">📚 Archetypes Library</span>
+          <span class="pc-module">⚡ Options Generator</span>
+          <span class="pc-module">🤖 AI Strategic Advisor</span>
+        </div>
+        <div class="pc-cta-row">
+          <a href="#register" class="pc-btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+            Access via Registration
+          </a>
+          <a href="#platforms" class="pc-btn-secondary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14"/></svg>
+            Learn More
+          </a>
+        </div>
+      </div>
+      <div class="pc-auth-strip">
+        <div class="pc-auth-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="auth-icon-cloud"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg>Syncs with SPP Cloud Account</div>
+        <div class="pc-auth-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="auth-icon-local"><rect x="3" y="11" width="18" height="11" rx="2"/></svg>Local Project Mode Available</div>
+        <div class="pc-auth-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>AI Advisor · Demo + Full Mode</div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- AUTH STATUS PANEL -->
+  <div class="auth-panel fi">
+    <div class="auth-panel-left">
+      <h3>Authentication &amp; Cloud Sync — How It Works</h3>
+      <p>Strat Planner Pro uses a sidebar navigation with real-time online/offline status indicators and visual cues distinguishing cloud-synced (authenticated) from local-only mode. Your BARMM investment project is safely stored whether you're online at the venue or working offline.</p>
+      <div class="auth-modes">
+        <div class="auth-mode">
+          <div class="auth-mode-icon">☁️</div>
+          <div>
+            <div class="auth-mode-label cloud">● Cloud Synced Mode</div>
+            <div class="auth-mode-desc">Authenticated login. All project data synced to cloud. Collaborate across team members. Access from any device. Version history preserved.</div>
+          </div>
+        </div>
+        <div class="auth-mode">
+          <div class="auth-mode-icon">💾</div>
+          <div>
+            <div class="auth-mode-label local">◆ Local-Only Mode</div>
+            <div class="auth-mode-desc">No login required. Data stored locally. Full functionality available offline during workshop. Sync to cloud when connectivity resumes.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="auth-panel-right">
+      <a href="https://strat-planner-pro.asilvainnovations.com" target="_blank" rel="noopener" class="auth-panel-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        Sign In to SPP
+      </a>
+      <div class="auth-status-row">
+        <div class="auth-status-chip asc-cloud"><div class="asc-dot"></div>Online</div>
+        <div class="auth-status-chip asc-offline"><div class="asc-dot"></div>Offline Mode</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODULE COMPARISON -->
+  <div class="sec-header fi">
+    <span class="sec-eyebrow">Platform Feature Map</span>
+    <h2>What Each Platform Covers</h2>
+    <div class="gold-div"></div>
+    <p>Use this reference to know which tool to open at each stage of the workshop day.</p>
+  </div>
+  <div class="module-compare fi">
+    <div class="mc-header">
+      <div class="mc-header-cell">Feature / Module</div>
+      <div class="mc-header-cell spp-col">Strat Planner Pro</div>
+      <div class="mc-header-cell ssp-col">Systems Strat Pro</div>
+    </div>
+    <div class="mc-row"><div class="mc-feature"><div class="mc-feature-name">User Authentication + Cloud Sync</div><div class="mc-feature-desc">Sidebar nav, online/offline status, cloud vs local mode</div></div><div class="mc-check"><div class="check-full spp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div></div><div class="mc-check"><div class="check-partial"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div></div></div>
+    <div class="mc-row"><div class="mc-feature"><div class="mc-feature-name">SWOT Analysis</div><div class="mc-feature-desc">Structured input, impact/likelihood scoring, AI generation</div></div><div class="mc-check"><div class="check-full spp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div></div><div class="mc-check"><div class="check-full ssp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div></div></div>
+    <div class="mc-row"><div class="mc-feature"><div class="mc-feature-name">Strategy Matrix (TOWS)</div><div class="mc-feature-desc">SO / ST / WO / WT quadrants, AI strategy generation</div></div><div class="mc-check"><div class="check-full spp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div></div><div class="mc-check"><div class="check-none">—</div></div></div>
+    <div class="mc-row"><div class="mc-feature"><div class="mc-feature-name">Balanced Scorecard</div><div class="mc-feature-desc">4 perspectives, objective management, AI KPI suggestions</div></div><div class="mc-check"><div class="check-full spp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div></div><div class="mc-check"><div class="check-none">—</div></div></div>
+    <div class="mc-row"><div class="mc-feature"><div class="mc-feature-name">PAPs Management</div><div class="mc-feature-desc">Programs, Activities, Projects with budget monitoring</div></div><div class="mc-check"><div class="check-full spp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div></div><div class="mc-check"><div class="check-none">—</div></div></div>
+    <div class="mc-row"><div class="mc-feature"><div class="mc-feature-name">Systems Thinking View</div><div class="mc-feature-desc">SWOT matrix visualisation + impact-likelihood analysis</div></div><div class="mc-check"><div class="check-full spp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div></div><div class="mc-check"><div class="check-full ssp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div></div></div>
+    <div class="mc-row"><div class="mc-feature"><div class="mc-feature-name">Causal Loop Diagram Builder</div><div class="mc-feature-desc">Drag-and-drop CLD canvas, R/B loop detection, leverage points</div></div><div class="mc-check"><div class="check-none">—</div></div><div class="mc-check"><div class="check-full ssp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div></div></div>
+    <div class="mc-row"><div class="mc-feature"><div class="mc-feature-name">System Archetypes Library</div><div class="mc-feature-desc">8 archetypes (Kim & Anderson) with BARMM application</div></div><div class="mc-check"><div class="check-none">—</div></div><div class="mc-check"><div class="check-full ssp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div></div></div>
+    <div class="mc-row"><div class="mc-feature"><div class="mc-feature-name">MEL Dashboard</div><div class="mc-feature-desc">KPI cards, progress tracking, status indicators, PAP overview</div></div><div class="mc-check"><div class="check-full spp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div></div><div class="mc-check"><div class="check-none">—</div></div></div>
+    <div class="mc-row"><div class="mc-feature"><div class="mc-feature-name">AI Strategy Assistant</div><div class="mc-feature-desc">SWOT, KPIs, strategic options, MEL insights via API</div></div><div class="mc-check"><div class="check-full spp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div></div><div class="mc-check"><div class="check-full ssp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div></div></div>
+    <div class="mc-row"><div class="mc-feature"><div class="mc-feature-name">Plan Export</div><div class="mc-feature-desc">Professional strategic plan documents — PDF, Word, CSV, PPT</div></div><div class="mc-check"><div class="check-full spp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div></div><div class="mc-check"><div class="check-partial"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div></div></div>
+  </div>
+
+  <!-- SPP MODULES GRID -->
+  <section id="spp-modules" aria-labelledby="spp-heading">
+    <div class="sec-header fi">
+      <span class="sec-eyebrow">Strat Planner Pro · 8 Modules</span>
+      <h2 id="spp-heading">Platform Modules Available to Participants</h2>
+      <div class="gold-div"></div>
+      <p>Eight integrated modules cover the full strategic planning lifecycle — from environment scanning through implementation monitoring and professional document export. All powered by an AI Edge function via the Strategy Assistant.</p>
+    </div>
+    <div class="spp-features-grid fi">
+
+      <article class="spp-feat-card">
+        <div class="spp-feat-top bg-auth"><div class="spp-feat-icon ico-auth">🔐</div><h3>User Authentication &amp; Cloud Sync</h3><div class="spp-feat-label">Module 0 · Foundation</div><div class="spp-feat-session-tag">All Sessions · Activate at Registration</div></div>
+        <div class="spp-feat-body">
+          <p class="spp-feat-desc">Responsive sidebar navigation with online/offline status indicator. Visual distinction between cloud-synced (authenticated) and local-only mode. All project data securely stored and accessible from any device.</p>
+          <div class="spp-feature-list">
+            <div class="spp-feat-item">Sidebar nav with module quick-access</div>
+            <div class="spp-feat-item">Online / offline status indicator</div>
+            <div class="spp-feat-item">Cloud sync when authenticated</div>
+            <div class="spp-feat-item">Full local-only mode — no login required</div>
+            <div class="spp-feat-item">Row-level security per user project</div>
+          </div>
+          <a href="https://strat-planner-pro.asilvainnovations.com" target="_blank" rel="noopener" class="spp-feat-launch btn-auth"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>Sign In to SPP</a>
+        </div>
+      </article>
+
+      <article class="spp-feat-card">
+        <div class="spp-feat-top bg-swot"><div class="spp-feat-icon ico-swot">📊</div><h3>SWOT Analysis</h3><div class="spp-feat-label">Module 1 · Session 1</div><div class="spp-feat-session-tag">10:15 – 11:15 AM</div></div>
+        <div class="spp-feat-body">
+          <p class="spp-feat-desc">Structured input forms for Strengths, Weaknesses, Opportunities, and Threats. Each item scored on impact and likelihood. AI generation via the ai-strategy-assistant Edge function for BARMM-context SWOT population.</p>
+          <div class="spp-feature-list">
+            <div class="spp-feat-item">Structured input forms with rich metadata</div>
+            <div class="spp-feat-item">Impact × likelihood scoring matrix</div>
+            <div class="spp-feat-item">AI SWOT generation from context</div>
+            <div class="spp-feat-item">SWOT matrix visualisation (Systems Thinking view)</div>
+            <div class="spp-feat-item">Feeds into TOWS, BSC, and SSP CLD</div>
+          </div>
+          <a href="https://strat-planner-pro.asilvainnovations.com" target="_blank" rel="noopener" class="spp-feat-launch btn-swot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Open SWOT Module</a>
+        </div>
+      </article>
+
+      <article class="spp-feat-card">
+        <div class="spp-feat-top bg-tows"><div class="spp-feat-icon ico-tows">⚔️</div><h3>Strategy Matrix (TOWS)</h3><div class="spp-feat-label">Module 2 · Session 2</div><div class="spp-feat-session-tag">11:15 AM – 12:00 NN</div></div>
+        <div class="spp-feat-body">
+          <p class="spp-feat-desc">Four-quadrant TOWS matrix auto-populated from your SWOT analysis. AI generates strategic options per quadrant — SO (use strengths to seize opportunities), ST, WO, and WT — calibrated to the BARMM Integrated Halal-Driven strategy.</p>
+          <div class="spp-feature-list">
+            <div class="spp-feat-item">SO / ST / WO / WT quadrant layout</div>
+            <div class="spp-feat-item">AI strategy generation per quadrant</div>
+            <div class="spp-feat-item">Aligns with Options A–D evaluation</div>
+            <div class="spp-feat-item">Exportable as Plan appendix</div>
+          </div>
+          <a href="https://strat-planner-pro.asilvainnovations.com" target="_blank" rel="noopener" class="spp-feat-launch btn-tows"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Open Strategy Matrix</a>
+        </div>
+      </article>
+
+      <article class="spp-feat-card">
+        <div class="spp-feat-top bg-bsc"><div class="spp-feat-icon ico-bsc">🎯</div><h3>Balanced Scorecard</h3><div class="spp-feat-label">Module 3 · Sessions 3–4</div><div class="spp-feat-session-tag">1:15 – 4:45 PM</div></div>
+        <div class="spp-feat-body">
+          <p class="spp-feat-desc">Four-perspective BSC with objective management and AI-powered KPI suggestions via the ai-strategy-assistant. Define Financial, Stakeholder, Internal Process, and Learning &amp; Growth objectives. AI generates KPI suggestions aligned to OIC/SMIIC and PDP 2023–2028.</p>
+          <div class="spp-feature-list">
+            <div class="spp-feat-item">4 perspectives — objectives + KPIs + targets</div>
+            <div class="spp-feat-item">AI KPI suggestions per objective</div>
+            <div class="spp-feat-item">Links to PAPs and MEL Dashboard</div>
+            <div class="spp-feat-item">PHP 50B target · 2,000 halal MSMEs · 1-day reg</div>
+          </div>
+          <a href="https://strat-planner-pro.asilvainnovations.com" target="_blank" rel="noopener" class="spp-feat-launch btn-bsc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Open BSC Module</a>
+        </div>
+      </article>
+
+      <article class="spp-feat-card">
+        <div class="spp-feat-top bg-pap"><div class="spp-feat-icon ico-pap">📋</div><h3>PAPs Management</h3><div class="spp-feat-label">Module 4 · Session 4</div><div class="spp-feat-session-tag">2:45 – 4:45 PM</div></div>
+        <div class="spp-feat-body">
+          <p class="spp-feat-desc">Track Programs, Activities, and Projects across all three implementation phases. Monitor budget allocation and utilisation. Link each PAP to its BSC objective and KPI for end-to-end accountability across Phase 1 Foundation (2026–2028), Phase 2 Acceleration, and Phase 3 Consolidation.</p>
+          <div class="spp-feature-list">
+            <div class="spp-feat-item">Programs / Activities / Projects hierarchy</div>
+            <div class="spp-feat-item">Budget monitoring with phase envelopes</div>
+            <div class="spp-feat-item">Lead agency and timeline assignment</div>
+            <div class="spp-feat-item">Linked to MEL Dashboard KPIs</div>
+          </div>
+          <a href="https://strat-planner-pro.asilvainnovations.com" target="_blank" rel="noopener" class="spp-feat-launch btn-pap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Open PAPs Module</a>
+        </div>
+      </article>
+
+      <article class="spp-feat-card">
+        <div class="spp-feat-top bg-systems"><div class="spp-feat-icon ico-systems">🔁</div><h3>Systems Thinking View</h3><div class="spp-feat-label">Module 5 · Masterclass + Session 1</div><div class="spp-feat-session-tag">9:55 – 11:15 AM</div></div>
+        <div class="spp-feat-body">
+          <p class="spp-feat-desc">Built into SPP — visualises your SWOT as an impact-likelihood matrix and surfaces systemic interdependencies. The bridge between the structured SWOT data in SPP and the full CLD-based causal analysis in Systems Strat Pro.</p>
+          <div class="spp-feature-list">
+            <div class="spp-feat-item">SWOT matrix visualisation (bubble chart)</div>
+            <div class="spp-feat-item">Impact × likelihood quadrant view</div>
+            <div class="spp-feat-item">Identifies high-priority leverage variables</div>
+            <div class="spp-feat-item">Bridges to SSP CLD Builder</div>
+          </div>
+          <a href="https://strat-planner-pro.asilvainnovations.com" target="_blank" rel="noopener" class="spp-feat-launch btn-systems"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Open Systems View</a>
+        </div>
+      </article>
+
+      <article class="spp-feat-card">
+        <div class="spp-feat-top bg-mel"><div class="spp-feat-icon ico-mel">📈</div><h3>MEL Dashboard</h3><div class="spp-feat-label">Module 6 · Post-Workshop Monitoring</div><div class="spp-feat-session-tag">Closing + Ongoing</div></div>
+        <div class="spp-feat-body">
+          <p class="spp-feat-desc">Monitoring, Evaluation &amp; Learning dashboard with KPI cards, progress tracking, on-track/at-risk/behind status indicators, and PAP overview. AI-generated MEL insights via the ai-strategy-assistant Edge function. Live sync in cloud mode.</p>
+          <div class="spp-feature-list">
+            <div class="spp-feat-item">KPI cards with current vs target values</div>
+            <div class="spp-feat-item">Progress bars and status indicators</div>
+            <div class="spp-feat-item">PAP overview with budget utilisation</div>
+            <div class="spp-feat-item">AI MEL insights + learning recommendations</div>
+          </div>
+          <a href="https://strat-planner-pro.asilvainnovations.com" target="_blank" rel="noopener" class="spp-feat-launch btn-mel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Open MEL Dashboard</a>
+        </div>
+      </article>
+
+      <article class="spp-feat-card">
+        <div class="spp-feat-top bg-export"><div class="spp-feat-icon ico-export">📄</div><h3>Plan Export</h3><div class="spp-feat-label">Module 7 · Synthesis</div><div class="spp-feat-session-tag">4:45 PM + Post-Workshop</div></div>
+        <div class="spp-feat-body">
+          <p class="spp-feat-desc">Generate professional strategic plan documents directly from your SPP workspace. Export the full BARMM Investment Roadmap — SWOT, TOWS Matrix, BSC, PAPs, KPIs, and MEL framework — as a polished, print-ready document.</p>
+          <div class="spp-feature-list">
+            <div class="spp-feat-item">Professional PDF strategic plan</div>
+            <div class="spp-feat-item">Word / DOCX editable format</div>
+            <div class="spp-feat-item">CSV data export for BSC and PAPs</div>
+            <div class="spp-feat-item">AI-generated executive summary</div>
+          </div>
+          <a href="https://strat-planner-pro.asilvainnovations.com" target="_blank" rel="noopener" class="spp-feat-launch btn-export"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Export Strategic Plan</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- WORKFLOW STEPPER -->
+  <div class="workflow-stepper fi">
+    <h3>Integrated Platform Workflow for This Workshop</h3>
+    <p>How to use Strat Planner Pro and Systems Strat Pro together, session by session.</p>
+    <div class="steps-flow">
+      <div class="step-item"><div class="step-num sn-1">1</div><div class="step-title">Sign In + Set Up</div><div class="step-platform sp-spp">Strat Planner Pro</div><div class="step-desc">Create project, set region context, enable cloud sync.</div></div>
+      <div class="step-item"><div class="step-num sn-2">2</div><div class="step-title">SWOT + Systems View</div><div class="step-platform sp-both">SPP + SSP</div><div class="step-desc">Input PEDSET &amp; 7S findings; view impact-likelihood matrix.</div></div>
+      <div class="step-item"><div class="step-num sn-3">3</div><div class="step-title">TOWS + CLD</div><div class="step-platform sp-both">SPP + SSP</div><div class="step-desc">Generate TOWS strategies; build the 4 feedback loops.</div></div>
+      <div class="step-item"><div class="step-num sn-4">4</div><div class="step-title">BSC + KPIs</div><div class="step-platform sp-spp">Strat Planner Pro</div><div class="step-desc">Define 4-perspective objectives; get AI KPI suggestions.</div></div>
+      <div class="step-item"><div class="step-num sn-5">5</div><div class="step-title">PAPs + Budget</div><div class="step-platform sp-spp">Strat Planner Pro</div><div class="step-desc">Map programs and projects to BSC objectives and phases.</div></div>
+      <div class="step-item"><div class="step-num sn-6">6</div><div class="step-title">MEL Dashboard</div><div class="step-platform sp-spp">Strat Planner Pro</div><div class="step-desc">Set baseline KPIs, status indicators, AI MEL insights.</div></div>
+      <div class="step-item"><div class="step-num sn-7">7</div><div class="step-title">Export Plan</div><div class="step-platform sp-spp">Strat Planner Pro</div><div class="step-desc">Generate the professional BARMM Investment Roadmap document.</div></div>
+    </div>
+  </div>
+
+  <!-- BSC PREVIEW -->
+  <section class="bsc-preview" id="bsc">
+    <div class="sec-header fi">
+      <span class="sec-eyebrow">Balanced Scorecard · SPP Module 3</span>
+      <h2>2035 Roadmap — Four Perspectives (Sample)</h2>
+      <div class="gold-div"></div>
+      <p>Manage all four BSC perspectives in Strat Planner Pro. AI generates KPI suggestions per objective, linked to your PAPs and the MEL Dashboard.</p>
+    </div>
+    <div class="bsc-grid fi">
+      <div class="bsc-card" style="--bsc-color:#C9A84C;">
+        <div class="bsc-card-header"><div class="bsc-card-icon">💰</div><div class="bsc-card-platform"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/></svg>SPP Module 3</div></div>
+        <div class="bsc-perspective">Financial</div>
+        <div class="bsc-target">Target: PHP 50 Billion investment by 2035</div>
+        <div class="bsc-obj-list">
+          <div class="bsc-obj"><div class="bsc-obj-dot" style="background:#C9A84C;"></div>Grow regional investment inflows to PHP 50B<span class="bsc-kpi-chip" style="background:rgba(201,168,76,.1);color:#8B6C28;border:1px solid rgba(201,168,76,.2);">AI KPI ✓</span></div>
+          <div class="bsc-obj"><div class="bsc-obj-dot" style="background:#C9A84C;"></div>Achieve 8–9% annual GRDP growth rate</div>
+          <div class="bsc-obj"><div class="bsc-obj-dot" style="background:#C9A84C;"></div>Reduce poverty incidence below national average</div>
+        </div>
+      </div>
+      <div class="bsc-card" style="--bsc-color:#3b82f6;">
+        <div class="bsc-card-header"><div class="bsc-card-icon">🤝</div><div class="bsc-card-platform"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/></svg>SPP Module 3</div></div>
+        <div class="bsc-perspective">Stakeholder / Customer</div>
+        <div class="bsc-target">Target: 2,000 halal-certified MSMEs</div>
+        <div class="bsc-obj-list">
+          <div class="bsc-obj"><div class="bsc-obj-dot" style="background:#3b82f6;"></div>Certify 2,000 halal MSMEs by 2035<span class="bsc-kpi-chip" style="background:rgba(59,130,246,.1);color:#1d4ed8;border:1px solid rgba(59,130,246,.2);">AI KPI ✓</span></div>
+          <div class="bsc-obj"><div class="bsc-obj-dot" style="background:#3b82f6;"></div>Increase investor confidence index to 75%</div>
+          <div class="bsc-obj"><div class="bsc-obj-dot" style="background:#3b82f6;"></div>Establish BARMM as OIC-recognised Halal Hub</div>
+        </div>
+      </div>
+      <div class="bsc-card" style="--bsc-color:#8b5cf6;">
+        <div class="bsc-card-header"><div class="bsc-card-icon">⚙️</div><div class="bsc-card-platform"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/></svg>SPP Module 3</div></div>
+        <div class="bsc-perspective">Internal Process</div>
+        <div class="bsc-target">Target: 1-day business registration</div>
+        <div class="bsc-obj-list">
+          <div class="bsc-obj"><div class="bsc-obj-dot" style="background:#8b5cf6;"></div>Reduce biz registration to 1 working day<span class="bsc-kpi-chip" style="background:rgba(139,92,246,.1);color:#7c3aed;border:1px solid rgba(139,92,246,.2);">AI KPI ✓</span></div>
+          <div class="bsc-obj"><div class="bsc-obj-dot" style="background:#8b5cf6;"></div>Operationalise BPLS and BEGMP platforms</div>
+          <div class="bsc-obj"><div class="bsc-obj-dot" style="background:#8b5cf6;"></div>Achieve full inter-agency data integration</div>
+        </div>
+      </div>
+      <div class="bsc-card" style="--bsc-color:#059669;">
+        <div class="bsc-card-header"><div class="bsc-card-icon">🌱</div><div class="bsc-card-platform"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/></svg>SPP Module 3</div></div>
+        <div class="bsc-perspective">Learning &amp; Growth</div>
+        <div class="bsc-target">Target: 100 trained halal officers</div>
+        <div class="bsc-obj-list">
+          <div class="bsc-obj"><div class="bsc-obj-dot" style="background:#059669;"></div>Train 100 halal certification officers<span class="bsc-kpi-chip" style="background:rgba(5,150,105,.1);color:#047857;border:1px solid rgba(5,150,105,.2);">AI KPI ✓</span></div>
+          <div class="bsc-obj"><div class="bsc-obj-dot" style="background:#059669;"></div>Build Moral Governance leadership capacity</div>
+          <div class="bsc-obj"><div class="bsc-obj-dot" style="background:#059669;"></div>Establish regional innovation and data hub</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEL DASHBOARD PREVIEW -->
+  <section id="mel" aria-labelledby="mel-heading">
+    <div class="sec-header fi">
+      <span class="sec-eyebrow">MEL Dashboard · SPP Module 6</span>
+      <h2 id="mel-heading">Monitoring, Evaluation &amp; Learning Dashboard</h2>
+      <div class="gold-div"></div>
+      <p>Live KPI tracking, PAP progress monitoring, and AI-generated MEL insights — all managed in Strat Planner Pro, synced in real-time when authenticated.</p>
+    </div>
+    <div class="mel-preview fi">
+      <div class="mel-header">
+        <div><h3>BARMM Investment Roadmap — MEL Dashboard</h3><p>Phase 1: Foundation Building 2026–2028 · Live View</p></div>
+        <div class="mel-header-right">
+          <div class="mel-sync-chip"><div class="sync-dot"></div>Cloud Synced</div>
+          <a href="https://strat-planner-pro.asilvainnovations.com" target="_blank" rel="noopener" class="mel-open-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Open in SPP</a>
+        </div>
+      </div>
+      <div class="mel-body">
+        <div class="kpi-cards-row">
+          <div class="kpi-card"><div class="kpi-label">Investment Inflows</div><div class="kpi-value">₱8.2B</div><div class="kpi-sub">Target: ₱12B by 2028</div><div class="kpi-status status-on-track">● On Track</div></div>
+          <div class="kpi-card"><div class="kpi-label">Halal MSMEs Certified</div><div class="kpi-value">312</div><div class="kpi-sub">Target: 500 by 2028</div><div class="kpi-status status-on-track">● On Track</div></div>
+          <div class="kpi-card"><div class="kpi-label">Biz Registration Days</div><div class="kpi-value">3.2</div><div class="kpi-sub">Target: 1 day by 2028</div><div class="kpi-status status-at-risk">◆ At Risk</div></div>
+          <div class="kpi-card"><div class="kpi-label">Halal Officers Trained</div><div class="kpi-value">28</div><div class="kpi-sub">Target: 40 by 2028</div><div class="kpi-status status-behind">✕ Behind</div></div>
+          <div class="kpi-card"><div class="kpi-label">GRDP Growth Rate</div><div class="kpi-value">7.1%</div><div class="kpi-sub">Target: 8–9% annual</div><div class="kpi-status status-at-risk">◆ At Risk</div></div>
+        </div>
+        <div class="mel-pap-table">
+          <div class="mel-pap-header"><div class="mel-pap-col-h">Program / Activity / Project</div><div class="mel-pap-col-h">Type</div><div class="mel-pap-col-h">Budget</div><div class="mel-pap-col-h">Progress</div><div class="mel-pap-col-h">Status</div></div>
+          <div class="mel-pap-row"><div><div class="pap-name">Halal Ecosystem Development</div><div class="pap-type">Program</div></div><div class="pap-cell">Program</div><div class="pap-cell">₱2.4B</div><div><div class="pap-prog-wrap"><div class="pap-prog prog-green" style="width:62%"></div></div></div><div><span class="kpi-status status-on-track" style="font-size:.62rem;">● On Track</span></div></div>
+          <div class="mel-pap-row"><div><div class="pap-name">BPLS Digital Platform Rollout</div><div class="pap-type">Project</div></div><div class="pap-cell">Project</div><div class="pap-cell">₱380M</div><div><div class="pap-prog-wrap"><div class="pap-prog prog-amber" style="width:35%"></div></div></div><div><span class="kpi-status status-at-risk" style="font-size:.62rem;">◆ At Risk</span></div></div>
+          <div class="mel-pap-row"><div><div class="pap-name">Halal Officer Capacity Building</div><div class="pap-type">Activity</div></div><div class="pap-cell">Activity</div><div class="pap-cell">₱95M</div><div><div class="pap-prog-wrap"><div class="pap-prog prog-blue" style="width:28%"></div></div></div><div><span class="kpi-status status-behind" style="font-size:.62rem;">✕ Behind</span></div></div>
+          <div class="mel-pap-row"><div><div class="pap-name">Infrastructure-Energy Nexus</div><div class="pap-type">Program</div></div><div class="pap-cell">Program</div><div class="pap-cell">₱5.1B</div><div><div class="pap-prog-wrap"><div class="pap-prog prog-green" style="width:71%"></div></div></div><div><span class="kpi-status status-on-track" style="font-size:.62rem;">● On Track</span></div></div>
+        </div>
+      </div>
+      <div class="mel-footer">
+        <p>Preview only — live data available in Strat Planner Pro after authentication. KPI values are illustrative for workshop demonstration.</p>
+        <a href="https://strat-planner-pro.asilvainnovations.com" target="_blank" rel="noopener" class="mel-open-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/></svg>Open Full MEL Dashboard</a>
+      </div>
+    </div>
+  </section>
 
   <!-- PROGRAM TIMELINE -->
   <section id="program" aria-labelledby="prog-heading">
@@ -321,252 +878,50 @@ footer{background:var(--dark-green);color:white;padding:3rem 2rem 1.5rem;border-
       <span class="sec-eyebrow">Indicative Programme</span>
       <h2 id="prog-heading">Workshop Programme of Activities</h2>
       <div class="gold-div"></div>
-      <p>A full-day structured workshop combining masterclasses, facilitated sessions, and collaborative strategy-building exercises anchored in systems thinking methodology.</p>
+      <p>A full-day structured workshop — with both Strat Planner Pro and Systems Strat Pro active at each stage, colour-coded in purple and blue respectively.</p>
     </div>
-
     <div class="timeline-wrap fi">
-      <div class="tl-spine" aria-hidden="true"></div>
+      <div class="tl-spine"></div>
 
-      <!-- 8:30 -->
-      <div class="tl-block">
-        <div class="tl-time"><span class="tl-time-text">8:30 AM<br>9:00 AM</span><div class="tl-dot" aria-hidden="true"></div></div>
-        <div class="tl-card" style="--card-accent:#C9A84C;">
-          <div class="tl-card-header">
-            <div class="tl-activity">Registration &amp; Systems Onboarding</div>
-            <span class="tl-tag tag-opening">Opening</span>
-          </div>
-          <div class="tl-lead">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            MTIT-BoI Staff
-          </div>
-          <p class="tl-content">Welcome orientation featuring the 12-Point Priority Agenda and current regional growth indicators. Participants receive their workshop kits and are introduced to the session's systems thinking lens.</p>
-          <div class="tl-tools">
-            <span class="tl-tool-chip">Welcome Kit</span>
-            <span class="tl-tool-chip">12-Point Priority Agenda Overview</span>
-            <span class="tl-tool-chip">Regional Growth Data Sheet</span>
-            <span class="tl-tool-chip">Participant Journal</span>
-          </div>
-        </div>
-      </div>
+      <div class="tl-block"><div class="tl-time"><span class="tl-time-text">8:30 AM<br>9:00 AM</span><div class="tl-dot"></div></div><div class="tl-card" style="--card-accent:#C9A84C;"><div class="tl-card-header"><div class="tl-activity">Registration &amp; Systems Onboarding</div><span class="tl-tag tag-opening">Opening</span></div><div class="tl-lead"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>MTIT-BoI Staff</div><p class="tl-content">Welcome orientation, 12-Point Priority Agenda, regional growth indicators. Participants receive workshop kits and are introduced to both digital platforms.</p><div class="tl-tools"><span class="tl-tool-chip">Welcome Kit</span><span class="tl-tool-chip">12-Point Priority Agenda</span><span class="tl-tool-chip">Regional Growth Data Sheet</span><span class="tl-tool-chip">Participant Journal</span></div><div class="tl-platform-badges"><div class="tl-platform-badge tpb-spp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/></svg>SPP: Sign in · Create BARMM project · Enable cloud sync</div><div class="tl-platform-badge tpb-ssp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>SSP: Activate workspace · Initial SWOT variables</div></div></div></div>
 
-      <!-- 9:00 -->
-      <div class="tl-block">
-        <div class="tl-time"><span class="tl-time-text">9:00 AM<br>9:15 AM</span><div class="tl-dot" aria-hidden="true"></div></div>
-        <div class="tl-card" style="--card-accent:#7c3aed;">
-          <div class="tl-card-header">
-            <div class="tl-activity">Opening Ceremony</div>
-            <span class="tl-tag tag-opening">Ceremony</span>
-          </div>
-          <div class="tl-lead">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            MTIT-BoI Staff
-          </div>
-          <p class="tl-content">Invocation, Philippine National Anthem, and BARMM Hymn. Formal opening of the workshop day.</p>
-          <div class="tl-tools">
-            <span class="tl-tool-chip">Programme Flow</span>
-            <span class="tl-tool-chip">Ceremonial Script</span>
-          </div>
-        </div>
-      </div>
+      <div class="tl-block"><div class="tl-time"><span class="tl-time-text">9:00 AM<br>9:35 AM</span><div class="tl-dot"></div></div><div class="tl-card" style="--card-accent:#7c3aed;"><div class="tl-card-header"><div class="tl-activity">Opening Ceremony &amp; Messages</div><span class="tl-tag tag-opening">Ceremony + Keynote</span></div><div class="tl-lead"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>DG Rosslaini · Minister Farserina · Sarah Radam</div><p class="tl-content">Invocation, National Anthem, BARMM Hymn. Contextualising investment as a tool for peace consolidation and Moral Governance. Strategic rationale — 8–9% annual growth target.</p><div class="tl-tools"><span class="tl-tool-chip">Ceremonial Script</span><span class="tl-tool-chip">Context Framing Deck</span><span class="tl-tool-chip">Moral Governance Brief</span></div></div></div>
 
-      <!-- 9:15 -->
-      <div class="tl-block">
-        <div class="tl-time"><span class="tl-time-text">9:15 AM<br>9:35 AM</span><div class="tl-dot" aria-hidden="true"></div></div>
-        <div class="tl-card" style="--card-accent:#1d4ed8;">
-          <div class="tl-card-header">
-            <div class="tl-activity">Opening Messages &amp; Rationale</div>
-            <span class="tl-tag tag-opening">Keynote</span>
-          </div>
-          <div class="tl-lead">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            DG Rosslaini Alonto Sinarimbo · Minister Farserina A. Mohammad · Sarah Radam
-          </div>
-          <p class="tl-content">Contextualising investment as a tool for peace consolidation and Moral Governance. Overview of the strategic rationale — shifting from conflict recovery to an 8–9% annual growth target through structured governance and poverty reduction.</p>
-          <div class="tl-tools">
-            <span class="tl-tool-chip">Opening Message Guide</span>
-            <span class="tl-tool-chip">Context Framing Deck</span>
-            <span class="tl-tool-chip">Moral Governance Brief</span>
-          </div>
-        </div>
-      </div>
+      <div class="tl-block"><div class="tl-time"><span class="tl-time-text">9:35 AM<br>9:55 AM</span><div class="tl-dot"></div></div><div class="tl-card" style="--card-accent:#047857;"><div class="tl-card-header"><div class="tl-activity">Retrospective: Previous Workshop Results</div><span class="tl-tag tag-retrospective">Retrospective</span></div><div class="tl-lead"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Addie Unsi &amp; Sarah Radam · MTIT BoI Consultants</div><p class="tl-content">₱299.5B GRDP — Services 42%, Agriculture 32.4%, Industry 25.6%. Prior workshop outputs reviewed as baseline for today's strategy-building.</p><div class="tl-tools"><span class="tl-tool-chip">GRDP Performance Dashboard</span><span class="tl-tool-chip">Sectoral Breakdown Reference</span><span class="tl-tool-chip">Prior Workshop Summary</span></div><div class="tl-platform-badges"><div class="tl-platform-badge tpb-spp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/></svg>SPP: Load prior project · Compare MEL baseline KPIs</div></div></div></div>
 
-      <!-- 9:35 -->
-      <div class="tl-block">
-        <div class="tl-time"><span class="tl-time-text">9:35 AM<br>9:55 AM</span><div class="tl-dot" aria-hidden="true"></div></div>
-        <div class="tl-card" style="--card-accent:#047857;">
-          <div class="tl-card-header">
-            <div class="tl-activity">Retrospective: Previous Workshop Results</div>
-            <span class="tl-tag tag-retrospective">Retrospective</span>
-          </div>
-          <div class="tl-lead">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            Addie Unsi &amp; Sarah Radam · MTIT BoI Consultants
-          </div>
-          <p class="tl-content">Summary of regional economic performance (₱299.5B GRDP) and current sector contributions: Services 42%, Agriculture 32.4%, Industry 25.6%. Prior workshop outputs reviewed as baseline for today's strategy-building.</p>
-          <div class="tl-tools">
-            <span class="tl-tool-chip">GRDP Performance Dashboard</span>
-            <span class="tl-tool-chip">Sectoral Breakdown Reference</span>
-            <span class="tl-tool-chip">Prior Workshop Summary</span>
-          </div>
-        </div>
-      </div>
+      <div class="tl-block"><div class="tl-time"><span class="tl-time-text">9:55 AM<br>10:15 AM</span><div class="tl-dot"></div></div><div class="tl-card" style="--card-accent:#2563eb;"><div class="tl-card-header"><div class="tl-activity">Masterclass: Roadmapping via Systems Thinking</div><span class="tl-tag tag-masterclass">Masterclass</span></div><div class="tl-lead"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Alvin Silva · Lead Consultant</div><p class="tl-content">Introduction to CLDs, Reinforcing vs Balancing loops, and Leverage Points that trigger virtuous cycles of investment and development.</p><div class="tl-tools"><span class="tl-tool-chip">CLD Primer Card</span><span class="tl-tool-chip">R vs B Loop Cheat Sheet</span><span class="tl-tool-chip">Leverage Point Guide</span><span class="tl-tool-chip">Masterclass Slides</span></div><div class="tl-platform-badges"><div class="tl-platform-badge tpb-spp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>SPP: Systems Thinking view — impact-likelihood bubble chart</div><div class="tl-platform-badge tpb-ssp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>SSP: CLD Builder — build R1, R2, B1, B2 loops live</div></div></div></div>
 
-      <!-- 9:55 -->
-      <div class="tl-block">
-        <div class="tl-time"><span class="tl-time-text">9:55 AM<br>10:15 AM</span><div class="tl-dot" aria-hidden="true"></div></div>
-        <div class="tl-card" style="--card-accent:#2563eb;">
-          <div class="tl-card-header">
-            <div class="tl-activity">Masterclass: Roadmapping via Systems Thinking</div>
-            <span class="tl-tag tag-masterclass">Masterclass</span>
-          </div>
-          <div class="tl-lead">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            Alvin Silva · Lead Consultant
-          </div>
-          <p class="tl-content">Introduction to Strategic and Systems Thinking including Causal Loop Diagrams (CLDs), distinguishing Reinforcing (R) vs. Balancing (B) loops, and identifying Leverage Points that trigger virtuous cycles of investment and development.</p>
-          <div class="tl-tools">
-            <span class="tl-tool-chip">CLD Primer Card</span>
-            <span class="tl-tool-chip">R vs B Loop Cheat Sheet</span>
-            <span class="tl-tool-chip">Leverage Point Identification Guide</span>
-            <span class="tl-tool-chip">Masterclass Slides</span>
-          </div>
-        </div>
-      </div>
+      <div class="tl-block"><div class="tl-time"><span class="tl-time-text">10:15 AM<br>11:15 AM</span><div class="tl-dot"></div></div><div class="tl-card" style="--card-accent:#C9A84C;"><div class="tl-card-header"><div class="tl-activity">Session 1: Dynamic Scanning &amp; Narrative Co-Crafting</div><span class="tl-tag tag-session">Session 1</span></div><div class="tl-lead"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Addie Unsi · MTIT BoI Consultant</div><p class="tl-content">PEDSET Framework (external scanning) and McKinsey 7S (internal assessment). Identify systemic bottlenecks such as the Infrastructure-Energy Nexus and regional strengths including Halal Legitimacy.</p><div class="tl-tools"><span class="tl-tool-chip">PEDSET Worksheet</span><span class="tl-tool-chip">McKinsey 7S Grid</span><span class="tl-tool-chip">Dynamic SWOT Template</span><span class="tl-tool-chip">Narrative Canvas</span></div><div class="tl-platform-badges"><div class="tl-platform-badge tpb-spp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/></svg>SPP: SWOT module — input PEDSET findings with impact/likelihood scores; AI SWOT generation</div><div class="tl-platform-badge tpb-ssp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/></svg>SSP: SWOT-to-Systems Engine — tag stakeholders &amp; timeframes for CLD</div></div></div></div>
 
-      <!-- 10:15 -->
-      <div class="tl-block">
-        <div class="tl-time"><span class="tl-time-text">10:15 AM<br>11:15 AM</span><div class="tl-dot" aria-hidden="true"></div></div>
-        <div class="tl-card" style="--card-accent:#C9A84C;">
-          <div class="tl-card-header">
-            <div class="tl-activity">Session 1: Dynamic Scanning &amp; Narrative Co-Crafting</div>
-            <span class="tl-tag tag-session">Session 1</span>
-          </div>
-          <div class="tl-lead">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            Addie Unsi · MTIT BoI Consultant
-          </div>
-          <p class="tl-content">Applying the PEDSET Framework (External Environmental Scanning) and McKinsey 7S (Internal Institutional Assessment) to identify systemic bottlenecks — such as the Infrastructure-Energy Nexus — and regional strengths, particularly Halal Legitimacy and cultural credibility.</p>
-          <div class="tl-tools">
-            <span class="tl-tool-chip">PEDSET Scanning Worksheet</span>
-            <span class="tl-tool-chip">McKinsey 7S Assessment Grid</span>
-            <span class="tl-tool-chip">Dynamic SWOT Template</span>
-            <span class="tl-tool-chip">Narrative Co-Crafting Canvas</span>
-            <span class="tl-tool-chip">Bottleneck Identification Tool</span>
-          </div>
-        </div>
-      </div>
+      <div class="tl-block"><div class="tl-time"><span class="tl-time-text">11:15 AM<br>12:00 NN</span><div class="tl-dot"></div></div><div class="tl-card" style="--card-accent:#C9A84C;"><div class="tl-card-header"><div class="tl-activity">Session 2: Prioritising Strategic Options</div><span class="tl-tag tag-session">Session 2</span></div><div class="tl-lead"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Alvin Silva · Lead Consultant</div><p class="tl-content">Evaluating Options A–D. Interactive TOWS Matrix — SO/ST/WO/WT strategies AI-generated in SPP. SSP Strategic Options Generator rates all four options on leverage alignment and feasibility. Group adopts Option D.</p><div class="tl-tools"><span class="tl-tool-chip">Strategic Options Matrix</span><span class="tl-tool-chip">Evaluation Scoring Guide</span><span class="tl-tool-chip">Group Decision Worksheet</span><span class="tl-tool-chip">Option D Rationale Brief</span></div><div class="tl-platform-badges"><div class="tl-platform-badge tpb-spp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/></svg>SPP: Strategy Matrix (TOWS) — AI generates SO/ST/WO/WT for Option D validation</div><div class="tl-platform-badge tpb-ssp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>SSP: Strategic Options Generator — rate A–D on leverage &amp; political economy</div></div></div></div>
 
-      <!-- 11:15 -->
-      <div class="tl-block">
-        <div class="tl-time"><span class="tl-time-text">11:15 AM<br>12:00 NN</span><div class="tl-dot" aria-hidden="true"></div></div>
-        <div class="tl-card" style="--card-accent:#C9A84C;">
-          <div class="tl-card-header">
-            <div class="tl-activity">Session 2: Prioritising Strategic Options</div>
-            <span class="tl-tag tag-session">Session 2</span>
-          </div>
-          <div class="tl-lead">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            Alvin Silva · Lead Consultant
-          </div>
-          <p class="tl-content">Interactive evaluation of four strategic configurations — Options A (Infrastructure-First), B (Halal Hub Rapid), C (Governance-Centred), and D (Integrated Halal-Driven) — leading to group adoption of the preferred strategic option based on leverage point analysis.</p>
-          <div class="tl-tools">
-            <span class="tl-tool-chip">Strategic Options Matrix</span>
-            <span class="tl-tool-chip">Evaluation Scoring Guide</span>
-            <span class="tl-tool-chip">Group Decision Worksheet</span>
-            <span class="tl-tool-chip">Option D Rationale Brief</span>
-          </div>
-        </div>
-      </div>
+      <div class="tl-block"><div class="tl-time"><span class="tl-time-text">12:00 PM<br>1:15 PM</span><div class="tl-dot"></div></div><div class="tl-card" style="--card-accent:#94a3b8;"><div class="tl-card-header"><div class="tl-activity">Lunch Break &amp; Prayer Time</div><span class="tl-tag tag-break">Break</span></div><div class="tl-lead"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>All Participants</div><p class="tl-content">Networking lunch, informal dialogue, and prayer time in accordance with Islamic practice. Reflect on morning outputs and surface questions for the afternoon.</p><div class="tl-tools"><span class="tl-tool-chip">Reflection Prompt Card</span></div><div class="tl-platform-badges"><div class="tl-platform-badge tpb-ssp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>SSP AI: "What risks do you see in my morning SWOT profile?"</div></div></div></div>
 
-      <!-- 12:00 -->
-      <div class="tl-block">
-        <div class="tl-time"><span class="tl-time-text">12:00 PM<br>1:15 PM</span><div class="tl-dot" aria-hidden="true"></div></div>
-        <div class="tl-card" style="--card-accent:#94a3b8;">
-          <div class="tl-card-header">
-            <div class="tl-activity">Lunch Break &amp; Prayer Time</div>
-            <span class="tl-tag tag-break">Break</span>
-          </div>
-          <div class="tl-lead">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            All Participants
-          </div>
-          <p class="tl-content">Networking lunch and informal systems dialogue. Prayer time observed in accordance with Islamic practice. Participants are encouraged to reflect on the morning sessions and surface questions for the afternoon.</p>
-          <div class="tl-tools">
-            <span class="tl-tool-chip">Reflection Prompt Card</span>
-          </div>
-        </div>
-      </div>
+      <div class="tl-block"><div class="tl-time"><span class="tl-time-text">1:15 PM<br>2:45 PM</span><div class="tl-dot"></div></div><div class="tl-card" style="--card-accent:#C9A84C;"><div class="tl-card-header"><div class="tl-activity">Session 3: Benchmarking &amp; KPI Framework</div><span class="tl-tag tag-session">Session 3</span></div><div class="tl-lead"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Alvin Silva · Lead Consultant</div><p class="tl-content">Aligning targets with OIC/SMIIC Standards and PDP 2023–2028. Defining measurable KPIs across all sectors. AI KPI generation in SPP Balanced Scorecard module.</p><div class="tl-tools"><span class="tl-tool-chip">OIC/SMIIC Standards Reference</span><span class="tl-tool-chip">PDP Alignment Matrix</span><span class="tl-tool-chip">KPI Definition Worksheet</span><span class="tl-tool-chip">Benchmarking Grid</span></div><div class="tl-platform-badges"><div class="tl-platform-badge tpb-spp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>SPP: BSC module — define objectives; AI generates KPI suggestions per perspective</div><div class="tl-platform-badge tpb-ssp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/></svg>SSP Archetypes: Check "Eroding Goals" — stress-test KPI targets</div></div></div></div>
 
-      <!-- 1:15 -->
-      <div class="tl-block">
-        <div class="tl-time"><span class="tl-time-text">1:15 PM<br>2:45 PM</span><div class="tl-dot" aria-hidden="true"></div></div>
-        <div class="tl-card" style="--card-accent:#C9A84C;">
-          <div class="tl-card-header">
-            <div class="tl-activity">Session 3: Benchmarking &amp; KPI Framework</div>
-            <span class="tl-tag tag-session">Session 3</span>
-          </div>
-          <div class="tl-lead">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            Alvin Silva · Lead Consultant
-          </div>
-          <p class="tl-content">Aligning Bangsamoro's strategic targets with OIC/SMIIC International Standards and the Philippine Development Plan (PDP) 2023–2028. Defining measurable KPIs that bridge regional ambition with internationally recognised benchmarks across all priority sectors.</p>
-          <div class="tl-tools">
-            <span class="tl-tool-chip">OIC/SMIIC Standards Reference</span>
-            <span class="tl-tool-chip">PDP 2023–2028 Alignment Matrix</span>
-            <span class="tl-tool-chip">KPI Definition Worksheet</span>
-            <span class="tl-tool-chip">BARMM-Specific Indicators Table</span>
-            <span class="tl-tool-chip">Benchmarking Comparison Grid</span>
-          </div>
-        </div>
-      </div>
+      <div class="tl-block"><div class="tl-time"><span class="tl-time-text">2:45 PM<br>4:45 PM</span><div class="tl-dot"></div></div><div class="tl-card" style="--card-accent:#C9A84C;"><div class="tl-card-header"><div class="tl-activity">Session 4: Balanced Scorecard &amp; Implementation Roadmap</div><span class="tl-tag tag-session">Session 4</span></div><div class="tl-lead"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Alvin Silva &amp; Addie Unsi · Consultants</div><p class="tl-content">2035 targets across 4 BSC perspectives. Three-phase roadmap: Phase 1 Foundation (2026–2028), Phase 2 Acceleration (2029–2032), Phase 3 Consolidation (2033–2035). PAPs mapped with budget envelopes and lead agencies.</p><div class="tl-tools"><span class="tl-tool-chip">BSC Strategy Canvas</span><span class="tl-tool-chip">4-Perspective Worksheet</span><span class="tl-tool-chip">3-Phase Roadmap Template</span><span class="tl-tool-chip">Lead Agency Grid</span><span class="tl-tool-chip">Budget Phasing Tool</span></div><div class="tl-platform-badges"><div class="tl-platform-badge tpb-spp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/></svg>SPP: Complete BSC + PAPs Management — map programs to objectives; set budget phases</div><div class="tl-platform-badge tpb-ssp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>SSP: Save version snapshot per BSC perspective</div></div></div></div>
 
-      <!-- 2:45 -->
-      <div class="tl-block">
-        <div class="tl-time"><span class="tl-time-text">2:45 PM<br>4:45 PM</span><div class="tl-dot" aria-hidden="true"></div></div>
-        <div class="tl-card" style="--card-accent:#C9A84C;">
-          <div class="tl-card-header">
-            <div class="tl-activity">Session 4: Balanced Scorecard &amp; Implementation Roadmap</div>
-            <span class="tl-tag tag-session">Session 4</span>
-          </div>
-          <div class="tl-lead">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            Alvin Silva &amp; Addie Unsi · Consultants
-          </div>
-          <p class="tl-content">Defining 2035 targets across the four Balanced Scorecard perspectives: Financial, Stakeholder/Customer, Internal Process, and Learning &amp; Growth. Mapping the three-phase implementation timeline: Phase 1 Foundation Building (2026–2028), Phase 2 Acceleration (2029–2032), and Phase 3 Consolidation (2033–2035).</p>
-          <div class="tl-tools">
-            <span class="tl-tool-chip">BSC Strategy Canvas</span>
-            <span class="tl-tool-chip">4-Perspective Mapping Worksheet</span>
-            <span class="tl-tool-chip">3-Phase Roadmap Template</span>
-            <span class="tl-tool-chip">Lead Agency Assignment Grid</span>
-            <span class="tl-tool-chip">Budget Phasing Tool</span>
-            <span class="tl-tool-chip">Critical Success Factors Checklist</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 4:45 -->
-      <div class="tl-block">
-        <div class="tl-time"><span class="tl-time-text">4:45 PM<br>5:00 PM</span><div class="tl-dot" aria-hidden="true"></div></div>
-        <div class="tl-card" style="--card-accent:#7c3aed;">
-          <div class="tl-card-header">
-            <div class="tl-activity">Synthesis &amp; Call to Action</div>
-            <span class="tl-tag tag-synthesis">Closing</span>
-          </div>
-          <div class="tl-lead">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            Shamera A. Abobakar · Director II, MTIT-BoI
-          </div>
-          <p class="tl-content">Summarising the "Choose Bangsamoro" investment narrative and formalising commitment to Moral Governance principles and ethical investment practices. Participants record their individual pledges and next steps toward implementation.</p>
-          <div class="tl-tools">
-            <span class="tl-tool-chip">Synthesis Summary Card</span>
-            <span class="tl-tool-chip">Commitment Pledge Form</span>
-            <span class="tl-tool-chip">Next Steps Action Plan</span>
-          </div>
-        </div>
-      </div>
-
-    </div><!-- end timeline-wrap -->
+      <div class="tl-block"><div class="tl-time"><span class="tl-time-text">4:45 PM<br>5:00 PM</span><div class="tl-dot"></div></div><div class="tl-card" style="--card-accent:#7c3aed;"><div class="tl-card-header"><div class="tl-activity">Synthesis &amp; Call to Action</div><span class="tl-tag tag-synthesis">Closing</span></div><div class="tl-lead"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Shamera A. Abobakar · Director II, MTIT-BoI</div><p class="tl-content">Summarising the "Choose Bangsamoro" investment narrative, formalising Moral Governance commitments, and generating the professional BARMM Investment Roadmap document from Strat Planner Pro.</p><div class="tl-tools"><span class="tl-tool-chip">Synthesis Summary Card</span><span class="tl-tool-chip">Commitment Pledge Form</span><span class="tl-tool-chip">Next Steps Action Plan</span></div><div class="tl-platform-badges"><div class="tl-platform-badge tpb-spp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/></svg>SPP: Plan Export — generate PDF/Word BARMM Investment Roadmap document</div><div class="tl-platform-badge tpb-ssp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>SSP AI: "Summarise my full system and key leverage points"</div></div></div></div>
+    </div>
   </section>
+
+  <!-- PLAN EXPORT PANEL -->
+  <div class="export-panel fi">
+    <div class="export-panel-left">
+      <h3>Plan Export — Professional Strategic Plan Documents</h3>
+      <p>When the workshop concludes, generate the complete BARMM Investment Roadmap as a professional document directly from Strat Planner Pro. The Plan Export module assembles your SWOT analysis, TOWS strategies, Balanced Scorecard, PAPs, KPIs, and MEL framework into a polished, print-ready output — with an AI-generated executive summary.</p>
+      <div class="export-formats">
+        <span class="export-fmt fmt-pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="11" height="11"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>PDF</span>
+        <span class="export-fmt fmt-word"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="11" height="11"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg>Word / DOCX</span>
+        <span class="export-fmt fmt-csv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="11" height="11"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>CSV Data</span>
+        <span class="export-fmt fmt-ppt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="11" height="11"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Presentation</span>
+      </div>
+    </div>
+    <div class="export-panel-right">
+      <a href="https://strat-planner-pro.asilvainnovations.com" target="_blank" rel="noopener" class="export-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Export Strategic Plan</a>
+      <div class="export-ai-note">✦ AI-generated executive summary included</div>
+    </div>
+  </div>
 
   <!-- WORKSHOP RESOURCES -->
   <section id="resources" aria-labelledby="res-heading">
@@ -574,338 +929,104 @@ footer{background:var(--dark-green);color:white;padding:3rem 2rem 1.5rem;border-
       <span class="sec-eyebrow">Participant Materials</span>
       <h2 id="res-heading">Workshop Tools &amp; Session Guides</h2>
       <div class="gold-div"></div>
-      <p>Each resource is designed to scaffold the systems thinking methodology and support active participation across all workshop sessions. Access is granted progressively to registered participants.</p>
+      <p>Each resource maps to one or more modules across Strat Planner Pro and Systems Strat Pro. Physical worksheets and both digital platforms are designed to work together.</p>
     </div>
-
     <div class="resources-grid">
-
-      <!-- Pre-Read Pack -->
       <article class="res-card fi fi-1">
-        <div class="res-card-top">
-          <div class="res-icon" aria-hidden="true">📋</div>
-          <h3>Participant Pre-Read Pack</h3>
-          <span class="res-session-tag">All Sessions · Distributed at Registration</span>
-        </div>
-        <div class="res-card-body">
-          <p class="res-desc">Contextual briefing materials to orient participants before the workshop begins. Includes a concise overview of BARMM's economic trajectory, the Moral Governance framework, and a glossary of key systems thinking terms used throughout the day.</p>
-          <div class="res-meta">
-            <span class="res-badge badge-guide">Participant Guide</span>
-            <span class="res-badge badge-reference">Reference</span>
-          </div>
-          <a href="#register" class="res-access-btn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Available After Registration
-          </a>
-        </div>
+        <div class="res-card-top"><div class="res-icon">📋</div><h3>Participant Pre-Read Pack</h3><span class="res-session-tag">All Sessions · Registration</span><div class="res-platform-tags"><span class="res-ptag spp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/></svg>SPP Onboarding</span><span class="res-ptag ssp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>SSP Onboarding</span></div></div>
+        <div class="res-card-body"><p class="res-desc">BARMM economic trajectory, Moral Governance framework, systems thinking glossary, and onboarding guides for both Strat Planner Pro (sign-in, cloud sync, sidebar nav) and Systems Strat Pro.</p><div class="res-meta"><span class="res-badge badge-guide">Participant Guide</span><span class="res-badge badge-spp">SPP Setup</span><span class="res-badge badge-ssp">SSP Setup</span></div><div class="res-btn-row"><a href="#register" class="res-access-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Available After Registration</a><a href="https://strat-planner-pro.asilvainnovations.com" target="_blank" rel="noopener" class="res-platform-btn spp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Launch Strat Planner Pro</a></div></div>
       </article>
 
-      <!-- Systems Thinking Primer -->
       <article class="res-card fi fi-2">
-        <div class="res-card-top">
-          <div class="res-icon" aria-hidden="true">🔄</div>
-          <h3>Systems Thinking Primer</h3>
-          <span class="res-session-tag">Masterclass · 9:55 – 10:15 AM</span>
-        </div>
-        <div class="res-card-body">
-          <p class="res-desc">A concise reference card introducing Causal Loop Diagram (CLD) notation, reinforcing and balancing loop identification, delay markers, polarity signs (+/−), and the concept of leverage points. Includes the four feedback loops mapped for Bangsamoro's investment climate.</p>
-          <div class="res-meta">
-            <span class="res-badge badge-framework">Framework</span>
-            <span class="res-badge badge-reference">Reference Card</span>
-          </div>
-          <a href="#register" class="res-access-btn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Available After Registration
-          </a>
-        </div>
+        <div class="res-card-top"><div class="res-icon">🔄</div><h3>Systems Thinking Primer</h3><span class="res-session-tag">Masterclass · 9:55 – 10:15 AM</span><div class="res-platform-tags"><span class="res-ptag spp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/></svg>SPP Systems View</span><span class="res-ptag ssp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>SSP CLD Builder</span></div></div>
+        <div class="res-card-body"><p class="res-desc">CLD notation, R/B loop identification, delay markers, polarity signs, and leverage points. Mirror the 4 BARMM feedback loops in SPP's Systems Thinking view and SSP's CLD Builder.</p><div class="res-meta"><span class="res-badge badge-framework">Framework</span><span class="res-badge badge-reference">Reference Card</span></div><div class="res-btn-row"><a href="#register" class="res-access-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Available After Registration</a><a href="https://strat-planner-pro.asilvainnovations.com" target="_blank" rel="noopener" class="res-platform-btn spp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/></svg>Open Systems View in SPP</a></div></div>
       </article>
 
-      <!-- Session 1 Worksheet -->
       <article class="res-card fi fi-3">
-        <div class="res-card-top">
-          <div class="res-icon" aria-hidden="true">🗺️</div>
-          <h3>Session 1: PEDSET &amp; 7S Scanning Worksheet</h3>
-          <span class="res-session-tag">Session 1 · 10:15 – 11:15 AM</span>
-        </div>
-        <div class="res-card-body">
-          <p class="res-desc">Structured group worksheet applying the PEDSET external scanning framework and McKinsey 7S internal assessment tool. Teams identify systemic bottlenecks and regional strengths, then co-craft a narrative linking the scan to investment priorities and leverage points.</p>
-          <div class="res-meta">
-            <span class="res-badge badge-worksheet">Group Worksheet</span>
-            <span class="res-badge badge-framework">Framework</span>
-          </div>
-          <a href="#register" class="res-access-btn locked" aria-disabled="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-            Distributed at Session 1
-          </a>
-        </div>
+        <div class="res-card-top"><div class="res-icon">🗺️</div><h3>Session 1: PEDSET &amp; 7S Scanning</h3><span class="res-session-tag">Session 1 · 10:15 – 11:15 AM</span><div class="res-platform-tags"><span class="res-ptag spp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/></svg>SPP SWOT Module</span><span class="res-ptag ssp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>SSP SWOT Engine</span></div></div>
+        <div class="res-card-body"><p class="res-desc">Group worksheet applying PEDSET + McKinsey 7S. Input findings into SPP's SWOT module (impact/likelihood scoring, AI generation) and SSP's SWOT-to-Systems Engine for CLD-ready variables.</p><div class="res-meta"><span class="res-badge badge-worksheet">Group Worksheet</span><span class="res-badge badge-spp">→ SPP SWOT</span><span class="res-badge badge-ssp">→ SSP Engine</span></div><div class="res-btn-row"><a href="#register" class="res-access-btn locked" aria-disabled="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>Distributed at Session 1</a><a href="https://strat-planner-pro.asilvainnovations.com" target="_blank" rel="noopener" class="res-platform-btn spp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/></svg>Open SWOT Module in SPP</a></div></div>
       </article>
 
-      <!-- Session 2 Worksheet -->
       <article class="res-card fi fi-4">
-        <div class="res-card-top">
-          <div class="res-icon" aria-hidden="true">⚖️</div>
-          <h3>Session 2: Strategic Options Evaluation Guide</h3>
-          <span class="res-session-tag">Session 2 · 11:15 AM – 12:00 NN</span>
-        </div>
-        <div class="res-card-body">
-          <p class="res-desc">Interactive evaluation matrix comparing Options A through D across six dimensions: primary focus, time horizon, key strength, main risk, resource needs, and leverage alignment. Includes a group scoring guide and structured discussion prompts for arriving at the preferred strategy.</p>
-          <div class="res-meta">
-            <span class="res-badge badge-worksheet">Evaluation Matrix</span>
-            <span class="res-badge badge-guide">Decision Guide</span>
-          </div>
-          <a href="#register" class="res-access-btn locked" aria-disabled="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-            Distributed at Session 2
-          </a>
-        </div>
+        <div class="res-card-top"><div class="res-icon">⚖️</div><h3>Session 2: Strategic Options &amp; TOWS</h3><span class="res-session-tag">Session 2 · 11:15 AM – 12:00 NN</span><div class="res-platform-tags"><span class="res-ptag spp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/></svg>SPP TOWS Matrix</span><span class="res-ptag ssp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>SSP Options Generator</span></div></div>
+        <div class="res-card-body"><p class="res-desc">Physical evaluation matrix for Options A–D. Complemented by SPP's AI-powered TOWS Matrix (SO/ST/WO/WT quadrant strategies) and SSP's Strategic Options Generator for leverage-based feasibility scoring.</p><div class="res-meta"><span class="res-badge badge-worksheet">Evaluation Matrix</span><span class="res-badge badge-spp">→ TOWS</span><span class="res-badge badge-ssp">→ Options</span></div><div class="res-btn-row"><a href="#register" class="res-access-btn locked" aria-disabled="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>Distributed at Session 2</a><a href="https://strat-planner-pro.asilvainnovations.com" target="_blank" rel="noopener" class="res-platform-btn spp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/></svg>Open Strategy Matrix in SPP</a></div></div>
       </article>
 
-      <!-- Session 3 Worksheet -->
       <article class="res-card fi fi-1">
-        <div class="res-card-top">
-          <div class="res-icon" aria-hidden="true">📊</div>
-          <h3>Session 3: KPI &amp; Benchmarking Template</h3>
-          <span class="res-session-tag">Session 3 · 1:15 – 2:45 PM</span>
-        </div>
-        <div class="res-card-body">
-          <p class="res-desc">A structured three-column template for defining sector-specific KPIs with baseline, 2028 interim target, and 2035 target columns. Cross-referenced against OIC/SMIIC halal standards and PDP 2023–2028 headline indicators. Includes a pre-populated BARMM-specific indicator reference table.</p>
-          <div class="res-meta">
-            <span class="res-badge badge-template">Template</span>
-            <span class="res-badge badge-reference">Standards Reference</span>
-          </div>
-          <a href="#register" class="res-access-btn locked" aria-disabled="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-            Distributed at Session 3
-          </a>
-        </div>
+        <div class="res-card-top"><div class="res-icon">📊</div><h3>Session 3: KPI &amp; Benchmarking Template</h3><span class="res-session-tag">Session 3 · 1:15 – 2:45 PM</span><div class="res-platform-tags"><span class="res-ptag spp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/></svg>SPP BSC Module</span><span class="res-ptag ssp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>SSP Archetypes</span></div></div>
+        <div class="res-card-body"><p class="res-desc">Three-column KPI template (baseline, 2028, 2035). AI KPI suggestions generated per BSC objective in SPP. Cross-reference against SSP Archetypes Library — especially "Eroding Goals" — to stress-test target integrity.</p><div class="res-meta"><span class="res-badge badge-template">Template</span><span class="res-badge badge-spp">→ BSC AI KPIs</span><span class="res-badge badge-ssp">→ Archetypes</span></div><div class="res-btn-row"><a href="#register" class="res-access-btn locked" aria-disabled="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>Distributed at Session 3</a><a href="https://strat-planner-pro.asilvainnovations.com" target="_blank" rel="noopener" class="res-platform-btn spp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/></svg>Open BSC in SPP</a></div></div>
       </article>
 
-      <!-- Session 4 Worksheet -->
       <article class="res-card fi fi-2">
-        <div class="res-card-top">
-          <div class="res-icon" aria-hidden="true">🏗️</div>
-          <h3>Session 4: Balanced Scorecard &amp; Roadmap Canvas</h3>
-          <span class="res-session-tag">Session 4 · 2:45 – 4:45 PM</span>
-        </div>
-        <div class="res-card-body">
-          <p class="res-desc">A large-format strategy canvas combining the four Balanced Scorecard perspectives with the three-phase implementation timeline. Teams populate strategic objectives, KPIs, targets, initiatives, lead agencies, and budget envelopes, producing a draft roadmap committed to the 2035 vision.</p>
-          <div class="res-meta">
-            <span class="res-badge badge-template">Strategy Canvas</span>
-            <span class="res-badge badge-worksheet">Group Worksheet</span>
-          </div>
-          <a href="#register" class="res-access-btn locked" aria-disabled="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-            Distributed at Session 4
-          </a>
-        </div>
+        <div class="res-card-top"><div class="res-icon">🏗️</div><h3>Session 4: BSC &amp; Roadmap Canvas</h3><span class="res-session-tag">Session 4 · 2:45 – 4:45 PM</span><div class="res-platform-tags"><span class="res-ptag spp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/></svg>SPP BSC + PAPs</span><span class="res-ptag ssp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>SSP Snapshot</span></div></div>
+        <div class="res-card-body"><p class="res-desc">Large-format canvas for BSC + 3-phase roadmap. Complete SPP's BSC and PAPs modules for the full digital roadmap. Save SSP version snapshots per perspective. Export via SPP's Plan Export when done.</p><div class="res-meta"><span class="res-badge badge-template">Strategy Canvas</span><span class="res-badge badge-spp">→ PAPs</span><span class="res-badge badge-ssp">→ Export</span></div><div class="res-btn-row"><a href="#register" class="res-access-btn locked" aria-disabled="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>Distributed at Session 4</a><a href="https://strat-planner-pro.asilvainnovations.com" target="_blank" rel="noopener" class="res-platform-btn spp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/></svg>Open PAPs in SPP</a></div></div>
       </article>
 
-      <!-- Synthesis Card -->
       <article class="res-card fi fi-3">
-        <div class="res-card-top">
-          <div class="res-icon" aria-hidden="true">🌟</div>
-          <h3>Synthesis &amp; Commitment Card</h3>
-          <span class="res-session-tag">Closing · 4:45 – 5:00 PM</span>
-        </div>
-        <div class="res-card-body">
-          <p class="res-desc">A personal commitment card anchoring participants to the "Choose Bangsamoro" investment narrative. Captures individual pledges tied to Moral Governance principles, specific next steps, and a 30-day accountability commitment. Retained by the participant and photographed for the workshop record.</p>
-          <div class="res-meta">
-            <span class="res-badge badge-guide">Commitment Card</span>
-          </div>
-          <a href="#register" class="res-access-btn locked" aria-disabled="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-            Distributed at Closing Session
-          </a>
-        </div>
+        <div class="res-card-top"><div class="res-icon">🌟</div><h3>Synthesis &amp; Commitment Card</h3><span class="res-session-tag">Closing · 4:45 – 5:00 PM</span><div class="res-platform-tags"><span class="res-ptag spp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/></svg>SPP Plan Export</span><span class="res-ptag ssp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>SSP AI Summary</span></div></div>
+        <div class="res-card-body"><p class="res-desc">Personal commitment card anchoring participants to the "Choose Bangsamoro" narrative. Before completing, export the professional roadmap from SPP and ask the SSP AI Advisor to "summarise my full system and key leverage points."</p><div class="res-meta"><span class="res-badge badge-guide">Commitment Card</span><span class="res-badge badge-spp">→ Export</span><span class="res-badge badge-ssp">→ AI</span></div><div class="res-btn-row"><a href="#register" class="res-access-btn locked" aria-disabled="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>Distributed at Closing</a><a href="https://strat-planner-pro.asilvainnovations.com" target="_blank" rel="noopener" class="res-platform-btn spp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/></svg>Export Plan from SPP</a></div></div>
       </article>
 
-      <!-- Facilitator Guide -->
       <article class="res-card fi fi-4">
-        <div class="res-card-top">
-          <div class="res-icon" aria-hidden="true">🎓</div>
-          <h3>Facilitator Session Guide (Full Day)</h3>
-          <span class="res-session-tag">Facilitators Only</span>
-        </div>
-        <div class="res-card-body">
-          <p class="res-desc">Detailed facilitation notes, timing cues, probing questions, energy management tips, and contingency guides for each session. Includes debrief protocols, common participant questions and suggested responses, and escalation pathways for complex group dynamics.</p>
-          <div class="res-meta">
-            <span class="res-badge badge-guide">Facilitator Guide</span>
-          </div>
-          <a href="#register" class="res-access-btn locked" aria-disabled="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-            Facilitators Only · Restricted
-          </a>
-        </div>
+        <div class="res-card-top"><div class="res-icon">🎓</div><h3>Facilitator Session Guide</h3><span class="res-session-tag">Facilitators Only</span></div>
+        <div class="res-card-body"><p class="res-desc">Detailed facilitation notes, timing cues, and contingency guides. Includes SPP and SSP integration cues per session — when to prompt participants to update their platform workspace, which module to open, and which AI queries to suggest.</p><div class="res-meta"><span class="res-badge badge-guide">Facilitator Guide</span><span class="res-badge badge-spp">SPP Cues</span><span class="res-badge badge-ssp">SSP Cues</span></div><div class="res-btn-row"><a href="#register" class="res-access-btn locked" aria-disabled="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>Facilitators Only · Restricted</a></div></div>
       </article>
-
     </div>
   </section>
 
-  <!-- FRAMEWORKS REFERENCE -->
+  <!-- FRAMEWORKS -->
   <section id="frameworks" aria-labelledby="fw-heading">
     <div class="sec-header fi">
       <span class="sec-eyebrow">Analytical Frameworks</span>
-      <h2 id="fw-heading">Key Frameworks Used in This Workshop</h2>
+      <h2 id="fw-heading">Key Frameworks — Platform Mapping</h2>
       <div class="gold-div"></div>
-      <p>Four complementary analytical frameworks are woven through every session, each selected for its capacity to reveal systemic interconnections in Bangsamoro's investment landscape.</p>
+      <p>Four frameworks woven through every session, each mapped to specific modules in Strat Planner Pro and/or Systems Strat Pro for digital follow-through.</p>
     </div>
-
-    <div class="framework-grid">
-      <div class="fw-card fi fi-1">
-        <div class="fw-card-icon" aria-hidden="true">🌐</div>
-        <h3>PEDSET Analysis</h3>
-        <span class="fw-card-tag">External Environmental Scanning</span>
-        <p>A six-domain macro-environmental framework examining the forces that shape Bangsamoro's investment climate. Used in Session 1 to identify external opportunities and systemic threats.</p>
-        <div class="fw-card-items">
-          <div class="fw-item">Political — governance autonomy &amp; transition</div>
-          <div class="fw-item">Economic — GRDP performance &amp; trade balance</div>
-          <div class="fw-item">Demographics — population youth dividend</div>
-          <div class="fw-item">Social — Islamic heritage &amp; peacebuilding</div>
-          <div class="fw-item">Environmental — climate resilience &amp; energy</div>
-          <div class="fw-item">Technological — digital transformation gaps</div>
-        </div>
-      </div>
-      <div class="fw-card fi fi-2">
-        <div class="fw-card-icon" aria-hidden="true">⚙️</div>
-        <h3>McKinsey 7S Framework</h3>
-        <span class="fw-card-tag">Internal Institutional Assessment</span>
-        <p>An organisational analysis tool examining seven interdependent elements of Bangsamoro's governance system to surface internal alignment gaps and institutional strengths.</p>
-        <div class="fw-card-items">
-          <div class="fw-item">Strategy — BDP 2023-2028 &amp; sectoral roadmaps</div>
-          <div class="fw-item">Structure — parliamentary system &amp; 15 ministries</div>
-          <div class="fw-item">Systems — BBNR, BPLS, BEGMP platforms</div>
-          <div class="fw-item">Shared Values — Moral Governance framework</div>
-          <div class="fw-item">Skills — halal &amp; digital expertise gaps</div>
-          <div class="fw-item">Staff — MILF-to-government transition</div>
-          <div class="fw-item">Style — collective decision-making culture</div>
-        </div>
-      </div>
-      <div class="fw-card fi fi-3">
-        <div class="fw-card-icon" aria-hidden="true">🔁</div>
-        <h3>Systems Thinking &amp; CLDs</h3>
-        <span class="fw-card-tag">Dynamic SWOT &amp; Masterclass</span>
-        <p>Causal Loop Diagrams map circular cause-and-effect relationships to reveal reinforcing virtuous cycles and balancing constraints. Four feedback loops are identified as critical leverage points.</p>
-        <div class="fw-card-items">
-          <div class="fw-item">R1 — Investment-Development Virtuous Cycle</div>
-          <div class="fw-item">R2 — Governance-Investor Confidence Loop</div>
-          <div class="fw-item">B1 — Growth-Resource Constraints</div>
-          <div class="fw-item">B2 — Security-Investment Tensions</div>
-          <div class="fw-item">Archetypes: Limits to Growth, Fixes that Fail, Success to the Successful</div>
-        </div>
-      </div>
-      <div class="fw-card fi fi-4">
-        <div class="fw-card-icon" aria-hidden="true">🎯</div>
-        <h3>Balanced Scorecard</h3>
-        <span class="fw-card-tag">Sessions 3 &amp; 4 · KPI &amp; Roadmap</span>
-        <p>Translates the Integrated Halal-Driven Investment Strategy into measurable objectives across four perspectives, operationalising the 2026–2035 roadmap with clear milestones and phase budgets.</p>
-        <div class="fw-card-items">
-          <div class="fw-item">Financial — PHP 50B investment target by 2035</div>
-          <div class="fw-item">Stakeholder — 2,000 halal-certified MSMEs</div>
-          <div class="fw-item">Internal Process — 1-day business registration</div>
-          <div class="fw-item">Learning &amp; Growth — 100 halal officers trained</div>
-          <div class="fw-item">3-Phase: Foundation / Acceleration / Consolidation</div>
-        </div>
-      </div>
+    <div class="framework-grid fi">
+      <div class="fw-card"><div class="fw-card-icon">🌐</div><h3>PEDSET Analysis</h3><span class="fw-card-tag">External Environmental Scanning</span><p>Six-domain macro-environmental framework for identifying external opportunities and systemic threats shaping BARMM's investment climate.</p><div class="fw-card-items"><div class="fw-item">Political — governance autonomy &amp; transition</div><div class="fw-item">Economic — GRDP performance &amp; trade balance</div><div class="fw-item">Demographics — population youth dividend</div><div class="fw-item">Social — Islamic heritage &amp; peacebuilding</div><div class="fw-item">Environmental — climate resilience &amp; energy</div><div class="fw-item">Technological — digital transformation gaps</div></div><div class="fw-platform-row"><span class="fw-platform-label">Platform Modules</span><div class="fw-platform-chips"><span class="fw-pchip spp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/></svg>SPP SWOT</span><span class="fw-pchip ssp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>SSP Engine</span></div></div></div>
+      <div class="fw-card"><div class="fw-card-icon">⚙️</div><h3>McKinsey 7S Framework</h3><span class="fw-card-tag">Internal Institutional Assessment</span><p>Seven interdependent elements of Bangsamoro's governance system — surfaces internal alignment gaps and institutional strengths for SWOT input.</p><div class="fw-card-items"><div class="fw-item">Strategy — BDP 2023-2028 &amp; sectoral roadmaps</div><div class="fw-item">Structure — parliamentary system &amp; 15 ministries</div><div class="fw-item">Systems — BBNR, BPLS, BEGMP platforms</div><div class="fw-item">Shared Values — Moral Governance framework</div><div class="fw-item">Skills — halal &amp; digital expertise gaps</div><div class="fw-item">Staff — MILF-to-government transition</div><div class="fw-item">Style — collective decision-making culture</div></div><div class="fw-platform-row"><span class="fw-platform-label">Platform Modules</span><div class="fw-platform-chips"><span class="fw-pchip spp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/></svg>SPP SWOT</span><span class="fw-pchip ssp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>SSP Engine</span></div></div></div>
+      <div class="fw-card"><div class="fw-card-icon">🔁</div><h3>Systems Thinking &amp; CLDs</h3><span class="fw-card-tag">Dynamic SWOT &amp; Masterclass</span><p>Causal Loop Diagrams mapping circular cause-and-effect. SPP's Systems Thinking view handles impact-likelihood visualisation; SSP handles full CLD building and archetype analysis.</p><div class="fw-card-items"><div class="fw-item">R1 — Investment-Development Virtuous Cycle</div><div class="fw-item">R2 — Governance-Investor Confidence Loop</div><div class="fw-item">B1 — Growth-Resource Constraints</div><div class="fw-item">B2 — Security-Investment Tensions</div><div class="fw-item">Archetypes: Limits to Growth, Fixes that Fail</div></div><div class="fw-platform-row"><span class="fw-platform-label">Platform Modules</span><div class="fw-platform-chips"><span class="fw-pchip spp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/></svg>SPP Systems</span><span class="fw-pchip ssp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>SSP CLD</span></div></div></div>
+      <div class="fw-card"><div class="fw-card-icon">🎯</div><h3>Balanced Scorecard</h3><span class="fw-card-tag">Sessions 3 &amp; 4 · KPI &amp; Roadmap</span><p>Translates the Integrated Halal-Driven Investment Strategy into measurable objectives. SPP's BSC module manages objectives and AI KPI suggestions; PAPs and MEL modules close the loop.</p><div class="fw-card-items"><div class="fw-item">Financial — PHP 50B investment target by 2035</div><div class="fw-item">Stakeholder — 2,000 halal-certified MSMEs</div><div class="fw-item">Internal Process — 1-day business registration</div><div class="fw-item">Learning &amp; Growth — 100 halal officers trained</div><div class="fw-item">3-Phase: Foundation / Acceleration / Consolidation</div></div><div class="fw-platform-row"><span class="fw-platform-label">Platform Modules</span><div class="fw-platform-chips"><span class="fw-pchip spp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/></svg>SPP BSC</span><span class="fw-pchip spp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/></svg>SPP PAPs</span><span class="fw-pchip spp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/></svg>SPP MEL</span></div></div></div>
     </div>
   </section>
 
   <!-- FACILITATORS -->
   <div class="facilitators fi" id="facilitators">
-    <div class="fac-header">
-      <h2>Workshop Facilitation Team</h2>
-      <p>Ministry of Trade, Investments and Tourism · Bangsamoro Autonomous Region in Muslim Mindanao</p>
-    </div>
+    <div class="fac-header"><h2>Workshop Facilitation Team</h2><p>Ministry of Trade, Investments and Tourism · Bangsamoro Autonomous Region in Muslim Mindanao</p></div>
     <div class="fac-grid">
-      <div class="fac-card">
-        <div class="fac-avatar" aria-hidden="true">FA</div>
-        <div class="fac-name">Farserina A. Mohammad</div>
-        <div class="fac-role">Minister<br>MTIT–BARMM</div>
-        <div class="fac-sessions">
-          <span class="fac-session-dot">Opening</span>
-        </div>
-      </div>
-      <div class="fac-card">
-        <div class="fac-avatar" aria-hidden="true">RA</div>
-        <div class="fac-name">Rosslaini Alonto Sinarimbo</div>
-        <div class="fac-role">Director General<br>MTIT</div>
-        <div class="fac-sessions">
-          <span class="fac-session-dot">Opening</span>
-        </div>
-      </div>
-      <div class="fac-card">
-        <div class="fac-avatar" aria-hidden="true">AS</div>
-        <div class="fac-name">Alvin Silva</div>
-        <div class="fac-role">Lead Consultant<br>Systems Thinking</div>
-        <div class="fac-sessions">
-          <span class="fac-session-dot">Masterclass</span>
-          <span class="fac-session-dot">S2</span>
-          <span class="fac-session-dot">S3</span>
-          <span class="fac-session-dot">S4</span>
-        </div>
-      </div>
-      <div class="fac-card">
-        <div class="fac-avatar" aria-hidden="true">AU</div>
-        <div class="fac-name">Addie Unsi</div>
-        <div class="fac-role">MTIT BoI Consultant<br>Environmental Scanning</div>
-        <div class="fac-sessions">
-          <span class="fac-session-dot">Retro</span>
-          <span class="fac-session-dot">S1</span>
-          <span class="fac-session-dot">S4</span>
-        </div>
-      </div>
-      <div class="fac-card">
-        <div class="fac-avatar" aria-hidden="true">SR</div>
-        <div class="fac-name">Sarah Radam</div>
-        <div class="fac-role">MTIT BoI Consultant<br>Strategic Planning</div>
-        <div class="fac-sessions">
-          <span class="fac-session-dot">Rationale</span>
-          <span class="fac-session-dot">Retro</span>
-        </div>
-      </div>
-      <div class="fac-card">
-        <div class="fac-avatar" aria-hidden="true">SA</div>
-        <div class="fac-name">Shamera A. Abobakar</div>
-        <div class="fac-role">Director II<br>MTIT–BoI</div>
-        <div class="fac-sessions">
-          <span class="fac-session-dot">Closing</span>
-        </div>
-      </div>
+      <div class="fac-card"><div class="fac-avatar">FA</div><div class="fac-name">Farserina A. Mohammad</div><div class="fac-role">Minister · MTIT–BARMM</div><div class="fac-sessions"><span class="fac-session-dot">Opening</span></div></div>
+      <div class="fac-card"><div class="fac-avatar">RA</div><div class="fac-name">Rosslaini Alonto Sinarimbo</div><div class="fac-role">Director General · MTIT</div><div class="fac-sessions"><span class="fac-session-dot">Opening</span></div></div>
+      <div class="fac-card"><div class="fac-avatar">AS</div><div class="fac-name">Alvin Silva</div><div class="fac-role">Lead Consultant · SPP + SSP Developer</div><div class="fac-sessions"><span class="fac-session-dot">Masterclass</span><span class="fac-session-dot">S2</span><span class="fac-session-dot">S3</span><span class="fac-session-dot">S4</span><span class="fac-session-dot">SPP</span><span class="fac-session-dot">SSP</span></div></div>
+      <div class="fac-card"><div class="fac-avatar">AU</div><div class="fac-name">Addie Unsi</div><div class="fac-role">MTIT BoI Consultant · Env. Scanning</div><div class="fac-sessions"><span class="fac-session-dot">Retro</span><span class="fac-session-dot">S1</span><span class="fac-session-dot">S4</span></div></div>
+      <div class="fac-card"><div class="fac-avatar">SR</div><div class="fac-name">Sarah Radam</div><div class="fac-role">MTIT BoI Consultant · Strategic Planning</div><div class="fac-sessions"><span class="fac-session-dot">Rationale</span><span class="fac-session-dot">Retro</span></div></div>
+      <div class="fac-card"><div class="fac-avatar">SA</div><div class="fac-name">Shamera A. Abobakar</div><div class="fac-role">Director II · MTIT–BoI</div><div class="fac-sessions"><span class="fac-session-dot">Closing</span></div></div>
     </div>
   </div>
 
 </div><!-- /page -->
 
-<!-- FOOTER -->
-<footer role="contentinfo">
+<footer>
   <div class="footer-inner">
-    <div class="footer-logo">
-      <img src="https://mtit.bangsamoro.gov.ph/wp-content/uploads/2024/04/MTIT-HEADER-2024.png" alt="MTIT BARMM" onerror="this.style.display='none'">
+    <div class="footer-logo"><img src="https://mtit.bangsamoro.gov.ph/wp-content/uploads/2024/04/MTIT-HEADER-2024.png" alt="MTIT BARMM" onerror="this.style.display='none'"></div>
+    <div class="footer-platform-row">
+      <a href="https://strat-planner-pro.asilvainnovations.com" target="_blank" rel="noopener" class="footer-platform fp-spp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Strat Planner Pro</a>
+      <a href="#platforms" class="footer-platform fp-ssp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14"/></svg>Systems Strat Pro</a>
     </div>
     <div class="footer-bottom">
       <p>© 2026 Ministry of Trade, Investments and Tourism · Bangsamoro Autonomous Region in Muslim Mindanao</p>
-      <p style="margin-top:.35rem;"><span>The Emerging Bangsamoro</span> — Workshop Resources Portal · Architecting a Hub for Resilient and Ethical Growth</p>
+      <p style="margin-top:.3rem;"><span>The Emerging Bangsamoro</span> — Workshop Resources Portal · Strat Planner Pro + Systems Strat Pro · asilvainnovations.com</p>
     </div>
   </div>
 </footer>
 
 <script>
-// Fade-in on scroll
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}});
-},{threshold:.07,rootMargin:'0px 0px -30px 0px'});
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}});},{threshold:.06,rootMargin:'0px 0px -30px 0px'});
 document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
-
-// Nav scroll shadow
-window.addEventListener('scroll',()=>{
-  document.querySelector('nav').style.boxShadow=window.scrollY>40?'0 4px 30px rgba(0,0,0,.45)':'';
-},{passive:true});
-
-// Resource card button — show register modal prompt
-document.querySelectorAll('.res-access-btn:not(.locked)').forEach(btn=>{
-  btn.addEventListener('click',e=>{
-    e.preventDefault();
-    document.getElementById('register').scrollIntoView({behavior:'smooth',block:'start'});
-  });
-});
+window.addEventListener('scroll',()=>{document.querySelector('nav').style.boxShadow=window.scrollY>40?'0 4px 30px rgba(0,0,0,.45)':'';},{passive:true});
+document.querySelectorAll('.res-access-btn:not(.locked)').forEach(btn=>{btn.addEventListener('click',e=>{e.preventDefault();document.getElementById('register').scrollIntoView({behavior:'smooth',block:'start'});});});
+// animate MEL progress bars on scroll
+const barObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.pap-prog,.health-metric-bar').forEach(b=>{const w=b.style.width;b.style.width='0';setTimeout(()=>{b.style.width=w;},120);});barObs.unobserve(e.target);}});},{threshold:.25});
+document.querySelectorAll('.mel-preview,.health-widget').forEach(el=>{if(el)barObs.observe(el);});
 </script>
 </body>
 </html>
