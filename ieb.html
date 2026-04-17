@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Economic Roadmap: BARMM 2026–2036</title>
+    
+    <!-- Fonts from index.css -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Roboto+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Config based on index.css variables -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                        condensed: ['Roboto Condensed', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0EA5E9', // Approximate slate-500/blue equivalent
+                        secondary: '#F1F5F9',
+                        background: '#ffffff',
+                        foreground: '#0f172a',
+                        border: '#e2e8f0',
+                    },
+                    boxShadow: {
+                        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Base styles consistent with index.css */
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.4);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #1e293b; /* slate-800 */
+            background-color: #f8fafc; /* slate-50 */
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Liquid Glass Card Style */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+            border-radius: 1rem;
+        }
+
+        .citation {
+            color: #3b82f6;
+            cursor: help;
+            position: relative;
+            border-bottom: 1px dashed #3b82f6;
+        }
+
+        .citation:hover::after {
+            content: attr(data-ref);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: max-content;
+            max-width: 300px;
+            background: #1e293b;
+            color: white;
+            padding: 0.5rem;
+            border-radius: 0.375rem;
+            font-size: 0.8rem;
+            z-index: 50;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity var(--transition-base);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .citation:hover::after {
+            opacity: 1;
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white; }
+            .glass-card { box-shadow: none; border: 1px solid #ddd; }
+        }
+    </style>
+</head>
+<body class="min-h-screen pb-20">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm">AS</span>
+                <span class="font-display font-bold text-xl tracking-tight text-slate-800">Strategic Insights</span>
+            </div>
+            <nav class="hidden md:flex gap-6 text-sm font-medium text-slate-600">
+                <a href="#overview" class="hover:text-primary transition-colors">Overview</a>
+                <a href="#framework" class="hover:text-primary transition-colors">Framework</a>
+                <a href="#governance" class="hover:text-primary transition-colors">Governance</a>
+                <a href="#conclusion" class="hover:text-primary transition-colors">Conclusion</a>
+            </nav>
+            <button onclick="window.print()" class="no-print px-4 py-2 text-xs font-semibold text-white bg-slate-900 rounded-lg hover:bg-slate-800 transition-all shadow-md flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" /></svg>
+                Print Report
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12 max-w-5xl">
+        
+        <!-- Title Section -->
+        <div class="mb-16 text-center space-y-4">
+            <div class="inline-block px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-bold uppercase tracking-wider mb-2">Strategic Planning Paper • 2026</div>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight">Reimagining BARMM’s Economic Sectors: Building an Integrated Investment Roadmap (2026–2036)</h1>
+            <p class="text-lg text-slate-600 font-medium">By Alvin M. Silva</p>
+            <div class="flex items-center justify-center gap-2 text-slate-400 text-sm">
+                <span>Updated: April 2026</span>
+                <span>&bull;</span>
+                <span>Regional Development Strategy</span>
+            </div>
+        </div>
+
+        <!-- Executive Summary -->
+        <div class="glass-card p-8 mb-12 no-print">
+            <h2 class="text-2xl font-bold text-slate-800 mb-4 flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                Executive Overview
+            </h2>
+            <p class="text-slate-600 mb-4">This paper outlines a systemic transformation of the Bangsamoro Autonomous Region in Muslim Mindanao (BARMM) economy from a fragmented sectoral approach to an integrated ecosystem model. By aligning foundational industries with transformative value creation and robust enablers, BARMM can achieve sustainable growth anchored in moral governance.</p>
+            <ul class="space-y-2 text-slate-700 list-disc pl-5">
+                <li><strong>Growth:</strong> Economy grew 2.7% in 2024 despite structural challenges.</li>
+                <li><strong>Momentum:</strong> Registered ₱5 billion in investments in 2025 with strong focus on Halal and Agriculture.</li>
+                <li><strong>Strategy:</strong> Adoption of Systems Thinking to break silos between Agriculture, Industry, Finance, and Infrastructure.</li>
+                <li><strong>Governance:</strong> Moral Governance positioned as the operating system for all economic activities.</li>
+            </ul>
+        </div>
+
+        <!-- Article Body -->
+        <article class="prose prose-slate max-w-none prose-headings:font-montserrat prose-a:text-primary">
+            
+            <!-- Understanding Landscape -->
+            <section id="overview" class="mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 mb-6">Understanding BARMM’s Current Economic Landscape</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    <div class="glass-card p-6 border-l-4 border-l-emerald-500">
+                        <h3 class="font-bold text-lg mb-2">Growth Trajectory</h3>
+                        <p class="text-slate-600 mb-2">BARMM’s economy grew by <span class="font-bold text-emerald-700">2.7% in 2024</span>. While modest compared to national averages, this reflects progress amidst historical fragility and underinvestment.</p>
+                        <small class="text-xs text-slate-400">Source: <span class="cursor-help citation" data-ref="Philippine Statistics Authority (2025)">[1]</span></small>
+                    </div>
+                    
+                    <div class="glass-card p-6 border-l-4 border-l-blue-500">
+                        <h3 class="font-bold text-lg mb-2">Sector Composition</h3>
+                        <ul class="text-sm text-slate-600 space-y-1">
+                            <li><strong>Services:</strong> 42%</li>
+                            <li><strong>Agriculture/Forestry/Fisheries:</strong> 32.4%</li>
+                            <li><strong>Industry:</strong> 25.6%</li>
+                        </ul>
+                        <small class="text-xs text-slate-400 mt-2 block">Source: <span class="cursor-help citation" data-ref="PSA Regional Statistics (2025)">[1]</span></small>
+                    </div>
+                </div>
+
+                <p class="text-slate-600 mb-4">The contraction of agriculture by <strong>4.2%</strong> and mining by <strong>8.7%</strong> highlights vulnerabilities in resource-based sectors, signaling that current siloed operations are insufficient for long-term stability.</p>
+
+                <h3 class="text-xl font-bold text-slate-800 mt-8 mb-4">Investment Momentum</h3>
+                <p class="text-slate-600 mb-4">Despite structural constraints, investment momentum is strong. In 2025, BARMM achieved <strong>₱5 billion</strong> in total registered investments, generating over <strong>2,000 jobs</strong>, surpassing its annual targets within the first quarter via the Board of Investments ([<span class="cursor-help citation" data-ref="SunStar Publishing Inc. (2025)">[2]</span>] & [<span class="cursor-help citation" data-ref="BARMM Official Website (2025)">[3]</span>]).</p>
+                
+                <p class="text-slate-600">Critically, approvals concentrated in high-impact areas like healthcare, infrastructure, and the halal industry reflect a strategic pivot toward comparative advantages. The approval of a <strong>₱133.91 billion Annual Investment Program</strong> for 2026 underscores institutional commitment to development ([<span class="cursor-help citation" data-ref="Daily Tribune (2025)">[5]</span>]).</p>
+            </section>
+
+            <!-- Why Reorganization Matters -->
+            <section class="glass-card p-8 mb-12 bg-slate-50/50">
+                <h2 class="text-3xl font-bold text-slate-900 mb-6">Why Reorganization of Economic Sectors Matters</h2>
+                <p class="text-slate-600 mb-4">Traditional planning treats sectors as isolated units (Agriculture vs. Industry vs. Finance). However, operational bottlenecks exist when agricultural output outpaces logistics or when tourism lacks supporting infrastructure ([<span class="cursor-help citation" data-ref="Silva (2025)">[Systemic Analysis]</span>]).</p>
+                <p class="text-slate-600">Systems thinking is required to shift focus from isolated outputs to <strong>flows, relationships, and feedback loops</strong>.</p>
+            </section>
+
+            <!-- Ecosystem Framework -->
+            <section id="framework" class="mb-16 space-y-8">
+                <h2 class="text-3xl font-bold text-slate-900 mb-8">The New Ecosystem-Based Sector Framework</h2>
+                
+                <!-- Image Placeholder -->
+                <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-lg border border-slate-200 mb-12 group">
+                    <img src="https://paibpwwszlfpsyytdnal.databasepad.com/storage/v1/object/public/pending-tasks/public/Investment%20ecosystem.png" alt="BARMM Investment Ecosystem Diagram" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute bottom-4 left-4 bg-black/70 backdrop-blur text-white px-3 py-1 rounded text-xs">Figure 1. Integrated Investment Ecosystem Model</div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Foundations -->
+                    <div class="glass-card p-6 hover:border-l-primary transition-all">
+                        <div class="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center mb-4">🌾</div>
+                        <h3 class="font-bold text-lg mb-2 text-slate-800">Foundations</h3>
+                        <p class="text-sm text-slate-600 mb-2"><strong>Agriculture, Energy, Environment</strong></p>
+                        <p class="text-xs text-slate-500 leading-relaxed">Provide raw materials and ecological stability. Supports BINHI and ISDA initiatives but requires modernization to reverse decline.</p>
+                    </div>
+
+                    <!-- Transformers -->
+                    <div class="glass-card p-6 hover:border-l-blue-500 transition-all">
+                        <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center mb-4">⚙️</div>
+                        <h3 class="font-bold text-lg mb-2 text-slate-800">Transformers</h3>
+                        <p class="text-sm text-slate-600 mb-2"><strong>Halal Industry, Engineering</strong></p>
+                        <p class="text-xs text-slate-500 leading-relaxed">Convert resources into higher-value products. Aligns with the <em>Bangsamoro Halal Industry Development Plan (2025–2030)</em> to target global markets (<span class="cursor-help citation" data-ref="Bangsamoro Official Web (2025)">[7]</span>).</p>
+                    </div>
+
+                    <!-- Enablers -->
+                    <div class="glass-card p-6 hover:border-l-purple-500 transition-all">
+                        <div class="w-12 h-12 rounded-lg bg-purple-100 flex items-center justify-center mb-4">🏗️</div>
+                        <h3 class="font-bold text-lg mb-2 text-slate-800">Enablers</h3>
+                        <p class="text-sm text-slate-600 mb-2"><strong>Infrastructure, Logistics</strong></p>
+                        <p class="text-xs text-slate-500 leading-relaxed">Backbone reducing costs and improving market access. Critical for scaling agriculture and tourism.</p>
+                    </div>
+
+                    <!-- Connectors -->
+                    <div class="glass-card p-6 hover:border-l-orange-500 transition-all">
+                        <div class="w-12 h-12 rounded-lg bg-orange-100 flex items-center justify-center mb-4">🌍</div>
+                        <h3 class="font-bold text-lg mb-2 text-slate-800">Connectors</h3>
+                        <p class="text-sm text-slate-600 mb-2"><strong>Tourism, BIMP-EAGA</strong></p>
+                        <p class="text-xs text-slate-500 leading-relaxed">Link region to external markets. Tourism already attracted >558k visitors, indicating scalability potential (<span class="cursor-help citation" data-ref="PIA (2025)">[8]</span>).</p>
+                    </div>
+
+                     <!-- Financiers -->
+                     <div class="glass-card p-6 hover:border-l-indigo-500 transition-all">
+                        <div class="w-12 h-12 rounded-lg bg-indigo-100 flex items-center justify-center mb-4">💰</div>
+                        <h3 class="font-bold text-lg mb-2 text-slate-800">Financiers</h3>
+                        <p class="text-sm text-slate-600 mb-2"><strong>Islamic Banking</strong></p>
+                        <p class="text-xs text-slate-500 leading-relaxed">Lifeblood of the ecosystem. Islamic finance roadmap ensures ethical funding aligned with local values (<span class="cursor-help citation" data-ref="BARMM Official Web (2025)">[9]</span>).</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Moral Governance -->
+            <section id="governance" class="mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 mb-6">Moral Governance as the Core Operating System</h2>
+                <div class="glass-card p-8 border border-purple-200 bg-purple-50/30">
+                    <div class="flex items-start gap-4">
+                        <div class="p-3 bg-white rounded-xl shadow-sm hidden sm:block">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-3">Embedded Infrastructure</h3>
+                            <p class="text-slate-600 mb-4">Moral governance is not a separate component but the <strong>operating system</strong> underlying all sectors. It emphasizes transparency, inclusivity, sustainability, and peace-building.</p>
+                            <p class="text-slate-600 text-sm">Without it, economic strategies fail due to lack of legitimacy. With it, governance acts as the functional foundation (roots) nourishing the entire tree of economic activity.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section id="faq" class="mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
+                <div class="space-y-4">
+                    <div class="glass-card p-6">
+                        <h4 class="font-bold text-slate-800 mb-2">Why is BARMM reorganizing its economic sectors?</h4>
+                        <p class="text-slate-600 text-sm">To move from fragmented planning to an integrated system that improves efficiency, investment impact, and long-term growth.</p>
+                    </div>
+                    <div class="glass-card p-6">
+                        <h4 class="font-bold text-slate-800 mb-2">What makes BARMM's framework unique?</h4>
+                        <p class="text-slate-600 text-sm">The integration of <strong>moral governance</strong> as the core operating system guiding all economic activities, ensuring social cohesion and environmental integrity.</p>
+                    </div>
+                    <div class="glass-card p-6">
+                        <h4 class="font-bold text-slate-800 mb-2">How does Islamic finance support the economy?</h4>
+                        <p class="text-slate-600 text-sm">It provides ethical, inclusive funding aligned with local values, enabling investments across sectors where conventional banking may face cultural resistance.</p>
+                    </div>
+                </div>
+            </section>
+
+        </article>
+
+        <!-- References Section -->
+        <section id="references" class="mt-12 pt-12 border-t border-slate-200">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                References
+            </h2>
+            <div class="space-y-3 text-sm text-slate-600 pl-4 border-l-2 border-slate-200">
+                <ol class="list-decimal ml-4 space-y-2 marker:text-slate-400">
+                    <li>Philippine Statistics Authority. (2025). <em>BARMM's economy expands by 2.7 percent in 2024</em>. https://rssobarmm.psa.gov.ph/content/barmms-economy-expands-27-percent-2024</li>
+                    <li>SunStar Publishing Inc. (2025). <em>Barmm hits ₱5B in 2025 investment driven by new projects in Lanao del Sur</em>. SunStar Business. https://www.sunstar.com.ph/davao/business/barmm-hits-5b-in-2025-investment-driven-by-new-projects-in-lanao-del-sur</li>
+                    <li>BARMM Official Website. (2025). <em>BARMM hits P3.2B in investment approvals, surpasses 2025 target in first quarter</em>. https://bangsamoro.gov.ph/news/latest-news/barmm-hits-p3-2b-in-investment-approvals-surpasses-2025-target-in-first-quarter/</li>
+                    <li>Cayon, M. (2025, June 12). <em>Investments pour into BARMM</em>. BusinessMirror. https://businessmirror.com.ph/2025/06/12/investments-pour-into-barmm/</li>
+                    <li>Daily Tribune. (2025, May 9). <em>BARMM greenlights development plan</em>. Philippine Daily Inquirer. https://tribune.net.ph/2025/05/09/barmm-greenlights-development-plan</li>
+                    <li>BARMM Official Website. (2025). <em>Mas Matatag na Kabuhayan: BARMM Gov't unveils major livelihood, investment drive for economic growth</em>. https://bangsamoro.gov.ph/news/latest-news/mas-matatag-na-kabuhayan-barmm-govt-unveils-major-livelihood-investment-drive-for-economic-growth/</li>
+                    <li>BARMM Official Website. (2025). <em>BARMM unveils roadmap to position Bangsamoro as PH Halal industry hub</em>. https://bangsamoro.gov.ph/news/latest-news/barmm-unveils-roadmap-to-position-bangsamoro-as-ph-halal-industry-hub/</li>
+                    <li>Philippine Information Agency. (2025). <em>BARMM seen as potential investment hub, surpassing 42% of its investment target at PhP3.5B</em>. https://pia.gov.ph/press-release/barmm-seen-as-potential-investment-hub-surpassing-42-of-its-investment-target-at-php3-5b/</li>
+                    <li>BARMM Official Website. (2025). <em>Islamic finance roadmap sets vision for BARMM's economic growth</em>. https://bangsamoro.gov.ph/news/latest-news/islamic-finance-roadmap-sets-vision-for-barmms-economic-growth/</li>
+                </ol>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 py-12 mt-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="font-bold text-lg text-white mb-2">Strat Planner Pro</p>
+            <p class="text-sm opacity-70 mb-4">Precision Planning for Ambitious Organizations</p>
+            <p class="text-xs opacity-50">© 2026 ASilva Innovations. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
