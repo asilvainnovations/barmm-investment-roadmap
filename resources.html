@@ -33,11 +33,26 @@ nav{background:rgba(2,44,34,.97);backdrop-filter:blur(16px);position:sticky;top:
 .nav-links a:hover::after{width:100%;}
 .nav-cta{background:var(--gold-grad);color:var(--dark-green)!important;padding:.5rem 1.1rem;border-radius:.4rem;font-weight:700!important;font-size:.77rem!important;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;}
 
-/* ===== HERO ===== */
-.hero{background:linear-gradient(160deg,var(--dark-green) 0%,#034030 50%,#0a1628 100%);color:white;padding:6rem 2rem 5rem;text-align:center;position:relative;overflow:hidden;}
+/* ===== HERO (MODIFIED WITH BANNER IMAGE) ===== */
+.hero{
+  /* Added the background image URL here with a dark overlay for readability */
+  background: linear-gradient(rgba(2, 44, 34, 0.85), rgba(10, 22, 40, 0.9)), 
+              url('https://paibpwwszlfpsyytdnal.databasepad.com/storage/v1/object/public/pending-tasks/public/Investment%20ecosystem.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Optional: adds a parallax effect */
+  color:white;
+  padding:8rem 2rem 7rem;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
 .hero-inner{max-width:860px;margin:0 auto;position:relative;z-index:1;}
 .hero h1{font-family:'Cinzel',serif;font-size:clamp(1.8rem,4vw,3.2rem);font-weight:700;line-height:1.2;margin-bottom:.75rem;background:var(--gold-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .hero-sub{font-size:1.1rem;color:rgba(255,255,255,.75);max-width:640px;margin:0 auto 2.5rem;}
+.hero-eyebrow {display: flex; align-items: center; justify-content: center; gap: 0.5rem; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; color: var(--gold); margin-bottom: 1rem;}
+.hero-eyebrow svg {width: 20px; height: 20px;}
+.hero-theme {display: inline-block; padding: 0.4rem 1rem; border: 1px solid var(--gold-border); border-radius: 2rem; font-size: 0.75rem; color: var(--gold-light);}
 
 /* ===== RESOURCE GRID ===== */
 .page{max-width:1300px;margin:0 auto;padding:4rem 2rem;}
@@ -106,8 +121,6 @@ nav{background:rgba(2,44,34,.97);backdrop-filter:blur(16px);position:sticky;top:
     <div class="gold-div"></div>
     <p>Move beyond superficial analysis. Use the Iceberg Model and Causal Loop Diagrams to identify the root structures of growth.</p>
   </section>
-
-  
 
   <div class="resources-grid">
     <article class="res-card">
