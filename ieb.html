@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Economic Roadmap: BARMM 2026–2036</title>
+    <title>BEIE Framework: Bangsamoro Investment Ecosystem 2026–2035</title>
 
     <!-- Fonts from index.css -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -133,6 +133,17 @@
             background: linear-gradient(90deg, transparent, #cbd5e1, transparent);
             margin: 3rem 0;
         }
+
+        .cluster-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
     </style>
 <base target="_blank">
 </head>
@@ -142,32 +153,32 @@
     <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <span class="w-8 h-8 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm">AS</span>
-                <span class="font-display font-bold text-xl tracking-tight text-slate-800">Strategic Insights</span>
+                <span class="w-8 h-8 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-sm">BEIE</span>
+                <span class="font-display font-bold text-xl tracking-tight text-slate-800">Bangsamoro Investment Ecosystem</span>
             </div>
             <nav class="hidden md:flex gap-6 text-sm font-medium text-slate-600">
-                <a href="#overview" class="hover:text-primary transition-colors">Overview</a>
-                <a href="#framework" class="hover:text-primary transition-colors">Framework</a>
-                <a href="#governance" class="hover:text-primary transition-colors">Governance</a>
-                <a href="#conclusion" class="hover:text-primary transition-colors">Conclusion</a>
+                <a href="#overview" class="hover:text-primary transition-colors">Framework</a>
+                <a href="#operating-system" class="hover:text-primary transition-colors">Operating System</a>
+                <a href="#clusters" class="hover:text-primary transition-colors">Five Clusters</a>
+                <a href="#synthesis" class="hover:text-primary transition-colors">Synthesis</a>
             </nav>
             <button onclick="window.print()" class="no-print px-4 py-2 text-xs font-semibold text-white bg-slate-900 rounded-lg hover:bg-slate-800 transition-all shadow-md flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" /></svg>
-                Print Report
+                Print Framework
             </button>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main class="container mx-auto px-6 py-12 max-w-5xl">
+    <main class="container mx-auto px-6 py-12 max-w-6xl">
 
         <!-- Title Section -->
         <div class="mb-12 text-center space-y-4">
-            <div class="inline-block px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-bold uppercase tracking-wider mb-2">Strategic Planning Paper • 2026</div>
-            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight">Reimagining BARMM's Economic Sectors: Building an Integrated Investment Roadmap (2026–2036)</h1>
-            <p class="text-lg text-slate-600 font-medium">By Alvin M. Silva</p>
+            <div class="inline-block px-3 py-1 rounded-full bg-gradient-to-r from-emerald-50 to-cyan-50 text-emerald-700 text-xs font-bold uppercase tracking-wider mb-2">Systems-Based Investment Framework • 2026–2035</div>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight">Bangsamoro Economic & Investment Ecosystem (BEIE) Framework</h1>
+            <p class="text-lg text-slate-600 font-medium max-w-3xl mx-auto">Reframing investment analysis from isolated sectoral silos toward an integrated, relational understanding of how economic clusters interact and reinforce each other—anchored by Moral Governance</p>
             <div class="flex items-center justify-center gap-2 text-slate-400 text-sm">
-                <span>Updated: April 2026</span>
+                <span>Updated: June 2026</span>
                 <span>&bull;</span>
                 <span>Regional Development Strategy</span>
             </div>
@@ -175,264 +186,501 @@
 
         <!-- Wide Banner Image -->
         <div class="mb-12 relative group">
-            <img src="https://paibpwwszlfpsyytdnal.databasepad.com/storage/v1/object/public/pending-tasks/public/Bangsamoro%20Economic%20and%20Investment%20Ecosystem.png" 
-                 alt="Bangsamoro Economic and Investment Ecosystem" 
+            <img src="https://paibpwwszlfpsyytdnal.databasepad.com/storage/v1/object/public/barmm-images/public/Bangsamoro%20Economic%20and%20%20Investment%20Ecosystem.png" 
+                 alt="Bangsamoro Economic and Investment Ecosystem Framework" 
                  class="hero-banner">
             <div class="absolute bottom-4 left-4 bg-black/70 backdrop-blur text-white px-4 py-2 rounded-lg text-sm font-medium">
-                Figure 1. Integrated Investment Ecosystem Model
+                Figure 1. BEIE Framework: Five Functional Clusters with Cross-Cutting Operating System
             </div>
         </div>
 
         <!-- Article Body -->
         <article class="prose prose-slate max-w-none prose-headings:font-montserrat prose-a:text-primary">
 
-            <!-- Recent Growth Trends -->
+            <!-- Framework Overview -->
             <section id="overview" class="mb-16">
-                <h2 class="text-3xl font-bold text-slate-900 mb-6">Recent Growth Trends and Investment Performance</h2>
+                <h2 class="text-3xl font-bold text-slate-900 mb-6">A Living Systems Lens for Investment</h2>
 
-                <p class="text-slate-600 mb-6">If you zoom out and look at the economic trajectory of BARMM, one thing becomes clear—it's a region in transition. Not quite a sleeping giant anymore, but not yet a fully awakened economic powerhouse either. According to the Philippine Statistics Authority, BARMM's economy grew by <strong>2.7% in 2024</strong>, with services taking the lead at 42% of total economic output, followed by agriculture and industry. That mix alone tells a story: while traditional sectors still matter, services and emerging industries are beginning to reshape the economic fabric.</p>
+                <p class="text-slate-600 mb-6">The <strong>Bangsamoro Economic and Investment Ecosystem (BEIE) Framework</strong> moves beyond traditional environmental scanning toward an integrated understanding of how political, economic, social, environmental, and technological factors interact within and across five functional clusters. This is not just a planning tool—it's a sensing architecture for deep presence.</p>
 
-                <p class="text-slate-600 mb-6">Now here's where it gets interesting. Investment momentum is quietly accelerating. In just the first quarter of 2025, BARMM secured <strong>₱3.2 billion</strong> in investments, already surpassing its full-year target. By late 2025, total investments had climbed to around <strong>₱5 billion</strong>, generating over <strong>2,000 jobs</strong>. These aren't just numbers—they're signals. Signals that confidence is growing, that capital is starting to trust the region's direction, and that something foundational is shifting.</p>
+                <p class="text-slate-600 mb-6">Deep presence requires sensing not only what is visible—data, indicators, trends—but also what is emergent: relationships, feedback loops, cultural currents, and governance rhythms. The framework organizes BARMM's economic landscape into interconnected clusters that feed, enable, and amplify each other.</p>
 
-                <div class="glass-card p-6 border-l-4 border-l-amber-500 mb-6">
-                    <p class="text-slate-700 font-medium mb-2">⚠️ The Challenge Ahead</p>
-                    <p class="text-slate-600 text-sm">But here's the catch: much of this investment is still clustered in familiar sectors like agriculture and basic services. Without a more integrated framework, these gains risk becoming fragmented. Growth without structure can feel like building a house without a blueprint—impressive at first glance, but unstable over time.</p>
+                <div class="glass-card p-6 border-l-4 border-l-emerald-500 mb-6">
+                    <p class="text-slate-700 font-medium mb-2">🎯 The Core Insight</p>
+                    <p class="text-slate-600 text-sm">Investment opportunities lie not in isolated sectors but at the <strong>intersections</strong>—where agriculture meets logistics, where halal meets exports, where finance meets infrastructure. The Cross-Cutting Operating System determines whether all clusters function as effective, equitable, continuous, and sustainable systems.</p>
                 </div>
             </section>
 
             <div class="section-divider"></div>
 
-            <!-- Structural Challenges -->
-            <section class="mb-16">
-                <h2 class="text-3xl font-bold text-slate-900 mb-6">Structural Challenges and Opportunities</h2>
+            <!-- Cross-Cutting Operating System -->
+            <section id="operating-system" class="mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 mb-6">Cross-Cutting Operating System: The Foundation of All Clusters</h2>
 
-                <p class="text-slate-600 mb-6">BARMM's economic DNA is unique. It's rich in natural resources, strategically located near major Southeast Asian markets, and culturally positioned to tap into the global halal economy. Yet, it also faces structural constraints—limited infrastructure, uneven human capital development, and historical underinvestment.</p>
-
-                <p class="text-slate-600 mb-6">Agriculture, for instance, still accounts for a large share of employment but experienced contraction in recent years. That's not necessarily a failure—it's a signal that the sector needs transformation, not abandonment. Meanwhile, infrastructure gaps continue to limit logistics efficiency, which in turn affects export competitiveness.</p>
-
-                <p class="text-slate-600">The opportunity lies in reframing these challenges as interconnected systems rather than isolated problems. Instead of asking, "How do we fix agriculture?" the better question is: "How does agriculture connect to industry, logistics, finance, and global markets?" That shift in thinking is where real transformation begins.</p>
-            </section>
-
-            <div class="section-divider"></div>
-
-            <!-- Systems-Based Reframing -->
-            <section class="mb-16">
-                <h2 class="text-3xl font-bold text-slate-900 mb-6">Why a Systems-Based Reframing is Needed</h2>
-
-                <h3 class="text-xl font-bold text-slate-800 mt-8 mb-4">Limitations of Traditional Sectoral Categorization</h3>
-                <p class="text-slate-600 mb-6">Traditional investment lists—like agriculture, tourism, infrastructure—tend to treat sectors as standalone silos. It's neat, organized, and honestly… misleading. Because in reality, no sector operates in isolation. Agriculture depends on logistics. Tourism relies on infrastructure. Industry needs energy and skilled labor.</p>
-
-                <p class="text-slate-600 mb-6">When sectors are planned in isolation, you get mismatches. You build farms without processing facilities. You develop tourism sites without transport access. You invest in exports without strengthening supply chains. It's like assembling puzzle pieces without checking if they actually fit together.</p>
-
-                <h3 class="text-xl font-bold text-slate-800 mt-8 mb-4">The Case for Interdependence and Integration</h3>
-                <p class="text-slate-600 mb-6">Think of BARMM's economy as an ecosystem rather than a checklist. In an ecosystem, every component feeds into another. Remove one, and the entire system feels the impact.</p>
-
-                <div class="glass-card p-6 bg-slate-50/50 mb-6">
-                    <p class="text-slate-700 font-medium mb-3">For example:</p>
-                    <ul class="space-y-2 text-slate-600 list-disc pl-5">
-                        <li>Agriculture feeds raw materials into industry.</li>
-                        <li>Industry creates products that logistics distributes.</li>
-                        <li>Logistics enables exports.</li>
-                        <li>Exports generate income that flows back into communities.</li>
-                    </ul>
-                </div>
-
-                <p class="text-slate-600">This circular dynamic is already happening—but often inefficiently. A systems-based framework doesn't create new sectors; it simply organizes them in a way that maximizes synergy.</p>
-            </section>
-
-            <div class="section-divider"></div>
-
-            <!-- Moral Governance -->
-            <section id="governance" class="mb-16">
-                <h2 class="text-3xl font-bold text-slate-900 mb-6">Moral Governance as the Core Operating System</h2>
-
-                <h3 class="text-xl font-bold text-slate-800 mt-8 mb-4">Embedding Values into Economic Planning</h3>
-                <p class="text-slate-600 mb-6">Here's where BARMM diverges from typical development models. At the heart of its investment strategy is moral governance—not as a slogan, but as a guiding principle. This isn't just about ethics; it's about trust. And trust, in economic terms, is currency.</p>
-
-                <p class="text-slate-600 mb-6">Investors don't just look at returns—they look at stability, transparency, and predictability. When governance is rooted in accountability and inclusivity, it reduces risk. And when risk goes down, investment goes up. Simple, but powerful.</p>
-
-                <h3 class="text-xl font-bold text-slate-800 mt-8 mb-4">Transparency, Inclusivity, and Sustainability</h3>
-                <div class="glass-card p-8 border border-purple-200 bg-purple-50/30 mb-6">
-                    <p class="text-slate-600 mb-4">Moral governance acts like an operating system—it runs quietly in the background but determines how everything functions. It ensures that:</p>
-                    <ul class="space-y-2 text-slate-700 list-disc pl-5">
-                        <li>Investments are inclusive, not extractive.</li>
-                        <li>Growth is sustainable, not short-term.</li>
-                        <li>Policies are transparent, not arbitrary.</li>
-                    </ul>
-                    <p class="text-slate-600 mt-4">In a region with a complex history, this approach isn't optional—it's essential.</p>
-                </div>
-            </section>
-
-            <div class="section-divider"></div>
-
-            <!-- Ecosystem Framework -->
-            <section id="framework" class="mb-16 space-y-8">
-                <h2 class="text-3xl font-bold text-slate-900 mb-8">The New Ecosystem-Based Sector Framework</h2>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Foundations -->
-                    <div class="glass-card p-6 hover:border-l-emerald-500 border-l-4 transition-all">
-                        <div class="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center mb-4 text-2xl">🌾</div>
-                        <h3 class="font-bold text-lg mb-2 text-slate-800">Foundations – The Resource Base</h3>
-                        <p class="text-sm text-slate-600 mb-2"><strong>Agriculture, Fishery, Forestry, and Energy</strong></p>
-                        <p class="text-xs text-slate-500 leading-relaxed mb-3">These sectors are the backbone of BARMM's economy. They provide food, raw materials, and energy—the essentials that everything else depends on. Recent investments in bamboo, abaca, and halal livestock production highlight the region's natural comparative advantage.</p>
-                        <p class="text-xs text-slate-600 italic">But being resource-rich isn't enough. Without value addition, raw materials remain low-value exports.</p>
-                    </div>
-
-                    <!-- Transformers -->
-                    <div class="glass-card p-6 hover:border-l-blue-500 border-l-4 transition-all">
-                        <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center mb-4 text-2xl">⚙️</div>
-                        <h3 class="font-bold text-lg mb-2 text-slate-800">Transformers – Engines of Value Creation</h3>
-                        <p class="text-sm text-slate-600 mb-2"><strong>Industrial Development and Engineering</strong></p>
-                        <p class="text-xs text-slate-500 leading-relaxed mb-3">This is where the magic happens—where raw inputs become high-value outputs. Industrial facilities, engineering services, and manufacturing hubs transform agricultural products into export-ready goods.</p>
-                        <p class="text-xs text-slate-600 italic">The halal industry is BARMM's wildcard—and potentially its strongest competitive advantage.</p>
-                    </div>
-
-                    <!-- Enablers -->
-                    <div class="glass-card p-6 hover:border-l-purple-500 border-l-4 transition-all">
-                        <div class="w-12 h-12 rounded-lg bg-purple-100 flex items-center justify-center mb-4 text-2xl">🏗️</div>
-                        <h3 class="font-bold text-lg mb-2 text-slate-800">Enablers – Building the Support Systems</h3>
-                        <p class="text-sm text-slate-600 mb-2"><strong>Infrastructure, Logistics, and Connectivity</strong></p>
-                        <p class="text-xs text-slate-500 leading-relaxed mb-3">No matter how strong your production is, if you can't move goods efficiently, you're stuck. Infrastructure and logistics are the invisible engines of economic growth.</p>
-                        <p class="text-xs text-slate-500 leading-relaxed">Projects like the Polloc Freeport aim to transform BARMM into a regional trade gateway, particularly within the BIMP-EAGA corridor.</p>
-                    </div>
-
-                    <!-- Connectors -->
-                    <div class="glass-card p-6 hover:border-l-orange-500 border-l-4 transition-all">
-                        <div class="w-12 h-12 rounded-lg bg-orange-100 flex items-center justify-center mb-4 text-2xl">🌍</div>
-                        <h3 class="font-bold text-lg mb-2 text-slate-800">Connectors – Linking to Global Markets</h3>
-                        <p class="text-sm text-slate-600 mb-2"><strong>Export Activities, Trade Services, BIMP-EAGA</strong></p>
-                        <p class="text-xs text-slate-500 leading-relaxed mb-3">Exports are where local value meets global demand. BARMM's integration into the BIMP-EAGA network opens doors to regional trade and investment.</p>
-                        <p class="text-xs text-slate-600 italic">Think of it as BARMM plugging into a larger economic grid.</p>
-                    </div>
-
-                    <!-- Financiers -->
-                    <div class="glass-card p-6 hover:border-l-indigo-500 border-l-4 transition-all">
-                        <div class="w-12 h-12 rounded-lg bg-indigo-100 flex items-center justify-center mb-4 text-2xl">💰</div>
-                        <h3 class="font-bold text-lg mb-2 text-slate-800">Financiers – Powering Investment Flows</h3>
-                        <p class="text-sm text-slate-600 mb-2"><strong>Islamic Banking and Ethical Finance</strong></p>
-                        <p class="text-xs text-slate-500 leading-relaxed mb-3">Finance is the bloodstream of any economy. In BARMM, Islamic banking offers a unique advantage—aligning financial systems with cultural and religious values.</p>
-                        <p class="text-xs text-slate-500 leading-relaxed">This isn't just about compliance—it's about inclusion. When financial systems resonate with local communities, participation increases.</p>
-                    </div>
-
-                    <!-- Cross-Cutting -->
-                    <div class="glass-card p-6 hover:border-l-pink-500 border-l-4 transition-all">
-                        <div class="w-12 h-12 rounded-lg bg-pink-100 flex items-center justify-center mb-4 text-2xl">🔄</div>
-                        <h3 class="font-bold text-lg mb-2 text-slate-800">Cross-Cutting Drivers</h3>
-                        <p class="text-sm text-slate-600 mb-2"><strong>Tourism, Culture, Peace, Security</strong></p>
-                        <p class="text-xs text-slate-500 leading-relaxed mb-3">Tourism in BARMM isn't just about beaches or landscapes—it's about identity. Cultural heritage, Islamic traditions, and historical narratives create a distinct tourism offering.</p>
-                        <p class="text-xs text-slate-500 leading-relaxed">Without peace and security, investment stalls. Without environmental protection, growth becomes unsustainable.</p>
-                    </div>
-                </div>
-            </section>
-
-            <div class="section-divider"></div>
-
-            <!-- Interdependence -->
-            <section class="mb-16">
-                <h2 class="text-3xl font-bold text-slate-900 mb-6">Interdependence Across the Ecosystem</h2>
-
-                <p class="text-slate-600 mb-6">Here's the big picture: every cluster feeds into another. This isn't linear—it's circular.</p>
-
-                <div class="glass-card overflow-hidden mb-8">
-                    <table class="w-full text-sm text-left text-slate-600">
-                        <thead class="text-xs text-slate-700 uppercase bg-slate-50">
-                            <tr>
-                                <th class="px-6 py-4">Cluster</th>
-                                <th class="px-6 py-4">Role</th>
-                                <th class="px-6 py-4">Dependency</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="bg-white border-b hover:bg-slate-50">
-                                <td class="px-6 py-4 font-medium text-slate-900">Foundations</td>
-                                <td class="px-6 py-4">Provide resources</td>
-                                <td class="px-6 py-4">Depend on environment</td>
-                            </tr>
-                            <tr class="bg-white border-b hover:bg-slate-50">
-                                <td class="px-6 py-4 font-medium text-slate-900">Transformers</td>
-                                <td class="px-6 py-4">Add value</td>
-                                <td class="px-6 py-4">Depend on foundations</td>
-                            </tr>
-                            <tr class="bg-white border-b hover:bg-slate-50">
-                                <td class="px-6 py-4 font-medium text-slate-900">Enablers</td>
-                                <td class="px-6 py-4">Support systems</td>
-                                <td class="px-6 py-4">Depend on governance</td>
-                            </tr>
-                            <tr class="bg-white border-b hover:bg-slate-50">
-                                <td class="px-6 py-4 font-medium text-slate-900">Connectors</td>
-                                <td class="px-6 py-4">Market access</td>
-                                <td class="px-6 py-4">Depend on all sectors</td>
-                            </tr>
-                            <tr class="bg-white hover:bg-slate-50">
-                                <td class="px-6 py-4 font-medium text-slate-900">Financiers</td>
-                                <td class="px-6 py-4">Provide capital</td>
-                                <td class="px-6 py-4">Depend on trust</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <p class="text-slate-600">Every cluster feeds into another. This isn't linear—it's circular.</p>
-            </section>
-
-            <div class="section-divider"></div>
-
-            <!-- Strategic Implications -->
-            <section class="mb-16">
-                <h2 class="text-3xl font-bold text-slate-900 mb-6">Strategic Implications for Investors and Policymakers</h2>
+                <p class="text-slate-600 mb-6">The BEIE Framework positions <strong>Moral Governance, Resilience, Inclusivity, and Peace</strong> not as aspirational goals but as the operating system of accountability and stability. Workshop consultations consistently identified fragmented program delivery, weak inter-agency coordination, and narrative-driven investor hesitation as systemic bottlenecks. These are not sectoral failures—they are <em>operating system failures</em>.</p>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                    <div class="glass-card p-6">
-                        <h4 class="font-bold text-slate-800 mb-3 flex items-center gap-2">
-                            <span class="text-2xl">💼</span> For Investors
-                        </h4>
-                        <p class="text-sm text-slate-600">Don't look at sectors in isolation—look at ecosystems. The real opportunities lie at the intersections—where agriculture meets logistics, where halal meets exports, where finance meets infrastructure.</p>
+                    <div class="glass-card p-6 bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="text-2xl">⚖️</span>
+                            <h3 class="font-bold text-lg text-slate-800">Moral Governance</h3>
+                        </div>
+                        <p class="text-sm text-slate-600 mb-3">Transparency, accountability, stability, Islamic ethics, and rule of law as the foundation of investment facilitation.</p>
+                        <ul class="text-xs text-slate-600 space-y-1 list-disc pl-4">
+                            <li>Budget execution transparency</li>
+                            <li>Investor protection mechanisms</li>
+                            <li>Public disclosure of incentives</li>
+                            <li>BHB certification integrity</li>
+                        </ul>
                     </div>
-                    <div class="glass-card p-6">
+
+                    <div class="glass-card p-6 bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-200">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="text-2xl">🛡️</span>
+                            <h3 class="font-bold text-lg text-slate-800">Resilience</h3>
+                        </div>
+                        <p class="text-sm text-slate-600 mb-3">Climate adaptation, economic shock absorption, food/water security, and infrastructure durability.</p>
+                        <ul class="text-xs text-slate-600 space-y-1 list-disc pl-4">
+                            <li>El Niño impact monitoring</li>
+                            <li>Pest/disease early warning systems</li>
+                            <li>Diversification of value chains</li>
+                            <li>Contingency financing</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card p-6 bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-200">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="text-2xl">🤝</span>
+                            <h3 class="font-bold text-lg text-slate-800">Inclusivity</h3>
+                        </div>
+                        <p class="text-sm text-slate-600 mb-3">Equitable benefit-sharing, MSME integration, IDP/women/youth empowerment, and poverty reduction.</p>
+                        <ul class="text-xs text-slate-600 space-y-1 list-disc pl-4">
+                            <li>MSME participation in value chains</li>
+                            <li>IDP reintegration metrics</li>
+                            <li>Gender-disaggregated employment</li>
+                            <li>Financial inclusion by municipality</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card p-6 bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-200">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="text-2xl">☮️</span>
+                            <h3 class="font-bold text-lg text-slate-800">Peace</h3>
+                        </div>
+                        <p class="text-sm text-slate-600 mb-3">Security stability, conflict prevention, narrative management, and post-conflict normalization.</p>
+                        <ul class="text-xs text-slate-600 space-y-1 list-disc pl-4">
+                            <li>Security incident frequency</li>
+                            <li>Investor perception surveys</li>
+                            <li>Community reconciliation coverage</li>
+                            <li>IDP return rates</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 bg-slate-50/50 border-l-4 border-l-red-500">
+                    <h4 class="font-bold text-slate-800 mb-3 flex items-center gap-2">
+                        <span class="text-xl">⚠️</span>
+                        <span>Breaking the "Big Man" Cycle: Three Reinforcing Feedback Loops</span>
+                    </h4>
+                    <p class="text-sm text-slate-600 mb-3">The framework addresses systemic instability driven by power concentration and patronage politics through three interlocking loops:</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+                        <div class="bg-white p-4 rounded-lg border border-slate-200">
+                            <p class="font-semibold text-slate-800 text-sm mb-2">R1: Patronage–Governance Trade-off</p>
+                            <p class="text-xs text-slate-600">Power concentration → patron-client psychology → resource diversion → favoritism → eroded governance → reinforced dominance</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg border border-slate-200">
+                            <p class="font-semibold text-slate-800 text-sm mb-2">R2: Exclusion–Conflict Cycle</p>
+                            <p class="text-xs text-slate-600">Power concentration → clan antagonism → exclusion & resentment → rido & radicalism → instability → justified domination</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg border border-slate-200">
+                            <p class="font-semibold text-slate-800 text-sm mb-2">R3: Resource Depletion Loop</p>
+                            <p class="text-xs text-slate-600">Biased distribution → poor governance → unqualified appointments → bureaucratic bloat → development failure → intensified competition</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-600 mt-4 italic">Breaking this cycle requires interventions that simultaneously weaken patronage incentives, open alternative pathways for economic inclusion, and mediate clan rivalries.</p>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- Five Clusters Introduction -->
+            <section id="clusters" class="mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 mb-8">The Five BEIE Clusters: An Integrated Architecture</h2>
+
+                <!-- Cluster 1: Foundations -->
+                <div class="mb-12">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="cluster-badge bg-emerald-100 text-emerald-700">Cluster 1</span>
+                        <h3 class="text-2xl font-bold text-slate-900">Foundations: The Resource Base</h3>
+                    </div>
+                    <p class="text-slate-600 mb-6"><strong>Agriculture, Fisheries, Forestry, Energy, Environment</strong> — the resource base providing sustainable inputs to all other clusters. This cluster feeds raw materials into Transformers and commodities into Connectors, making it functionally upstream from value creation.</p>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                        <div class="glass-card p-6">
+                            <h4 class="font-bold text-slate-800 mb-3 flex items-center gap-2">
+                                <span class="text-xl">🌾</span>
+                                Agriculture, Fisheries & Forestry
+                            </h4>
+                            <p class="text-sm text-slate-600 mb-3">AFF contributes <strong>32.4% of regional GRDP (₱97.2B)</strong>, yet faces structural vulnerabilities: post-harvest losses of 20–40%, climate-induced contractions (4.2% AFF decline in 2024 due to El Niño), and disease outbreaks (Pestalotiopsis fungal disease infesting 800+ hectares of rubber in Basilan).</p>
+                            
+                            <div class="bg-emerald-50 p-4 rounded-lg mb-3">
+                                <p class="text-xs font-semibold text-emerald-800 mb-2">Key Investment Opportunities:</p>
+                                <ul class="text-xs text-slate-600 space-y-1 list-disc pl-4">
+                                    <li><strong>Halal Food Processing Hub</strong> (Marawi City, Wao) — Cultural authority + UAE market corridor</li>
+                                    <li><strong>Integrated Rubber Processing</strong> (Basilan) — ₱195M BARMM program + 48,366 ha plantation base</li>
+                                    <li><strong>Seaweed Farming & Carrageenan</strong> (Tawi-Tawi) — 40% national output, strong global demand</li>
+                                    <li><strong>Agro-Industrial Corridor</strong> (Wao–Amai Manabilang) — SPDA + DoleFil anchor investment</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-6">
+                            <h4 class="font-bold text-slate-800 mb-3 flex items-center gap-2">
+                                <span class="text-xl">⚡</span>
+                                Energy & Environmental Systems
+                            </h4>
+                            <p class="text-sm text-slate-600 mb-3">BARMM's renewable energy mix stands at <strong>75.86%</strong>, primarily hydropower from the Agus cascade. However, 25–30% of households in remote areas lack reliable access, and archipelagic provinces face high power costs constraining industrial viability.</p>
+                            
+                            <div class="bg-blue-50 p-4 rounded-lg mb-3">
+                                <p class="text-xs font-semibold text-blue-800 mb-2">Priority Investments:</p>
+                                <ul class="text-xs text-slate-600 space-y-1 list-disc pl-4">
+                                    <li><strong>₱6.67B Zamboanga-Basilan Interconnection Project (ZBIP)</strong> — transforms Basilan's investment ceiling</li>
+                                    <li><strong>Hydropower Rehabilitation</strong> — restore Agus cascade capacity</li>
+                                    <li><strong>Solar & Biomass Energy</strong> — rubber wood, coconut shells, rice hulls</li>
+                                    <li><strong>Mini-Grid Solutions</strong> — for remote islands in Tawi-Tawi and Sulu</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-200">
                         <h4 class="font-bold text-slate-800 mb-3 flex items-center gap-2">
-                            <span class="text-2xl">📋</span> For Policymakers
+                            <span class="text-xl">🌱</span>
+                            Green Economy: The New Investment Frontier
                         </h4>
-                        <p class="text-sm text-slate-600">The challenge is coordination. It's not about launching more programs—it's about aligning existing ones into a coherent system.</p>
+                        <p class="text-sm text-slate-600 mb-3">The convergence of BIMP-EAGA EGL Strategic Plan 2025–2028, the pending <strong>Bangsamoro Forestry Code</strong>, and Draft MENRE-MILG JMC No. 2026-01 establishes regulatory pathways for:</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                            <div class="bg-white p-4 rounded-lg">
+                                <p class="font-semibold text-slate-800 text-sm mb-2">Carbon Credit Programs</p>
+                                <p class="text-xs text-slate-600">BARMM's forest resources could generate <strong>₱200–500M annually</strong> from REDD+ programs by 2029</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg">
+                                <p class="font-semibold text-slate-800 text-sm mb-2">Payment for Ecosystem Services (PES)</p>
+                                <p class="text-xs text-slate-600">Watershed, coastal, and carbon PES mechanisms compensating communities for maintaining ecosystems</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg">
+                                <p class="font-semibold text-slate-800 text-sm mb-2">Sustainable Timber Industry</p>
+                                <p class="text-xs text-slate-600">Licensed production, community forestry, wood processing for construction self-sufficiency</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg">
+                                <p class="font-semibold text-slate-800 text-sm mb-2">Eco-Tourism User Fees</p>
+                                <p class="text-xs text-slate-600">Revenue allocated to conservation, creating virtuous cycle where tourism funds conservation</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 glass-card p-6 border-l-4 border-l-amber-500">
+                        <h4 class="font-bold text-slate-800 mb-2">⚠️ Moral Governance Challenge: Tragedy of the Commons</h4>
+                        <p class="text-sm text-slate-600">When governance structures remain fragmented, the system becomes vulnerable to individual actors maximizing short-term yields from shared resources—watersheds, fishing grounds, forest reserves—collectively depleting the ecological base. Concrete interventions include: <strong>empowering LGUs and cooperatives to co-manage resources (L4: Self-Organization)</strong>, <strong>fast-tracking the Bangsamoro Forestry Code (L5: Rules)</strong>, and <strong>deploying transparent monitoring systems (L6: Information Flows)</strong>.</p>
+                    </div>
+                </div>
+
+                <!-- Cluster 2: Transformers -->
+                <div class="mb-12">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="cluster-badge bg-blue-100 text-blue-700">Cluster 2</span>
+                        <h3 class="text-2xl font-bold text-slate-900">Transformers: Engines of Value Creation</h3>
+                    </div>
+                    <p class="text-slate-600 mb-6"><strong>Industry, Manufacturing, Logistics, Halal Processing</strong> — value-adding transformation of Foundation resources. If Foundations provide the raw material, Transformers create the value. BARMM's industrial sector (25.6% of GRDP) remains constrained by low processing capacity and underdeveloped halal manufacturing ecosystems.</p>
+
+                    <div class="glass-card p-6 mb-6 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200">
+                        <h4 class="font-bold text-slate-800 mb-3 flex items-center gap-2">
+                            <span class="text-xl">☪️</span>
+                            The Halal Economy: BARMM's Strategic Differentiator
+                        </h4>
+                        <p class="text-sm text-slate-600 mb-3">The global halal market is estimated at <strong>USD 2.3 trillion</strong>, growing at 6–8% annually. BARMM's Muslim-majority population, cultural authority in Islamic practice, and existing agricultural raw material base create a <strong>first-mover advantage</strong> that no other Philippine region can credibly replicate.</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+                            <div class="bg-white p-4 rounded-lg border border-blue-200">
+                                <p class="font-semibold text-slate-800 text-sm mb-2">Strengths</p>
+                                <ul class="text-xs text-slate-600 space-y-1 list-disc pl-3">
+                                    <li>Halal legitimacy & cultural credibility</li>
+                                    <li>Strategic BIMP-EAGA location</li>
+                                    <li>Strong AFF raw material base</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg border border-blue-200">
+                                <p class="font-semibold text-slate-800 text-sm mb-2">Weaknesses</p>
+                                <ul class="text-xs text-slate-600 space-y-1 list-disc pl-3">
+                                    <li>Weak certification system (45–60 days vs Malaysia's 15 days)</li>
+                                    <li>Fragmented policy framework</li>
+                                    <li>Limited infrastructure</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg border border-blue-200">
+                                <p class="font-semibold text-slate-800 text-sm mb-2">Opportunities</p>
+                                <ul class="text-xs text-slate-600 space-y-1 list-disc pl-3">
+                                    <li>Expanding Philippine halal market</li>
+                                    <li>ASEAN & global halal economy growth</li>
+                                    <li>Islamic finance ecosystem</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6">
+                        <h4 class="font-bold text-slate-800 mb-3">Investment Architecture: Three-Phase Approach</h4>
+                        <div class="space-y-4">
+                            <div class="flex gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-bold">1</div>
+                                <div>
+                                    <p class="font-semibold text-slate-800 text-sm">Short-term (Years 1–3): Halal Governance & Regulatory Strengthening</p>
+                                    <p class="text-xs text-slate-600">Operationalize Bangsamoro Halal Board (BHB) with OIC/SMIIC-aligned certification; harmonize standards; fast-track BHIDP 2025–2030</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-bold">2</div>
+                                <div>
+                                    <p class="font-semibold text-slate-800 text-sm">Medium-term (Years 1–7): Halal Ecosystem & Value Chain Development</p>
+                                    <p class="text-xs text-slate-600">Strengthen certification bodies; develop halal processing, logistics, supply chain infrastructure; promote Halal Park clustering in Matanog</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-bold">3</div>
+                                <div>
+                                    <p class="font-semibold text-slate-800 text-sm">Long-term (Years 1–10): Islamic Finance as Sector Enabler</p>
+                                    <p class="text-xs text-slate-600">Promote Shariah-compliant MSME financing; develop Islamic microfinance pathways; expand fintech-enabled access</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cluster 3: Enablers -->
+                <div class="mb-12">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="cluster-badge bg-purple-100 text-purple-700">Cluster 3</span>
+                        <h3 class="text-2xl font-bold text-slate-900">Enablers: Building Support Systems</h3>
+                    </div>
+                    <p class="text-slate-600 mb-6"><strong>Infrastructure, Social Services & Protection, Health, Education, Human Capital</strong> — human capital access, physical and digital systems that make value creation viable. No production capability can generate export value without infrastructure to move goods, skills to operate facilities, or health systems to sustain communities.</p>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                        <div class="glass-card p-6">
+                            <h4 class="font-bold text-slate-800 mb-3 flex items-center gap-2">
+                                <span class="text-xl">👥</span>
+                                Human Capital: The Demographic Dividend
+                            </h4>
+                            <p class="text-sm text-slate-600 mb-3">BARMM's population of <strong>5.69 million grows at 3.43% annually</strong>—nearly double the national average—creating both labor supply potential and urgent demands. Yet functional literacy stands at just <strong>59.3% (lowest nationally)</strong>, and 45% of children under five experience stunting.</p>
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <p class="text-xs font-semibold text-purple-800 mb-2">Priority Investments:</p>
+                                <ul class="text-xs text-slate-600 space-y-1 list-disc pl-4">
+                                    <li>TESDA programs aligned with agro-industry, halal, renewable energy needs</li>
+                                    <li>Scholarships for Islamic finance and halal certification professionals</li>
+                                    <li>ICT-equipped learning facilities</li>
+                                    <li>Resolution of land ownership for donated school lots</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-6">
+                            <h4 class="font-bold text-slate-800 mb-3 flex items-center gap-2">
+                                <span class="text-xl">🏥</span>
+                                Health & Social Services
+                            </h4>
+                            <p class="text-sm text-slate-600 mb-3">Services sector leads BARMM's economy at <strong>42.0% of GRDP (₱125.7B)</strong>, with human health growing 10.9% in 2024.</p>
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <p class="text-xs font-semibold text-purple-800 mb-2">Priority Investments:</p>
+                                <ul class="text-xs text-slate-600 space-y-1 list-disc pl-4">
+                                    <li>Tertiary-level private hospitals in provincial hubs (Basilan, Sulu, Tawi-Tawi)</li>
+                                    <li>Solar-powered cold chain storage for vaccines</li>
+                                    <li>Telemedicine for island communities</li>
+                                    <li>Ibadah-Friendly health facilities (BaSulTa Health Link Project)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 border-l-4 border-l-purple-500">
+                        <h4 class="font-bold text-slate-800 mb-3 flex items-center gap-2">
+                            <span class="text-xl">🌉</span>
+                            Infrastructure Sequencing Logic: The Binding Constraint
+                        </h4>
+                        <p class="text-sm text-slate-600 mb-3">Infrastructure gaps are the most pervasively cited investment constraint. Deep presence reveals critical sequencing logic:</p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <p class="font-semibold text-slate-800 text-sm mb-2">Farm-to-Market Roads</p>
+                                <p class="text-xs text-slate-600"><strong>Highest-leverage intervention</strong>—without them, production investments cannot reach markets, creating binding constraint on Foundations → Transformers linkages</p>
+                            </div>
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <p class="font-semibold text-slate-800 text-sm mb-2">Digital Infrastructure</p>
+                                <p class="text-xs text-slate-600">Broadband penetration &lt;30% in rural/island areas constrains e-commerce, digital payments—yet digital hubs can leapfrog physical gaps</p>
+                            </div>
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <p class="font-semibold text-slate-800 text-sm mb-2">Bridge Economics</p>
+                                <p class="text-xs text-slate-600"><strong>Basilan-Zamboanga Bridge (2030)</strong> and <strong>Bongao Bridge (96% complete)</strong> reconfigure market access, labor mobility, investor perception</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cluster 4: Connectors -->
+                <div class="mb-12">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="cluster-badge bg-orange-100 text-orange-700">Cluster 4</span>
+                        <h3 class="text-2xl font-bold text-slate-900">Connectors: Market Linkages</h3>
+                    </div>
+                    <p class="text-slate-600 mb-6"><strong>Tourism, Digital Connectivity, Trade, Exports, BIMP-EAGA Integration</strong> — tourism, supply chain integration, market access and regional/global integration mechanisms. BARMM's strategic location within the BIMP-EAGA corridor and cultural proximity to Muslim-majority export destinations create unique trade advantages.</p>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                        <div class="glass-card p-6">
+                            <h4 class="font-bold text-slate-800 mb-3 flex items-center gap-2">
+                                <span class="text-xl">🌍</span>
+                                Trade & Export Corridors
+                            </h4>
+                            <p class="text-sm text-slate-600 mb-3">BARMM is actively pursuing <strong>UAE/GCC halal export corridors</strong>, with MAFAR collaborating with UAE-based halal certifiers. Tawi-Tawi's proximity to Sabah (20km) enables formalization of traditional barter trade into structured BIMP-EAGA commerce.</p>
+                            <div class="bg-orange-50 p-4 rounded-lg">
+                                <p class="text-xs font-semibold text-orange-800 mb-2">Market Access Readiness:</p>
+                                <ul class="text-xs text-slate-600 space-y-1 list-disc pl-4">
+                                    <li><strong>Halal Export Corridor</strong> — Direct access to 10.5M UAE consumers</li>
+                                    <li><strong>Cross-Border Trade</strong> — Formalized BIMP-EAGA protocols, digital customs clearance</li>
+                                    <li><strong>Digital Trade Enablement</strong> — Blockchain traceability for halal supply chains</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-6">
+                            <h4 class="font-bold text-slate-800 mb-3 flex items-center gap-2">
+                                <span class="text-xl">🏝️</span>
+                                Tourism & Cultural Economy
+                            </h4>
+                            <p class="text-sm text-slate-600 mb-3">Tourism remains severely underdeveloped relative to BARMM's endowments: Lake Lanao eco-tourism, Maranao cultural heritage (torogan, okir, malong), Yakan traditional textiles, Tausug and Bajau maritime culture.</p>
+                            <div class="bg-orange-50 p-4 rounded-lg">
+                                <p class="text-xs font-semibold text-orange-800 mb-2">Authenticity as Competitive Advantage:</p>
+                                <ul class="text-xs text-slate-600 space-y-1 list-disc pl-4">
+                                    <li>Maranao, Yakan, Tausug heritage = cultural authenticity for halal branding</li>
+                                    <li>Eco-tourism links to Green Economy (Lake Lanao, marine sanctuaries)</li>
+                                    <li>Narrative management: transparent communication of peace dividends</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cluster 5: Financiers -->
+                <div class="mb-12">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="cluster-badge bg-amber-100 text-amber-700">Cluster 5</span>
+                        <h3 class="text-2xl font-bold text-slate-900">Financiers: Capital Flow</h3>
+                    </div>
+                    <p class="text-slate-600 mb-6"><strong>Islamic Banking, Takaful, Microfinance</strong> — financial capital access aligned with Shariah principles. Despite RA 11439 (Islamic Banking Law) and institutions like Al-Amanah and CARD Islamic Bank, formal financial penetration remains minimal relative to BARMM's economic size.</p>
+
+                    <div class="glass-card p-6 mb-6 bg-gradient-to-br from-amber-50 to-yellow-50 border border-amber-200">
+                        <h4 class="font-bold text-slate-800 mb-3 flex items-center gap-2">
+                            <span class="text-xl">💰</span>
+                            Islamic Finance: Cultural Alignment as Capital Access
+                        </h4>
+                        <p class="text-sm text-slate-600 mb-3">Islamic banking assets in BARMM remain <strong>below ₱2B</strong>, representing a massive addressable market. Microfinance and cooperative systems are undercapitalized, constraining MSME scaling and climate adaptation.</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                            <div class="bg-white p-4 rounded-lg border border-amber-200">
+                                <p class="font-semibold text-slate-800 text-sm mb-2">Takaful (Islamic Insurance)</p>
+                                <p class="text-xs text-slate-600">Largely untapped for agri-risk mitigation. El Niño-induced crop losses and seaweed heat stress create demand for Shariah-compliant agricultural insurance.</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg border border-amber-200">
+                                <p class="font-semibold text-slate-800 text-sm mb-2">Waqf (Islamic Endowment)</p>
+                                <p class="text-xs text-slate-600">Community-managed waqf can channel endowments into halal MSME incubation, eco-tourism enterprises, education scholarships.</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg border border-amber-200">
+                                <p class="font-semibold text-slate-800 text-sm mb-2">Fintech Acceleration</p>
+                                <p class="text-xs text-slate-600">Mobile banking and digital payments can reach archipelagic/upland communities where brick-and-mortar branches are unviable.</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg border border-amber-200">
+                                <p class="font-semibold text-slate-800 text-sm mb-2">Provincial Opportunities</p>
+                                <p class="text-xs text-slate-600">Lanao del Sur: CARD Islamic Bank expansion; Tawi-Tawi: mobile Islamic banking; Sulu: community-based cooperatives</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <div class="section-divider"></div>
 
-            <!-- Conclusion -->
-            <section id="conclusion" class="mb-16">
-                <h2 class="text-3xl font-bold text-slate-900 mb-6">Conclusion</h2>
+            <!-- Ecosystem Synthesis -->
+            <section id="synthesis" class="mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 mb-8">Ecosystem Synthesis: Deep Presence Insights</h2>
+
+                <p class="text-slate-600 mb-6">The BEIE Framework reveals that BARMM's greatest investment opportunity lies not in isolated sectoral interventions but in <strong>synchronized cluster linkages</strong>. Deep presence sensing identifies four systemic insights:</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div class="glass-card p-6 border-t-4 border-t-emerald-500">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="text-2xl">🎯</span>
+                            <h4 class="font-bold text-slate-800">Insight 1: The Operating System Binds All Clusters</h4>
+                        </div>
+                        <p class="text-sm text-slate-600">Moral Governance, Resilience, Inclusivity, and Peace are not "soft" factors—they are the operating system that determines whether production investments compound or dissipate. Sensing governance rhythms (transparency cycles, accountability mechanisms, community trust) reveals whether Foundations → Transformers → Connectors linkages will function effectively.</p>
+                    </div>
+
+                    <div class="glass-card p-6 border-t-4 border-t-blue-500">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="text-2xl">🚧</span>
+                            <h4 class="font-bold text-slate-800">Insight 2: Infrastructure-First Sequencing is Non-Negotiable</h4>
+                        </div>
+                        <p class="text-sm text-slate-600">The <strong>Limits to Growth</strong> systems archetype warns that rapid production investment without enabling infrastructure will plateau as the system hits resource ceilings. Farm-to-market roads, grid interconnection, and digital connectivity must precede or accompany agro-industrial scale-up—not follow it.</p>
+                    </div>
+
+                    <div class="glass-card p-6 border-t-4 border-t-purple-500">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="text-2xl">🔑</span>
+                            <h4 class="font-bold text-slate-800">Insight 3: Certification is the Gateway to Global Markets</h4>
+                        </div>
+                        <p class="text-sm text-slate-600">Halal certification infrastructure (BHB capacity, OIC/SMIIC alignment, QA labs) is not a standalone intervention—it is the gateway that unlocks Transformers cluster viability and Connectors cluster effectiveness. Pairing production incentives with certification milestones avoids the <strong>"Fixes that Fail"</strong> trap.</p>
+                    </div>
+
+                    <div class="glass-card p-6 border-t-4 border-t-orange-500">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="text-2xl">📚</span>
+                            <h4 class="font-bold text-slate-800">Insight 4: Human Capital is the Binding Constraint</h4>
+                        </div>
+                        <p class="text-sm text-slate-600">The <strong>59.3% functional literacy rate</strong> is not merely a social indicator—it is the binding constraint on industrial investment viability. TESDA-industry alignment, digital literacy programs, and health service access must be sequenced alongside production investments to ensure labor supply quality matches investor expectations.</p>
+                    </div>
+                </div>
 
                 <div class="glass-card p-8 bg-gradient-to-br from-slate-50 to-white border-l-4 border-l-primary">
-                    <p class="text-slate-700 mb-4">Reimagining BARMM's priority investment sectors isn't about rewriting a list—it's about redesigning how the economy functions. By organizing sectors into foundations, transformers, enablers, connectors, and financiers, and anchoring everything in moral governance, BARMM can move from fragmented growth to integrated development.</p>
-                    <p class="text-slate-700 font-medium">It's the difference between scattered progress and a synchronized ecosystem. And in a region with as much potential as BARMM, that difference is everything.</p>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">The Difference Between Scattered Progress and Synchronized Ecosystem</h3>
+                    <p class="text-slate-700 mb-4">Reimagining BARMM's priority investment sectors through the BEIE Framework isn't about rewriting a list—it's about redesigning how the economy functions. By organizing sectors into Foundations, Transformers, Enablers, Connectors, and Financiers, and anchoring everything in Moral Governance, BARMM can move from fragmented growth to integrated development.</p>
+                    <p class="text-slate-700 font-medium">In a region with as much potential as BARMM, that difference is everything.</p>
                 </div>
             </section>
+
+            <div class="section-divider"></div>
 
             <!-- FAQ -->
             <section id="faq" class="mb-16">
                 <h2 class="text-3xl font-bold text-slate-900 mb-8 text-center">Frequently Asked Questions</h2>
                 <div class="space-y-4">
                     <div class="glass-card p-6">
-                        <h4 class="font-bold text-slate-800 mb-2">Why is a systems-based approach important for BARMM?</h4>
-                        <p class="text-slate-600 text-sm">Because sectors in BARMM are deeply interconnected, and treating them as isolated leads to inefficiencies and missed opportunities.</p>
+                        <h4 class="font-bold text-slate-800 mb-2">What makes the BEIE Framework different from traditional sectoral planning?</h4>
+                        <p class="text-slate-600 text-sm">Traditional planning treats sectors as isolated silos. BEIE recognizes that agriculture depends on logistics, tourism relies on infrastructure, and industry needs energy and skilled labor. It organizes investments as an interconnected ecosystem where every cluster feeds into another.</p>
                     </div>
                     <div class="glass-card p-6">
-                        <h4 class="font-bold text-slate-800 mb-2">What makes the halal industry strategic for BARMM?</h4>
-                        <p class="text-slate-600 text-sm">It connects local production to a rapidly growing global Muslim market, offering both economic and cultural advantages.</p>
+                        <h4 class="font-bold text-slate-800 mb-2">Why is Moral Governance positioned as the "operating system" rather than just another goal?</h4>
+                        <p class="text-slate-600 text-sm">Because governance determines whether investments compound or dissipate. Without transparency, accountability, and inclusivity, even well-funded projects fail. The operating system runs quietly in the background but determines how everything functions.</p>
                     </div>
                     <div class="glass-card p-6">
-                        <h4 class="font-bold text-slate-800 mb-2">How does Islamic finance support development?</h4>
-                        <p class="text-slate-600 text-sm">It provides culturally aligned financial systems that increase trust, participation, and investment.</p>
+                        <h4 class="font-bold text-slate-800 mb-2">What is BARMM's competitive advantage in the halal economy?</h4>
+                        <p class="text-slate-600 text-sm">Cultural authenticity. BARMM's Muslim-majority population and Islamic heritage provide first-mover advantage that no other Philippine region can credibly replicate. Combined with agricultural raw materials and BIMP-EAGA location, this creates a unique ecosystem for halal production and export.</p>
                     </div>
                     <div class="glass-card p-6">
-                        <h4 class="font-bold text-slate-800 mb-2">What role does BIMP-EAGA play in BARMM's growth?</h4>
-                        <p class="text-slate-600 text-sm">It integrates BARMM into regional trade networks, enhancing connectivity and investment opportunities.</p>
+                        <h4 class="font-bold text-slate-800 mb-2">How does the Green Economy generate revenue, not just environmental benefits?</h4>
+                        <p class="text-slate-600 text-sm">Through carbon credits (₱200–500M annually potential), Payment for Ecosystem Services (PES) from water users and tourism operators, eco-tourism user fees, and sustainable timber/NTFP enterprises. The pending Bangsamoro Forestry Code and MENRE-MILG JMC establish the regulatory framework.</p>
                     </div>
                     <div class="glass-card p-6">
-                        <h4 class="font-bold text-slate-800 mb-2">What is the biggest challenge in implementing this framework?</h4>
-                        <p class="text-slate-600 text-sm">Coordination across sectors and ensuring governance systems effectively align all components.</p>
+                        <h4 class="font-bold text-slate-800 mb-2">What is the single highest-leverage infrastructure intervention?</h4>
+                        <p class="text-slate-600 text-sm">Farm-to-market roads. Without them, production investments cannot reach markets, creating a binding constraint on the entire Foundations → Transformers linkage. This must precede or accompany agro-industrial investments.</p>
+                    </div>
+                    <div class="glass-card p-6">
+                        <h4 class="font-bold text-slate-800 mb-2">How does Islamic finance differ from conventional banking in BARMM?</h4>
+                        <p class="text-slate-600 text-sm">It aligns financial systems with cultural and religious values, increasing trust and participation. Instruments like takaful (insurance) and waqf (endowment) provide Shariah-compliant risk mitigation and community capital—critical for a Muslim-majority region with low formal banking penetration.</p>
                     </div>
                 </div>
             </section>
@@ -442,15 +690,22 @@
         <!-- References Section -->
         <section id="references" class="mt-12 pt-12 border-t border-slate-200">
             <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-                References
+                References & Data Sources
             </h2>
             <div class="space-y-3 text-sm text-slate-600 pl-4 border-l-2 border-slate-200">
                 <ol class="list-decimal ml-4 space-y-2 marker:text-slate-400">
-                    <li>Philippine Statistics Authority. (2025). <em>BARMM's economy expands by 2.7 percent in 2024</em>. https://rssobarmm.psa.gov.ph/content/barmms-economy-expands-27-percent-2024</li>
-                    <li>SunStar Publishing Inc. (2025). <em>Barmm hits ₱5B in 2025 investment driven by new projects in Lanao del Sur</em>. SunStar Business. https://www.sunstar.com.ph/davao/business/barmm-hits-5b-in-2025-investment-driven-by-new-projects-in-lanao-del-sur</li>
-                    <li>BARMM Official Website. (2025). <em>BARMM hits P3.2B in investment approvals, surpasses 2025 target in first quarter</em>. https://bangsamoro.gov.ph/news/latest-news/barmm-hits-p3-2b-in-investment-approvals-surpasses-2025-target-in-first-quarter/</li>
-                    <li>Cayon, M. (2025, June 12). <em>Investments pour into BARMM</em>. BusinessMirror. https://businessmirror.com.ph/2025/06/12/investments-pour-into-barmm/</li>
-                    <li>Daily Tribune. (2025, May 9). <em>BARMM greenlights development plan</em>. Philippine Daily Inquirer. https://tribune.net.ph/2025/05/09/barmm-greenlights-development-plan</li>
+                    <li>Workshop 1–5 Outputs (2026). BARMM Investment Ecosystem Framework Development.</li>
+                    <li>Bangsamoro Planning and Development Authority (BPDA). (2023–2028). Bangsamoro Development Plan.</li>
+                    <li>Ministry of Finance and Budget Management (MFBM). (2025). BARMM Investment Portfolio and Fiscal Data.</li>
+                    <li>Philippine Statistics Authority (PSA-BARMM). (2025). Regional Economic Accounts and GRDP Data.</li>
+                    <li>Ministry of Agriculture, Fisheries and Agrarian Reform (MAFAR). (2025). Agro-Industrial Development Programs.</li>
+                    <li>Ministry of Environment and Natural Resources (MENRE-BARMM). (2024). Forestry and Environmental Data.</li>
+                    <li>Ministry of Trade, Industry and Tourism (MTIT-BARMM). (2026). Halal Industry Development Plan 2025–2030.</li>
+                    <li>Bangsamoro Halal Board (BHB). (2025). Certification Standards and Capacity Assessment.</li>
+                    <li>BIMP-EAGA Secretariat. (2024). Environment, Green Economy, and Land Use (EGL) Sub-Committee Strategic Plan 2025–2028.</li>
+                    <li>Islamic Development Bank (IsDB) & Islamic Corporation for the Development of the Private Sector (ICD). (2025). Islamic Finance Market Analysis.</li>
+                    <li>CARD Islamic Bank & Al-Amanah Islamic Investment Bank. (2026). Financial Inclusion Data.</li>
+                    <li>Silva, A. M. (2022). Mid-Term Review and Participatory Conflict Assessment and Analysis Report. Mindanao CONSENT II DRR Project.</li>
                 </ol>
             </div>
         </section>
@@ -460,9 +715,9 @@
     <!-- Footer -->
     <footer class="bg-slate-900 text-slate-300 py-12 mt-12">
         <div class="container mx-auto px-6 text-center">
-            <p class="font-bold text-lg text-white mb-2">The Emerging Bangsamoro</p>
-            <p class="text-sm opacity-70 mb-4">A Hub for Resilient and Ethical Growth | Investment Roadmap 2026–2035</p>
-            <p class="text-xs opacity-50">© 2026 Bangsamoro Autonomous Region in Muslim Mindanao (BARMM). All rights reserved.</p>
+            <p class="font-bold text-lg text-white mb-2">Bangsamoro Economic and Investment Ecosystem (BEIE) Framework</p>
+            <p class="text-sm opacity-70 mb-4">Foundations that Sustain • Transformers that Create • Enablers that Support • Connectors that Expand • Financiers that Empower</p>
+            <p class="text-xs opacity-50">© 2026 Ministry of Trade, Investmments, and Tourism - BARMM. All rights reserved.</p>
         </div>
     </footer>
 </body>
