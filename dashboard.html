@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 <meta name="theme-color" content="#022c22">
-<meta name="description" content="BARMM Strategic MEL Dashboard 2026-2035 — Real-time Monitoring, Evaluation & Learning">
+<meta name="description" content="BARMM Strategic MEL Dashboard 2026-2035 — Real-time Monitoring, Evaluation & Learning based on the BIRD 2026–2035 Investment Roadmap">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <title>BARMM Strategic Dashboard — MEL 2026–2035</title>
 <style>
@@ -70,9 +70,10 @@ body{
 .nav-logo-wrap{display:flex;align-items:center;gap:var(--s3);text-decoration:none;flex-shrink:0;}
 .nav-logo-wrap img{height:40px;width:auto;object-fit:contain;}
 .nav-title{display:none;font-family:'Cinzel',serif;font-size:.72rem;color:var(--gold);font-weight:700;letter-spacing:.06em;line-height:1.3;}
-.nav-right{margin-left:auto;display:flex;align-items:center;gap:var(--s3);}
+.nav-right{margin-left:auto;display:flex;align-items:center;gap:var(--s3);flex-wrap:wrap;}
 .nav-back{color:var(--light-green);text-decoration:none;font-size:.82rem;font-weight:500;display:flex;align-items:center;gap:.4rem;transition:color .2s;padding:.4rem .6rem;border-radius:var(--r-sm);border:1px solid var(--gold-border);}
 .nav-back:hover{color:var(--gold);border-color:var(--gold-border-strong);}
+.nav-back.active-nav{color:var(--gold);border-color:var(--gold-border-strong);background:rgba(201,168,76,.08);}
 .live-badge{display:flex;align-items:center;gap:.4rem;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.3);border-radius:2rem;padding:.3rem .8rem;font-size:.72rem;font-weight:700;color:#10b981;letter-spacing:.04em;text-transform:uppercase;}
 .live-dot{width:7px;height:7px;background:#10b981;border-radius:50%;animation:livePulse 2s infinite;}
 @keyframes livePulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(1.3);}}
@@ -377,9 +378,9 @@ body{
       <span class="nav-title">BARMM<br>Strategic Dashboard</span>
     </a>
     <div class="nav-right">
-      <a href="roadmap.html" class="nav-back" aria-label="Back to roadmap">
-        ← Roadmap
-      </a>
+      <a href="dashboard.html" class="nav-back active-nav" aria-label="Dashboard">Dashboard</a>
+      <a href="roadmap.html" class="nav-back" aria-label="Roadmap">Roadmap</a>
+      <a href="action-plan.html" class="nav-back" aria-label="Action Plan">Action Plan</a>
       <div class="live-badge" role="status" aria-live="polite">
         <span class="live-dot" aria-hidden="true"></span>
         <span>Live MEL</span>
@@ -394,7 +395,7 @@ body{
 <header class="dash-header" role="banner" id="main-content">
   <div class="dash-eyebrow">Strategic MEL Dashboard · Phase 1: Foundation Building</div>
   <h1 class="dash-title">The Emerging Bangsamoro</h1>
-  <p class="dash-subtitle">Monitoring, Evaluation &amp; Learning — 2026 Priority Actions &amp; 2035 Investment Targets. Applying the <strong>Pareto Principle</strong> to surface the vital few metrics that drive 80% of strategic impact.</p>
+  <p class="dash-subtitle">Monitoring, Evaluation &amp; Learning — 2026 Priority Actions &amp; 2035 Investment Targets. Applying the <strong>Pareto Principle</strong> to surface the vital few metrics that drive 80% of strategic impact, aligned with the BIRD 2026–2035 Roadmap.</p>
   <div class="dash-meta-row">
     <div class="dash-timestamp">
       <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="2"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2"/></svg>
@@ -402,7 +403,7 @@ body{
     </div>
     <div class="pareto-note">
       <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-      Pareto Focus: 5 Critical KPIs · 6 Priority Actions · ₱1.28B 2026 Budget
+      Pareto Focus: 6 Critical KPIs · 6 Priority Actions · ₱55B Total Roadmap Budget
     </div>
   </div>
 </header>
@@ -421,7 +422,7 @@ body{
     <div class="mel-leg-item"><div class="mel-leg-dot" style="background:#3b82f6;"></div>Watch / Early Stage</div>
     <div class="mel-leg-item"><div class="mel-leg-dot" style="background:#f59e0b;"></div>At Risk</div>
     <div class="mel-leg-item"><div class="mel-leg-dot" style="background:#ef4444;"></div>Critical / Behind</div>
-    <div class="mel-leg-item" style="margin-left:auto;font-size:.7rem;color:rgba(255,255,255,.35);">Baselines: 2024 PSA / BBOI / MTIT. Targets: BDP 2023-2028, Investment Roadmap 2035.</div>
+    <div class="mel-leg-item" style="margin-left:auto;font-size:.7rem;color:rgba(255,255,255,.35);">Baselines: 2024 PSA / BBOI / MTIT. Targets: BIRD 2026-2035 Roadmap.</div>
   </div>
 
   <!-- ========================================================
@@ -447,87 +448,87 @@ body{
             <circle class="kpi-ring-fill gold" cx="38" cy="38" r="31"
                     stroke-dasharray="194.78"
                     stroke-dashoffset="194.78"
-                    data-target-offset="181.2"/><!-- 7% filled -->
+                    data-target-offset="128.55"/><!-- 34% filled -->
           </svg>
           <div class="kpi-ring-center">
-            <span class="kpi-ring-pct" id="pct1">7%</span>
+            <span class="kpi-ring-pct" id="pct1">34%</span>
             <span class="kpi-ring-sub">of target</span>
           </div>
         </div>
-        <div class="kpi-label">Total Investment Inflows</div>
-        <div class="kpi-current">₱3.5B <span style="font-size:.65rem;opacity:.6;">(2024)</span></div>
-        <div class="kpi-target">Target: ₱50B by 2035</div>
-        <span class="kpi-delta up">▲ +₱0.4B YoY</span>
+        <div class="kpi-label">Annual Investment Approvals</div>
+        <div class="kpi-current">₱5.1B <span style="font-size:.65rem;opacity:.6;">(Q1 2026)</span></div>
+        <div class="kpi-target">Target: ₱15B p.a. by 2035</div>
+        <span class="kpi-delta up">▲ Structural Shift</span>
         <div class="kpi-source">BBOI / BEZA · ⭐ LP1+LP3</div>
       </div>
 
-      <!-- KPI 2 — Halal Exports -->
-      <div class="kpi-card watch reveal d2" role="listitem" aria-label="Halal Export Value KPI">
+      <!-- KPI 2 — Total Export Value -->
+      <div class="kpi-card watch reveal d2" role="listitem" aria-label="Total Export Value KPI">
         <div class="kpi-ring-wrap" aria-hidden="true">
           <svg class="kpi-ring" width="76" height="76" viewBox="0 0 76 76">
             <circle class="kpi-ring-track" cx="38" cy="38" r="31"/>
             <circle class="kpi-ring-fill blue" cx="38" cy="38" r="31"
                     stroke-dasharray="194.78"
                     stroke-dashoffset="194.78"
-                    data-target-offset="194.0"/><!-- ~0.4% -->
+                    data-target-offset="146.08"/><!-- ~25% -->
           </svg>
           <div class="kpi-ring-center">
-            <span class="kpi-ring-pct" id="pct2">&lt;1%</span>
+            <span class="kpi-ring-pct" id="pct2">25%</span>
             <span class="kpi-ring-sub">of target</span>
           </div>
         </div>
-        <div class="kpi-label">Halal Export Value</div>
-        <div class="kpi-current">Minimal <span style="font-size:.65rem;opacity:.6;">(2024)</span></div>
-        <div class="kpi-target">Target: ₱25B by 2035</div>
+        <div class="kpi-label">Total Export Value</div>
+        <div class="kpi-current">&lt;₱10B <span style="font-size:.65rem;opacity:.6;">(2024)</span></div>
+        <div class="kpi-target">Target: ₱40B+ by 2035</div>
         <span class="kpi-delta flat">~ Baseline Phase</span>
         <div class="kpi-source">PSA / Customs · ⭐ LP1</div>
       </div>
 
-      <!-- KPI 3 — Halal Enterprises -->
-      <div class="kpi-card watch reveal d3" role="listitem" aria-label="Halal Certified Enterprises KPI">
+      <!-- KPI 3 — Halal-Certified Firms -->
+      <div class="kpi-card watch reveal d3" role="listitem" aria-label="Halal Certified Firms KPI">
         <div class="kpi-ring-wrap" aria-hidden="true">
           <svg class="kpi-ring" width="76" height="76" viewBox="0 0 76 76">
             <circle class="kpi-ring-track" cx="38" cy="38" r="31"/>
             <circle class="kpi-ring-fill gold" cx="38" cy="38" r="31"
                     stroke-dasharray="194.78"
                     stroke-dashoffset="194.78"
-                    data-target-offset="184.9"/><!-- 5% -->
+                    data-target-offset="175.30"/><!-- 10% -->
           </svg>
           <div class="kpi-ring-center">
-            <span class="kpi-ring-pct" id="pct3">5%</span>
+            <span class="kpi-ring-pct" id="pct3">10%</span>
             <span class="kpi-ring-sub">of target</span>
           </div>
         </div>
-        <div class="kpi-label">Halal-Certified Enterprises</div>
-        <div class="kpi-current">&lt;100 est. <span style="font-size:.65rem;opacity:.6;">(2024)</span></div>
-        <div class="kpi-target">Target: 2,000 by 2035</div>
-        <span class="kpi-delta flat">~ 500 by 2028</span>
+        <div class="kpi-label">Halal-Certified Firms</div>
+        <div class="kpi-current">~500 <span style="font-size:.65rem;opacity:.6;">(2024)</span></div>
+        <div class="kpi-target">Target: 5,000+ by 2035</div>
+        <span class="kpi-delta flat">~ 2,000 by 2030</span>
         <div class="kpi-source">BHB Registry · ⭐ LP1</div>
       </div>
 
-      <!-- KPI 4 — Islamic Finance MSMEs -->
-      <div class="kpi-card watch reveal d1" role="listitem" aria-label="MSMEs in Islamic Finance KPI">
+      <!-- KPI 4 — Islamic Finance Penetration -->
+      <div class="kpi-card watch reveal d1" role="listitem" aria-label="Islamic Finance Penetration KPI">
         <div class="kpi-ring-wrap" aria-hidden="true">
           <svg class="kpi-ring" width="76" height="76" viewBox="0 0 76 76">
             <circle class="kpi-ring-track" cx="38" cy="38" r="31"/>
             <circle class="kpi-ring-fill blue" cx="38" cy="38" r="31"
                     stroke-dasharray="194.78"
                     stroke-dashoffset="194.78"
-                    data-target-offset="194.78"/><!-- 0% -->
+                    data-target-offset="190.88"/><!-- 2% -->
           </svg>
           <div class="kpi-ring-center">
-            <span class="kpi-ring-pct" id="pct4">0%</span>
+            <span class="kpi-ring-pct" id="pct4">2%</span>
             <span class="kpi-ring-sub">building</span>
           </div>
         </div>
-        <div class="kpi-label">MSMEs in Islamic Finance</div>
-        <div class="kpi-current">0 <span style="font-size:.65rem;opacity:.6;">(no system)</span></div>
-        <div class="kpi-target">Target: 5,000 by 2035</div>
+        <div class="kpi-label">Islamic Finance Penetration</div>
+        <div class="kpi-current">Minimal <span style="font-size:.65rem;opacity:.6;">(&lt;₱2B assets)</span></div>
+        <div class="kpi-target">Target: 25% of adults by 2035</div>
         <span class="kpi-delta flat">~ Framework 2026</span>
-        <div class="kpi-source">Finance Ministry · ⭐ LP4</div>
+        <div class="kpi-source">Min. Finance · ⭐ LP4</div>
       </div>
 
-      <!-- KPI 5 — Electrification -->
+      <!-- KPI 5 — Electrification Rate -->
       <div class="kpi-card on-track reveal d2" role="listitem" aria-label="Electrification Rate KPI">
         <div class="kpi-ring-wrap" aria-hidden="true">
           <svg class="kpi-ring" width="76" height="76" viewBox="0 0 76 76">
@@ -535,40 +536,40 @@ body{
             <circle class="kpi-ring-fill green" cx="38" cy="38" r="31"
                     stroke-dasharray="194.78"
                     stroke-dashoffset="194.78"
-                    data-target-offset="118.8"/><!-- 39% -->
+                    data-target-offset="48.69"/><!-- 75% -->
           </svg>
           <div class="kpi-ring-center">
-            <span class="kpi-ring-pct" id="pct5">39%</span>
+            <span class="kpi-ring-pct" id="pct5">75%</span>
             <span class="kpi-ring-sub">of target</span>
           </div>
         </div>
         <div class="kpi-label">Electrification Rate</div>
-        <div class="kpi-current">39% <span style="font-size:.65rem;opacity:.6;">(2024)</span></div>
-        <div class="kpi-target">Target: 100% by 2030</div>
-        <span class="kpi-delta up">▲ 80% by 2028</span>
-        <div class="kpi-source">MENRE · ⭐ LP2</div>
+        <div class="kpi-current">~75% <span style="font-size:.65rem;opacity:.6;">(2024)</span></div>
+        <div class="kpi-target">Target: 100% by 2035</div>
+        <span class="kpi-delta up">▲ 90% by 2030</span>
+        <div class="kpi-source">MENRE / DOE · ⭐ LP2</div>
       </div>
 
-      <!-- KPI 6 — Internet Penetration -->
-      <div class="kpi-card on-track reveal d3" role="listitem" aria-label="Internet Penetration KPI">
+      <!-- KPI 6 — Broadband Connectivity -->
+      <div class="kpi-card on-track reveal d3" role="listitem" aria-label="Broadband Connectivity KPI">
         <div class="kpi-ring-wrap" aria-hidden="true">
           <svg class="kpi-ring" width="76" height="76" viewBox="0 0 76 76">
             <circle class="kpi-ring-track" cx="38" cy="38" r="31"/>
             <circle class="kpi-ring-fill green" cx="38" cy="38" r="31"
                     stroke-dasharray="194.78"
                     stroke-dashoffset="194.78"
-                    data-target-offset="145.7"/><!-- 25% -->
+                    data-target-offset="126.60"/><!-- 35% -->
           </svg>
           <div class="kpi-ring-center">
-            <span class="kpi-ring-pct" id="pct6">25%</span>
+            <span class="kpi-ring-pct" id="pct6">35%</span>
             <span class="kpi-ring-sub">of target</span>
           </div>
         </div>
-        <div class="kpi-label">Internet Penetration</div>
-        <div class="kpi-current">~25% est. <span style="font-size:.65rem;opacity:.6;">(2024)</span></div>
-        <div class="kpi-target">Target: 70% by 2030</div>
-        <span class="kpi-delta up">▲ 50% by 2028</span>
-        <div class="kpi-source">DICT / MTIT · ⭐ LP2</div>
+        <div class="kpi-label">Broadband Connectivity</div>
+        <div class="kpi-current">&lt;30% est. <span style="font-size:.65rem;opacity:.6;">(2024)</span></div>
+        <div class="kpi-target">Target: 85% by 2035</div>
+        <span class="kpi-delta up">▲ 60% by 2030</span>
+        <div class="kpi-source">DICT / MICT · ⭐ LP2</div>
       </div>
 
     </div>
@@ -594,35 +595,35 @@ body{
         <span class="bsc-lp-badge">⭐ LP1 + LP3</span>
         <span class="bsc-persp-tag">Financial Perspective</span>
         <div class="bsc-action">Increase FDI &amp; domestic investment inflows</div>
-        <div class="bsc-kpi">Total Investment Generated</div>
+        <div class="bsc-kpi">Annual Investment Approvals</div>
         <div class="bsc-prog-wrap">
           <div class="bsc-prog-label">
-            <span class="bsc-prog-current">₱3.5B baseline</span>
-            <span class="bsc-prog-target">₱50B target</span>
+            <span class="bsc-prog-current">₱5.1B (Q1 2026)</span>
+            <span class="bsc-prog-target">₱15B p.a. target</span>
           </div>
-          <div class="bsc-prog-bar"><div class="bsc-prog-fill gold" style="width:0%" data-w="7"></div></div>
+          <div class="bsc-prog-bar"><div class="bsc-prog-fill gold" style="width:0%" data-w="34"></div></div>
           <div class="bsc-prog-label" style="margin-top:.3rem;">
             <span class="status-badge in-progress"><span class="status-dot-anim"></span>In Progress</span>
-            <span style="font-size:.68rem;color:rgba(255,255,255,.35);">7% of 2035 goal</span>
+            <span style="font-size:.68rem;color:rgba(255,255,255,.35);">34% of 2035 goal</span>
           </div>
         </div>
       </div>
 
-      <!-- LP1: Halal Export — Financial -->
+      <!-- LP1: Export Value — Financial -->
       <div class="bsc-card finance reveal d2" role="listitem">
         <span class="bsc-lp-badge">⭐ LP1</span>
         <span class="bsc-persp-tag">Financial Perspective</span>
-        <div class="bsc-action">Expand halal product exports to global markets</div>
-        <div class="bsc-kpi">Halal Export Value</div>
+        <div class="bsc-action">Expand halal &amp; agro-industrial exports</div>
+        <div class="bsc-kpi">Total Export Value</div>
         <div class="bsc-prog-wrap">
           <div class="bsc-prog-label">
-            <span class="bsc-prog-current">Minimal</span>
-            <span class="bsc-prog-target">₱25B target</span>
+            <span class="bsc-prog-current">&lt;₱10B</span>
+            <span class="bsc-prog-target">₱40B+ target</span>
           </div>
-          <div class="bsc-prog-bar"><div class="bsc-prog-fill blue" style="width:0%" data-w="1"></div></div>
+          <div class="bsc-prog-bar"><div class="bsc-prog-fill blue" style="width:0%" data-w="25"></div></div>
           <div class="bsc-prog-label" style="margin-top:.3rem;">
-            <span class="status-badge not-started"><span class="status-dot-anim"></span>Baseline</span>
-            <span style="font-size:.68rem;color:rgba(255,255,255,.35);">BHB activation needed</span>
+            <span class="status-badge in-progress"><span class="status-dot-anim"></span>Building Corridors</span>
+            <span style="font-size:.68rem;color:rgba(255,255,255,.35);">UAE/GCC focus</span>
           </div>
         </div>
       </div>
@@ -641,7 +642,7 @@ body{
           <div class="bsc-prog-bar"><div class="bsc-prog-fill blue" style="width:0%" data-w="50"></div></div>
           <div class="bsc-prog-label" style="margin-top:.3rem;">
             <span class="status-badge in-progress"><span class="status-dot-anim"></span>Measuring</span>
-            <span style="font-size:.68rem;color:rgba(255,255,255,.35);">BIIC IRR activates R2 loop</span>
+            <span style="font-size:.68rem;color:rgba(255,255,255,.35);">BICC activates R2 loop</span>
           </div>
         </div>
       </div>
@@ -673,7 +674,7 @@ body{
         <div class="bsc-prog-wrap">
           <div class="bsc-prog-label">
             <span class="bsc-prog-current">Minimal pool</span>
-            <span class="bsc-prog-target">100 officers by 2030</span>
+            <span class="bsc-prog-target">100+ officers by 2035</span>
           </div>
           <div class="bsc-prog-bar"><div class="bsc-prog-fill teal" style="width:0%" data-w="10"></div></div>
           <div class="bsc-prog-label" style="margin-top:.3rem;">
@@ -713,7 +714,7 @@ body{
         <div class="a-sum-lbl">Due Q2 2026</div>
       </div>
       <div class="a-sum-card budget">
-        <div class="a-sum-num">₱1.28B</div>
+        <div class="a-sum-num">₱1.1B</div>
         <div class="a-sum-lbl">2026 Total Budget</div>
       </div>
     </div>
@@ -762,18 +763,18 @@ body{
 
           <tr data-priority="critical" data-quarter="q2">
             <td>
-              <span class="lp-tag">LP3</span>
-              <div class="action-desc" style="margin-top:.4rem;">Governance–Investor Confidence — Activating R2 reinforcing loop</div>
+              <span class="lp-tag">LP5</span>
+              <div class="action-desc" style="margin-top:.4rem;">Green Economy Framework — Monetizing environmental assets</div>
             </td>
             <td>
-              <strong>BIIC Implementing Rules (IRR)</strong>
-              <div class="action-desc">Finalization of Bangsamoro Investment and Incentives Code IRR; regulatory clarity for investors.</div>
+              <strong>Forestry Code &amp; JMC 2026-01</strong>
+              <div class="action-desc">Enact Bangsamoro Forestry Code; sign MENRE-MILG JMC for Carbon Credits, PES, and Eco-tourism User Fees.</div>
             </td>
             <td style="text-align:center;"><span class="pri-badge critical">● Critical</span></td>
             <td class="due-cell" style="text-align:center;">Q2 2026</td>
             <td><span class="status-badge in-progress"><span class="status-dot-anim"></span>Drafting</span></td>
-            <td class="budget-cell" style="text-align:right;">₱30M</td>
-            <td class="agency-cell"><strong style="color:white;">BTA Parliament</strong><br>MTIT-BoI</td>
+            <td class="budget-cell" style="text-align:right;">₱50M</td>
+            <td class="agency-cell"><strong style="color:white;">MENRE</strong><br>Parliament / MILG</td>
           </tr>
 
           <tr data-priority="high" data-quarter="q3">
@@ -782,14 +783,14 @@ body{
               <div class="action-desc" style="margin-top:.4rem;">Governance–Investor Confidence — Digital transformation for ease of doing business</div>
             </td>
             <td>
-              <strong>Digital BIFOSS Full Rollout</strong>
-              <div class="action-desc">Complete deployment of Bangsamoro Integrated Financial &amp; Operations System; 1-day business registration.</div>
+              <strong>BEGMP Digital Rollout</strong>
+              <div class="action-desc">Complete deployment of Bangsamoro e-Governance Master Plan; 1-day digital business registration via BBOI.</div>
             </td>
             <td style="text-align:center;"><span class="pri-badge high">● High</span></td>
             <td class="due-cell" style="text-align:center;">Q3 2026</td>
             <td><span class="status-badge in-progress"><span class="status-dot-anim"></span>Development</span></td>
             <td class="budget-cell" style="text-align:right;">₱150M</td>
-            <td class="agency-cell"><strong style="color:white;">BDTA</strong><br>BBOI, MTIT</td>
+            <td class="agency-cell"><strong style="color:white;">BDTA</strong><br>BBOI, MICT</td>
           </tr>
 
           <tr data-priority="high" data-quarter="q4">
@@ -798,7 +799,7 @@ body{
               <div class="action-desc" style="margin-top:.4rem;">Infrastructure–Energy Nexus — Raising the B1 Growth Ceiling</div>
             </td>
             <td>
-              <strong>WOW Matanog SEZ Launch</strong>
+              <strong>Bangsamoro Halal Park (Matanog)</strong>
               <div class="action-desc">Ground-breaking and master-planned site development; anchor tenant pre-qualification; utility infrastructure.</div>
             </td>
             <td style="text-align:center;"><span class="pri-badge high">● High</span></td>
@@ -815,13 +816,13 @@ body{
             </td>
             <td>
               <strong>Islamic Finance Foundation</strong>
-              <div class="action-desc">Regulatory base for Shariah-compliant microfinance; Takaful framework; Sukuk readiness assessment.</div>
+              <div class="action-desc">Regulatory base for Shariah-compliant microfinance; Takaful framework; Al-Amanah expansion to all provincial capitals.</div>
             </td>
             <td style="text-align:center;"><span class="pri-badge high">● High</span></td>
             <td class="due-cell" style="text-align:center;">Q4 2026</td>
             <td><span class="status-badge in-progress"><span class="status-dot-anim"></span>Scoping</span></td>
             <td class="budget-cell" style="text-align:right;">₱100M</td>
-            <td class="agency-cell"><strong style="color:white;">Min. Finance</strong><br>BPDA</td>
+            <td class="agency-cell"><strong style="color:white;">Min. Finance</strong><br>BPDA, BSP</td>
           </tr>
 
           <tr data-priority="medium" data-quarter="q4">
@@ -921,7 +922,7 @@ body{
         <h2 class="section-title" id="phase-title">Phase Progress Tracker — 2026–2035</h2>
         <div class="section-rule"></div>
       </div>
-      <span class="section-count">₱40B total · 3 phases</span>
+      <span class="section-count">₱55B total · 3 phases</span>
     </div>
 
     <div class="phase-tracker" role="list">
@@ -931,7 +932,7 @@ body{
         <div class="phase-num-badge" aria-hidden="true">01</div>
         <div class="phase-track-title">Foundation Building</div>
         <div class="phase-track-years">2026 – 2028</div>
-        <div class="phase-track-budget">PHP 5B</div>
+        <div class="phase-track-budget">PHP 15B</div>
         <span class="status-badge in-progress" style="margin-bottom:.6rem;"><span class="status-dot-anim"></span>Current Phase</span>
         <div class="phase-track-bar" style="background:rgba(16,185,129,.12);">
           <div class="phase-track-fill" style="background:linear-gradient(90deg,#10b981,#6ee7b7);width:0%;" data-w="26"></div>
@@ -939,10 +940,10 @@ body{
         <div class="phase-track-pct">26% complete (Year 1 of 3)</div>
         <div class="phase-milestones" role="list">
           <div class="phase-milestone active" role="listitem"><span class="phase-milestone-dot"></span>BHB operationalisation — Q2 2026</div>
-          <div class="phase-milestone active" role="listitem"><span class="phase-milestone-dot"></span>BIIC IRR finalization — Q2 2026</div>
-          <div class="phase-milestone pending" role="listitem"><span class="phase-milestone-dot"></span>Digital BIFOSS — Q3 2026</div>
+          <div class="phase-milestone active" role="listitem"><span class="phase-milestone-dot"></span>Forestry Code &amp; JMC 2026-01 — Q2 2026</div>
+          <div class="phase-milestone pending" role="listitem"><span class="phase-milestone-dot"></span>BEGMP Digital Rollout — Q3 2026</div>
           <div class="phase-milestone pending" role="listitem"><span class="phase-milestone-dot"></span>Halal Park groundbreaking — Q4 2026</div>
-          <div class="phase-milestone pending" role="listitem"><span class="phase-milestone-dot"></span>80% electrification — 2028</div>
+          <div class="phase-milestone pending" role="listitem"><span class="phase-milestone-dot"></span>ZBIP &amp; 80% electrification — 2028</div>
         </div>
       </div>
 
@@ -951,7 +952,7 @@ body{
         <div class="phase-num-badge" aria-hidden="true">02</div>
         <div class="phase-track-title">Acceleration</div>
         <div class="phase-track-years">2029 – 2032</div>
-        <div class="phase-track-budget">PHP 15B</div>
+        <div class="phase-track-budget">PHP 20B</div>
         <span class="status-badge not-started" style="margin-bottom:.6rem;"><span class="status-dot-anim"></span>Upcoming</span>
         <div class="phase-track-bar">
           <div class="phase-track-fill" style="background:linear-gradient(90deg,#3b82f6,#93c5fd);width:0%;" data-w="0"></div>
@@ -960,8 +961,8 @@ body{
         <div class="phase-milestones" role="list">
           <div class="phase-milestone pending" role="listitem"><span class="phase-milestone-dot"></span>Full OIC/SMIIC recognition</div>
           <div class="phase-milestone pending" role="listitem"><span class="phase-milestone-dot"></span>Halal Park Phase 1 with tenants</div>
-          <div class="phase-milestone pending" role="listitem"><span class="phase-milestone-dot"></span>50% internet penetration</div>
-          <div class="phase-milestone pending" role="listitem"><span class="phase-milestone-dot"></span>Islamic banking launched</div>
+          <div class="phase-milestone pending" role="listitem"><span class="phase-milestone-dot"></span>60% broadband penetration</div>
+          <div class="phase-milestone pending" role="listitem"><span class="phase-milestone-dot"></span>Islamic banking in all capitals</div>
         </div>
       </div>
 
@@ -978,9 +979,9 @@ body{
         <div class="phase-track-pct">0% — begins 2033</div>
         <div class="phase-milestones" role="list">
           <div class="phase-milestone pending" role="listitem"><span class="phase-milestone-dot"></span>Full BHB mutual recognition</div>
-          <div class="phase-milestone pending" role="listitem"><span class="phase-milestone-dot"></span>100% electrification · 70% internet</div>
-          <div class="phase-milestone pending" role="listitem"><span class="phase-milestone-dot"></span>Bangsamoro Halal Innovation Hub</div>
-          <div class="phase-milestone pending" role="listitem"><span class="phase-milestone-dot"></span>₱50B intra-EAGA trade target</div>
+          <div class="phase-milestone pending" role="listitem"><span class="phase-milestone-dot"></span>100% electrification · 85% broadband</div>
+          <div class="phase-milestone pending" role="listitem"><span class="phase-milestone-dot"></span>₱500M/yr carbon &amp; PES revenue</div>
+          <div class="phase-milestone pending" role="listitem"><span class="phase-milestone-dot"></span>₱40B+ export target achieved</div>
         </div>
       </div>
 
@@ -991,8 +992,13 @@ body{
 
 <!-- Footer -->
 <footer style="text-align:center;padding:2rem 1rem;border-top:1px solid var(--gold-border);margin-top:var(--s8);">
+  <div style="margin-bottom:1rem;display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;">
+    <a href="dashboard.html" style="color:var(--gold);text-decoration:none;font-size:.8rem;font-weight:600;">Dashboard</a>
+    <a href="roadmap.html" style="color:rgba(255,255,255,.5);text-decoration:none;font-size:.8rem;">Roadmap</a>
+    <a href="action-plan.html" style="color:rgba(255,255,255,.5);text-decoration:none;font-size:.8rem;">Action Plan</a>
+  </div>
   <p style="font-size:.75rem;color:rgba(255,255,255,.3);">© 2026 BARMM · Ministry of Trade, Investments and Tourism · <span style="color:var(--gold);">The Emerging Bangsamoro</span> · Investment Roadmap 2026–2035</p>
-  <p style="font-size:.68rem;color:rgba(255,255,255,.2);margin-top:.3rem;">Data sources: PSA, BBOI, BEZA, MTIT, MENRE (2024 baselines). Targets per BDP 2023–2028 and Investment Roadmap 2035.</p>
+  <p style="font-size:.68rem;color:rgba(255,255,255,.2);margin-top:.3rem;">Data sources: PSA, BBOI, BEZA, MTIT, MENRE (2024 baselines). Targets per BIRD 2026–2035 Roadmap &amp; BDP 2023–2028.</p>
 </footer>
 
 <script>
