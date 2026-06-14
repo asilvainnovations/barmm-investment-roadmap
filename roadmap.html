@@ -11,7 +11,7 @@
 :root{
 --primary-green:#064e3b;--dark-green:#022c22;--mid-green:#065f46;
 --light-green:#6ee7b7;--cream:#ecfdf5;--white:#ffffff;
---text-dark:#0f172a;--text-muted:#64748b;
+--text-light:#ffffff;--text-muted:#64748b;
 --gold:#C9A84C;--gold-light:#E8C560;--gold-dark:#8B6C28;--gold-pale:#fdf6e3;
 --gold-border:rgba(201,168,76,0.32);--gold-border-strong:rgba(201,168,76,0.55);
 --gold-glow:rgba(201,168,76,0.20);
@@ -897,7 +897,6 @@ body { background:white; color:black; }
 </header>
 <div class="tabs-bar" role="tablist" aria-label="Strategy sections">
 <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="roadmap-tab" onclick="switchTab('roadmap-tab',this)" data-tooltip="Strategic perspectives and leverage points overview">📊 Roadmap</button>
-<button class="tab-btn" role="tab" aria-selected="false" aria-controls="action-plan-tab" onclick="switchTab('action-plan-tab',this)" data-tooltip="Detailed 2026 Action Plan with budget and timelines">📋 Action Plan 2026</button>
 <button class="tab-btn" role="tab" aria-selected="false" aria-controls="swot-tab" onclick="switchTab('swot-tab',this)" data-tooltip="Strategic SWOT Analysis">🔍 SWOT</button>
 <button class="tab-btn" role="tab" aria-selected="false" aria-controls="cld-tab" onclick="switchTab('cld-tab',this)" data-tooltip="Causal Loop Diagrams showing feedback systems">🔄 CLDs</button>
 <button class="tab-btn" role="tab" aria-selected="false" aria-controls="archetypes-tab" onclick="switchTab('archetypes-tab',this)" data-tooltip="System archetypes and leverage points">⚙️ Archetypes</button>
@@ -905,6 +904,7 @@ body { background:white; color:black; }
 <button class="tab-btn" role="tab" aria-selected="false" aria-controls="metrics-tab" onclick="switchTab('metrics-tab',this)" data-tooltip="Metrics and international benchmarks">📏 Metrics</button>
 <button class="tab-btn" role="tab" aria-selected="false" aria-controls="phases-tab" onclick="switchTab('phases-tab',this)" data-tooltip="Implementation phases 2026-2035">🗺️ Phases</button>
 <button class="tab-btn" role="tab" aria-selected="false" onclick="filterCore()" data-tooltip="Filter to show only Critical Leverage Points">⭐ Critical Only</button>
+<button class="tab-btn" role="tab" aria-selected="false" aria-controls="action-plan-tab" onclick="switchTab('action-plan-tab',this)" data-tooltip="Detailed 2026 Action Plan with budget and timelines">📋 Action Plan 2026</button>
 </div>
 <main class="page-container" id="mainContent">
 <!-- ======= ROADMAP TAB ======= -->
