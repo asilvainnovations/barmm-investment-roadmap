@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Activity, Plus, X, RefreshCw, GitBranch, Target, AlertCircle, ArrowUpRight, TrendingUp } from 'lucide-react';
+import { Activity, RefreshCw, GitBranch, Target, AlertCircle, ArrowUpRight, TrendingUp } from 'lucide-react';
 import { useStrategicPlanStore } from '../../stores/strategicPlanStore';
+import { CAUSAL_LOOPS, SYSTEMS_ARCHETYPES } from '../../data/bird/clds';
 import type { CausalLoop, SystemsArchetype } from '../../types';
 
 const ARCHEtype_CONFIG = {
@@ -20,11 +21,9 @@ export function SystemsThinking() {
   const currentPlan = getCurrentPlan();
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState<'cld' | 'archetypes' | 'leverage'>('cld');
-  const [showClModal, setShowClModal] = useState(false);
-  const [showArchModal, setShowArchModal] = useState(false);
 
-  const loops = currentPlan?.causal_loops || [];
-  const archetypes = currentPlan?.systems_archetypes || [];
+  const loops = currentPlan?.causal_loops || CAUSAL_LOOPS;
+  const archetypes = currentPlan?.systems_archetypes || SYSTEMS_ARCHETYPES;
 
   // Sample data for BIRD
   const sampleLoops: CausalLoop[] = [
@@ -122,7 +121,7 @@ export function SystemsThinking() {
               </div>
               <p className="text-sm text-white/50 mb-3">{loop.description}</p>
               <div className="flex flex-wrap gap-2">
-                {(loop.leverage_points || []).map((lp: string, i: number) => (
+                {(loop.leverage_points || []).map((lp, i) => (
                   <span key={i} className="text-xs bg-gold/10 text-gold px-2 py-1 rounded">{lp}</span>
                 ))}
               </div>
@@ -133,7 +132,7 @@ export function SystemsThinking() {
 
       {activeTab === 'archetypes' && (
         <div className="space-y-4">
-          {displayArchetypes.map((arch) => {
+          {displayArchetypes.map((arch: SystemsArchetype) => {
             const config = ARCHEtype_CONFIG[arch.archetype_type as keyof typeof ARCHEtype_CONFIG] || ARCHEtype_CONFIG.limits_to_growth;
             const Icon = config.icon;
             return (

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Plus, X, Brain, Sparkles, ArrowRight, Target, Shield, Zap, AlertTriangle, CheckCircle } from 'lucide-react';
+import { Plus, X, Brain, Sparkles, GitBranch, ArrowRight, Target, Shield, Zap, AlertTriangle, CheckCircle } from 'lucide-react';
 import { useStrategicPlanStore } from '../../stores/strategicPlanStore';
 import { useAuth } from '../../hooks/useAuth';
 import { supabase } from '../../lib/supabase';

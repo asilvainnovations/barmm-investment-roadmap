@@ -13,6 +13,8 @@ import { TeamManagement } from './components/teams/TeamManagement';
 import { ActivityTimeline } from './components/activity/ActivityTimeline';
 import { PlanComparison } from './components/compare/PlanComparison';
 import { AdminPanel } from './components/admin/AdminPanel';
+import { PublicRoadmap } from './pages/PublicRoadmap';
+import { PublicDashboard } from './pages/PublicDashboard';
 import { useAuth } from './hooks/useAuth';
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
@@ -34,6 +36,8 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<LandingPage />} />
+      <Route path="/roadmap" element={<PublicRoadmap />} />
+      <Route path="/public-dashboard" element={<PublicDashboard />} />
       <Route path="/app" element={<ProtectedRoute><AppLayout /></ProtectedRoute>}>
         <Route index element={<Navigate to="dashboard" replace />} />
         <Route path="dashboard" element={<Dashboard />} />

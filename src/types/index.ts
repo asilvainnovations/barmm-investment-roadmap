@@ -60,6 +60,8 @@ export interface StrategicPlan {
   strategies?: StrategyMatrix[];
   scorecards?: BalancedScorecard[];
   paps?: Pap[];
+  causal_loops?: CausalLoop[];
+  systems_archetypes?: SystemsArchetype[];
 }
 
 export interface SwotItem {
@@ -238,28 +240,36 @@ export interface PlanShare {
   accepted: boolean;
 }
 
+export interface OrganizationMember {
+  id: string;
+  organization_id: string;
+  user_id: string;
+  role: 'member' | 'editor' | 'admin';
+  joined_at: string;
+}
+
 export interface CausalLoop {
   id: string;
-  plan_id: string;
+  plan_id?: string;
   name: string;
   description: string | null;
   loop_type: 'reinforcing' | 'balancing';
   variables: unknown[];
   connections: unknown[];
   leverage_points: unknown[];
-  created_at: string;
+  created_at?: string;
 }
 
 export interface SystemsArchetype {
   id: string;
-  plan_id: string;
+  plan_id?: string;
   name: string;
   description: string | null;
   archetype_type: string;
   symptoms: string | null;
   structural_causes: string | null;
   interventions: string | null;
-  created_at: string;
+  created_at?: string;
 }
 
 export interface AppState {
