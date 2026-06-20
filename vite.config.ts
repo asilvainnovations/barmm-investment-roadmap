@@ -1,14 +1,17 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
+import path from "path"
 
 export default defineConfig({
-  plugins: [
-    react(),
+  plugins: [react()],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
     VitePWA({
       registerType: 'autoUpdate',
       manifest: {
-        name: 'BIRD Strategic Planning',
+        name: 'BIRD_2026-2035',
         short_name: 'BIRD',
         description: 'AI-powered strategic planning for BARMM Investment Roadmap',
         theme_color: '#022c22',
