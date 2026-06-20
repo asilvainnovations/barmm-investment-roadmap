@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Clock, ArrowUpRight, ArrowDownLeft, Plus, Edit, Trash, User, CheckCircle } from 'lucide-react';
+import { Clock, ArrowUpRight, ArrowDownLeft, Plus, FileEdit as Edit, Trash, User, CheckCircle } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { supabase } from '../../lib/supabase';
 import { useStrategicPlanStore } from '../../stores/strategicPlanStore';
