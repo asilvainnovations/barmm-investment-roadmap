@@ -140,7 +140,7 @@ export function Dashboard() {
           >
             <option value="">Select a plan...</option>
             {plans.map((p) => (
-              <option key={p.id || p.local_id} value={p.id || p.local_id}>{p.title}</option>
+              <option key={p.id || p.local_id || undefined} value={p.id || p.local_id || undefined}>{p.title}</option>
             ))}
           </select>
           <button onClick={() => navigate('/app/templates')} className="btn btn-primary text-sm px-3 py-2">
