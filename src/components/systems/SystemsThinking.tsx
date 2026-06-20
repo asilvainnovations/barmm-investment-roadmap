@@ -122,7 +122,7 @@ export function SystemsThinking() {
               <p className="text-sm text-white/50 mb-3">{loop.description}</p>
               <div className="flex flex-wrap gap-2">
                 {(loop.leverage_points || []).map((lp, i) => (
-                  <span key={i} className="text-xs bg-gold/10 text-gold px-2 py-1 rounded">{lp}</span>
+                  <span key={i} className="text-xs bg-gold/10 text-gold px-2 py-1 rounded">{String(lp)}</span>
                 ))}
               </div>
             </div>
