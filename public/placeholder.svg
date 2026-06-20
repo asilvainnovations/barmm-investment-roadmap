@@ -82,7 +82,7 @@
     fill="white"
     letter-spacing="-1"
   >
-    <tspan x="512" dy="0">ASilva</tspan>
+    <tspan x="512" dy="0">MTIT</tspan>
   </text>
   
   <text 
@@ -95,7 +95,7 @@
     fill="rgba(255,255,255,0.95)"
     letter-spacing="2"
   >
-    <tspan x="512" dy="0">Innovations</tspan>
+    <tspan x="512" dy="0"></tspan>
   </text>
   
   <!-- Tagline -->
@@ -109,7 +109,7 @@
     fill="rgba(255,255,255,0.8)"
     letter-spacing="3"
   >
-    <tspan x="512" dy="0">TRANSFORMING ORGANIZATIONS</tspan>
+    <tspan x="512" dy="0"></tspan>
   </text>
   
   <!-- ==================== DECORATIVE ELEMENTS ==================== -->
