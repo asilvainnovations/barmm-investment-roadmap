@@ -154,7 +154,7 @@
 
   /* ---- Global Resets ---- */
   * {
-    border-color: hsl(var(--border));
+    @apply border-border;
   }
 
   html {
@@ -226,8 +226,7 @@
   input[type="month"],
   input[type="week"],
   textarea {
-    @apply bg-background text-foreground placeholder:text-muted-foreground;
-  border-color: hsl(var(--border));
+    @apply bg-background text-foreground border-border placeholder:text-muted-foreground;
   }
 
   input:disabled,
@@ -584,14 +583,12 @@
   /* ---- Material / Elevated Surfaces ---- */
   .material {
     @apply bg-card rounded-xl shadow-md;
-    @apply border;
-  border-color: hsl(var(--border) / 0.5);
+    @apply border border-border/50;
     transition: all var(--transition-base);
   }
 
   .material:hover {
-    @apply shadow-lg;
-  border-color: hsl(var(--border));
+    @apply shadow-lg border-border;
   }
 
   .elevated {
@@ -719,8 +716,7 @@
 .markdown-editor {
   @apply font-mono text-base leading-relaxed;
   @apply bg-transparent p-4 rounded-xl;
-  @apply border focus:border-primary/50;
-  border-color: hsl(var(--border) / 0.5);
+  @apply border border-border/50 focus:border-primary/50;
   @apply transition-all duration-200;
   @apply focus:outline-none focus:ring-2 focus:ring-primary/20;
 }
@@ -768,13 +764,11 @@
 
 .markdown-preview th {
   @apply bg-secondary/50 font-semibold text-left p-3;
-  @apply border-b-2;
-  border-bottom-color: hsl(var(--border));
+  @apply border-b-2 border-border;
 }
 
 .markdown-preview td {
-  @apply p-3 border-b;
-  border-bottom-color: hsl(var(--border) / 0.5);
+  @apply p-3 border-b border-border/50;
 }
 
 .markdown-preview img {
