@@ -54,7 +54,7 @@ export function PlanComparison() {
           <select value={planA} onChange={(e) => setPlanA(e.target.value)} className="text-sm">
             <option value="">Select plan...</option>
             {plans.map((p) => (
-              <option key={p.id || p.local_id} value={p.id || p.local_id}>{p.title}</option>
+              <option key={p.id || p.local_id || undefined} value={p.id || p.local_id || undefined}>{p.title}</option>
             ))}
           </select>
         </div>
