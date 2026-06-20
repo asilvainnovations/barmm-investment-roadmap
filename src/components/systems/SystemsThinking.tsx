@@ -122,7 +122,7 @@ export function SystemsThinking() {
               <p className="text-sm text-white/50 mb-3">{loop.description}</p>
               <div className="flex flex-wrap gap-2">
                 {(loop.leverage_points || []).map((lp, i) => (
-                  <span key={i} className="text-xs bg-gold/10 text-gold px-2 py-1 rounded">{lp}</span>
+                  <span key={i} className="text-xs bg-gold/10 text-gold px-2 py-1 rounded">{String(lp)}</span>
                 ))}
               </div>
             </div>
@@ -132,7 +132,7 @@ export function SystemsThinking() {
 
       {activeTab === 'archetypes' && (
         <div className="space-y-4">
-          {displayArchetypes.map((arch: SystemsArchetype) => {
+          {displayArchetypes.map((arch) => {
             const config = ARCHEtype_CONFIG[arch.archetype_type as keyof typeof ARCHEtype_CONFIG] || ARCHEtype_CONFIG.limits_to_growth;
             const Icon = config.icon;
             return (
