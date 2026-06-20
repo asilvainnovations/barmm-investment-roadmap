@@ -11,7 +11,7 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       manifest: {
-        name: 'BIRD_2026-2035',
+        name: 'BIRD Strategic Planning',
         short_name: 'BIRD',
         description: 'AI-powered strategic planning for BARMM Investment Roadmap',
         theme_color: '#022c22',
