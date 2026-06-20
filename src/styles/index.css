@@ -1,0 +1,288 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
+
+:root {
+  --primary-green: #064e3b;
+  --dark-green: #022c22;
+  --mid-green: #065f46;
+  --light-green: #6ee7b7;
+  --cream: #ecfdf5;
+  --gold: #C9A84C;
+  --gold-light: #E8C560;
+  --gold-dark: #8B6C28;
+  --gold-pale: #fdf6e3;
+  --text-dark: #0f172a;
+  --text-muted: #64748b;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #011a12;
+  color: var(--cream);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cinzel', serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(2, 44, 34, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold-dark);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+
+/* Animations */
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201, 168, 76, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(201, 168, 76, 0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.1), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.animate-pulse-gold {
+  animation: pulse-gold 2s infinite;
+}
+
+/* Gold gradient text */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #7a5c1e 0%, #c9a84c 35%, #e8c560 50%, #c9a84c 65%, #7a5c1e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(2, 44, 34, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(201, 168, 76, 0.15);
+}
+
+/* Card hover */
+.card-hover {
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  border-color: rgba(201, 168, 76, 0.4);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Status indicators */
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-synced { background: #22c55e; }
+.status-pending { background: #f59e0b; }
+.status-syncing { background: #3b82f6; animation: pulse-gold 1.5s infinite; }
+.status-error { background: #ef4444; }
+.status-offline { background: #6b7280; }
+
+/* Form styling */
+input, textarea, select {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 0.5rem;
+  color: white;
+  padding: 0.75rem 1rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  transition: border-color 0.3s, background 0.3s;
+  outline: none;
+  width: 100%;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: rgba(201, 168, 76, 0.55);
+  background: rgba(255, 255, 255, 0.09);
+}
+
+input::placeholder, textarea::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* Button styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: none;
+  outline: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #7a5c1e 0%, #c9a84c 35%, #e8c560 50%, #c9a84c 65%, #7a5c1e 100%);
+  background-size: 200% 100%;
+  color: var(--dark-green);
+}
+
+.btn-primary:hover {
+  background-position: 100% 0;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(201, 168, 76, 0.35);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(201, 168, 76, 0.4);
+  color: white;
+}
+
+.btn-danger {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+}
+
+.btn-danger:hover {
+  background: rgba(239, 68, 68, 0.25);
+}
+
+/* Section backgrounds */
+.bg-gradient-dark {
+  background: linear-gradient(160deg, #011a12 0%, #022c22 45%, #0a1628 100%);
+}
+
+.bg-glass-dark {
+  background: rgba(2, 44, 34, 0.85);
+  backdrop-filter: blur(20px);
+}
+
+/* Badge styles */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.6rem;
+  border-radius: 0.375rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.badge-critical {
+  background: rgba(239, 68, 68, 0.2);
+  color: #fca5a5;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+.badge-high {
+  background: rgba(201, 168, 76, 0.2);
+  color: var(--gold);
+  border: 1px solid rgba(201, 168, 76, 0.4);
+}
+
+.badge-medium {
+  background: rgba(59, 130, 246, 0.2);
+  color: #93c5fd;
+  border: 1px solid rgba(59, 130, 246, 0.4);
+}
+
+.badge-low {
+  background: rgba(107, 114, 128, 0.2);
+  color: #d1d5db;
+  border: 1px solid rgba(107, 114, 128, 0.4);
+}
+
+/* Priority colors */
+.priority-critical { color: #fca5a5; }
+.priority-high { color: var(--gold-light); }
+.priority-medium { color: #93c5fd; }
+.priority-low { color: #d1d5db; }
+
+/* SWOT quadrant colors */
+.swot-strength { border-left: 3px solid #22c55e; }
+.swot-weakness { border-left: 3px solid #ef4444; }
+.swot-opportunity { border-left: 3px solid #3b82f6; }
+.swot-threat { border-left: 3px solid #f59e0b; }
+
+/* BSC perspective colors */
+.bsc-financial { border-left: 3px solid #C9A84C; }
+.bsc-customer { border-left: 3px solid #22c55e; }
+.bsc-internal { border-left: 3px solid #3b82f6; }
+.bsc-learning { border-left: 3px solid #a855f7; }
+
+/* Responsive table */
+@media (max-width: 768px) {
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Print styles */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
