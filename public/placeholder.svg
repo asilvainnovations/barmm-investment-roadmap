@@ -22,19 +22,6 @@
       <stop offset="100%" stop-color="#0A2463"/>
     </linearGradient>
     
-    <!-- Blob Gradient (Cyan to Deep Blue) -->
-    <linearGradient id="blobGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00E5FF"/>
-      <stop offset="40%" stop-color="#00B4D8"/>
-      <stop offset="100%" stop-color="#0A2463"/>
-    </linearGradient>
-    
-    <!-- Triangle Stroke Gradient -->
-    <linearGradient id="triangleGradient" x1="0%" y1="100%" x2="0%" y2="0%">
-      <stop offset="0%" stop-color="#FFFFFF"/>
-      <stop offset="100%" stop-color="#00E5FF"/>
-    </linearGradient>
-    
     <!-- Drop Shadow for Main Circle -->
     <filter id="dropShadow" x="-50%" y="-50%" width="200%" height="200%">
       <feGaussianBlur in="SourceAlpha" stdDeviation="15"/>
@@ -47,20 +34,14 @@
       </feMerge>
     </filter>
     
-    <!-- Soft Glow for Icon -->
-    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+    <!-- Drop Shadow for the MTIT Image -->
+    <filter id="imageShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="12"/>
+      <feOffset dx="0" dy="8" result="offsetblur"/>
+      <feFlood flood-color="#000000" flood-opacity="0.4"/>
+      <feComposite in2="offsetblur" operator="in"/>
       <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-    
-    <!-- Triangle Glow -->
-    <filter id="triGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="2" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
+        <feMergeNode/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
@@ -72,51 +53,21 @@
   <!-- Inner Decorative Ring -->
   <circle cx="512" cy="512" r="440" fill="none" stroke="url(#accentGradient)" stroke-width="8" opacity="0.6"/>
   
-  <!-- ==================== CIRCULAR ICON ==================== -->
-  <g transform="translate(512, 460)" filter="url(#softGlow)">
-    
-    <!-- 5-Lobed Blob Shape (Vector Recreation) -->
-    <path 
-      d="M 0,-190 
-         C 125,-217 167,-186 181,-59 
-         C 245,52 228,102 112,154 
-         C 26,248 -26,248 -112,154 
-         C -228,102 -245,52 -181,-59 
-         C -167,-186 -125,-217 0,-190 
-         Z" 
-      fill="url(#blobGradient)"
-    />
-    
-    <!-- Center Dark Cutout (creates depth) -->
-    <circle cx="0" cy="0" r="105" fill="#0A2463" opacity="0.95"/>
-    
-    <!-- Three Nested Triangles -->
-    <path 
-      d="M 0,-70 L -81,35 L 81,35 Z" 
-      fill="none" 
-      stroke="url(#triangleGradient)" 
-      stroke-width="6" 
-      stroke-linejoin="round"
-      filter="url(#triGlow)"
-    />
-    <path 
-      d="M 0,-50 L -58,25 L 58,25 Z" 
-      fill="none" 
-      stroke="url(#triangleGradient)" 
-      stroke-width="5" 
-      stroke-linejoin="round"
-      filter="url(#triGlow)"
-    />
-    <path 
-      d="M 0,-30 L -35,15 L 35,15 Z" 
-      fill="none" 
-      stroke="url(#triangleGradient)" 
-      stroke-width="4" 
-      stroke-linejoin="round"
-      filter="url(#triGlow)"
-    />
-    
-  </g>
+  <!-- ==================== MTIT HEADER IMAGE ==================== -->
+  <!-- 
+    The image is centered at (512, 460) to match the original icon's placement.
+    preserveAspectRatio ensures the header scales proportionally within the bounding box.
+  -->
+  <image 
+    xlink:href="https://mtit.bangsamoro.gov.ph/wp-content/uploads/2024/04/MTIT-HEADER-2024.png"
+    href="https://mtit.bangsamoro.gov.ph/wp-content/uploads/2024/04/MTIT-HEADER-2024.png"
+    x="162" 
+    y="310" 
+    width="700" 
+    height="300" 
+    preserveAspectRatio="xMidYMid meet"
+    filter="url(#imageShadow)"
+  />
   
   <!-- ==================== BRAND TEXT ==================== -->
   
