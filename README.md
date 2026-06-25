@@ -1,6 +1,6 @@
 # Bangsamoro Investment Roadmap (BIRD) 2026–2035 Module
 
-This module integrates the **Bangsamoro Investment Roadmap Development (BIRD)** strategic framework into the Strat Planner Pro platform. It translates the static, multi-page HTML strategic documents into a fully interactive, data-driven React Single Page Application (SPA) featuring systems thinking visualizations, mathematically quantified SWOT analysis, and a real-time Monitoring, Evaluation, and Learning (MEL) dashboard.
+This platform integrates the **Bangsamoro Investment Roadmap Development (BIRD)** strategic framework into the Strat Planner Pro platform. It translates the static, multi-page HTML strategic documents into a fully interactive, data-driven React Single Page Application (SPA) featuring systems thinking visualizations, mathematically quantified SWOT analysis, and a real-time Monitoring, Evaluation, and Learning (MEL) dashboard.
 
 The UI is built using the **Apple Liquid Glass** aesthetic, customized with the official BIRD branding (Deep Space Navy, Emerald, and Cyan accents).
 
