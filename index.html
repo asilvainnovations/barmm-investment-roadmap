@@ -567,7 +567,6 @@ outline-offset:-2px;
 }
 .metrics-table tbody td:first-child{color:white;font-weight:500;}
 .target-2028{color:var(--gold)!important;font-weight:600!important;}
-.target-2030{color:#fbbf24!important;font-weight:600!important;}
 .target-2035{color:var(--light-green)!important;font-weight:600!important;}
 .smiic-standards-grid{display:grid;grid-template-columns:1fr;gap:.75rem;margin-top:.5rem;}
 .smiic-standard{background:rgba(0,0,0,.25);border:1px solid var(--gold-border);border-radius:.6rem;padding:.85rem;font-size:.82rem;color:rgba(209,250,229,.85);}
@@ -721,48 +720,6 @@ text-align:center;
 .action-plan-table td { padding:.85rem .75rem; }
 .quarter-grid { grid-template-columns:repeat(4,1fr); }
 }
-/* Collapsible Sections */
-.collapsible-section {
-border: 1px solid var(--gold-border);
-border-radius: 0.75rem;
-margin: 1rem 0;
-overflow: hidden;
-}
-.collapsible-header {
-background: rgba(6, 78, 59, 0.6);
-color: var(--gold);
-padding: 1rem;
-cursor: pointer;
-display: flex;
-justify-content: space-between;
-align-items: center;
-font-family: 'Cinzel', serif;
-font-weight: 600;
-transition: background 0.3s;
-}
-.collapsible-header:hover {
-background: rgba(6, 78, 59, 0.8);
-}
-.collapsible-header::after {
-content: '▼';
-font-size: 0.8rem;
-transition: transform 0.3s;
-}
-.collapsible-section.active .collapsible-header::after {
-transform: rotate(180deg);
-}
-.collapsible-content {
-max-height: 0;
-overflow: hidden;
-transition: max-height 0.3s ease-out;
-background: rgba(0, 0, 0, 0.2);
-}
-.collapsible-section.active .collapsible-content {
-max-height: 2000px;
-}
-.collapsible-body {
-padding: 1rem;
-}
 /* MODALS */
 .modal{display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.82);animation:modalFadeIn .25s ease;backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:1rem;}
 .modal.active{display:flex;}
@@ -881,6 +838,14 @@ body { background:white; color:black; }
 <div class="subtitle">Investment Roadmap 2026–2035</div>
 <p class="tagline">"A Hub for Resilient and Ethical Growth"</p>
 </header>
+
+<!-- VIDEO BANNER -->
+<div class="page-container" style="padding-top: 0; padding-bottom: 1rem;">
+  <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.5); border: 1px solid var(--gold-border); background: #000;">
+    <iframe src="https://www.youtube.com/embed/Li7lpyWWMcE" title="Bangsamoro Investment Roadmap 2026–2035 | Context Analysis &amp; BEIE Framework" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+  </div>
+</div>
+
 <div class="tabs-bar" role="tablist" aria-label="Strategy sections">
 <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="roadmap-tab" onclick="switchTab('roadmap-tab',this)" data-tooltip="Strategic perspectives and leverage points overview">📊 Roadmap</button>
 <button class="tab-btn" role="tab" aria-selected="false" aria-controls="swot-tab" onclick="switchTab('swot-tab',this)" data-tooltip="Strategic SWOT Analysis">🔍 SWOT</button>
@@ -1600,22 +1565,21 @@ Rather than ad-hoc tax incentives, the plan invests ₱30M in BIIC IRR and ₱20
 <th>Indicator</th>
 <th>Baseline (2024/2026)</th>
 <th class="target-2028">2028 Target</th>
-<th class="target-2030">2030 Target</th>
 <th class="target-2035">2035 Target</th>
 <th>Data Source</th>
 </tr>
 </thead>
 <tbody>
-<tr><td>Halal-certified enterprises</td><td>~500 est.</td><td class="target-2028">2,000</td><td class="target-2030">3,000</td><td class="target-2035">5,000+</td><td>BHB Registry</td></tr>
-<tr><td>Halal export value (PHP M)</td><td>&lt;₱10B</td><td class="target-2028">20,000</td><td class="target-2030">30,000</td><td class="target-2035">40,000+</td><td>PSA / Customs</td></tr>
-<tr><td>Investment inflows (PHP B)</td><td>5.1 (Q1 2026)</td><td class="target-2028">8.0</td><td class="target-2030">12.0</td><td class="target-2035">15.0</td><td>BBOI / BEZA</td></tr>
-<tr><td>Electrification rate (%)</td><td>~75% (2024)</td><td class="target-2028">90%</td><td class="target-2030">95%</td><td class="target-2035">100%</td><td>MENRE</td></tr>
-<tr><td>Broadband connectivity (%)</td><td>&lt;30% est.</td><td class="target-2028">60%</td><td class="target-2030">75%</td><td class="target-2035">85%</td><td>DICT / MICT</td></tr>
-<tr><td>Tourist arrivals (000s)</td><td>&lt;500K/yr</td><td class="target-2028">1,000</td><td class="target-2030">2,000</td><td class="target-2035">3,000</td><td>MTIT</td></tr>
-<tr><td>BIMP-EAGA trade value (PHP M)</td><td>TBD</td><td class="target-2028">10,000</td><td class="target-2030">30,000</td><td class="target-2035">50,000</td><td>MTIT / Customs</td></tr>
-<tr><td>FDI stock growth rate (%)</td><td>Baseline TBD</td><td class="target-2028">10% p.a.</td><td class="target-2030">12% p.a.</td><td class="target-2035">15% p.a.</td><td>BBOI</td></tr>
-<tr><td>Local revenue to total budget (%)</td><td>&lt;10%</td><td class="target-2028">20%</td><td class="target-2030">25%</td><td class="target-2035">30%</td><td>BPDA</td></tr>
-<tr><td>Budget execution rate (%)</td><td>&lt;80%</td><td class="target-2028">90%</td><td class="target-2030">92%</td><td class="target-2035">>90%</td><td>BPDA</td></tr>
+<tr><td>Halal-certified enterprises</td><td>~500 est.</td><td class="target-2028">2,000</td><td class="target-2035">5,000+</td><td>BHB Registry</td></tr>
+<tr><td>Halal export value (PHP M)</td><td>&lt;₱10B</td><td class="target-2028">20,000</td><td class="target-2035">40,000+</td><td>PSA / Customs</td></tr>
+<tr><td>Investment inflows (PHP B)</td><td>5.1 (Q1 2026)</td><td class="target-2028">8.0</td><td class="target-2035">15.0</td><td>BBOI / BEZA</td></tr>
+<tr><td>Electrification rate (%)</td><td>~75% (2024)</td><td class="target-2028">90%</td><td class="target-2035">100%</td><td>MENRE</td></tr>
+<tr><td>Broadband connectivity (%)</td><td>&lt;30% est.</td><td class="target-2028">60%</td><td class="target-2035">85%</td><td>DICT / MICT</td></tr>
+<tr><td>Tourist arrivals (000s)</td><td>&lt;500K/yr</td><td class="target-2028">1,000</td><td class="target-2035">3,000</td><td>MTIT</td></tr>
+<tr><td>BIMP-EAGA trade value (PHP M)</td><td>TBD</td><td class="target-2028">10,000</td><td class="target-2035">50,000</td><td>MTIT / Customs</td></tr>
+<tr><td>FDI stock growth rate (%)</td><td>Baseline TBD</td><td class="target-2028">10% p.a.</td><td class="target-2035">15% p.a.</td><td>BBOI</td></tr>
+<tr><td>Local revenue to total budget (%)</td><td>&lt;10%</td><td class="target-2028">20%</td><td class="target-2035">30%</td><td>BPDA</td></tr>
+<tr><td>Budget execution rate (%)</td><td>&lt;80%</td><td class="target-2028">90%</td><td class="target-2035">>90%</td><td>BPDA</td></tr>
 </tbody>
 </table>
 </div>
@@ -2225,8 +2189,5 @@ saveContent();
 }
 });
 </script>
-</body>
-</html>
-  <script type="module" src="/src/main.tsx"></script>
 </body>
 </html>
