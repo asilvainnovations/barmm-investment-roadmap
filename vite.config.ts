@@ -22,5 +22,20 @@ export default defineConfig({
     })
   ],
   server: { port: 5173 },
-  build: { outDir: 'dist', sourcemap: true }
+  build: {
+    outDir: 'dist',
+    sourcemap: false, // Disable in production for smaller bundles
+    minify: 'esbuild',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+          ui: ['lucide-react', 'framer-motion'],
+          charts: ['recharts'],
+          supabase: ['@supabase/supabase-js'],
+          utils: ['zustand', 'date-fns', 'clsx', 'tailwind-merge']
+        }
+      }
+    }
+  }
 })
