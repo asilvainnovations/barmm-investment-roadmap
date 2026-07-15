@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2CNG7D15Q7"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -80,7 +80,7 @@ body{
    CONTAINER
    ═══════════════════════════════════════════════════════════════════════════ */
 .container{max-width:1400px;margin:0 auto;padding:0 var(--s4) var(--s12);display:flex;flex-direction:column;gap:var(--s10);}
-@media(min-width:768px){.container{padding:0 var(--s8) var(--s12);}}
+@media(min-width:100%){.container{padding:0 var(--s8) var(--s12);}}
 
 /* ═══════════════════════════════════════════════════════════════════════════
    SECTION CARD
@@ -88,7 +88,7 @@ body{
 .section-card{background:rgba(6,78,59,.15);border:1px solid var(--gold-border);border-radius:var(--r-xl);padding:var(--s6);position:relative;overflow:hidden;}
 .section-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold-grad);}
 .section-card::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 0%,rgba(201,168,76,.04) 0%,transparent 60%);pointer-events:none;}
-@media(min-width:768px){.section-card{padding:var(--s8);}}
+@media(min-width:100%){.section-card{padding:var(--s8);}}
 .section-kicker{font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.3rem;}
 .section-title{font-family:'Cinzel',serif;font-size:clamp(1.1rem,2.5vw,1.6rem);font-weight:700;color:white;line-height:1.2;margin-bottom:var(--s3);}
 .section-rule{width:50px;height:3px;background:var(--gold-grad);border-radius:2px;margin-bottom:var(--s5);}
@@ -351,7 +351,9 @@ body{
 /* ═══════════════════════════════════════════════════════════════════════════
    CTA
    ═══════════════════════════════════════════════════════════════════════════ */
-.cta{text-align:center;padding:var(--s10) var(--s4);background:linear-gradient(135deg,rgba(6,78,59,.4) 0%,rgba(2,44,34,.6) 100%);border:1px solid var(--gold-border-strong);border-radius:var(--r-xl);position:relative;overflow:hidden;}
+/* CTA Image - Wide Full View */
+.cluster-img{width:100%;max-width:100%;height:auto;display:block;margin:var(--s4) 0;border-radius:var(--r-md);box-shadow:0 4px 20px rgba(0,0,0,.3);}
+  .cta{text-align:center;padding:var(--s10) var(--s4);background:linear-gradient(135deg,rgba(6,78,59,.4) 0%,rgba(2,44,34,.6) 100%);border:1px solid var(--gold-border-strong);border-radius:var(--r-xl);position:relative;overflow:hidden;}
 .cta::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold-grad);}
 .cta-title{font-family:'Cinzel',serif;font-size:clamp(1.3rem,3vw,2rem);font-weight:700;background:var(--gold-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:var(--s4);}
 .cta-text{font-size:1rem;color:rgba(236,253,245,.85);max-width:700px;margin:0 auto var(--s6);line-height:1.7;}
@@ -848,6 +850,9 @@ footer .gold{color:var(--gold);}
   <!-- ═══════════════════════════════════════════════════════════════════════════
        CTA
        ═══════════════════════════════════════════════════════════════════════════ -->
+<!-- CTA Image - Wide Full View -->
+<img src="https://lydsisparsmvextskevw.supabase.co/storage/v1/object/public/validation-survey-images/The%20Decade%20Ahead_Bird%20App-CTA.png" alt="The Decade Ahead Belongs to You" class="cta-img">
+</main>
   <div class="cta reveal">
     <h2 class="cta-title">The Decade Ahead (2026–2035) Belongs to You</h2>
     <p class="cta-text">
@@ -859,7 +864,6 @@ footer .gold{color:var(--gold);}
     </a>
   </div>
 
-</main>
 
 <footer>
   <p>© 2026 BARMM · Ministry of Trade, Investments and Tourism · <span class="gold">The Emerging Bangsamoro</span> · Investment Roadmap 2026–2035</p>
