@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2CNG7D15Q7"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-2CNG7D15Q7');
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 <meta name="theme-color" content="#022c22">
@@ -834,12 +841,12 @@ body { background:white; color:black; }
 <li><a href="public/dashboard.html" data-tooltip="View the Strategic MEL Dashboard">Dashboard</a></li>
 <li><a href="public/roadmap.html" style="color:var(--gold); font-weight:700;" data-tooltip="Interactive Strategy Map 2026-2035">Roadmap</a></li>
 <li><a href="public/action-plan.html" data-tooltip="View the Detailed Action Plan">Action Plan</a></li>
-<li><a href="https://strategy-ai-planner-1.deploypad.app/" data-tooltip="Access the BIRD Platform">BIRD App</a></li>
+<li><a href="https://bird-app.asilvainnovations.com" data-tooltip="Access the BIRD Platform">BIRD App</a></li>
 </ul>
 </div>
 </nav>
 <header class="page-header" role="banner">
-<div class="header-eyebrow">Interactive Strategy Map 2026–2035</div>
+<div class="header-eyebrow">Interactive Investment Roadmap 2026–2035</div>
 <h1>The Emerging Bangsamoro</h1>
 <div class="subtitle">Investment Roadmap 2026–2035</div>
 <p class="tagline">"A Hub for Resilient and Ethical Growth"</p>
@@ -848,13 +855,13 @@ body { background:white; color:black; }
 <!-- VIDEO BANNER -->
 <div class="page-container" style="padding-top: 0; padding-bottom: 1rem;">
   <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.5); border: 1px solid var(--gold-border); background: #000;">
-    <iframe src="https://www.youtube.com/embed/Li7lpyWWMcE" title="Bangsamoro Investment Roadmap 2026–2035 | Context Analysis &amp; BEIE Framework" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    <iframe src="https://www.youtube.com/embed/UCi2dVUmSbE " title="Bangsamoro Investment Roadmap 2026–2035 | Southeast Asia’s Hub for Ethical & Sustainable Growth" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
   </div>
 </div>
 
 <div class="tabs-bar" role="tablist" aria-label="Strategy sections">
 <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="roadmap-tab" onclick="switchTab('roadmap-tab',this)" data-tooltip="Strategic perspectives and leverage points overview">📊 Roadmap</button>
-<button class="tab-btn" role="tab" aria-selected="false" aria-controls="swot-tab" onclick="switchTab('swot-tab',this)" data-tooltip="Strategic SWOT Analysis">🔍 SWOT</button>
+<button class="tab-btn" role="tab" aria-selected="false" aria-controls="swot-tab" onclick="switchTab('swot-tab',this)" data-tooltip="Quantified SWOT Analysis">🔍 SWOT</button>
 <button class="tab-btn" role="tab" aria-selected="false" aria-controls="cld-tab" onclick="switchTab('cld-tab',this)" data-tooltip="Causal Loop Diagrams showing feedback systems">🔄 CLDs</button>
 <button class="tab-btn" role="tab" aria-selected="false" aria-controls="archetypes-tab" onclick="switchTab('archetypes-tab',this)" data-tooltip="System archetypes and leverage points">⚙️ Archetypes</button>
 <button class="tab-btn" role="tab" aria-selected="false" aria-controls="bsc-matrix" onclick="switchTab('bsc-matrix',this)" data-tooltip="Balanced Scorecard Matrix">📈 BSC</button>
@@ -2173,26 +2180,25 @@ installBtn.addEventListener('click',async()=>{if(!deferredPrompt)return;deferred
 loadState();
 render();
 renderBSC();
-loadSavedContent(); // Load any saved edits
-// Observe dynamically added content
-const observer = new MutationObserver((mutations) => {
-mutations.forEach((mutation) => {
-if (mutation.addedNodes.length && state.editMode) {
-makeContentEditable(true);
-}
-});
-});
-observer.observe(document.body, { childList: true, subtree: true });
-// Keyboard shortcut for edit mode
-document.addEventListener('keydown', (e) => {
-if (e.ctrlKey && e.key === 'e') {
-e.preventDefault();
-toggleEditMode();
-}
-if (e.ctrlKey && e.key === 's' && state.editMode) {
-e.preventDefault();
-saveContent();
-}
+/* ======================== CONSENT BANNER ======================== */
+document.addEventListener('DOMContentLoaded', function() {
+    const banner = document.getElementById('consentBanner');
+    const acceptBtn = document.getElementById('acceptBtn');
+    const declineBtn = document.getElementById('declineBtn');
+
+    if (!localStorage.getItem('birdConsent')) {
+        banner.style.display = 'block';
+    }
+
+    acceptBtn.addEventListener('click', function() {
+        localStorage.setItem('birdConsent', 'accepted');
+        banner.style.display = 'none';
+    });
+
+    declineBtn.addEventListener('click', function() {
+        localStorage.setItem('birdConsent', 'declined');
+        banner.style.display = 'none';
+    });
 });
 </script>
 </body>
